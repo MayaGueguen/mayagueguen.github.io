@@ -11,18 +11,22 @@
 
 
 
-<title>Welcome to my website!</title>
+<title></title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/lumen.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="site_libs/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -100,34 +104,34 @@ button.code-folding-btn:focus {
 <style type="text/css">
 /* padding for bootstrap navbar */
 body {
-  padding-top: 61px;
+  padding-top: 54px;
   padding-bottom: 40px;
 }
 /* offset scroll position for anchor links (for fixed navbar)  */
 .section h1 {
-  padding-top: 66px;
-  margin-top: -66px;
+  padding-top: 59px;
+  margin-top: -59px;
 }
 
 .section h2 {
-  padding-top: 66px;
-  margin-top: -66px;
+  padding-top: 59px;
+  margin-top: -59px;
 }
 .section h3 {
-  padding-top: 66px;
-  margin-top: -66px;
+  padding-top: 59px;
+  margin-top: -59px;
 }
 .section h4 {
-  padding-top: 66px;
-  margin-top: -66px;
+  padding-top: 59px;
+  margin-top: -59px;
 }
 .section h5 {
-  padding-top: 66px;
-  margin-top: -66px;
+  padding-top: 59px;
+  margin-top: -59px;
 }
 .section h6 {
-  padding-top: 66px;
-  margin-top: -66px;
+  padding-top: 59px;
+  margin-top: -59px;
 }
 </style>
 
@@ -164,6 +168,107 @@ $(document).ready(function () {
 
 
 
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = false;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
 
 
 <div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
@@ -174,7 +279,7 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">YOURNAME</a>
+      <a class="navbar-brand" href="index.html">Maya Guéguen</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -187,16 +292,16 @@ $(document).ready(function () {
 </li>
 <li>
   <a href="about.html">
-    <span class="fa fa-user-circle"></span>
+    <span class="fa fa-info"></span>
      
     About
   </a>
 </li>
 <li>
-  <a href="cv.html">
-    <span class="fa fa-file-pdf-o"></span>
+  <a href="publications.html">
+    <span class="ion ion-document-text"></span>
      
-    CV
+    Publications
   </a>
 </li>
       </ul>
@@ -212,7 +317,7 @@ $(document).ready(function () {
   <a href="https://github.com/MayaGueguen">
     <span class="fa fa-github"></span>
      
-    GitHub
+    
   </a>
 </li>
       </ul>
@@ -224,15 +329,40 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Welcome to my website!</h1>
 
 </div>
 
 
-<p>You’re up and running!</p>
+<p><br/><br/></p>
+<div id="fate-hd-website" class="section level2">
+<h2><a href="https://mayagueguen.github.io/FATE-WEBSITE/"><code>FATE-HD</code> website</a> <img src="pictures/link.png" alt="Link to" style="width:20px;height:20px;"></h2>
+<p><em>“<code>FATE-HD</code> is a dynamic landscape vegetation model that simulates interactions between plant modelling entities (e.g. species or plant functional groups), their population dynamics and dispersal, whilst taking into account external drivers such as disturbance regimes, and environmental variations. The model is built on past conceptual and technical developments (Albert et al., 2008; Midgley et al., 2010) but has been entirely recoded in C++ and revisited.”</em> (<a href="http://www.will.chez-alice.fr/pdf/BoulangeatGCB2014.pdf" title="Boulangeat, I., Georges, D., Thuiller, W., FATE-HD: A spatially and temporally explicit integrated model for predicting vegetation structure and diversity at regional scale. Global Change Biology, 20, 2368–2378.">Boulangeat, 2014</a>)</p>
+<p>The website presents more accurately the <strong>model</strong>, as well as the <strong>publications</strong> which introduced it or used it.</p>
+<p><strong>Tutorials</strong> are available for each step of use, going from the installation of the software to its use in different situations.</p>
+<p><br/></p>
+</div>
+<div id="rfate-package" class="section level2">
+<h2><a href="https://mayagueguen.github.io/RFate/"><code>RFate</code> package</a> <img src="pictures/link.png" alt="Link to" style="width:20px;height:20px;"></h2>
+<p><code>RFate</code> is a <code>R</code> package designed to help the user in using the software <code>FATE-HD</code>. It provides functions PRE and POST simulations :</p>
+<ul>
+<li>PRE simulations :
+<ul>
+<li>to build Plant Functional Groups with dominant species</li>
+<li>to prepare parameter files</li>
+</ul></li>
+<li>POST simulations :
+<ul>
+<li>to produce graphics</li>
+<li>to analyze results</li>
+<li>etc</li>
+</ul></li>
+</ul>
+</div>
 
 
 
+</div>
+</div>
 
 </div>
 

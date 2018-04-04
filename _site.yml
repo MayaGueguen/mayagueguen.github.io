@@ -1,27 +1,29 @@
-name: "YOURNAME"                                  # CHANGE HERE
-
-output_dir: "."
+name: Maya Guéguen
+output_dir: '.'
 navbar:
-  title: "YOURNAME"                               # CHANGE HERE 
+  title: Maya Guéguen
   type: inverse
   left:
-    - text: "Home"
-      icon: fa-home
-      href: index.html
-    - text: "About"
-      icon: fa-user-circle
-      href: about.html
-    - text: "CV"
-      icon: fa-file-pdf-o
-      href: cv.html
+  - text: Home
+    icon: fa-home
+    href: index.html
+  - text: About
+    icon: fa-info
+    href: about.html
+  - text: Publications
+    icon: ion-document-text
+    href: publications.html
   right:
-    - text: "Contact me"
-      icon: fa-envelope-o
-      href: mailto:maya.gueguen@univ-grenoble-alpes.fr
-    - text: "GitHub"
-      icon: fa-github
-      href: https://github.com/MayaGueguen
+  - text: Contact me
+    icon: fa-envelope-o
+    href: mailto:maya.gueguen@univ-grenoble-alpes.fr
+  - text: ''
+    icon: fa-github
+    href: https://github.com/MayaGueguen
 output:
   html_document:
-    theme: sandstone
-    highlight: textmate
+    theme: lumen
+    #highlight: tango
+    lib_dir: site_libs
+    self_contained: no
+
