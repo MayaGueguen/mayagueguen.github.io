@@ -7,7 +7,7 @@ navbar:
   - text: Home
     icon: fa-home
     href: index.html
-  - text: About
+  - text: About me
     icon: fa-info
     href: about.html
   - text: Publications

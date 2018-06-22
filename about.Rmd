@@ -1,7 +1,62 @@
 ---
-title: "About me"
----
+output:
+  html_document:
+    number_sections: no
+    toc: yes
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+---	
 
-## Header
+<br/><br/>
 
-Say more about you here.
+
+## Education
+
+<br/>
+
+**Training** [<img src="pictures/logo-cnrs.png" alt="CNRS" align="right" style="width:100px;">](http://www.cnrs.fr/fr/page-daccueil)
+
+- *Novembre 2017* :  
+Formation CNRS. Python pour le calcul scientifique et la Programmation Orientée Objet (POO).
+
+- *Décembre 2016* :  
+Formation CNRS. Analyses statistiques des réseaux.  
+Manipulation et visualisation, algorithmes de recherche communautés,  
+modélisation statistique, sous le logiciel R.
+[<img src="pictures/logo-telabotanica.png" alt="Tela Botanica" align="right" style="width:100px;">](http://www.tela-botanica.org/site:accueil)
+
+- *Septembre - Octobre 2016* :  
+MOOC Tela Botanica. Apprendre à connaître les plantes.
+
+- *Mai 2015* :  
+École d'été. Bayesian calibration, forescasting and multi-model  
+predictions of process-based vegetation models.  
+Statistiques bayésiennes, méthodes d'optimisation et de Monte-Carlo par Chaînes de Markov (MCMC).
+
+<br/><br>
+
+**University education** [<img src="pictures/logo-insa.png" alt="INSA" align="right" style="width:250px;">](https://www.insa-lyon.fr/)
+
+- *Septembre 2011 – Juin 2014* :  
+Cycle ingénieur à l’INSA de Lyon.  
+Département Bio-Informatique et Modélisation.
+
+- *Septembre 2009 – Juin 2011* :  [<img src="pictures/logo-eurinsa.png" alt="EURINSA" align="right" style="width:300px;">](https://www.insa-lyon.fr/fr/formation/premier-cycle-eurinsa)
+Cycle préparatoire à l'INSA de Lyon.  
+Section européenne.
+
+<br/><br/>
+
+**School education**
+
+- *July 2009* :  
+Baccalauréat Scientifique, Mention Très bien. Avignon (84).
+
+<br/><br/>
+
+## Skills
+
+<br/><br/>
+
+## Projects
