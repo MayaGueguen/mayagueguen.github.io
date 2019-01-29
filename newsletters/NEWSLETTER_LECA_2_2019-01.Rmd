@@ -62,6 +62,9 @@ Janvier/février étant la période d'arrivée des étudiants en stage de M2, qu
 
 Chaque personne est invitée à venir avec un **ordinateur portable**.
 
+Pour la formation R - SIG, il est recommandé d'avoir [`R`](https://www.r-project.org/) (et [`RStudio`](https://www.rstudio.com/products/rstudio/download/)) d'installé, ainsi que les librairies `raster` et `mapview`.
+
+
 **La plupart des présentations / support utilisés sont déjà disponibles sur [`RLeca`](http://rleca.pbworks.com/).**
 
 <br/>
