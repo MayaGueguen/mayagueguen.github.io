@@ -53,6 +53,11 @@ footer {
 </div>
 <br/><br/>
 
+<div style="text-align:center;">
+**[Merci de vous inscrire ICI !!](https://doodle.com/poll/f8ugk5w2ithcfb77)**
+</div>
+<br/><br/>
+
 Janvier/février étant la période d'arrivée des étudiants en stage de M2, quelques formations sont proposées la première quinzaine de février, **ouvertes à tous**, stagiaires et membres du laboratoire, souhaitant y participer.
 
 Chaque personne est invitée à venir avec un **ordinateur portable**.
