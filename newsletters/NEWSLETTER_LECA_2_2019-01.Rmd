@@ -45,9 +45,9 @@ footer {
 #### Prochains évènements
 
 <div style="color:#980043;">
-- ***5 février 2019 - 9h* : formation R - SIG (Julien)**
-- ***13 février 2019 - 9h* : formation UNIX (Fred)**
-- ***14 février 2019 - 9h* : formation CIMENT (Maya, et Bruno si disponible)**
+- ***5 février 2019 - 9h - 12h* : formation R - SIG (Julien)**
+- ***13 février 2019 - 9h - 12h* : formation UNIX (Fred)**
+- ***14 février 2019 - 9h - 12h* : formation CIMENT (Maya, et Bruno si disponible)**
 
 **au LECA en salle de réunion au 3ème étage**
 </div>
