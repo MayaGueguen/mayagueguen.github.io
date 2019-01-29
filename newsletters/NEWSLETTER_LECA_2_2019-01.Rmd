@@ -64,6 +64,8 @@ Chaque personne est invitée à venir avec un **ordinateur portable**.
 
 Pour la formation R - SIG, il est recommandé d'avoir [`R`](https://www.r-project.org/) (et [`RStudio`](https://www.rstudio.com/products/rstudio/download/)) d'installé, ainsi que les librairies `raster` et `mapview`.
 
+Pour la formation CIMENT, les utilisateurs Windows peuvent installer [`WinSCP`](https://winscp.net/eng/download.php) et [`PuTTY`](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
+
 
 **La plupart des présentations / support utilisés sont déjà disponibles sur [`RLeca`](http://rleca.pbworks.com/).**
 
