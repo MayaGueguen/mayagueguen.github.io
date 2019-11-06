@@ -44,13 +44,13 @@ footer {
 
 #### Derniers évènements
 
-- *5 novembre 2019* : journée utilisateurs CIMENT (Gricad)  
+- *5 novembre 2019* : journée utilisateurs CIMENT ([`Gricad`](https://gricad.univ-grenoble-alpes.fr/))  
 Présentations disponibles ici : [gricad-user](https://userday2019.sciencesconf.org/resource/page/id/1)
 
 
 <br/><br/>
 
-Après cette journée organisée par [`Gricad`](https://gricad.univ-grenoble-alpes.fr/), voici un aperçu de quelques points d'intérêts pour le laboratoire :
+Après cette journée organisée par `Gricad`, voici un aperçu de quelques points d'intérêts pour le laboratoire :
 
 <br/>
 
@@ -58,21 +58,21 @@ Après cette journée organisée par [`Gricad`](https://gricad.univ-grenoble-alp
 
 La famille Ciment s'agrandit et se dote de **nouvelles machines** :
 
-- [DAHU]() : 25 nouveaux noeuds !  ce qui amène à un total de 73 noeuds  
+- **`DAHU`** : 25 nouveaux noeuds !  ce qui amène à un total de 73 noeuds  
 42 noeuds sont réservés aux jobs nécessitant des ressources > 31 coeurs
-- [bettik]() : passage de 500 To l'année dernière à 1,3 Po ! (avec une participation du LECA)
-- [MANTIS2 (Irods)]() : remise à neuf de la grille, ajout de 400 To, et d'une base de données propre
+- **`bettik`** : passage de 500 To l'année dernière à 1,3 Po ! (avec une participation du LECA)
+- **`MANTIS2 (Irods)`** : remise à neuf de la grille, ajout de 400 To, et d'une base de données propre
 
 
 
-[Froggy]() est issu du projet "Equipements d'excellence" 2010 des Investissements d'avenir [Equip@meso](http://www.genci.fr/fr/content/pr%C3%A9sentation-d%E2%80%99equipmeso) qui arrive à son terme en décembre 2019.  
-La maintenance de [Froggy]() qui devait s'achever en mai 2019 a été reconduite pour un an jusqu'à mai 2020.
+`Froggy` est issu du projet "Equipements d'excellence" 2010 des Investissements d'avenir [Equip@meso](http://www.genci.fr/fr/content/pr%C3%A9sentation-d%E2%80%99equipmeso) qui arrive à son terme en décembre 2019.  
+La maintenance de `Froggy` qui devait s'achever en mai 2019 a été reconduite pour un an jusqu'à mai 2020.
 
 <br/><br/>
 
 #### Communication
 
-Les sites web de [`Gricad`](https://gricad.univ-grenoble-alpes.fr/) font peau neuve !
+Les sites web de `Gricad` font peau neuve !
 
 - un nouveau site web pour présenter l'unité de service (en ligne prochainement)
 - <div style=";color:#980043;">**un nouveau site web pour la [DOCUMENTATION](https://gricad-doc.univ-grenoble-alpes.fr) !!**</div>
@@ -114,11 +114,11 @@ Plus de détails peuvent être trouvés [ici](https://userday2019.sciencesconf.o
 
 #### Astuces
 
-+ Le service de stockage [SUMMER](https://gricad.univ-grenoble-alpes.fr/thematiques/stockage-summer) a été couplé avec [Luke]() et [Dahu]() !  
-Ainsi, il est possible de copier des données stockées sur SUMMER directement sur Luke ou Dahu pour les utiliser.  
-Ca nécessite de demander la synchronisation entre ses ID de Perseus (ciment) et de Summer
++ Le service de stockage [SUMMER](https://gricad.univ-grenoble-alpes.fr/thematiques/stockage-summer) a été couplé avec `Luke` et `Dahu` !  
+Ainsi, il est possible de copier des données stockées sur SUMMER directement sur `Luke` ou `Dahu` pour les utiliser.  
+Cela nécessite de demander la synchronisation entre ses ID de Perseus (ciment) et de `Summer`.
 
-+ Commande `df -h` : visualiser ces montages sur Luke ou Dahu, ainsi que l'espace de stockage
++ Commande `df -h` : visualiser ces montages sur `Luke` ou `Dahu`, ainsi que l'espace de stockage
 + Dossier `/home/.snapshot/` : copie pour tous les utilisateurs des 5 derniers jours, **pour retrouver des données perdues dans la semaine**
 + Dossier `/home/0-USAGE/` : fichiers contenant l'utilisation du disque, et le nombre de fichiers par utilisateur et par groupe dans les derniers jours, **pour évaluer la place occupée par ses données** sur le `/home`
 
