@@ -64,7 +64,7 @@ Nous rappelons donc que l'équipe PASTIS est joignable par mail (leca-pastis-req
 - à l'analyse de séquences
 - aux statistiques et analyses de données
 
-(Détails prochainement disponibles sur le nouveau site web : [PASTIS](https://leca-new.osug.fr/-PASTIS-))
+(Détails prochainement disponibles sur le nouveau site web : [PASTIS](https://leca.osug.fr/-PASTIS-))
 
 <div style="text-align:right;">
 Fred, Julien, Anthony, Clément, Nicolas, Maya
