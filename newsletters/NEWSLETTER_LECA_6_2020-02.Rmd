@@ -45,7 +45,7 @@ footer {
 #### Prochains évènements :
 
 <div style="color:#980043;">
-- ***21 février 2020 - 15h* : formation R - ggplot2 (Maya)**
+- ***21 février 2020 - 10h* : formation R - ggplot2 (Maya)**
 - ***28 février 2020 - 15h* : formation CIMENT - débutant (Maya)**
 - ***20 mars 2020 - 15h* : introduction aux Bases de Données Relationnelles (Julien)**
 
