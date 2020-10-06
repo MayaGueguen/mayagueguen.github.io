@@ -166,9 +166,9 @@ However cophenetic correlation does not take into account the transformation of 
 # Citations
 
 - Legendre P. and Legendre L. (1998). Numerical Ecology. Elsevier, Amsterdam, p. 853, 1998.
-- Mouchet, Maud & Guilhaumon, Francois & Villéger, Sébastien & Mason, Norman & Tomasini, Jean & Mouillot, David. (2008). Towards a consensus for calculating dendrogram-based functional diversity indices. Oikos. 117. 794 - 800. doi:10.1111/j.0030-1299.2008.16594.x
-- Petchey, O. L., & Gaston, K. J. (2002). Functional diversity (FD), species richness and community composition. Ecology letters, 5(3), 402-411.
-- Podani, Janos & Schmera, Dénes. (2006). On dendrogram-based measures of functional diversity. Oikos. 115. 179 - 185. doi:10.1111/j.2006.0030-1299.15048.x
-- Rao, A. Ramachandra & Srinivas, Venkata. (2006). Regionalization of watersheds by hybrid-cluster analysis. Journal of Hydrology - J HYDROL. 318. 37-56. doi:10.1016/j.jhydrol.2005.06.003
+- Mouchet, Maud & Guilhaumon, Francois & Villéger, Sébastien & Mason, Norman & Tomasini, Jean & Mouillot, David. (2008). Towards a consensus for calculating dendrogram-based functional diversity indices. Oikos. 117. 794 - 800. https://doi.org/10.1111/j.0030-1299.2008.16594.x
+- Petchey, O. L., & Gaston, K. J. (2002). Functional diversity (FD), species richness and community composition. Ecology letters, 5(3), 402-411. https://doi.org/10.1046/j.1461-0248.2002.00339.x
+- Podani, Janos & Schmera, Dénes. (2006). On dendrogram-based measures of functional diversity. Oikos. 115. 179 - 185. https://doi.org/10.1111/j.2006.0030-1299.15048.x
+- Rao, A. Ramachandra & Srinivas, Venkata. (2006). Regionalization of watersheds by hybrid-cluster analysis. Journal of Hydrology - J HYDROL. 318. 37-56. https://doi.org/10.1016/j.jhydrol.2005.06.003
 
 

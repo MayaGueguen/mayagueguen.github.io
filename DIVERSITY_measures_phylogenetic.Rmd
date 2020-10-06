@@ -168,7 +168,19 @@ include_graphics("pictures_tutorials/example_ultrametric-tree.png")
 
 # Citations
 
-- Baselga, A. and Orme, C. D. L. (2012). betapart: an R package for the study of beta diversity. Methods in Ecology and Evolution, 3: 808–812. doi:10.1111/j.2041-210X.2012.00224.x
-- 
+- Faith D. P. (2013). Biodiversity and evolutionary history: useful extensions of the PD phylogenetic diversity assessment framework. Ann N Y Acad Sci. Jun; 1289:69-89. https://doi.org/10.1111/nyas.12186
+
+    - Barker, G. (2002). Phylogenetic diversity: a quantitative framework for measurement of priority and achievement in biodiversity conservation. Biological Journal of the Linnean Society. 76. 165-194. https://doi.org/10.1046/j.1095-8312.2002.00055.x
+    - Crozier, R. (1997). Preserving the Information Content of Species: Genetic Diversity, Phylogeny, and Conservation Worth. Annual Review of Ecology and Systematics, 28, 243-268. http://www.jstor.org/stable/2952493
+    - Faith, D. (1992). Conservation evaluation and phylogenetic diversity. Biological Conservation. 61. 1-10. https://doi.org/10.1016/0006-3207(92)91201-3
+    - Helmus, M., Bland, T., Williams, C. & Ives, A. (2007). Phylogenetic measures of biodiversity. Am Nat 169(3):E68-E83. The American naturalist. 169. https://doi.org/10.1086/511334
+    - Rao, C. R. (1982). Diversity and Dissimilarity Coefficients: A Unified Approach. Theoretical population biology, 21, 24-43. Theoretical Population Biology. 21. 24-43. https://doi.org/10.1016/0040-5809(82)90004-1
+    - Warwick, R. & Clarke, K. (1995). New 'biodiversity' measures reveal a decrease in taxonomic distinctness with increasing stress. Marine Ecology Progress Series. 129. 301-305. https://doi.org/10.3354/meps129301
+    - Webb, C. (2000). Exploring the Phylogenetic Structure of Ecological Communities: An Example for Rain Forest Trees. The American naturalist. 156. 145-155. https://doi.org/10.1086/303378
+
+- Vellend, M., Cornwell, W., Magnuson-Ford, K. & Mooers, A. (2010). Measuring phylogenetic biodiversity.
+
+
+
 
 

@@ -304,11 +304,11 @@ Usually require :
 
 # Citations
 
-- Burnham, K., & Overton, W. (1978). Estimation of the Size of a Closed Population when Capture Probabilities vary Among Animals. Biometrika, 65(3), 625-633. doi:10.2307/2335915
-- Chao, A. (1987). Estimating the Population Size for Capture-Recapture Data with Unequal Catchability. Biometrics, 43(4), 783-791. doi:10.2307/2531532
+- Burnham, K., & Overton, W. (1978). Estimation of the Size of a Closed Population when Capture Probabilities vary Among Animals. Biometrika, 65(3), 625-633. https://doi.org/10.2307/2335915
+- Chao, A. (1987). Estimating the Population Size for Capture-Recapture Data with Unequal Catchability. Biometrics, 43(4), 783-791. https://doi.org/10.2307/2531532
 - Chao, A. & Chiu, C.-H. (2012) Estimation of species richness and shared species richness. In Methods and Applications of Statistics in the Atmospheric and Earth Sciences (ed. N. Balakrishnan), pp. 76–111, Wiley, New York, NY, USA.
-- Chao, A., Colwell, R. K., Chiu, C.-H. and Townsend, D. (2017), Seen once or more than once: applying Good–Turing theory to estimate species richness using only unique observations and a species list. Methods Ecol Evol, 8: 1221–1232. doi:10.1111/2041-210X.12768
+- Chao, A., Colwell, R. K., Chiu, C.-H. and Townsend, D. (2017), Seen once or more than once: applying Good–Turing theory to estimate species richness using only unique observations and a species list. Methods Ecol Evol, 8: 1221–1232. https://doi.org/10.1111/2041-210X.12768
 - Chazdon, Robin & Colwell, Robert & S. Denslow, J & Guariguata, Manuel. (1998). Statistical methods for estimating species richness of woody regeneration in primary and secondary rain forests of NE Costa Rica. In Forest biodiversity research, monitoring and modelling. 285-309. 
-- Colwell, Robert & Chao, Anne & J. Gotelli, Nicholas & Lin, SY & Mao, Chang Xuan & Chazdon, Robin & T. Longino, John. (2012). Models and estimators linking individual-based and sample-based rarefaction, extrapolation and comparison of assemblages. Journal of Plant Ecology. 5. 3-21. doi:10.1093/jpe/rtr044.
-- Good, I. (1953). The Population Frequencies of Species and the Estimation of Population Parameters. Biometrika, 40(3/4), 237-264. doi:10.2307/2333344
-- Lee, S., & Chao, A. (1994). Estimating Population Size Via Sample Coverage for Closed Capture-Recapture Models. Biometrics, 50(1), 88-97. doi:10.2307/2533199
+- Colwell, Robert & Chao, Anne & J. Gotelli, Nicholas & Lin, SY & Mao, Chang Xuan & Chazdon, Robin & T. Longino, John. (2012). Models and estimators linking individual-based and sample-based rarefaction, extrapolation and comparison of assemblages. Journal of Plant Ecology. 5. 3-21. https://doi.org/10.1093/jpe/rtr044.
+- Good, I. (1953). The Population Frequencies of Species and the Estimation of Population Parameters. Biometrika, 40(3/4), 237-264. https://doi.org/10.2307/2333344
+- Lee, S., & Chao, A. (1994). Estimating Population Size Via Sample Coverage for Closed Capture-Recapture Models. Biometrics, 50(1), 88-97. https://doi.org/10.2307/2533199

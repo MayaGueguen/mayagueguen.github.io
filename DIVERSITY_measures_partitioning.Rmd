@@ -345,16 +345,16 @@ with :
 
 # Citations
 
-- Baselga, A. and Orme, C. D. L. (2012). betapart: an R package for the study of beta diversity. Methods in Ecology and Evolution, 3: 808–812. doi:10.1111/j.2041-210X.2012.00224.x
-- Baselga, A. (2013). Separating the two components of abundance-based dissimilarity: balanced changes in abundance vs. abundance gradients. Methods Ecol Evol, 4: 552–557. doi:10.1111/2041-210X.12029
-- Bray, J., & Curtis, J. (1957). An Ordination of the Upland Forest Communities of Southern Wisconsin. Ecological Monographs, 27(4), 326-349. doi:10.2307/1942268
-- Chalmandrier, L., Münkemüller, T., Devictor, V., Lavergne, S. and Thuiller, W. (2015). Decomposing changes in phylogenetic and functional diversity over space and time. Methods Ecol Evol, 6: 109–118. doi:10.1111/2041-210X.12297
-- Chiu, C., Jost, L., & Chao, A. (2014). Phylogenetic beta diversity, similarity, and differentiation measures based on Hill numbers. Ecological Monographs, 84(1), 21-44. (http://www.jstor.org/stable/43187595)
-- Jaccard, P. (1902). Lois de distribution florale dans la zone alpine. Bulletin de la Société vaudoise des sciences naturelles. 38. 69-130. doi:10.5169/seals-266762.
-- Jost, L. (2007). Partitioning Diversity into Independent Alpha and Beta Components. Ecology, 88(10), 2427-2439. (http://www.jstor.org/stable/27651387)
-- Lande, R. (1996). Statistics and Partitioning of Species Diversity, and Similarity Among Multiple Communities. Oikos. 76. 5-13. doi:10.2307/3545743. 
-- Reeve, R. & Matthews, L., & Cobbold, C. & Leinster, T. & Thompson, J & Brummitt, N. (2014). How to partition diversity. (http://arxiv.org/abs/1404.6520)
+- Baselga, A. and Orme, C. D. L. (2012). betapart: an R package for the study of beta diversity. Methods in Ecology and Evolution, 3: 808–812. https://doi.org/10.1111/j.2041-210X.2012.00224.x
+- Baselga, A. (2013). Separating the two components of abundance-based dissimilarity: balanced changes in abundance vs. abundance gradients. Methods Ecol Evol, 4: 552–557. https://doi.org/10.1111/2041-210X.12029
+- Bray, J., & Curtis, J. (1957). An Ordination of the Upland Forest Communities of Southern Wisconsin. Ecological Monographs, 27(4), 326-349. https://doi.org/10.2307/1942268
+- Chalmandrier, L., Münkemüller, T., Devictor, V., Lavergne, S. and Thuiller, W. (2015). Decomposing changes in phylogenetic and functional diversity over space and time. Methods Ecol Evol, 6: 109–118. https://doi.org/10.1111/2041-210X.12297
+- Chiu, C., Jost, L., & Chao, A. (2014). Phylogenetic beta diversity, similarity, and differentiation measures based on Hill numbers. Ecological Monographs, 84(1), 21-44. http://www.jstor.org/stable/43187595
+- Jaccard, P. (1902). Lois de distribution florale dans la zone alpine. Bulletin de la Société vaudoise des sciences naturelles. 38. 69-130. https://doi.org/10.5169/seals-266762.
+- Jost, L. (2007). Partitioning Diversity into Independent Alpha and Beta Components. Ecology, 88(10), 2427-2439. http://www.jstor.org/stable/27651387
+- Lande, R. (1996). Statistics and Partitioning of Species Diversity, and Similarity Among Multiple Communities. Oikos. 76. 5-13. https://doi.org/10.2307/3545743. 
+- Reeve, R. & Matthews, L., & Cobbold, C. & Leinster, T. & Thompson, J & Brummitt, N. (2014). How to partition diversity. http://arxiv.org/abs/1404.6520
 - Sorenson, T. (1948). A Method of Establishing Groups of Equal Amplitudes in Plant Sociology Based on Similarity of Species Content and Its Application to Analyses of the Vegetation on Danish Commons. Kongelige Danske Videnskabernes Selskab, Biologiske Skrifter, 5, 1-34.
-- Whittaker, R. (1972). Evolution and Measurement of Species Diversity. Taxon, 21(2/3), 213-251. doi:10.2307/1218190
+- Whittaker, R. (1972). Evolution and Measurement of Species Diversity. Taxon, 21(2/3), 213-251. https://doi.org/10.2307/1218190
 
 

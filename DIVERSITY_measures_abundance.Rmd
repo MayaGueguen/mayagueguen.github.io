@@ -314,13 +314,13 @@ include_graphics("pictures_tutorials/example_ultrametric-tree.png")
 
 # Citations
 
-- Allen, B., Kon, M., Bar‐Yam, Y., Associate Editor: Ross H. Crozier, & Editor: Monica A. Geber. (2009). A New Phylogenetic Diversity Measure Generalizing the Shannon Index and Its Application to Phyllostomid Bats. The American Naturalist, 174(2), 236-243. doi:10.1086/600101
-- Chao, A., Chiu, C., & Jost, L. (2010). Phylogenetic diversity measures based on Hill numbers. Philosophical Transactions: Biological Sciences, 365(1558), 3599-3609. (http://www.jstor.org/stable/20789175)
-- Faith, D. (1992). Conservation evaluation and phylogenetic diversity. Biological Conservation. 61. 1-10. doi:10.1016/0006-3207(92)91201-3
-- Hill, M. (1973). Diversity and Evenness: A Unifying Notation and Its Consequences. Ecology, 54(2), 427-432. doi:10.2307/1934352
-- Leinster, T., & Cobbold, C. (2012). Measuring diversity: The importance of species similarity. Ecology, 93(3), 477-489. (http://www.jstor.org/stable/23143936)
-- Rao, C. R. (1982). Diversity and Dissimilarity Coefficients: A Unified Approach. Theoretical population biology, 21, 24-43. Theoretical Population Biology. 21. 24-43. doi:10.1016/0040-5809(82)90004-1
-- Rényi, Alfréd. On Measures of Entropy and Information. Proceedings of the Fourth Berkeley Symposium on Mathematical Statistics and Probability, Volume 1: Contributions to the Theory of Statistics, 547--561, University of California Press, Berkeley, Calif., 1961. (https://projecteuclid.org/euclid.bsmsp/1200512181)
-- Shannon, C. E. (1948), A Mathematical Theory of Communication. Bell System Technical Journal, 27: 379–423. doi:10.1002/j.1538-7305.1948.tb01338.x
-- Simpson, E. H. 1949 - Measurement of diversity. Nature 163: 688. doi:10.1038/163688a0
+- Allen, B., Kon, M., Bar‐Yam, Y., Associate Editor: Ross H. Crozier, & Editor: Monica A. Geber. (2009). A New Phylogenetic Diversity Measure Generalizing the Shannon Index and Its Application to Phyllostomid Bats. The American Naturalist, 174(2), 236-243. https://doi.org/10.1086/600101
+- Chao, A., Chiu, C., & Jost, L. (2010). Phylogenetic diversity measures based on Hill numbers. Philosophical Transactions: Biological Sciences, 365(1558), 3599-3609. http://www.jstor.org/stable/20789175
+- Faith, D. (1992). Conservation evaluation and phylogenetic diversity. Biological Conservation. 61. 1-10. https://doi.org/10.1016/0006-3207(92)91201-3
+- Hill, M. (1973). Diversity and Evenness: A Unifying Notation and Its Consequences. Ecology, 54(2), 427-432. https://doi.org/10.2307/1934352
+- Leinster, T., & Cobbold, C. (2012). Measuring diversity: The importance of species similarity. Ecology, 93(3), 477-489. http://www.jstor.org/stable/23143936
+- Rao, C. R. (1982). Diversity and Dissimilarity Coefficients: A Unified Approach. Theoretical population biology, 21, 24-43. Theoretical Population Biology. 21. 24-43. https://doi.org/10.1016/0040-5809(82)90004-1
+- Rényi, Alfréd. On Measures of Entropy and Information. Proceedings of the Fourth Berkeley Symposium on Mathematical Statistics and Probability, Volume 1: Contributions to the Theory of Statistics, 547--561, University of California Press, Berkeley, Calif., 1961. https://projecteuclid.org/euclid.bsmsp/1200512181
+- Shannon, C. E. (1948), A Mathematical Theory of Communication. Bell System Technical Journal, 27: 379–423. https://doi.org/10.1002/j.1538-7305.1948.tb01338.x
+- Simpson, E. H. 1949 - Measurement of diversity. Nature 163: 688. https://doi.org/10.1038/163688a0
 
