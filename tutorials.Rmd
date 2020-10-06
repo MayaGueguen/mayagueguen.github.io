@@ -1,0 +1,19 @@
+---
+output:
+  html_document:
+    number_sections: no
+    toc: no
+---	
+
+<br/><br/>
+
+### DIVERSITY indices
+
+- [Abundance](DIVERSITY_measures_abundance.html)
+- [Functional](DIVERSITY_measures_functional.html)
+- [Phylogenetic](DIVERSITY_measures_phylogenetic.html)
+- [Partitioning](DIVERSITY_measures_partitioning.html)
+- [Communities](DIVERSITY_measures_communities.html)
+- [Richness](DIVERSITY_measures_richness.html)
+
+### LOGICIEL R

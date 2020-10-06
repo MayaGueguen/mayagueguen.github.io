@@ -19,10 +19,11 @@ navbar:
     href: work.html
   - text: Tutorials
     icon: fa-toolbox
+    href: tutorials.html
     menu:
       - text: "---------"
       - text: "DIVERSITY indices : abundance"
-        href: DIVERSITY_measures.html
+        href: DIVERSITY_measures_abundance.html
       - text: "DIVERSITY indices : functional"
         href: DIVERSITY_measures_functional.html
       - text: "DIVERSITY indices : phylogenetic"

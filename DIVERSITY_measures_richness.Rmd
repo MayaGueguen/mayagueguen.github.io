@@ -48,7 +48,10 @@ Non-parametric estimators based on the information about the infrequently detect
 
 *Estimation of species richness :*
 
-<div style="text-align:center"><img src="pictures/formula_Burnham-jackknife-2.png" width=100px/></div>
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Burnham-jackknife-2.png" width=100px/></div> -->
+```{r, echo=FALSE, fig.align='center', out.width='100px', fig.retina=1}
+include_graphics("pictures_tutorials/formula_Burnham-jackknife-2.png")
+```
 
 with :
 
@@ -63,7 +66,10 @@ with :
 
 *Clearly, S is biased and this bias decreases as t increases. Hence the following correction :*
 
-<div style="text-align:center"><img src="pictures/formula_Burnham-jackknife-1.png" width=320px/></div>
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Burnham-jackknife-1.png" width=320px/></div> -->
+```{r, echo=FALSE, fig.align='center', out.width='320px', fig.retina=1}
+include_graphics("pictures_tutorials/formula_Burnham-jackknife-1.png")
+```
 
 with :
 
@@ -74,12 +80,18 @@ with :
 *First-order jackknife :*  
 (depending on unique species)
 
-<div style="text-align:center"><img src="pictures/formula_Burnham-jackknife-3.png" width=230px/></div>
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Burnham-jackknife-3.png" width=230px/></div> -->
+```{r, echo=FALSE, fig.align='center', out.width='230px', fig.retina=1}
+include_graphics("pictures_tutorials/formula_Burnham-jackknife-3.png")
+```
 
 *Second-order jackknife :*  
 (depending on unique and duplicate species)
 
-<div style="text-align:center"><img src="pictures/formula_Burnham-jackknife-4.png" width=330px/></div>
+<div style="text-align:center"><img src="pictures_tutorials/formula_Burnham-jackknife-4.png" width=330px/></div>
+```{r, echo=FALSE, fig.align='center', out.width='330px', fig.retina=1}
+include_graphics("pictures_tutorials/formula_Burnham-jackknife-4.png")
+```
 
 with `n = t`.
 
@@ -96,13 +108,19 @@ If there are many undetectable species, then it will be impossible to obtain a g
 
 **Chao1 estimator (number of undected species for abundance data) :**
 
-<div style="text-align:center"><img src="pictures/formula_Chao1-estimator.png" width=400px/></div>
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Chao1-estimator.png" width=400px/></div> -->
+```{r, echo=FALSE, fig.align='center', out.width='400px', fig.retina=1}
+include_graphics("pictures_tutorials/formula_Chao1-estimator.png")
+```
 
 <br/>
 
 **Chao2 estimator (number of undected species for incidence data) :**
 
-<div style="text-align:center"><img src="pictures/formula_Chao2-estimator.png" width=500px/></div>
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Chao2-estimator.png" width=500px/></div> -->
+```{r, echo=FALSE, fig.align='center', out.width='500px', fig.retina=1}
+include_graphics("pictures_tutorials/formula_Chao2-estimator.png")
+```
 
 with :
 
@@ -118,10 +136,19 @@ with :
 
 **Incidence-based coverage estimator (ICE) :** 
 
-<div style="text-align:center"><img src="pictures/formula_ICE-1.png" width=280px/></div>
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_ICE-1.png" width=280px/></div> -->
+```{r, echo=FALSE, fig.align='center', out.width='280px', fig.retina=1}
+include_graphics("pictures_tutorials/formula_ICE-1.png")
+```
 with :
-<div style="text-align:center"><img src="pictures/formula_ICE-2.png" width=420px/></div>
-<div style="text-align:center"><img src="pictures/formula_ICE-3.png" width=180px/></div>
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_ICE-2.png" width=420px/></div> -->
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_ICE-3.png" width=180px/></div> -->
+```{r, echo=FALSE, fig.align='center', out.width='420px', fig.retina=1}
+include_graphics("pictures_tutorials/formula_ICE-2.png")
+```
+```{r, echo=FALSE, fig.align='center', out.width='180px', fig.retina=1}
+include_graphics("pictures_tutorials/formula_ICE-3.png")
+```
 
 
 with :
@@ -146,7 +173,10 @@ There is a generalization of ICE-type shared species richness estimators for two
 
 <br/>
 
-<div style="text-align:center"><img src="pictures/formula_Chao1-shared-estimator-1.png" width=200px/></div>
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Chao1-shared-estimator-1.png" width=200px/></div> -->
+```{r, echo=FALSE, fig.align='center', out.width='200px', fig.retina=1}
+include_graphics("pictures_tutorials/formula_Chao1-shared-estimator-1.png")
+```
 
 with :
 
@@ -160,9 +190,15 @@ with :
 
 **Chao1-shared estimator (number of shared species for abundance data) :**
 
-<div style="text-align:center"><img src="pictures/formula_Chao1-shared-estimator-2.png" width=240px/></div>
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Chao1-shared-estimator-2.png" width=240px/></div> -->
+```{r, echo=FALSE, fig.align='center', out.width='240px', fig.retina=1}
+include_graphics("pictures_tutorials/formula_Chao1-shared-estimator-2.png")
+```
 with
-<div style="text-align:center"><img src="pictures/formula_Chao1-shared-estimator-3.png" width=150px/></div>
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Chao1-shared-estimator-3.png" width=150px/></div> -->
+```{r, echo=FALSE, fig.align='center', out.width='150px', fig.retina=1}
+include_graphics("pictures_tutorials/formula_Chao1-shared-estimator-3.png")
+```
 
 <br/>
 

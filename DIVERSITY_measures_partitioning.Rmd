@@ -53,7 +53,10 @@ gradients).
 
 **Coefficient of community (percentage of co-occurrence) :**
 
-<div style="text-align:center"><img src="pictures/formula_Jaccard.png" width=200px/></div>  
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Jaccard.png" width=200px/></div>   -->
+```{r, echo=FALSE, fig.align='center', out.width='200px', fig.retina=1}
+include_graphics("pictures_tutorials/formula_Jaccard.png")
+```
 
 with :
 
@@ -75,7 +78,10 @@ with :
 
 leading to :
 
-<div style="text-align:center"><img src="pictures/formula_Jaccard-2.png" width=100px/></div>  
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Jaccard-2.png" width=100px/></div>   -->
+```{r, echo=FALSE, fig.align='center', out.width='100px', fig.retina=1}
+include_graphics("pictures_tutorials/formula_Jaccard-2.png")
+```
 
 <br/>
 
@@ -83,7 +89,10 @@ leading to :
 
 **Coefficient of community (percentage of co-occurrence) :**
 
-<div style="text-align:center"><img src="pictures/formula_Sorensen.png" width=200px/></div>  
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Sorensen.png" width=200px/></div>   -->
+```{r, echo=FALSE, fig.align='center', out.width='200px', fig.retina=1}
+include_graphics("pictures_tutorials/formula_Sorensen.png")
+```
 
 with :
 
@@ -105,7 +114,10 @@ with :
 
 leading to :
 
-<div style="text-align:center"><img src="pictures/formula_Sorensen-2.png" width=100px/></div>  
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Sorensen-2.png" width=100px/></div>   -->
+```{r, echo=FALSE, fig.align='center', out.width='100px', fig.retina=1}
+include_graphics("pictures_tutorials/formula_Sorensen-2.png")
+```
 
 <br/>
 
@@ -113,7 +125,10 @@ leading to :
 
 **Percentage similarity :**
 
-<div style="text-align:center"><img src="pictures/formula_Bray-Curtis.png" width=300px/></div>  
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Bray-Curtis.png" width=300px/></div>   -->
+```{r, echo=FALSE, fig.align='center', out.width='300px', fig.retina=1}
+include_graphics("pictures_tutorials/formula_Bray-Curtis.png")
+```
 
 with :
 
@@ -131,12 +146,19 @@ Instead of looking at the percentage of co-occurring species between two sites, 
 
 <br/>
 
-<div style="text-align:center">
-<img src="pictures/formula_Sorensen-beta-decomposition.png" width=300px/>
+<!-- <div style="text-align:center"> -->
+<!-- <img src="pictures_tutorials/formula_Sorensen-beta-decomposition.png" width=300px/> -->
 
-<br/>
-<img src="pictures/formula_Jaccard-beta-decomposition.png" width=300px/>
-</div>  
+<!-- <br/> -->
+<!-- <img src="pictures_tutorials/formula_Jaccard-beta-decomposition.png" width=300px/> -->
+<!-- </div>   -->
+
+```{r, echo=FALSE, fig.align='center', out.width='300px', fig.retina=1}
+include_graphics("pictures_tutorials/formula_Sorensen-beta-decomposition.png")
+```
+```{r, echo=FALSE, fig.align='center', out.width='300px', fig.retina=1}
+include_graphics("pictures_tutorials/formula_Jaccard-beta-decomposition.png")
+```
 
 with :
 
@@ -158,16 +180,25 @@ with :
 
 <br/>
 
-<div style="text-align:center">
-<img src="pictures/formula_Bray-Curtis-decomposition-1.png" width=200px/>
-<img src="pictures/formula_Bray-Curtis-decomposition-2.png" width=300px/>
-</div> 
+<!-- <div style="text-align:center"> -->
+<!-- <img src="pictures_tutorials/formula_Bray-Curtis-decomposition-1.png" width=200px/> -->
+<!-- <img src="pictures_tutorials/formula_Bray-Curtis-decomposition-2.png" width=300px/> -->
+<!-- </div>  -->
+```{r, echo=FALSE, fig.align='center', out.width='200px', fig.retina=1}
+include_graphics("pictures_tutorials/formula_Bray-Curtis-decomposition-1.png")
+```
+```{r, echo=FALSE, fig.align='center', out.width='300px', fig.retina=1}
+include_graphics("pictures_tutorials/formula_Bray-Curtis-decomposition-2.png")
+```
 
 <br/>
 
 Using an *analogous reasoning as for separating the turnover and nestedness components* of incidence-based dissimilarity, the **balanced variation** and **abundance gradient** components of Bray-Curtis dissimilarity can be separated as follows :
 
-<div style="text-align:center"> <img src="pictures/formula_Bray-Curtis-decomposition-3.png" width=450px/> </div> 
+<!-- <div style="text-align:center"> <img src="pictures_tutorials/formula_Bray-Curtis-decomposition-3.png" width=450px/> </div> -->
+```{r, echo=FALSE, fig.align='center', out.width='450px', fig.retina=1}
+include_graphics("pictures_tutorials/formula_Bray-Curtis-decomposition-3.png")
+```
 
 with :
 
@@ -176,10 +207,16 @@ with :
 
 <br/>
 
-<div style="text-align:center">
-<img src="pictures/example_Bray-Curtis-decomposition-1.png" width=300px/>
-<img src="pictures/example_Bray-Curtis-decomposition-2.png" width=300px/>
-</div> 
+<!-- <div style="text-align:center"> -->
+<!-- <img src="pictures_tutorials/example_Bray-Curtis-decomposition-1.png" width=300px/> -->
+<!-- <img src="pictures_tutorials/example_Bray-Curtis-decomposition-2.png" width=300px/> -->
+<!-- </div>  -->
+```{r, echo=FALSE, fig.align='center', out.width='300px', fig.retina=1}
+include_graphics("pictures_tutorials/example_Bray-Curtis-decomposition-1.png")
+```
+```{r, echo=FALSE, fig.align='center', out.width='300px', fig.retina=1}
+include_graphics("pictures_tutorials/example_Bray-Curtis-decomposition-2.png")
+```
 
 <br/>
 
@@ -198,8 +235,10 @@ divided by the mean number of species in the alpha samples
 
 **Multiplicative relationship between Alpha, Beta and Gamma :**
 
-<div style="text-align:center"><img src="pictures/formula_Whittaker.png" width=100px/></div>  
-
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Whittaker.png" width=100px/></div>   -->
+```{r, echo=FALSE, fig.align='center', out.width='100px', fig.retina=1}
+include_graphics("pictures_tutorials/formula_Whittaker.png")
+```
 
 <br/>
 
@@ -207,7 +246,10 @@ divided by the mean number of species in the alpha samples
 
 **Additive Diversity Partitioning (ADP) :**
 
-<div style="text-align:center"><img src="pictures/formula_Lande.png" width=300px/></div>  
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Lande.png" width=300px/></div>   -->
+```{r, echo=FALSE, fig.align='center', out.width='300px', fig.retina=1}
+include_graphics("pictures_tutorials/formula_Lande.png")
+```
 
 - Total diversity and its components have the same units and can be compared directly.
 
@@ -238,9 +280,15 @@ divided by the mean number of species in the alpha samples
 
 **Decomposition of Hill's numbers using Whittaker's law :**
 
-<div style="text-align:center"><img src="pictures/formula_Whittaker-Jost.png" width=300px/></div>  
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Whittaker-Jost.png" width=300px/></div>   -->
+```{r, echo=FALSE, fig.align='center', out.width='300px', fig.retina=1}
+include_graphics("pictures_tutorials/formula_Whittaker-Jost.png")
+```
 
-<div style="text-align:center"><img src="pictures/formula_Whittaker-Jost-alpha.png" width=500px/></div>
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Whittaker-Jost-alpha.png" width=500px/></div> -->
+```{r, echo=FALSE, fig.align='center', out.width='500px', fig.retina=1}
+include_graphics("pictures_tutorials/formula_Whittaker-Jost-alpha.png")
+```
 
 *The second formula is used to calculate alpha and gamma components,  
 and the first formula is used to obtain beta component.*
@@ -267,7 +315,10 @@ and the first formula is used to obtain beta component.*
 
 ## 2015 : Chalmandrier (Methods Ecology Evolution)
 
-<div style="text-align:center"> <img src="pictures/formula_Chalmandrier.png" width=250px/> </div> 
+<!-- <div style="text-align:center"> <img src="pictures_tutorials/formula_Chalmandrier.png" width=250px/> </div>  -->
+```{r, echo=FALSE, fig.align='center', out.width='250px', fig.retina=1}
+include_graphics("pictures_tutorials/formula_Chalmandrier.png")
+```
 
 with :
 

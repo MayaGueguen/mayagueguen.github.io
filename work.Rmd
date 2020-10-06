@@ -39,7 +39,7 @@ z-index: 10;
 
 
 
-<div class="zoom">
-<p><img src="pictures/graph_FATE.png" alt="FATE"></img></p>
-</div>
+<!-- <div class="zoom"> -->
+<!-- <p><img src="pictures/graph_FATE.png" alt="FATE"></img></p> -->
+<!-- </div> -->
 

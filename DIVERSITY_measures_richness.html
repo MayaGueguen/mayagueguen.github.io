@@ -379,7 +379,7 @@ div.tocify {
   <ul class="dropdown-menu" role="menu">
     <li class="divider"></li>
     <li>
-      <a href="DIVERSITY_measures.html">DIVERSITY indices : abundance</a>
+      <a href="DIVERSITY_measures_abundance.html">DIVERSITY indices : abundance</a>
     </li>
     <li>
       <a href="DIVERSITY_measures_functional.html">DIVERSITY indices : functional</a>
@@ -458,9 +458,8 @@ Different parametric distributions may fit the observed data equally well, but l
 </ul>
 <p><br/></p>
 <p><em>Estimation of species richness :</em></p>
-<div style="text-align:center">
-<img src="pictures/formula_Burnham-jackknife-2.png" width=100px/>
-</div>
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Burnham-jackknife-2.png" width=100px/></div> -->
+<p><img src="pictures_tutorials/formula_Burnham-jackknife-2.png" width="100px" style="display: block; margin: auto;" /></p>
 <p>with :</p>
 <ul>
 <li><code>N</code> : total number of individuals / species</li>
@@ -471,9 +470,8 @@ Different parametric distributions may fit the observed data equally well, but l
 </ul>
 <p><br/></p>
 <p><em>Clearly, S is biased and this bias decreases as t increases. Hence the following correction :</em></p>
-<div style="text-align:center">
-<img src="pictures/formula_Burnham-jackknife-1.png" width=320px/>
-</div>
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Burnham-jackknife-1.png" width=320px/></div> -->
+<p><img src="pictures_tutorials/formula_Burnham-jackknife-1.png" width="320px" style="display: block; margin: auto;" /></p>
 <p>with :</p>
 <ul>
 <li><code>j</code> : individual / species</li>
@@ -481,14 +479,14 @@ Different parametric distributions may fit the observed data equally well, but l
 <p><br/></p>
 <p><em>First-order jackknife :</em><br />
 (depending on unique species)</p>
-<div style="text-align:center">
-<img src="pictures/formula_Burnham-jackknife-3.png" width=230px/>
-</div>
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Burnham-jackknife-3.png" width=230px/></div> -->
+<p><img src="pictures_tutorials/formula_Burnham-jackknife-3.png" width="230px" style="display: block; margin: auto;" /></p>
 <p><em>Second-order jackknife :</em><br />
 (depending on unique and duplicate species)</p>
 <div style="text-align:center">
-<img src="pictures/formula_Burnham-jackknife-4.png" width=330px/>
+<img src="pictures_tutorials/formula_Burnham-jackknife-4.png" width=330px/>
 </div>
+<p><img src="pictures_tutorials/formula_Burnham-jackknife-4.png" width="330px" style="display: block; margin: auto;" /></p>
 <p>with <code>n = t</code>.</p>
 <p><br/></p>
 </div>
@@ -499,14 +497,12 @@ Different parametric distributions may fit the observed data equally well, but l
 <em>It is a minimum estimator of asymptotic species richness.</em></p>
 <p><br/></p>
 <p><strong>Chao1 estimator (number of undected species for abundance data) :</strong></p>
-<div style="text-align:center">
-<img src="pictures/formula_Chao1-estimator.png" width=400px/>
-</div>
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Chao1-estimator.png" width=400px/></div> -->
+<p><img src="pictures_tutorials/formula_Chao1-estimator.png" width="400px" style="display: block; margin: auto;" /></p>
 <p><br/></p>
 <p><strong>Chao2 estimator (number of undected species for incidence data) :</strong></p>
-<div style="text-align:center">
-<img src="pictures/formula_Chao2-estimator.png" width=500px/>
-</div>
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Chao2-estimator.png" width=500px/></div> -->
+<p><img src="pictures_tutorials/formula_Chao2-estimator.png" width="500px" style="display: block; margin: auto;" /></p>
 <p>with :</p>
 <ul>
 <li><code>S obs</code> : count of the total number of species observed</li>
@@ -519,16 +515,8 @@ Different parametric distributions may fit the observed data equally well, but l
 <div id="lee-chao-chazdon" class="section level2">
 <h2>1994 / 1998 : Lee &amp; Chao, Chazdon</h2>
 <p><strong>Incidence-based coverage estimator (ICE) :</strong></p>
-<div style="text-align:center">
-<img src="pictures/formula_ICE-1.png" width=280px/>
-</div>
-with :
-<div style="text-align:center">
-<img src="pictures/formula_ICE-2.png" width=420px/>
-</div>
-<div style="text-align:center">
-<img src="pictures/formula_ICE-3.png" width=180px/>
-</div>
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_ICE-1.png" width=280px/></div> -->
+<p><img src="pictures_tutorials/formula_ICE-1.png" width="280px" style="display: block; margin: auto;" /> with : <!-- <div style="text-align:center"><img src="pictures_tutorials/formula_ICE-2.png" width=420px/></div> --> <!-- <div style="text-align:center"><img src="pictures_tutorials/formula_ICE-3.png" width=180px/></div> --> <img src="pictures_tutorials/formula_ICE-2.png" width="420px" style="display: block; margin: auto;" /> <img src="pictures_tutorials/formula_ICE-3.png" width="180px" style="display: block; margin: auto;" /></p>
 <p>with :</p>
 <ul>
 <li><code>Qk</code> : number of species present in <code>k</code> sampling units</li>
@@ -549,9 +537,8 @@ with :
 <p>The estimation of <em>species richness shared by multiple assemblages</em> (two or more) has received relatively little attention. However, it can be used to describe assemblage overlap and forms a basis <em>to construct various types of beta diversity and similarity/dissimilarity measures</em> to quantify spatial or temporal variation in species composition.</p>
 <p>There is a generalization of ICE-type shared species richness estimators for two assemblages. However, these estimators cannot be easily extended to the general case when there are more than two assemblages.</p>
 <p><br/></p>
-<div style="text-align:center">
-<img src="pictures/formula_Chao1-shared-estimator-1.png" width=200px/>
-</div>
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Chao1-shared-estimator-1.png" width=200px/></div> -->
+<p><img src="pictures_tutorials/formula_Chao1-shared-estimator-1.png" width="200px" style="display: block; margin: auto;" /></p>
 <p>with :</p>
 <ul>
 <li><code>S12</code> : number of shared species between samples 1 and 2</li>
@@ -562,13 +549,8 @@ with :
 </ul>
 <p><br/></p>
 <p><strong>Chao1-shared estimator (number of shared species for abundance data) :</strong></p>
-<div style="text-align:center">
-<img src="pictures/formula_Chao1-shared-estimator-2.png" width=240px/>
-</div>
-with
-<div style="text-align:center">
-<img src="pictures/formula_Chao1-shared-estimator-3.png" width=150px/>
-</div>
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Chao1-shared-estimator-2.png" width=240px/></div> -->
+<p><img src="pictures_tutorials/formula_Chao1-shared-estimator-2.png" width="240px" style="display: block; margin: auto;" /> with <!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Chao1-shared-estimator-3.png" width=150px/></div> --> <img src="pictures_tutorials/formula_Chao1-shared-estimator-3.png" width="150px" style="display: block; margin: auto;" /></p>
 <p><br/></p>
 <p>with :</p>
 <ul>

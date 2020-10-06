@@ -16,23 +16,23 @@ output:
 
 ## Formulas
 
-- **Mean :** <img src="pictures/formula_mean.png" width=100px/>
-- **Variance :** <img src="pictures/formula_variance.png" width=180px/>
+- **Mean :** <img src="pictures_tutorials/formula_mean.png" width=100px/>
+- **Variance :** <img src="pictures_tutorials/formula_variance.png" width=180px/>
 
-- **Standardization :** <img src="pictures/formula_standardized.png" width=180px/>
-- **Correlation :** <img src="pictures/formula_correlation.png" width=170px/>
+- **Standardization :** <img src="pictures_tutorials/formula_standardized.png" width=180px/>
+- **Correlation :** <img src="pictures_tutorials/formula_correlation.png" width=170px/>
 
 <br/>
 <br/>
 
 ## Formulas with weights
 
-- **Weighted mean :** <img src="pictures/formula_weighted-mean.png" width=120px/> if weights sum to 1
-- **Weighted variance :** <img src="pictures/formula_weighted-variance.png" width=210px/> if weights sum to 1
+- **Weighted mean :** <img src="pictures_tutorials/formula_weighted-mean.png" width=120px/> if weights sum to 1
+- **Weighted variance :** <img src="pictures_tutorials/formula_weighted-variance.png" width=210px/> if weights sum to 1
 
-- **Weighted standardization :** <img src="pictures/formula_weighted-standardized.png" width=190px/>
-- **Weighted correlation :** <img src="pictures/formula_weighted-correlation.png" width=170px/>
-- **Weighted covariance :** <img src="pictures/formula_weighted-covariance.png" width=190px/>
+- **Weighted standardization :** <img src="pictures_tutorials/formula_weighted-standardized.png" width=190px/>
+- **Weighted correlation :** <img src="pictures_tutorials/formula_weighted-correlation.png" width=170px/>
+- **Weighted covariance :** <img src="pictures_tutorials/formula_weighted-covariance.png" width=190px/>
 
 <br/>
 <br/>
@@ -44,7 +44,7 @@ output:
 
 ### Community Weighted Mean (CWM)
 
-<div style="text-align:center">CWM (for one community site) = <img src="pictures/formula_weighted-mean-2.png" width=100px/></div>  
+<div style="text-align:center">CWM (for one community site) = <img src="pictures_tutorials/formula_weighted-mean-2.png" width=100px/></div>  
 
 with :
 
@@ -61,7 +61,7 @@ with :
 
 ### Species Niche Centroid (SNC)
 
-<div style="text-align:center">SNC (for one species) = <img src="pictures/formula_weighted-mean-2.png" width=100px/></div>  
+<div style="text-align:center">SNC (for one species) = <img src="pictures_tutorials/formula_weighted-mean-2.png" width=100px/></div>  
 
 with :
 
@@ -111,7 +111,7 @@ Usually, **CWM** is used to assess **among-community component**, and *average t
 
 New solution for **within-community component** :
 
-<div style="text-align:center">(for one community site) = alpha i * <img src="pictures/formula_within-community.png" width=190px/></div>  
+<div style="text-align:center">(for one community site) = alpha i * <img src="pictures_tutorials/formula_within-community.png" width=190px/></div>  
 
 with :
 
