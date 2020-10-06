@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+<meta name="date" content="2018-06-03" />
+
+<title>DIVERSITY indices : phylogenetic</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/journal.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 61px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h2 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h3 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h4 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h5 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h6 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Maya Guéguen</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Home
+  </a>
+</li>
+<li>
+  <a href="about.html">
+    <span class="fa fa-info"></span>
+     
+    About me
+  </a>
+</li>
+<li>
+  <a href="publications.html">
+    <span class="ion ion-document-text"></span>
+     
+    Publications
+  </a>
+</li>
+<li>
+  <a href="work.html">
+    <span class="fa fa-chart-line"></span>
+     
+    Work
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-toolbox"></span>
+     
+    Tutorials
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="divider"></li>
+    <li>
+      <a href="DIVERSITY_measures.html">DIVERSITY indices : abundance</a>
+    </li>
+    <li>
+      <a href="DIVERSITY_measures_functional.html">DIVERSITY indices : functional</a>
+    </li>
+    <li>
+      <a href="DIVERSITY_measures_phylogenetic.html">DIVERSITY indices : phylogenetic</a>
+    </li>
+    <li>
+      <a href="DIVERSITY_measures_partitioning.html">DIVERSITY indices : partitioning</a>
+    </li>
+    <li>
+      <a href="DIVERSITY_measures_richness.html">DIVERSITY indices : richness</a>
+    </li>
+    <li>
+      <a href="DIVERSITY_measures_communities.html">DIVERSITY indices : communities</a>
+    </li>
+    <li class="divider"></li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="mailto:maya.gueguen@univ-grenoble-alpes.fr">
+    <span class="fa fa-envelope-o"></span>
+     
+    Contact me
+  </a>
+</li>
+<li>
+  <a href="https://github.com/MayaGueguen">
+    <span class="fa fa-github"></span>
+     
+    
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">DIVERSITY indices : phylogenetic</h1>
+<h4 class="date">06/03/2018</h4>
+
+</div>
+
+
+<p><br/><br/></p>
+<div id="vellend" class="section level1">
+<h1>2011 : Vellend</h1>
+<div id="indices-of-species-distinctness" class="section level2">
+<h2>Indices of species’ distinctness</h2>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="42%" />
+<col width="13%" />
+<col width="13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Index</th>
+<th>Description</th>
+<th>Type of tree</th>
+<th>Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Taxonomic distinctness (TD)</strong></td>
+<td>Reciprocal of number of nodes between species and root of tree</td>
+<td>node-based</td>
+<td><em>1991 : Vane-Wright</em></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>To account for polytomies, count number of descendants at each node rather than number of nodes</td>
+<td></td>
+<td><em>1990 : May</em></td>
+</tr>
+<tr class="odd">
+<td><strong>Species originality (SO)</strong></td>
+<td>Assign each node in a tree a value of 1 if more species descend from that node than its sister node, and 0 otherwise; sum the values at the nodes between a species and the root; smaller values indicate greater distinctness</td>
+<td>node-based</td>
+<td><em>1992 : Nixon &amp; Wheeler</em></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>Pendant edge (PE)</strong></td>
+<td>Length of the branch connecting a species to the rest of the regional tree</td>
+<td>distance-based</td>
+<td><em>1990 : Altschul &amp; Lipman</em></td>
+</tr>
+<tr class="even">
+<td><strong>Species evolutionary history (SEH)</strong></td>
+<td>Portion of a phylogenetic tree attributable to a species; shared branches are apportioned equally among descendant lineages</td>
+<td>distance-based</td>
+<td><em>2006 : Redding &amp; Mooers</em></td>
+</tr>
+<tr class="odd">
+<td><strong>Originality of species within a set (OSS)</strong></td>
+<td>Values for each species that ‘maximize the expected dissimilarity between two species randomly drawn from the set’</td>
+<td>distance-based</td>
+<td><em>2005 : Pavoine</em></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+</div>
+<div id="type-i-metrics" class="section level2">
+<h2>Type I metrics</h2>
+<ol style="list-style-type: decimal">
+<li>Calculating a distinctness score for all species in a regional phylogeny</li>
+<li>Calculating some function of these scores (typically the sum) for particular subsets of species</li>
+</ol>
+<p><br/></p>
+</div>
+<div id="type-ii-metrics" class="section level2">
+<h2>Type II metrics</h2>
+<ol style="list-style-type: decimal">
+<li>Starting with a local phylogeny</li>
+</ol>
+<p><br/></p>
+<p>Aggregation of metrics according to :</p>
+<ul>
+<li>nature of the phylogenetic tree - distance-based metrics - counting nodes metrics (special case of first)</li>
+<li>nature of species data - abundances - presence-absence (special case of first)</li>
+</ul>
+<p><br/></p>
+<table>
+<colgroup>
+<col width="13%" />
+<col width="36%" />
+<col width="36%" />
+<col width="13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Index</th>
+<th>Description <br/> presence-absence</th>
+<th>Description <br/> abundance-weighted</th>
+<th>Equation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Phylogenetic diversity (PD)</strong></td>
+<td><em>1992 : Faith</em> <br/> Sum of all branch lengths in the portion of a phylogenetic tree connecting the focal set of species</td>
+<td><em>2002 : Barker</em> <br/> For the subset tree, the number of branches multiplied by the weighted mean branch length, with weights equal to the average abundance of species sharing that branch</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>Mean phylogenetic distance (MPD)</strong></td>
+<td><em>2000 : Webb</em> <br/> Mean phylogenetic distance between each pair of species in the focal set</td>
+<td><em>1995 : Warwick &amp; Clarke (1982 : Rao)</em><br/> Mean phylogenetic distance between pairs of individuals, excluding (or not) same-species pairs</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>Sum of phylogenetic distances (SPD)</strong></td>
+<td><em>1997 : Crozier</em> <br/> Sum of phylogenetic distances between each pair of species <br/> MPD x number of species pairs</td>
+<td><em>2007 : Helmus</em> <br/> Abundance-weighted MPD x number of species pairs</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>Mean nearest neighbour distance (MNND)</strong></td>
+<td><em>2000 : Webb</em> <br/> Mean phylogenetic distance from each species to its closest relative in the focal species set</td>
+<td>Weighted mean phylogenetic distance from each species to its closest relative, with weights equal to species’ abundance</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+</div>
+</div>
+<div id="faith" class="section level1">
+<h1>2013 : Faith</h1>
+<p><strong>Phylogenetic Diversity (PD) :</strong> basis for a measure of biodiversity, that would consider all possible units<br />
+(genes, features, species, ecosystems).</p>
+<p>Required information about expected relationships among the objects provided by :</p>
+<ul>
+<li>phylogeny</li>
+<li>associated evolutionary models linking phylogenetic pattern to variation at the level of features/units</li>
+</ul>
+<p><br/></p>
+<p><strong>Link between PD and species richness (SR) ?</strong></p>
+<ol style="list-style-type: decimal">
+<li>When subsets of different numbers of species are selected randomly from the tree, the average PD value for a given species number has a <em>power curve relationship</em> with the number of species in the subset.</li>
+<li>Departures from the basic power curve depend on the nature of these departures from random sets — whether the species extinctions are clumped or well dispersed on the phylogenetic tree.</li>
+</ol>
+<p><br/></p>
+<p><strong>PD of a set of species from a phylogenetic tree :</strong> minimum total length of all the phylogenetic branches required to connect all those species on the tree.</p>
+<p><br/></p>
+<div id="loss-or-gain-of-species" class="section level3">
+<h3>Loss or gain of species</h3>
+<ul>
+<li><p><strong>Loss of species :</strong> loss of features exclusively represented by these species = <strong>endemism</strong></p></li>
+<li><p><strong>Loss of area :</strong> loss of SR with the loss of species that were exclusively found in this area = <strong>complementarity</strong></p></li>
+</ul>
+<p><br/></p>
+</div>
+<div id="probabilities-of-loss" class="section level3">
+<h3>Probabilities of loss</h3>
+<p><strong>Expected PD :</strong> PD given a set of species’ extinction probabilities.<br />
+<em>Species case of Weitzman’s general expected diversity formula.</em></p>
+<ul>
+<li><p><strong>Delta PD q :</strong> change in expected PD if probability extinction of species (e.g. in a given area) changes from <code>q</code> to 1.<br />
+<em>The value will be large to the extent that the species shares long ancestral branches with few other species.</em></p></li>
+<li><p><strong>PD50 :</strong> change in expected PD with a current probability of extinction of 0.5 for all species.<br />
+<em>The value will be large when the species has long ancestral branches with few other descendants.</em></p></li>
+</ul>
+<p><br/></p>
+</div>
+<div id="dissimilarities" class="section level3">
+<h3>Dissimilarities</h3>
+<ul>
+<li><strong>PD dissimilarities :</strong> differences of evolutionary features between samples or localities<br />
+(sum of branches in one site only, divided by sum of all branches).</li>
+</ul>
+<p><br/></p>
+</div>
+<div id="dissimilarities-with-abundance-information" class="section level3">
+<h3>Dissimilarities with abundance information</h3>
+<ul>
+<li><p><strong>Chao’s framework</strong></p></li>
+<li><p><strong>Effective rare PD :</strong> defines “Valley numbers” in which the flexible parameter provides increasing focus on low abundance.<br />
+<em>Effective amount of rare feature diversity</em></p></li>
+</ul>
+<p><br/></p>
+</div>
+</div>
+<div id="dissimilarities-beta-partitioning" class="section level1">
+<h1>Dissimilarities (beta) &amp; partitioning</h1>
+<p><strong>PhyloSor :</strong></p>
+<ul>
+<li>derived from the taxonomic-based <em>Sorensen</em> dissimilarity index</li>
+</ul>
+<p><strong>UniFrac :</strong></p>
+<ul>
+<li>derived from the taxonomic-based <em>Jaccard</em> dissimilarity index</li>
+<li>total branch length unique to each community relative to the total branch length linking all species in both communities</li>
+<li>measures the proportion of evolutionary history unique to each community</li>
+</ul>
+<p><br/> <br/></p>
+</div>
+<div id="glossary" class="section level1">
+<h1>Glossary</h1>
+<ul>
+<li><strong>Node-based tree :</strong> simplest type of phylogenetic tree which represents only the topology, with no information on the lengths of branches connecting the nodes.</li>
+<li><p><strong>Distance-based tree :</strong> with quantitative branch lengths.</p></li>
+<li><p><strong>Ultrametric tree</strong> = in which the distances from the root to every branch tip are equal<br />
+= if the branch lengths are proportional to divergence time, all branch tips are the same distance from the tree base (first node) = a) on the graph, b) is non-ultrametric</p></li>
+</ul>
+<!-- <div style="text-align:center"><img src="pictures_tutorials/example_ultrametric-tree.png" width=600px/></div>  -->
+<p><img src="pictures_tutorials/example_ultrametric-tree.png" width="600px" style="display: block; margin: auto;" /></p>
+<ul>
+<li><strong>Balanced tree :</strong> all tips are separated from the root by the same number of nodes, which is equivalent to saying that all lineages bifurcate the same number of times.</li>
+<li><p><strong>Imbalanced tree :</strong> one lineage descending from each node connects directly to a tip with no further bifurcations.</p></li>
+<li><strong>Polytomie :</strong> node where the lineage splits into three or more (most commonly due to data limitations).</li>
+<li><p><strong>Evenness :</strong> an even distribution of branches within the community has branches with about equal abundance; uneven distributions may be dominated by one or a few abundant branches.</p></li>
+</ul>
+<p><br/> <br/></p>
+</div>
+<div id="citations" class="section level1">
+<h1>Citations</h1>
+<ul>
+<li>Baselga, A. and Orme, C. D. L. (2012). betapart: an R package for the study of beta diversity. Methods in Ecology and Evolution, 3: 808–812. <a href="doi:10.1111/j.2041-210X.2012.00224.x" class="uri">doi:10.1111/j.2041-210X.2012.00224.x</a></li>
+<li></li>
+</ul>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = false;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

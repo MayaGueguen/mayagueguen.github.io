@@ -5,6 +5,31 @@ output:
     toc: no
 ---	
 
+<style>
+<!-- pre.bash { -->
+<!--  background-color: black; -->
+<!--  color: #9ea1a3; -->
+<!--  font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace; -->
+<!-- } -->
+<!-- pre.grey { -->
+<!--  background-color: white; -->
+<!--  border-style: solid; -->
+<!--  border-color: #8b8d8f; -->
+<!--  color: #8b8d8f; -->
+<!--  font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace; -->
+<!-- } -->
+.zoom p {
+width:600px;
+margin-left: auto;
+margin-right: auto;
+}
+.zoom p:hover {
+width:1200px;
+position: relative;
+z-index: 10;
+}
+</style>
+
 <br/><br/>
 
 
@@ -12,4 +37,9 @@ output:
 
 <br/>
 
-<img src="pictures/graph_FATE.png" alt="FATE" align="left" style="width:400px;">
+
+
+<div class="zoom">
+<p><img src="pictures/graph_FATE.png" alt="FATE"></img></p>
+</div>
+

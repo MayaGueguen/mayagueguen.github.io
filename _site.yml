@@ -1,5 +1,6 @@
 name: Maya Guéguen
 output_dir: '.'
+
 navbar:
   title: Maya Guéguen
   type: inverse
@@ -18,7 +19,22 @@ navbar:
     href: work.html
   - text: Tutorials
     icon: fa-toolbox
-    href: tutorials.html
+    menu:
+      - text: "---------"
+      - text: "DIVERSITY indices : abundance"
+        href: DIVERSITY_measures.html
+      - text: "DIVERSITY indices : functional"
+        href: DIVERSITY_measures_functional.html
+      - text: "DIVERSITY indices : phylogenetic"
+        href: DIVERSITY_measures_phylogenetic.html
+      - text: "DIVERSITY indices : partitioning"
+        href: DIVERSITY_measures_partitioning.html
+      - text: "DIVERSITY indices : richness"
+        href: DIVERSITY_measures_richness.html
+      - text: "DIVERSITY indices : communities"
+        href: DIVERSITY_measures_communities.html
+      - text: "---------"
+    
   right:
   - text: Contact me
     icon: fa-envelope-o
@@ -26,6 +42,7 @@ navbar:
   - text: ''
     icon: fa-github
     href: https://github.com/MayaGueguen
+
 output:
   html_document:
     theme: journal

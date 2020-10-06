@@ -1,0 +1,137 @@
+---
+title: "DIVERSITY indices : communities"
+date: "02/03/2018"
+output:
+  html_document:
+    number_sections: no
+    toc: yes
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+---	
+
+<br/><br/>
+
+# Glossary {.tabset .tabset-fade .tabset-pills} 
+
+## Formulas
+
+- **Mean :** <img src="pictures/formula_mean.png" width=100px/>
+- **Variance :** <img src="pictures/formula_variance.png" width=180px/>
+
+- **Standardization :** <img src="pictures/formula_standardized.png" width=180px/>
+- **Correlation :** <img src="pictures/formula_correlation.png" width=170px/>
+
+<br/>
+<br/>
+
+## Formulas with weights
+
+- **Weighted mean :** <img src="pictures/formula_weighted-mean.png" width=120px/> if weights sum to 1
+- **Weighted variance :** <img src="pictures/formula_weighted-variance.png" width=210px/> if weights sum to 1
+
+- **Weighted standardization :** <img src="pictures/formula_weighted-standardized.png" width=190px/>
+- **Weighted correlation :** <img src="pictures/formula_weighted-correlation.png" width=170px/>
+- **Weighted covariance :** <img src="pictures/formula_weighted-covariance.png" width=190px/>
+
+<br/>
+<br/>
+
+
+# 
+
+## 2016 : Peres-Neto
+
+### Community Weighted Mean (CWM)
+
+<div style="text-align:center">CWM (for one community site) = <img src="pictures/formula_weighted-mean-2.png" width=100px/></div>  
+
+with :
+
+- `xi` = trait value of species i
+- `wi` = abundance of species i
+- `n` = total number of species
+
+<br/>
+
+
+**Community Weighted Mean correlation :** correlation between CWM values and environmental values (non-weighted by species' abundances) for all community sites
+
+<br/>
+
+### Species Niche Centroid (SNC)
+
+<div style="text-align:center">SNC (for one species) = <img src="pictures/formula_weighted-mean-2.png" width=100px/></div>  
+
+with :
+
+- `xi` = environmental value of site i
+- `wi` = abundance of species in site i
+- `n` = total number of community sites
+
+<br/>
+
+**Species Niche Centroid correlation :** correlation between SNC values and trait values (non-weighted by species' abundances) for all species
+
+<br/>
+
+### Fourth-corner correlation
+
+- correlation (weighted standardized trait, weighted standardized environment)
+- weighted covariance (CWM, weighted standardized environment)
+- weighted covariance (weighted standardized trait, SNC)
+- weighted regression slope (CWM of weighted standardized trait, weighted standardized environment)  
+  *considering the correlations among environmental variables, on the contrary to RLQ*
+
+<br/>
+
+| CWM, SNC correlations | 4th-corner correlation |
+|-----------------------|------------------------|
+| divide by mean variation | divide by total trait variation |
+
+<br/>
+
+**Maximum (4th-corner correlation) :**
+
+- reached if species distributions are perfectly ordered across columns (species) and rows (sites)
+- squared root of 1st eigen value of correspondance analysis of species distribution matrix (sites x species)
+
+<br/>
+
+**Chessel fourth-corner correlation :** 4th-corner correlation / max(4th-corner correlation)
+
+<br/>
+
+### Decomposition of trait variation
+
+CWM / SNC are based on weighted averages : ignore trait variation among species within communities  
+(i.e. *within-community component*)
+
+Usually, **CWM** is used to assess **among-community component**, and *average trait distance* (e.g. MPD) to asses *within-community component*. **But they are not additive : they do not sum up to total variation.**
+
+New solution for **within-community component** :
+
+<div style="text-align:center">(for one community site) = alpha i * <img src="pictures/formula_within-community.png" width=190px/></div>  
+
+with :
+
+- `alpha i` = abundance weight of site i
+
+- `lij` = abundance of species j in site i
+- `SUM lij` = abundance of species in site i
+- `tj` = trait value of species j
+- `ci` = CWM value of site i
+
+<br/>
+
+
+<br/>
+<br/>
+
+
+# Citations
+
+- Baselga, A. and Orme, C. D. L. (2012). betapart: an R package for the study of beta diversity. Methods in Ecology and Evolution, 3: 808–812. doi:10.1111/j.2041-210X.2012.00224.x
+- 
+
+

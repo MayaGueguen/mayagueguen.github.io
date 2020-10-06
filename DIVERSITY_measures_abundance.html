@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>DIVERSITY indices : abundance</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/journal.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 61px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h2 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h3 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h4 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h5 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h6 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Maya Guéguen</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Home
+  </a>
+</li>
+<li>
+  <a href="about.html">
+    <span class="fa fa-info"></span>
+     
+    About me
+  </a>
+</li>
+<li>
+  <a href="publications.html">
+    <span class="ion ion-document-text"></span>
+     
+    Publications
+  </a>
+</li>
+<li>
+  <a href="work.html">
+    <span class="fa fa-chart-line"></span>
+     
+    Work
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-toolbox"></span>
+     
+    Tutorials
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="divider"></li>
+    <li>
+      <a href="DIVERSITY_measures.html">DIVERSITY indices : abundance</a>
+    </li>
+    <li>
+      <a href="DIVERSITY_measures_functional.html">DIVERSITY indices : functional</a>
+    </li>
+    <li>
+      <a href="DIVERSITY_measures_phylogenetic.html">DIVERSITY indices : phylogenetic</a>
+    </li>
+    <li>
+      <a href="DIVERSITY_measures_partitioning.html">DIVERSITY indices : partitioning</a>
+    </li>
+    <li>
+      <a href="DIVERSITY_measures_richness.html">DIVERSITY indices : richness</a>
+    </li>
+    <li>
+      <a href="DIVERSITY_measures_communities.html">DIVERSITY indices : communities</a>
+    </li>
+    <li class="divider"></li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="mailto:maya.gueguen@univ-grenoble-alpes.fr">
+    <span class="fa fa-envelope-o"></span>
+     
+    Contact me
+  </a>
+</li>
+<li>
+  <a href="https://github.com/MayaGueguen">
+    <span class="fa fa-github"></span>
+     
+    
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">DIVERSITY indices : abundance</h1>
+<h4 class="date">21/02/2018</h4>
+
+</div>
+
+
+<p><br/> <br/></p>
+<div id="standard-diversity-indices" class="section level1">
+<h1>Standard diversity indices</h1>
+<div id="simpson-nature" class="section level2">
+<h2>1949 : Simpson (Nature)</h2>
+<p><strong>Simpson concentration :</strong> probability that two randomly chosen individuals from a given community are the same species.</p>
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Simpson-index.png" width=60px/></div>   -->
+<p><img src="pictures_tutorials/formula_Simpson-index.png" width="60px" style="display: block; margin: auto;" /></p>
+<!-- \begin{equation} -->
+<!-- \sum\limits_{i=1}^S {p_i}^2 -->
+<!-- \end{equation} -->
+<p><br/></p>
+<p><strong>Gini-Simpson index :</strong> probability that two randomly chosen individuals from a given community are different species.</p>
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Gini-Simpson-index.png" width=80px/></div>   -->
+<p><img src="pictures_tutorials/formula_Gini-Simpson-index.png" width="80px" style="display: block; margin: auto;" /></p>
+<p><br/></p>
+</div>
+<div id="shannon-weaver" class="section level2">
+<h2>1948-1962 : Shannon &amp; Weaver</h2>
+<p><strong>Shannon entropy :</strong> average amount of <em>information</em> in the community, given the facts that :</p>
+<ul>
+<li>rare species carry more <em>information</em> than common species ;</li>
+<li>their information value is proportional to the logarithm of their relative abundance.</li>
+</ul>
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Shannon-entropy.png" width=100px/></div>   -->
+<p><img src="pictures_tutorials/formula_Shannon-entropy.png" width="100px" style="display: block; margin: auto;" /></p>
+<p><br/></p>
+<p>Measures the loss of information due to the loss of a species.<br />
+Or the uncertainty about the species obtained when one individual is randomly chosen.</p>
+<p><br/></p>
+</div>
+<div id="rényi" class="section level2">
+<h2>1961-1970 : Rényi</h2>
+<p><strong>Rényi entropy :</strong></p>
+<ul>
+<li><code>q -&gt; 0</code> : increasingly weighs all possible species more equally, regardless of their probabilities.</li>
+<li><code>q = 0</code> : Hartley entropy (logarithm of the species richness).</li>
+<li><code>q -&gt; 1</code> : Shannon entropy.</li>
+<li><code>q -&gt; inf</code> : increasingly determined by the most abundant species.</li>
+</ul>
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Renyi-entropy.png" width=160px/></div>   -->
+<p><img src="pictures_tutorials/formula_Renyi-entropy.png" width="160px" style="display: block; margin: auto;" /></p>
+<p><br/></p>
+</div>
+</div>
+<div id="hills-numbers" class="section level1">
+<h1>Hill’s numbers</h1>
+<div id="hill-ecology" class="section level2">
+<h2>1973 : Hill (Ecology)</h2>
+<p><br/> The <strong>“doubling” property</strong> = if two equally large, completely distinct communities (no shared species) each have diversity X, and if these communities are combined, then the diversity of the combined communities should be 2X.</p>
+<p><strong>Most raw diversity indices (standard diversity indices, <code>H</code>) do not obey this property,<br />
+but their numbers equivalents do.</strong></p>
+<p><br/></p>
+<p>The <strong>numbers equivalents</strong> or <strong>effective number of elements</strong> of a diversity index = number of equally likely elements needed to produce the given value of the diversity index.<br />
+<em>The diversity of <code>S</code> equally abundant species is <code>S</code>.</em></p>
+<p>Every diversity measure <code>H</code> has a number equivalent <code>D</code> : <!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Hill-numbers.png" width=300px/></div>   --> <img src="pictures_tutorials/formula_Hill-numbers.png" width="300px" style="display: block; margin: auto;" /></p>
+<p><br/> The order <code>q</code> determines a diversity <strong>measure’s sensitivity to species abundance</strong> (rare or common species) :</p>
+<ul>
+<li>orders higher than 1 are disproportionately sensitive to the most common species,</li>
+<li>while orders lower than 1 are disproportionately sensitive to the rare species.</li>
+</ul>
+<p><br/></p>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>q = 0</th>
+<th>q = 1</th>
+<th>q = 2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>Standard diversity indices</em></td>
+<td>Species richness <br/> <img src="pictures_tutorials/formula_species-richness.png" width=60px/></td>
+<td>Shannon entropy <br/> <img src="pictures_tutorials/formula_Shannon-entropy.png" width=100px/></td>
+<td>Simpson index <br/> <img src="pictures_tutorials/formula_Simpson-index.png" width=60px/> <br/><br/> Gini-Simpson index <br/> <img src="pictures_tutorials/formula_Gini-Simpson-index.png" width=80px/></td>
+</tr>
+<tr class="even">
+<td><em>- Effective numbers <br/> Hill numbers</em> <br/> <em>- exp(Rényi entropy) <br/>(total dissimilarity)</em></td>
+<td>Species richness</td>
+<td>Exponential of Shannon entropy</td>
+<td>Inverse of (Gini)-Simpson index</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+</div>
+</div>
+<div id="similarity-sensitive-measures" class="section level1">
+<h1>Similarity-sensitive measures</h1>
+<div id="rao-theoretical-population-biology" class="section level2">
+<h2>1982 : Rao (Theoretical Population Biology)</h2>
+<p><strong>Rao’s quadratic entropy :</strong></p>
+<ul>
+<li>measure of average conflict among species<br />
+</li>
+<li>efficient index of functional diversity<br />
+</li>
+<li>expected dissimilarity between two individuals of a given species assemblage selected at random with replacement</li>
+<li><strong>Simpson concentration + pairwise distance between species</strong></li>
+</ul>
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Rao-entropy.png" width=150px/></div>   -->
+<p><img src="pictures_tutorials/formula_Rao-entropy.png" width="150px" style="display: block; margin: auto;" /></p>
+<p><em>Both Simpson and Rao indices :</em></p>
+<ul>
+<li>non-linearity with respect to increasing diversity</li>
+<li>do not obey the replication principle</li>
+</ul>
+<p><br/></p>
+</div>
+<div id="faith-biological-conservation" class="section level2">
+<h2>1992 : Faith (Biological Conservation)</h2>
+<p><strong>Phylogenetic diversity (PD)</strong> = sum of the lengths of all those branches that are members of the corresponding minimum spanning path (smallest assemblage of branches from the cladogram for the complete set of taxa such that, for any two members of a subset of the taxa, a path connecting the two can be found that uses only branches in the assemblage).</p>
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Faith-PD.png" width=150px/></div>   -->
+<p><img src="pictures_tutorials/formula_Faith-PD.png" width="150px" style="display: block; margin: auto;" /></p>
+<p><br/></p>
+</div>
+<div id="allen-american-naturalist" class="section level2">
+<h2>2009 : Allen (American Naturalist)</h2>
+<p><strong>Phylogenetic entropy index :</strong></p>
+<ul>
+<li>places a high value on distinctive species but has the property that when members of a species become rare in proportion to other species, it is never desirable to eliminate them<br />
+</li>
+<li><strong>Shannon entropy + phylogenetic differences</strong></li>
+</ul>
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Allen-entropy.png" width=300px/></div>   -->
+<p><img src="pictures_tutorials/formula_Allen-entropy.png" width="300px" style="display: block; margin: auto;" /></p>
+<p><em>Both Shannon and Allen indices :</em></p>
+<ul>
+<li>non-linearity with respect to increasing diversity</li>
+<li>do not obey the replication principle</li>
+</ul>
+<p><br/></p>
+</div>
+<div id="generalization" class="section level2">
+<h2>Generalization</h2>
+<p><br/></p>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>q = 0</th>
+<th>q = 1</th>
+<th>q = 2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>Standard diversity indices</em></td>
+<td>Species richness <br/> <img src="pictures_tutorials/formula_species-richness.png" width=60px/></td>
+<td>Shannon entropy <br/> <img src="pictures_tutorials/formula_Shannon-entropy.png" width=100px/></td>
+<td>Simpson concentration <br/> <img src="pictures_tutorials/formula_Simpson-index.png" width=60px/> <br/><br/> Gini-Simpson index <br/> <img src="pictures_tutorials/formula_Gini-Simpson-index.png" width=80px/></td>
+</tr>
+<tr class="even">
+<td><em>- Effective numbers <br/> Hill numbers</em> <br/> <em>- exp(Rényi entropy) <br/>(total dissimilarity)</em></td>
+<td>Species richness</td>
+<td>Exponential of Shannon entropy</td>
+<td>Inverse of Simpson concentration</td>
+</tr>
+<tr class="odd">
+<td><em>Generalization</em> <br/> <em>Similarity information</em></td>
+<td>Faith PD (ultrametric tree)</td>
+<td>Allen’s entropy <br/> Generalization of Shannon entropy</td>
+<td>Rao’s quadratic entropy <br/> Generalization of Gini-Simpson index</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+</div>
+</div>
+<div id="hill-numbers-similarity-sensitive-measures" class="section level1">
+<h1>Hill numbers’ + similarity-sensitive measures</h1>
+<p>Improve the formula of Hill numbers by adding a <strong>similarity-sensitive</strong> parameter = measure that reflect the varying dissimilarities between species (number specifying how similar they are).</p>
+<p><br/></p>
+<div id="chao-phil.-trans.-r.-soc." class="section level2">
+<h2>2010 : Chao (Phil. Trans. R. Soc.)</h2>
+<p>Family of effective number similarity-sensitive measures, <strong>tailored specifically to phylogenetic diversity</strong> (similarity derived from a tree = <strong>distance</strong>).</p>
+<p><strong>Mean phylogenetic diversity of order <code>q</code> :</strong></p>
+<ul>
+<li>family of diversity measures taking into account phylogenetic similarities, derived from a phylogenetic tree.</li>
+<li>product of the interval duration <code>T</code> and the mean diversity over that interval.</li>
+</ul>
+<p><br/></p>
+<p><strong>Phylogenetic diversity of order <code>q</code> through <code>T</code> years ago :</strong></p>
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Chao-PD.png" width=350px/></div>   -->
+<p><img src="pictures_tutorials/formula_Chao-PD.png" width="350px" style="display: block; margin: auto;" /></p>
+<p>with :</p>
+<ul>
+<li><code>Li</code> = length of branch <code>i</code></li>
+<li><code>ai</code> = total abundance descended from branch <code>i</code></li>
+<li><p><code>q</code> = sensitivity parameter</p></li>
+<li><p><code>T</code> = <code>sum(Li * ai)</code> if ultrametric tree<br />
+= <code>mean quantity</code> if non-ultrametric tree</p></li>
+</ul>
+<p><br/> <em>Hill numbers</em> = special case for all species maximally distinct, all branch lengths = <code>T</code></p>
+<p><em>Faith’s PD for all <code>q</code></em> = all species maximally distinct and equally common, age of the highest node = <code>T</code></p>
+<p>After applying a simple transformation, the phylogenetic diversity measure of Faith (1992) and the phylogenetic entropy of Allen et al. (2009) are special cases of mean phylogenetic diversity.</p>
+<p><br/></p>
+<p><strong>Properties of values of Chao model :</strong></p>
+<ul>
+<li>satisfies replication, but only under the assumption that <em>subcommunities all have the same mean evolutionary change (ultrametric tree)</em></li>
+<li>for <em>non-ultrametric trees</em>, mean phylogenetic diversity can be greater than the number of species !</li>
+</ul>
+<p><br/></p>
+</div>
+<div id="leinster-ecology" class="section level2">
+<h2>2012 : Leinster (Ecology)</h2>
+<p><br/> <em>Community’s diversity profile</em> = calculate the diversity of order q for every q, and plot it against q.</p>
+<p>For <code>q != 1</code> :</p>
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Leinster-numbers.png" width=250px/></div>   -->
+<p><img src="pictures_tutorials/formula_Leinster-numbers.png" width="250px" style="display: block; margin: auto;" /></p>
+<p>with :</p>
+<ul>
+<li><code>pi</code> = relative abundances</li>
+<li><code>Z</code> = matrix of similarities between species ( 0 = total dissimilarity)</li>
+<li><p><code>q</code> = sensitivity parameter</p></li>
+<li><p><code>(Zp)i</code> = relative abundance of species similar to the ith<br />
+= expected similarity between and individual of the ith species and an individual chosen at random<br />
+= measures the ordinariness of the ith species within the community<br />
+= inversely related to the diversity</p></li>
+</ul>
+<p><br/> <em>Hill numbers</em> = special case of <strong>total dissimilarity</strong>, <code>Z</code> = identity matrix, <code>(Zp)i</code> = <code>pi</code></p>
+<p><strong>If a measure knows nothing of the commonalities between species, it will evaluate the community as more diverse than it really is. The naive model typically overestimates diversity.</strong></p>
+<p><br/></p>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>q = 0</th>
+<th>q = 1</th>
+<th>q = 2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>Standard diversity indices</em></td>
+<td>Species richness <br/> <img src="pictures_tutorials/formula_species-richness.png" width=60px/></td>
+<td>Shannon entropy <br/> <img src="pictures_tutorials/formula_Shannon-entropy.png" width=100px/></td>
+<td>Simpson concentration <br/> <img src="pictures_tutorials/formula_Simpson-index.png" width=60px/> <br/><br/> Gini-Simpson index <br/> <img src="pictures_tutorials/formula_Gini-Simpson-index.png" width=80px/></td>
+</tr>
+<tr class="even">
+<td><em>- Effective numbers <br/> Hill numbers</em> <br/> <em>- Leinster naive model <br/> exp(Rényi entropy) <br/> (total dissimilarity)</em></td>
+<td>Species richness</td>
+<td>Exponential of Shannon entropy</td>
+<td>Inverse of Simpson concentration</td>
+</tr>
+<tr class="odd">
+<td><em>Generalization</em> <br/> <em>Similarity information</em></td>
+<td>Faith PD (ultrametric tree)</td>
+<td>Allen’s entropy <br/> Generalization of Shannon entropy</td>
+<td>Rao’s quadratic entropy <br/> Generalization of Gini-Simpson index</td>
+</tr>
+<tr class="even">
+<td><em>- Leinster model <br/> exp(Rényi entropy) <br/> Similarity information</em></td>
+<td>Faith PD (ultrametric tree)</td>
+<td></td>
+<td>1 / (1 - Rao’s quadratic entropy)</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Properties of values of Leinster model :</strong></p>
+<ul>
+<li><em>Partitioning properties :</em> - Effective number : diversity of a community with equally abundant and totally dissimilar species = species richness - Modularity : partition in subcommunities - Replication : if subcommunities of equal size and diversity, diversity = nb subcom * subdiv</li>
+<li><em>Elementary properties :</em> - Symmetry - Absent species - Identical species</li>
+<li><em>Effect of species similarity on diversity :</em> - Monotonicity - Naive model - Range</li>
+</ul>
+<p><strong>Note :</strong> Allen and Rao’s entropies do not respect the replication principle.</p>
+<p><br/> <br/></p>
+</div>
+</div>
+<div id="glossary" class="section level1">
+<h1>Glossary</h1>
+<ul>
+<li><strong>Ultrametric tree</strong> = in which the distances from the root to every branch tip are equal<br />
+= if the branch lengths are proportional to divergence time, all branch tips are the same distance from the tree base (first node) = a) on the graph, b) is non-ultrametric</li>
+</ul>
+<!-- <div style="text-align:center"><img src="pictures_tutorials/example_ultrametric-tree.png" width=600px/></div>   -->
+<p><img src="pictures_tutorials/example_ultrametric-tree.png" width="600px" style="display: block; margin: auto;" /></p>
+<p><br/> <br/></p>
+</div>
+<div id="citations" class="section level1">
+<h1>Citations</h1>
+<ul>
+<li>Allen, B., Kon, M., Bar‐Yam, Y., Associate Editor: Ross H. Crozier, &amp; Editor: Monica A. Geber. (2009). A New Phylogenetic Diversity Measure Generalizing the Shannon Index and Its Application to Phyllostomid Bats. The American Naturalist, 174(2), 236-243. <a href="doi:10.1086/600101" class="uri">doi:10.1086/600101</a></li>
+<li>Chao, A., Chiu, C., &amp; Jost, L. (2010). Phylogenetic diversity measures based on Hill numbers. Philosophical Transactions: Biological Sciences, 365(1558), 3599-3609. (<a href="http://www.jstor.org/stable/20789175" class="uri">http://www.jstor.org/stable/20789175</a>)</li>
+<li>Faith, D. (1992). Conservation evaluation and phylogenetic diversity. Biological Conservation. 61. 1-10. <a href="doi:10.1016/0006-3207(92)91201-3" class="uri">doi:10.1016/0006-3207(92)91201-3</a></li>
+<li>Hill, M. (1973). Diversity and Evenness: A Unifying Notation and Its Consequences. Ecology, 54(2), 427-432. <a href="doi:10.2307/1934352" class="uri">doi:10.2307/1934352</a></li>
+<li>Leinster, T., &amp; Cobbold, C. (2012). Measuring diversity: The importance of species similarity. Ecology, 93(3), 477-489. (<a href="http://www.jstor.org/stable/23143936" class="uri">http://www.jstor.org/stable/23143936</a>)</li>
+<li>Rao, C. R. (1982). Diversity and Dissimilarity Coefficients: A Unified Approach. Theoretical population biology, 21, 24-43. Theoretical Population Biology. 21. 24-43. <a href="doi:10.1016/0040-5809(82)90004-1" class="uri">doi:10.1016/0040-5809(82)90004-1</a></li>
+<li>Rényi, Alfréd. On Measures of Entropy and Information. Proceedings of the Fourth Berkeley Symposium on Mathematical Statistics and Probability, Volume 1: Contributions to the Theory of Statistics, 547–561, University of California Press, Berkeley, Calif., 1961. (<a href="https://projecteuclid.org/euclid.bsmsp/1200512181" class="uri">https://projecteuclid.org/euclid.bsmsp/1200512181</a>)</li>
+<li>Shannon, C. E. (1948), A Mathematical Theory of Communication. Bell System Technical Journal, 27: 379–423. <a href="doi:10.1002/j.1538-7305.1948.tb01338.x" class="uri">doi:10.1002/j.1538-7305.1948.tb01338.x</a></li>
+<li>Simpson, E. H. 1949 - Measurement of diversity. Nature 163: 688. <a href="doi:10.1038/163688a0" class="uri">doi:10.1038/163688a0</a></li>
+</ul>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = false;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

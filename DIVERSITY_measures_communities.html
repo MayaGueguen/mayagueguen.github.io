@@ -10,8 +10,9 @@
 
 
 
+<meta name="date" content="2018-02-03" />
 
-<title>tutorials.utf8</title>
+<title>DIVERSITY indices : communities</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -367,12 +368,36 @@ div.tocify {
     Work
   </a>
 </li>
-<li>
-  <a href="tutorials.html">
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     <span class="fa fa-toolbox"></span>
      
     Tutorials
+     
+    <span class="caret"></span>
   </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="divider"></li>
+    <li>
+      <a href="DIVERSITY_measures.html">DIVERSITY indices : abundance</a>
+    </li>
+    <li>
+      <a href="DIVERSITY_measures_functional.html">DIVERSITY indices : functional</a>
+    </li>
+    <li>
+      <a href="DIVERSITY_measures_phylogenetic.html">DIVERSITY indices : phylogenetic</a>
+    </li>
+    <li>
+      <a href="DIVERSITY_measures_partitioning.html">DIVERSITY indices : partitioning</a>
+    </li>
+    <li>
+      <a href="DIVERSITY_measures_richness.html">DIVERSITY indices : richness</a>
+    </li>
+    <li>
+      <a href="DIVERSITY_measures_communities.html">DIVERSITY indices : communities</a>
+    </li>
+    <li class="divider"></li>
+  </ul>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -399,11 +424,134 @@ div.tocify {
 
 
 
+<h1 class="title toc-ignore">DIVERSITY indices : communities</h1>
+<h4 class="date">02/03/2018</h4>
 
 </div>
 
 
 <p><br/><br/></p>
+<div id="glossary" class="section level1 tabset tabset-fade tabset-pills">
+<h1>Glossary</h1>
+<div id="formulas" class="section level2">
+<h2>Formulas</h2>
+<ul>
+<li><strong>Mean :</strong> <img src="pictures/formula_mean.png" width=100px/></li>
+<li><p><strong>Variance :</strong> <img src="pictures/formula_variance.png" width=180px/></p></li>
+<li><strong>Standardization :</strong> <img src="pictures/formula_standardized.png" width=180px/></li>
+<li><p><strong>Correlation :</strong> <img src="pictures/formula_correlation.png" width=170px/></p></li>
+</ul>
+<p><br/> <br/></p>
+</div>
+<div id="formulas-with-weights" class="section level2">
+<h2>Formulas with weights</h2>
+<ul>
+<li><strong>Weighted mean :</strong> <img src="pictures/formula_weighted-mean.png" width=120px/> if weights sum to 1</li>
+<li><p><strong>Weighted variance :</strong> <img src="pictures/formula_weighted-variance.png" width=210px/> if weights sum to 1</p></li>
+<li><strong>Weighted standardization :</strong> <img src="pictures/formula_weighted-standardized.png" width=190px/></li>
+<li><strong>Weighted correlation :</strong> <img src="pictures/formula_weighted-correlation.png" width=170px/></li>
+<li><p><strong>Weighted covariance :</strong> <img src="pictures/formula_weighted-covariance.png" width=190px/></p></li>
+</ul>
+<p><br/> <br/></p>
+</div>
+</div>
+<div id="section" class="section level1">
+<h1></h1>
+<div id="peres-neto" class="section level2">
+<h2>2016 : Peres-Neto</h2>
+<div id="community-weighted-mean-cwm" class="section level3">
+<h3>Community Weighted Mean (CWM)</h3>
+<div style="text-align:center">
+CWM (for one community site) = <img src="pictures/formula_weighted-mean-2.png" width=100px/>
+</div>
+<p>with :</p>
+<ul>
+<li><code>xi</code> = trait value of species i</li>
+<li><code>wi</code> = abundance of species i</li>
+<li><code>n</code> = total number of species</li>
+</ul>
+<p><br/></p>
+<p><strong>Community Weighted Mean correlation :</strong> correlation between CWM values and environmental values (non-weighted by species’ abundances) for all community sites</p>
+<p><br/></p>
+</div>
+<div id="species-niche-centroid-snc" class="section level3">
+<h3>Species Niche Centroid (SNC)</h3>
+<div style="text-align:center">
+SNC (for one species) = <img src="pictures/formula_weighted-mean-2.png" width=100px/>
+</div>
+<p>with :</p>
+<ul>
+<li><code>xi</code> = environmental value of site i</li>
+<li><code>wi</code> = abundance of species in site i</li>
+<li><code>n</code> = total number of community sites</li>
+</ul>
+<p><br/></p>
+<p><strong>Species Niche Centroid correlation :</strong> correlation between SNC values and trait values (non-weighted by species’ abundances) for all species</p>
+<p><br/></p>
+</div>
+<div id="fourth-corner-correlation" class="section level3">
+<h3>Fourth-corner correlation</h3>
+<ul>
+<li>correlation (weighted standardized trait, weighted standardized environment)</li>
+<li>weighted covariance (CWM, weighted standardized environment)</li>
+<li>weighted covariance (weighted standardized trait, SNC)</li>
+<li>weighted regression slope (CWM of weighted standardized trait, weighted standardized environment)<br />
+<em>considering the correlations among environmental variables, on the contrary to RLQ</em></li>
+</ul>
+<p><br/></p>
+<table>
+<thead>
+<tr class="header">
+<th>CWM, SNC correlations</th>
+<th>4th-corner correlation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>divide by mean variation</td>
+<td>divide by total trait variation</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Maximum (4th-corner correlation) :</strong></p>
+<ul>
+<li>reached if species distributions are perfectly ordered across columns (species) and rows (sites)</li>
+<li>squared root of 1st eigen value of correspondance analysis of species distribution matrix (sites x species)</li>
+</ul>
+<p><br/></p>
+<p><strong>Chessel fourth-corner correlation :</strong> 4th-corner correlation / max(4th-corner correlation)</p>
+<p><br/></p>
+</div>
+<div id="decomposition-of-trait-variation" class="section level3">
+<h3>Decomposition of trait variation</h3>
+<p>CWM / SNC are based on weighted averages : ignore trait variation among species within communities<br />
+(i.e. <em>within-community component</em>)</p>
+<p>Usually, <strong>CWM</strong> is used to assess <strong>among-community component</strong>, and <em>average trait distance</em> (e.g. MPD) to asses <em>within-community component</em>. <strong>But they are not additive : they do not sum up to total variation.</strong></p>
+<p>New solution for <strong>within-community component</strong> :</p>
+<div style="text-align:center">
+(for one community site) = alpha i * <img src="pictures/formula_within-community.png" width=190px/>
+</div>
+<p>with :</p>
+<ul>
+<li><p><code>alpha i</code> = abundance weight of site i</p></li>
+<li><code>lij</code> = abundance of species j in site i</li>
+<li><code>SUM lij</code> = abundance of species in site i</li>
+<li><code>tj</code> = trait value of species j</li>
+<li><p><code>ci</code> = CWM value of site i</p></li>
+</ul>
+<p><br/></p>
+<p><br/> <br/></p>
+</div>
+</div>
+</div>
+<div id="citations" class="section level1">
+<h1>Citations</h1>
+<ul>
+<li>Baselga, A. and Orme, C. D. L. (2012). betapart: an R package for the study of beta diversity. Methods in Ecology and Evolution, 3: 808–812. <a href="doi:10.1111/j.2041-210X.2012.00224.x" class="uri">doi:10.1111/j.2041-210X.2012.00224.x</a></li>
+<li></li>
+</ul>
+</div>
 
 
 

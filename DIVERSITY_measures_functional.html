@@ -10,8 +10,9 @@
 
 
 
+<meta name="date" content="2018-05-03" />
 
-<title>publications.utf8</title>
+<title>DIVERSITY indices : functional</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -423,84 +424,198 @@ div.tocify {
 
 
 
+<h1 class="title toc-ignore">DIVERSITY indices : functional</h1>
+<h4 class="date">05/03/2018</h4>
 
 </div>
 
 
-<p><br/><br/></p>
-<div id="section" class="section level2">
-<h2><a href="">2020</a></h2>
+<p><br/> <br/></p>
+<div id="functional-diversity" class="section level1">
+<h1>Functional diversity</h1>
+<div id="petchey-gaston" class="section level2">
+<h2>2002 : Petchey &amp; Gaston</h2>
+<p><strong>Functional Diversity (FD) index :</strong> total branch length of a functional dendrogram<br />
+(hierarchical classification of the species according to their functional features)</p>
+<ol style="list-style-type: decimal">
+<li>building the trait matrix (containing the value of each species for each functional trait)</li>
+<li>calculating a matrix of distances between pairs of species in functional trait space</li>
+<li>constructing a dendrogram to classify species according to the distance matrix</li>
+</ol>
+<p>The choices of the distance and of the classification method are of crucial importance since they may lead to different results.</p>
 <p><br/></p>
-<!-- <a href="papers/Thuiller_2017_Diversity_Distributions.pdf" class="download" title="Download as PDF"> -->
-<!-- <img src="pictures/art_2017_Thuiller_DD.png" alt="Thuiller 2017 Diversity Distributions" style="width:350px"> -->
-<!-- </a> -->
-<p><br/></p>
+<p><strong>Euclidean distance :</strong></p>
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_distance-euclidean.png" width=220px/></div> -->
+<p><img src="pictures_tutorials/formula_distance-euclidean.png" width="220px" style="display: block; margin: auto;" /></p>
+<p>with :</p>
 <ul>
-<li>Capblancq, T. , Morin, X. , <strong>Guéguen, M.</strong> , Renaud, J. , Lobreaux, S. and Bazin, E. (2020). <em>Climate associated genetic variation in Fagus sylvatica and potential responses to climate change in the French Alps.</em> Journal of Evolutionary Biology. 33. <a href="https://doi:10.1111/jeb.13610" class="uri">https://doi:10.1111/jeb.13610</a></li>
-<li>Sherpa, S. , Renaud, J. , <strong>Guéguen, M.</strong> , Besnard, G. , Mouyon, L. , Rey, D. and Després, L. (2020). <em>Landscape does matter: Disentangling founder effects from natural and human-aided post-introduction dispersal during an ongoing biological invasion.</em> Journal of Animal Ecology. <a href="https://doi:10.1111/1365-2656.13284" class="uri">https://doi:10.1111/1365-2656.13284</a></li>
+<li><code>a, b</code> : species to be compared</li>
+<li><code>N</code> : number of quantitative traits</li>
+<li><code>xia, xib</code> : values of trait i for each species</li>
 </ul>
 <p><br/></p>
 </div>
-<div id="section-1" class="section level2">
-<h2><a href="">2019</a></h2>
-<p><br/></p>
-<!-- <a href="papers/Thuiller_2017_Diversity_Distributions.pdf" class="download" title="Download as PDF"> -->
-<!-- <img src="pictures/art_2017_Thuiller_DD.png" alt="Thuiller 2017 Diversity Distributions" style="width:350px"> -->
-<!-- </a> -->
-<p><br/></p>
+<div id="podani-schemra" class="section level2">
+<h2>2006 : Podani &amp; Schemra</h2>
+<p><strong>Gower’s distance :</strong> can cope with mixed scale types of data :</p>
 <ul>
-<li>Cerasoli, F. , Thuiller, W. , <strong>Guéguen, M.</strong> , Renaud, J. , D’Alessandro, P. and Biondi, M. (2019). <em>The role of climate and biotic factors in shaping current distributions and potential future shifts of European Neocrepidodera (Coleoptera, Chrysomelidae).</em> Insect Conservation and Diversity. <a href="https://doi:10.1111/icad.12376" class="uri">https://doi:10.1111/icad.12376</a></li>
-<li>Dufour, P. , Descamps, S. , Chantepie, S. , Renaud, J. , <strong>Guéguen, M.</strong> , Schiffers, K. , Thuiller, W. and Lavergne, S. (2019). <em>Reconstructing the geographic and climatic origins of long‐distance bird migrations.</em> Journal of Biogeography. <a href="https://doi:10.1111/jbi.13700" class="uri">https://doi:10.1111/jbi.13700</a></li>
-<li>Menchetti, M. , <strong>Guéguen, M.</strong> and Talavera, G. (2019). Spatio-temporal ecological niche modelling of multigenerational insect migrations. Proceedings of the Royal Society B: Biological Sciences. 286. 20191583. <a href="https://doi:10.1098/rspb.2019.1583" class="uri">https://doi:10.1098/rspb.2019.1583</a></li>
-<li>Ondo, I. , Thuiller, W. , <strong>Guéguen, M.</strong> and Pironon, S. (2019). <em>A new R application for Modelling Species Distribution.</em> <a href="https://doi:10.13140/RG.2.2.23431.83363" class="uri">https://doi:10.13140/RG.2.2.23431.83363</a></li>
-<li>Sherpa, S. , <strong>Guéguen, M.</strong> , Renaud, J. , Blum, M. , Gaude, T. , Laporte, F. , Akiner, M. M. , Alten, B. , Aranda, C. , Barré-Cardi, H. , Bellini, R. , Paulis, M. , Chen, X-G. , Eritja, R. , Flacio, E. , Foxi, C. , Ishak, I. , Kalan, K. , Kasai, S. and Després, L. (2019). <em>Predicting the success of an invader: Niche shift versus niche conservatism.</em> Ecology and Evolution. <a href="https://doi:10.1002/ece3.5734" class="uri">https://doi:10.1002/ece3.5734</a></li>
-<li>Thuiller, W. , <strong>Guéguen, M.</strong> , Renaud, J. , Karger, D. N. and Zimmermann, N. (2019). <em>Uncertainty in ensembles of global biodiversity scenarios.</em> Nature Communications. 10. <a href="https://doi:10.1038/s41467-019-09519-w" class="uri">https://doi:10.1038/s41467-019-09519-w</a></li>
+<li>quantitative,</li>
+<li>interval,</li>
+<li>nominal or ordinal data,</li>
+<li>ratios,</li>
+<li>missing values.</li>
+</ul>
+<p><br/></p>
+<div style="text-align:center">
+<p><img src="pictures_tutorials/formula_distance-gower-1.png" width=220px/> with <img src="pictures_tutorials/formula_distance-gower-2.png" width=220px/></p>
+</div>
+<p>with :</p>
+<ul>
+<li><code>a, b</code> : species to be compared</li>
+<li><code>N</code> : number of quantitative traits</li>
+<li><code>diab</code> : dissimilarity between species for trait i</li>
+<li><p><code>xia, xib</code> : values of trait i for each species</p></li>
+<li>If <code>xia</code> or <code>xib</code> is missing, <code>wiab = 0</code>.</li>
+<li><p>If no missing value, all quantitative traits and each trait equally weighted :</p></li>
+</ul>
+<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_distance-gower-3.png" width=220px/></div>  -->
+<p><img src="pictures_tutorials/formula_distance-gower-3.png" width="220px" style="display: block; margin: auto;" /></p>
+<p><br/></p>
+<ol style="list-style-type: decimal">
+<li>Advises the use of Gower’s distance even when all traits are quantitative.</li>
+<li>Single linkage tends to contract space by compressing edges of the dendrograms whereas complete linkage tends to dilate data space to produce compact classes.</li>
+</ol>
+<p><br/></p>
+</div>
+<div id="legendre-legendre" class="section level2">
+<h2>1998 : Legendre &amp; Legendre</h2>
+<p>Some algorithms are well known to cause a distortion of space.</p>
+<p>Clustering methods for constructing a hierarchical classification :</p>
+<p><br/></p>
+<table>
+<colgroup>
+<col width="11%" />
+<col width="44%" />
+<col width="44%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Acronym</th>
+<th>Clustering method</th>
+<th>Signification</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SL</td>
+<td>Single linkage</td>
+<td>Fusion of the closest objects</td>
+</tr>
+<tr class="even">
+<td>CL</td>
+<td>Complete linkage</td>
+<td>Fusion of the most distant objects</td>
+</tr>
+<tr class="odd">
+<td>UPGMA</td>
+<td>Unweighted pair group method using arithmetic averages</td>
+<td>Fusion of clusters when the similarity reaches the mean inter cluster similarity value</td>
+</tr>
+<tr class="even">
+<td>WPGMA</td>
+<td>Weighted pair group method using arithmetic averages</td>
+<td>Mean dissimilarity between two items is the sum of the weighted dissimilarities</td>
+</tr>
+<tr class="odd">
+<td>UPGMC</td>
+<td>Unweighted pair group centroid method</td>
+<td>Fusion of the clusters with closest centroids</td>
+</tr>
+<tr class="even">
+<td>WPGMC</td>
+<td>Weighted pair group centroid method</td>
+<td>Fusion of the clusters with closest centroids after adjustment for group sizes</td>
+</tr>
+<tr class="odd">
+<td>Ward</td>
+<td>Ward’s method</td>
+<td>Minimization of the within-group sum of squares</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Consensus algorithms</td>
+<td>Synthesis from different dendrograms into one classification which highlights the concordant parts between the various methods relative to the parts that disagree</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Cophenetic correlation :</strong></p>
+<ul>
+<li>measure of how faithfully a dendrogram preserves the pairwise distances between the original unmodeled data points</li>
+<li>dissimilarity between initial distance and cophenetic distance matrices</li>
+<li><code>DM = 1 - c²</code> with <code>c</code> : cophenetic correlation coefficient (e.g. Pearson correlation coefficient)<br />
+<em><code>DM = 0</code> : no distortion between distance matrices</em></li>
 </ul>
 <p><br/></p>
 </div>
-<div id="section-2" class="section level2">
-<h2><a href="">2018</a></h2>
+<div id="rao-srinivas" class="section level2">
+<h2>2006 : Rao &amp; Srinivas</h2>
+<p>Defined a threshold for validity of a dendrogram: the dissimilarity between initial distance and cophenetic distance matrices, DM, must be less than 0.36 (corresponding to the 0.8 correlation coefficient limit).</p>
+</div>
+<div id="mouchet" class="section level2">
+<h2>2008 : Mouchet</h2>
+<p>Aims to :</p>
+<ol style="list-style-type: decimal">
+<li>find the <em>combination of distance and clustering algorithm(s)</em><br />
+that best represents species distribution in functional trait space</li>
+<li>test also <em>consensus trees resulting from a combination of several clustering algorithms</em>,<br />
+to enhance the reliability of the classification and, ultimately, the estimation of functional diversity.</li>
+</ol>
+<p>The effects of distances, clustering methods, correlations between traits and species richness on dissimilarity were explored using a four factor ANOVA.</p>
 <p><br/></p>
-<!-- <a href="papers/Thuiller_2017_Diversity_Distributions.pdf" class="download" title="Download as PDF"> -->
-<!-- <img src="pictures/art_2017_Thuiller_DD.png" alt="Thuiller 2017 Diversity Distributions" style="width:350px"> -->
-<!-- </a> -->
-<p><br/></p>
+<p>Dissimilarity was influenced by all the factors and their interactions. However, the complexity of interactions between factors made identification of the direct effects of each factor on DM difficult. Consequently, <strong>no combination of distance and clustering methods gave systematically the best representation of species from the multidimensional functional space.</strong> Nevertheless, among all combinations, <strong>UPGMA/UPGMC consensus trees seemed to be most often used</strong>.</p>
 <ul>
-<li>Kim, H. , Rosa, I. , Alkemade, R. , Leadley, P. , Hurtt, G. , Popp, A. , Vuuren, D. , Anthoni, P. , Arneth, A. , Baisero, D. , Caton, E. , Chaplin-Kramer, R. , Chini, L , De Palma, A. , Di Fulvio, F. , Di Marco, M. , Espinoza, F. , Ferrier, S. and Fujimori, S. (2018). <em>A protocol for an intercomparison of biodiversity and ecosystem services models using harmonized land-use and climate scenarios.</em> Geoscientific Model Development. 11. 4537-4562. <a href="https://doi:10.5194/gmd-11-4537-2018" class="uri">https://doi:10.5194/gmd-11-4537-2018</a></li>
-<li>Roy, J. , Bonneville, J-M. , Saccone, P. , Ibañez, S. , Albert, C. , Boleda, M. , <strong>Guéguen, M.</strong> , Ohlmann, M. , Rioux, D. , Clement, J-C. , Lavergne, S. and Geremia, R. (2018). <em>Differences in the fungal communities nursed by two genetic groups of the alpine cushion plant, Silene acaulis: XXXX.</em> Ecology and Evolution. 8. <a href="https://doi:10.1002/ece3.4606" class="uri">https://doi:10.1002/ece3.4606</a></li>
+<li>Despite their drawbacks, <strong>single linkage and complete linkage must not be ignored</strong> because they are regularly included in the consensus trees yielding the lowest DM.</li>
+<li><strong>UPGMA is a good compromise</strong> between single linkage and complete linkage because it preserves most of the initial distances in dimensionally reduced space.</li>
+<li><strong>The Ward’s method, though widely used, produces the least reliable classifications.</strong></li>
 </ul>
 <p><br/></p>
+<p><em>None of the clustering algorithms (even UPGMA) perfectly corresponds to the distribution of objects in a multidimensional space. Therefore, it is worth gathering information from different clustering methods into consensus trees.</em></p>
+<p><br/></p>
+<p>However cophenetic correlation does not take into account the transformation of the trait matrix into a distance matrix. More studies are needed to assess the impact of that transformation and of the use of other distances (Manhattan, Bray-Curtis, etc.).</p>
+<p><br/> <br/></p>
 </div>
-<div id="section-3" class="section level2">
-<h2><a href="">2017</a></h2>
-<p><br/></p>
-<p><a href="papers/Thuiller_2017_Diversity_Distributions.pdf" class="download" title="Download as PDF"> <img src="pictures/art_2017_Thuiller_DD.png" alt="Thuiller 2017 Diversity Distributions" style="width:350px"> </a> <a href="papers/Mazel_2017_Current_Biology.pdf" class="download" title="Download as PDF"> <img src="pictures/art_2017_Mazel_CB.png" alt="Mazel 2017 Current Biology" style="width:350px"> </a> <a href="papers/Carboni_2017_Global_Change_Biology.pdf" class="download" title="Download as PDF"> <img src="pictures/art_2017_Carboni_GCB.png" alt="Carboni 2017 Global Change Biology" style="width:350px"> </a> <a href="papers/Barros_2017_Journal_Applied_Ecology.pdf" class="download" title="Download as PDF"> <img src="pictures/art_2017_Barros_JAE.png" alt="Barros 2017 Journal of Applied Ecology" style="width:350px"> </a></p>
-<p><br/></p>
+</div>
+<div id="glossary" class="section level1">
+<h1>Glossary</h1>
 <ul>
-<li>Barros, C. , <strong>Guéguen, M.</strong> , Douzet, R. , Carboni, M. , Boulangeat, I. , Zimmermann, N. E., Münkemüller, T. , Thuiller, W. and Mori, A. (2017). <em>Extreme climate events counteract the effects of climate and land‐use changes in Alpine tree lines.</em> J Appl Ecol, 54: 39-50. <a href="https://doi:10.1111/1365-2664.12742" class="uri">https://doi:10.1111/1365-2664.12742</a></li>
-<li>Carboni M, <strong>Guéguen M</strong>, Barros C, et al. (2017). <em>Simulating plant invasion dynamics in mountain ecosystems under global change scenarios.</em> Glob Change Biol. 2018;24:e289–e302. <a href="https://doi.org/10.1111/gcb.13879" class="uri">https://doi.org/10.1111/gcb.13879</a></li>
-<li>Mazel, F., Wüest, R., <strong>Guéguen, M.</strong>, Renaud, J., Ficetola, G. F., Lavergne, S. &amp; Thuiller, W. (2017). <em>The Geography of Ecological Niche Evolution in Mammals.</em> Current Biology. 27. <a href="https://doi.org/10.1016/j.cub.2017.03.046" class="uri">https://doi.org/10.1016/j.cub.2017.03.046</a>.</li>
-<li>Thuiller W, <strong>Guéguen M</strong>, Bison M, et al. (2017). <em>Combining point‐process and landscape vegetation models to predict large herbivore distributions in space and time—A case study of Rupicapra rupicapra.</em> Divers Distrib. 2018;24:352–362. <a href="https://doi.org/10.1111/ddi.12684" class="uri">https://doi.org/10.1111/ddi.12684</a></li>
+<li><strong>Cophenetic similarity / distance :</strong>
+<ul>
+<li>measure of how similar two objects have to be in order to be grouped into the same cluster</li>
+<li>height of the dendrogram where the two branches that include the two objects merge into a single branch</li>
+</ul></li>
+<li><strong>Cophenetic correlation :</strong> measure of how faithfully a dendrogram preserves the pairwise distances between the original unmodeled data points.</li>
 </ul>
-<p><br/></p>
+<p><br/> <br/></p>
 </div>
-<div id="section-4" class="section level2">
-<h2><a href="">2015</a></h2>
-<p><br/></p>
-<p><a href="papers/Thuiller_2015_Ecology_Letters.pdf" class="download" title="Download as PDF"> <img src="pictures/art_2015_Thuiller_EL.png" alt="Thuiller 2015 Ecology Letters" style="width:500px"> </a></p>
-<p><br/></p>
+<div id="citations" class="section level1">
+<h1>Citations</h1>
 <ul>
-<li>Thuiller, W. , Pollock, L. J., <strong>Guéguen, M.</strong> , Münkemüller, T. and Cornell, H. (2015). <em>From species distributions to meta‐communities.</em> Ecol Lett, 18: 1321-1328. <a href="https://doi:10.1111/ele.12526" class="uri">https://doi:10.1111/ele.12526</a></li>
-</ul>
-<p><br/></p>
-</div>
-<div id="section-5" class="section level2">
-<h2><a href="">2014</a></h2>
-<p><br/></p>
-<p><a href="papers/Thuiller_2014_Ecography.pdf" class="download" title="Download as PDF"> <img src="pictures/art_2014_Thuiller_Ecography.png" alt="Thuiller 2014 Ecography" style="width:500px"> </a></p>
-<p><br/></p>
-<ul>
-<li>Thuiller, W. , <strong>Guéguen, M.</strong> , Georges, D. , Bonet, R. , Chalmandrier, L. , Garraud, L. , Renaud, J. , Roquet, C. , Van Es, J. , Zimmermann, N. E. and Lavergne, S. (2014). <em>Are different facets of plant diversity well protected against climate and land cover changes? A test study in the French Alps.</em> Ecography, 37: 1254-1266. <a href="https://doi:10.1111/ecog.00670" class="uri">https://doi:10.1111/ecog.00670</a></li>
+<li>Legendre P. and Legendre L. (1998). Numerical Ecology. Elsevier, Amsterdam, p. 853, 1998.</li>
+<li>Mouchet, Maud &amp; Guilhaumon, Francois &amp; Villéger, Sébastien &amp; Mason, Norman &amp; Tomasini, Jean &amp; Mouillot, David. (2008). Towards a consensus for calculating dendrogram-based functional diversity indices. Oikos. 117. 794 - 800. <a href="doi:10.1111/j.0030-1299.2008.16594.x" class="uri">doi:10.1111/j.0030-1299.2008.16594.x</a></li>
+<li>Petchey, O. L., &amp; Gaston, K. J. (2002). Functional diversity (FD), species richness and community composition. Ecology letters, 5(3), 402-411.</li>
+<li>Podani, Janos &amp; Schmera, Dénes. (2006). On dendrogram-based measures of functional diversity. Oikos. 115. 179 - 185. <a href="doi:10.1111/j.2006.0030-1299.15048.x" class="uri">doi:10.1111/j.2006.0030-1299.15048.x</a></li>
+<li>Rao, A. Ramachandra &amp; Srinivas, Venkata. (2006). Regionalization of watersheds by hybrid-cluster analysis. Journal of Hydrology - J HYDROL. 318. 37-56. <a href="doi:10.1016/j.jhydrol.2005.06.003" class="uri">doi:10.1016/j.jhydrol.2005.06.003</a></li>
 </ul>
 </div>
 

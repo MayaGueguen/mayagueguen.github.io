@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+<meta name="date" content="2018-12-03" />
+
+<title>DIVERSITY indices : richness</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/journal.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 61px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h2 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h3 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h4 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h5 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h6 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Maya Guéguen</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Home
+  </a>
+</li>
+<li>
+  <a href="about.html">
+    <span class="fa fa-info"></span>
+     
+    About me
+  </a>
+</li>
+<li>
+  <a href="publications.html">
+    <span class="ion ion-document-text"></span>
+     
+    Publications
+  </a>
+</li>
+<li>
+  <a href="work.html">
+    <span class="fa fa-chart-line"></span>
+     
+    Work
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-toolbox"></span>
+     
+    Tutorials
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="divider"></li>
+    <li>
+      <a href="DIVERSITY_measures.html">DIVERSITY indices : abundance</a>
+    </li>
+    <li>
+      <a href="DIVERSITY_measures_functional.html">DIVERSITY indices : functional</a>
+    </li>
+    <li>
+      <a href="DIVERSITY_measures_phylogenetic.html">DIVERSITY indices : phylogenetic</a>
+    </li>
+    <li>
+      <a href="DIVERSITY_measures_partitioning.html">DIVERSITY indices : partitioning</a>
+    </li>
+    <li>
+      <a href="DIVERSITY_measures_richness.html">DIVERSITY indices : richness</a>
+    </li>
+    <li>
+      <a href="DIVERSITY_measures_communities.html">DIVERSITY indices : communities</a>
+    </li>
+    <li class="divider"></li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="mailto:maya.gueguen@univ-grenoble-alpes.fr">
+    <span class="fa fa-envelope-o"></span>
+     
+    Contact me
+  </a>
+</li>
+<li>
+  <a href="https://github.com/MayaGueguen">
+    <span class="fa fa-github"></span>
+     
+    
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">DIVERSITY indices : richness</h1>
+<h4 class="date">12/03/2018</h4>
+
+</div>
+
+
+<p><br/><br/></p>
+<div id="glossary" class="section level1 tabset tabset-fade tabset-pills">
+<h1>Glossary</h1>
+<ul>
+<li><p><strong>Parametric methods :</strong> require specific parametric assumptions about the species abundance distribution.<br />
+Different parametric distributions may fit the observed data equally well, but lead to drastically different species richness estimates.</p></li>
+<li><p><strong>Non-parametric methods :</strong> always obtainable and make no assumptions about the mathematical form of the underlying species abundance/incidence distributions.</p></li>
+<li><p><strong>Species richness :</strong> number of observed species + number of undetected species</p></li>
+<li><strong>Uniques :</strong> number of species observed in only one sampling unit</li>
+<li><strong>Duplicates :</strong> number of species observed in exactly two sampling units</li>
+<li><p><strong>Super-duplicates :</strong> number of species observed in at least two sampling units</p></li>
+</ul>
+<p><br/> <br/></p>
+</div>
+<div id="estimators-of-number-of-undetected-species" class="section level1">
+<h1>Estimators of number of undetected species</h1>
+<p>Non-parametric estimators based on the information about the infrequently detected (rare) species.</p>
+<div id="burnham-overton" class="section level2">
+<h2>1978 : Burnham &amp; Overton</h2>
+<p><strong>Jackknife resampling :</strong> technique especially useful to reduce the bias / variance of a biased estimator (similar to bootstrap). The basic idea with the <code>jth</code> order jackknife method is to consider sub-data by successively deleting <code>j</code> individuals from the data.</p>
+<p><strong>Jackknife estimator of a parameter :</strong></p>
+<ul>
+<li>for a sample of size <code>n</code>,</li>
+<li>calculate the estimates of each n-1-sized sub-sample</li>
+<li>average of these calculations</li>
+</ul>
+<p><br/></p>
+<p><em>Estimation of species richness :</em></p>
+<div style="text-align:center">
+<img src="pictures/formula_Burnham-jackknife-2.png" width=100px/>
+</div>
+<p>with :</p>
+<ul>
+<li><code>N</code> : total number of individuals / species</li>
+<li><p><code>S</code> : non-parametric maximum likelihood estimator of N</p></li>
+<li><code>i</code> : sampling-unit (day, trap, quadrat)</li>
+<li><code>t</code> : total number of sampling units</li>
+<li><p><code>fr</code> : number of individuals captured exactly r times</p></li>
+</ul>
+<p><br/></p>
+<p><em>Clearly, S is biased and this bias decreases as t increases. Hence the following correction :</em></p>
+<div style="text-align:center">
+<img src="pictures/formula_Burnham-jackknife-1.png" width=320px/>
+</div>
+<p>with :</p>
+<ul>
+<li><code>j</code> : individual / species</li>
+</ul>
+<p><br/></p>
+<p><em>First-order jackknife :</em><br />
+(depending on unique species)</p>
+<div style="text-align:center">
+<img src="pictures/formula_Burnham-jackknife-3.png" width=230px/>
+</div>
+<p><em>Second-order jackknife :</em><br />
+(depending on unique and duplicate species)</p>
+<div style="text-align:center">
+<img src="pictures/formula_Burnham-jackknife-4.png" width=330px/>
+</div>
+<p>with <code>n = t</code>.</p>
+<p><br/></p>
+</div>
+<div id="chao" class="section level2">
+<h2>1987 : Chao</h2>
+<p>This method is especially useful <strong>when most of the captured individuals are caught once or twice in the sample</strong> (very small capture probabilities), <em>for which case the kackknife estimator usually does not work well</em>.</p>
+<p>If there are many undetectable species, then it will be impossible to obtain a good estimate of species richness. A reliable lower bound for SR if often more practical use than an imprecise point estimate.<br />
+<em>It is a minimum estimator of asymptotic species richness.</em></p>
+<p><br/></p>
+<p><strong>Chao1 estimator (number of undected species for abundance data) :</strong></p>
+<div style="text-align:center">
+<img src="pictures/formula_Chao1-estimator.png" width=400px/>
+</div>
+<p><br/></p>
+<p><strong>Chao2 estimator (number of undected species for incidence data) :</strong></p>
+<div style="text-align:center">
+<img src="pictures/formula_Chao2-estimator.png" width=500px/>
+</div>
+<p>with :</p>
+<ul>
+<li><code>S obs</code> : count of the total number of species observed</li>
+<li><code>T</code> : number of sampling units</li>
+<li><code>f1/Q1</code> : uniques</li>
+<li><code>f2/Q2</code> : duplicates</li>
+</ul>
+<p><br/></p>
+</div>
+<div id="lee-chao-chazdon" class="section level2">
+<h2>1994 / 1998 : Lee &amp; Chao, Chazdon</h2>
+<p><strong>Incidence-based coverage estimator (ICE) :</strong></p>
+<div style="text-align:center">
+<img src="pictures/formula_ICE-1.png" width=280px/>
+</div>
+with :
+<div style="text-align:center">
+<img src="pictures/formula_ICE-2.png" width=420px/>
+</div>
+<div style="text-align:center">
+<img src="pictures/formula_ICE-3.png" width=180px/>
+</div>
+<p>with :</p>
+<ul>
+<li><code>Qk</code> : number of species present in <code>k</code> sampling units</li>
+<li><code>R</code> : utoff frequency between infrequent and frequent species in the reference sample (= 10 as a start)</li>
+<li><code>S infreq</code> : number of species occurring in fewer than <code>R</code> sampling units (frequency counts for rare species)</li>
+<li><code>Y infreq</code> : summed incidence frequencies for species occurring in fewer than <code>R</code> sampling units</li>
+<li><code>T infreq</code> : number of sampling units including at least one infrequent species</li>
+<li><code>C ICE</code> : estimate of sample coverage</li>
+<li><code>gamma ICE</code> : squared coefficient of variation</li>
+</ul>
+<p><br/></p>
+</div>
+</div>
+<div id="estimators-of-number-of-shared-species" class="section level1">
+<h1>Estimators of number of shared species</h1>
+<div id="chao-review" class="section level2">
+<h2>2012 : Chao (review)</h2>
+<p>The estimation of <em>species richness shared by multiple assemblages</em> (two or more) has received relatively little attention. However, it can be used to describe assemblage overlap and forms a basis <em>to construct various types of beta diversity and similarity/dissimilarity measures</em> to quantify spatial or temporal variation in species composition.</p>
+<p>There is a generalization of ICE-type shared species richness estimators for two assemblages. However, these estimators cannot be easily extended to the general case when there are more than two assemblages.</p>
+<p><br/></p>
+<div style="text-align:center">
+<img src="pictures/formula_Chao1-shared-estimator-1.png" width=200px/>
+</div>
+<p>with :</p>
+<ul>
+<li><code>S12</code> : number of shared species between samples 1 and 2</li>
+<li><code>D12</code> : number of shared species observed</li>
+<li><code>f+0</code> : number of shared species observed in sample 1 but not observed in sample 2</li>
+<li><code>f0+</code> : number of shared species observed in sample 2 but not observed in sample 1</li>
+<li><code>f00</code> : number of undetected species</li>
+</ul>
+<p><br/></p>
+<p><strong>Chao1-shared estimator (number of shared species for abundance data) :</strong></p>
+<div style="text-align:center">
+<img src="pictures/formula_Chao1-shared-estimator-2.png" width=240px/>
+</div>
+with
+<div style="text-align:center">
+<img src="pictures/formula_Chao1-shared-estimator-3.png" width=150px/>
+</div>
+<p><br/></p>
+<p>with :</p>
+<ul>
+<li><code>ni</code> : size of sample i</li>
+<li><code>fjk</code> : number of shared species that are observed j times in sample 1 and k times in sample 2</li>
+</ul>
+<p><em>Only those shared species that are singletons or doubletons in at least one of the samples are used to infer the undetected shared species richness.</em> <br/></p>
+<p><strong>Chao2-shared estimator</strong> (number of shared species for incidence data) follows the same structure.</p>
+<p><br/></p>
+</div>
+</div>
+<div id="models-to-infer-species-richness" class="section level1">
+<h1>Models to infer species richness</h1>
+<div id="good-turing" class="section level2">
+<h2>1953 / 2000 : Good (&amp; Turing)</h2>
+<p>Detection probabilities of unique species do not vary greatly among such species, so that most of the detection probabilities of uniques are concentrated at the average.</p>
+<p><br/></p>
+</div>
+<div id="chao-review-1" class="section level2">
+<h2>2012 : Chao (review)</h2>
+<ul>
+<li><p><strong>Rarefaction (interpolation) :</strong> traditional method to down-sample the larger samples, when comparing the sample richnesses of different assemblages, until they are the same size<br />
+(<em>but loss of information</em>)</p></li>
+<li><p><strong>Curve-fitting approaches :</strong> generally do not provide the variances of the resulting estimates</p>
+<ul>
+<li><p><strong>Extrapolation :</strong> use parametric curves to extrapolate a species-accumulation or species-area curve to predict its asymptote, which is used as an estimate of species richness, for hypothetical samples larger than the actual samples<br />
+(<em>can be reliable to about twice the actual sample sizes</em>)</p></li>
+<li><p><strong>Curve-fitting :</strong> fit a truncated parametric distribution or functional form to the observed species abundances to obtain an estimate of species richness</p></li>
+</ul></li>
+<li><p><strong>Sampling-theory-based approaches :</strong> two type of sampling data :</p>
+<ul>
+<li>individual-based (abundance) data</li>
+<li>sample-based (incidence) data</li>
+</ul></li>
+</ul>
+<p><br/></p>
+</div>
+<div id="colwell" class="section level2">
+<h2>2012 : Colwell</h2>
+<p>For sample-based incidence data :</p>
+<ul>
+<li><p><strong>interpolation</strong> : sample-based rarefaction (Bernoulli product model)</p></li>
+<li><p><strong>extrapolation</strong> : estimate of asymptotic species richness for a larger number of sampling units,<br />
+which requires an estimation of the number of undetected species :</p>
+<ul>
+<li>Chao2 estimator</li>
+<li>ICE for assemblages with many rare species</li>
+</ul></li>
+</ul>
+<p><br/></p>
+</div>
+</div>
+<div id="incidence-based-models" class="section level1">
+<h1>Incidence-based models</h1>
+<p>Especially advantageous for <em>social species</em> (individuals difficult to distinguish and to count), and avoid the risk of double-counting individuals within sessions.</p>
+<p>Usually require :</p>
+<ul>
+<li>Count of the total number of species observed</li>
+<li>Number of unique species</li>
+<li>Number of duplicate species</li>
+</ul>
+<div id="chao-1" class="section level2">
+<h2>2017 : Chao</h2>
+<p><em>Extension of incidence-based sampling model of Colwell</em> to encompass datasets with only :</p>
+<ul>
+<li>Count of the total number of species observed</li>
+<li>Number of super-duplicate species</li>
+</ul>
+<p><br/></p>
+<p><strong>STEPS</strong> :</p>
+<ol style="list-style-type: decimal">
+<li>Estimate the <strong>true number of duplicates</strong> with :
+<ul>
+<li>observed numbers of uniques (<code>S obs = S uniques + S super-duplicates</code>)</li>
+<li>observed numbers of super-duplicates (species observed in at least two sampling units)</li>
+</ul></li>
+</ol>
+<div style="text-align:center">
+<strong>Good-Turing frequency formula</strong>
+</div>
+<p><br/></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Infer the <strong>number of undected species</strong> with :
+<ul>
+<li>observed numbers of uniques</li>
+<li>estimated number of duplicates</li>
+</ul></li>
+</ol>
+<div style="text-align:center">
+<strong>Chao2 formula</strong>
+</div>
+<p><br/></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Infer the <strong>species richness</strong> with :
+<ul>
+<li>observed numbers of species</li>
+<li>estimated number of undetected species</li>
+</ul></li>
+</ol>
+<div style="text-align:center">
+<strong><code>SR estimated = S obs + S undetected</code></strong>
+</div>
+<p><br/> <br/></p>
+</div>
+</div>
+<div id="citations" class="section level1">
+<h1>Citations</h1>
+<ul>
+<li>Burnham, K., &amp; Overton, W. (1978). Estimation of the Size of a Closed Population when Capture Probabilities vary Among Animals. Biometrika, 65(3), 625-633. <a href="doi:10.2307/2335915" class="uri">doi:10.2307/2335915</a></li>
+<li>Chao, A. (1987). Estimating the Population Size for Capture-Recapture Data with Unequal Catchability. Biometrics, 43(4), 783-791. <a href="doi:10.2307/2531532" class="uri">doi:10.2307/2531532</a></li>
+<li>Chao, A. &amp; Chiu, C.-H. (2012) Estimation of species richness and shared species richness. In Methods and Applications of Statistics in the Atmospheric and Earth Sciences (ed. N. Balakrishnan), pp. 76–111, Wiley, New York, NY, USA.</li>
+<li>Chao, A., Colwell, R. K., Chiu, C.-H. and Townsend, D. (2017), Seen once or more than once: applying Good–Turing theory to estimate species richness using only unique observations and a species list. Methods Ecol Evol, 8: 1221–1232. <a href="doi:10.1111/2041-210X.12768" class="uri">doi:10.1111/2041-210X.12768</a></li>
+<li>Chazdon, Robin &amp; Colwell, Robert &amp; S. Denslow, J &amp; Guariguata, Manuel. (1998). Statistical methods for estimating species richness of woody regeneration in primary and secondary rain forests of NE Costa Rica. In Forest biodiversity research, monitoring and modelling. 285-309.</li>
+<li>Colwell, Robert &amp; Chao, Anne &amp; J. Gotelli, Nicholas &amp; Lin, SY &amp; Mao, Chang Xuan &amp; Chazdon, Robin &amp; T. Longino, John. (2012). Models and estimators linking individual-based and sample-based rarefaction, extrapolation and comparison of assemblages. Journal of Plant Ecology. 5. 3-21. <a href="doi:10.1093/jpe/rtr044" class="uri">doi:10.1093/jpe/rtr044</a>.</li>
+<li>Good, I. (1953). The Population Frequencies of Species and the Estimation of Population Parameters. Biometrika, 40(3/4), 237-264. <a href="doi:10.2307/2333344" class="uri">doi:10.2307/2333344</a></li>
+<li>Lee, S., &amp; Chao, A. (1994). Estimating Population Size Via Sample Coverage for Closed Capture-Recapture Models. Biometrics, 50(1), 88-97. <a href="doi:10.2307/2533199" class="uri">doi:10.2307/2533199</a></li>
+</ul>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = false;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
