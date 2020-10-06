@@ -1,0 +1,15 @@
+---
+output:
+  html_document:
+    number_sections: no
+    toc: no
+---	
+
+<br/><br/>
+
+
+## FATE
+
+<br/>
+
+<img src="pictures/graph_FATE.png" alt="FATE" align="left" style="width:400px;">

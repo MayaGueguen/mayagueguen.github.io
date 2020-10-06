@@ -13,6 +13,12 @@ navbar:
   - text: Publications
     icon: ion-document-text
     href: publications.html
+  - text: Work
+    icon: fa-chart-line
+    href: work.html
+  - text: Tutorials
+    icon: fa-toolbox
+    href: tutorials.html
   right:
   - text: Contact me
     icon: fa-envelope-o

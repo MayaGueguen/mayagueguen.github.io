@@ -22,5 +22,5 @@ Mon travail se partage entre la **modélisation de la biodiversité** (modèles 
 <br/><br/>
 
 [<img src="pictures/picture-archive.jpg" alt="Maya" align="left" style="width:200px;">](publications.html)
-<img src="pictures/picture-code.jpg" alt="Maya" align="center" style="width:200px; margin-left:80px;">
-<img src="pictures/picture-tutorial.jpg" alt="Maya" align="center" style="width:200px; margin-left:80px;">
+[<img src="pictures/picture-code.jpg" alt="Maya" align="center" style="width:200px; margin-left:80px;">](work.html)
+[<img src="pictures/picture-tutorial.jpg" alt="Maya" align="center" style="width:200px; margin-left:80px;">](tutorials.html)
