@@ -22,8 +22,8 @@ navbar:
     href: https://github.com/MayaGueguen
 output:
   html_document:
-    theme: lumen
-    #highlight: tango
+    theme: journal
+    highlight: zenburn
     lib_dir: site_libs
     self_contained: no
 

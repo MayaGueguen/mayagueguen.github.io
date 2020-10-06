@@ -17,19 +17,19 @@ output:
 
 **Training** [<img src="pictures/logo-cnrs.png" alt="CNRS" align="right" style="width:100px;">](http://www.cnrs.fr/fr/page-daccueil)
 
-- *Novembre 2017* :  
+- *November 2017* :  
 Formation CNRS. Python pour le calcul scientifique et la Programmation Orientée Objet (POO).
 
-- *Décembre 2016* :  
+- *December 2016* :  
 Formation CNRS. Analyses statistiques des réseaux.  
 Manipulation et visualisation, algorithmes de recherche communautés,  
 modélisation statistique, sous le logiciel R.
 [<img src="pictures/logo-telabotanica.png" alt="Tela Botanica" align="right" style="width:100px;">](http://www.tela-botanica.org/site:accueil)
 
-- *Septembre - Octobre 2016* :  
+- *September - Octobre 2016* :  
 MOOC Tela Botanica. Apprendre à connaître les plantes.
 
-- *Mai 2015* :  
+- *May 2015* :  
 École d'été. Bayesian calibration, forescasting and multi-model  
 predictions of process-based vegetation models.  
 Statistiques bayésiennes, méthodes d'optimisation et de Monte-Carlo par Chaînes de Markov (MCMC).
@@ -38,11 +38,11 @@ Statistiques bayésiennes, méthodes d'optimisation et de Monte-Carlo par Chaîn
 
 **University education** [<img src="pictures/logo-insa.png" alt="INSA" align="right" style="width:250px;">](https://www.insa-lyon.fr/)
 
-- *Septembre 2011 – Juin 2014* :  
+- *September 2011 – June 2014* :  
 Cycle ingénieur à l’INSA de Lyon.  
 Département Bio-Informatique et Modélisation.
 
-- *Septembre 2009 – Juin 2011* :  [<img src="pictures/logo-eurinsa.png" alt="EURINSA" align="right" style="width:300px;">](https://www.insa-lyon.fr/fr/formation/premier-cycle-eurinsa)
+- *September 2009 – June 2011* :  [<img src="pictures/logo-eurinsa.png" alt="EURINSA" align="right" style="width:300px;">](https://www.insa-lyon.fr/fr/formation/premier-cycle-eurinsa)
 Cycle préparatoire à l'INSA de Lyon.  
 Section européenne.
 
@@ -55,8 +55,25 @@ Baccalauréat Scientifique, Mention Très bien. Avignon (84).
 
 <br/><br/>
 
+
+
 ## Skills
+
+<br/>
+
+**Programming**
+
+- *Languages* :  
+R / C++ / C / Python / HTML / CSS
+
+- *Tools* :  
+GitHub / SVN
 
 <br/><br/>
 
+
+
 ## Projects
+
+<br/>
+

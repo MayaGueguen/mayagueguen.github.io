@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
 
-<title></title>
+<title>publications.utf8</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/lumen.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/journal.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -23,26 +23,10 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <link href="site_libs/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
 
-<style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
 
 
 
@@ -74,9 +58,7 @@ h6 {
 </style>
 
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -90,13 +72,18 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
 }
+.html-widget {
+  margin-bottom: 20px;
+}
 button.code-folding-btn:focus {
   outline: none;
+}
+summary {
+  display: list-item;
 }
 </style>
 
@@ -104,34 +91,70 @@ button.code-folding-btn:focus {
 <style type="text/css">
 /* padding for bootstrap navbar */
 body {
-  padding-top: 54px;
+  padding-top: 61px;
   padding-bottom: 40px;
 }
 /* offset scroll position for anchor links (for fixed navbar)  */
 .section h1 {
-  padding-top: 59px;
-  margin-top: -59px;
+  padding-top: 66px;
+  margin-top: -66px;
 }
-
 .section h2 {
-  padding-top: 59px;
-  margin-top: -59px;
+  padding-top: 66px;
+  margin-top: -66px;
 }
 .section h3 {
-  padding-top: 59px;
-  margin-top: -59px;
+  padding-top: 66px;
+  margin-top: -66px;
 }
 .section h4 {
-  padding-top: 59px;
-  margin-top: -59px;
+  padding-top: 66px;
+  margin-top: -66px;
 }
 .section h5 {
-  padding-top: 59px;
-  margin-top: -59px;
+  padding-top: 66px;
+  margin-top: -66px;
 }
 .section h6 {
-  padding-top: 59px;
-  margin-top: -59px;
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
 }
 </style>
 
@@ -153,47 +176,66 @@ $(document).ready(function () {
 });
 </script>
 
-
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-</script>
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
 
 <!-- code folding -->
 
 
-
-
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = false;
-    options.smoothScroll = false;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <style type="text/css">
 
@@ -207,6 +249,12 @@ $(document).ready(function ()  {
 }
 }
 
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
 
 .toc-content {
   padding-left: 30px;
@@ -242,8 +290,6 @@ div.tocify {
 
 .tocify-subheader .tocify-item {
   font-size: 0.90em;
-  padding-left: 25px;
-  text-indent: 0;
 }
 
 .tocify .list-group-item {
@@ -258,6 +304,16 @@ div.tocify {
 }
 
 </style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
 <div class="row-fluid">
@@ -335,35 +391,78 @@ div.tocify {
 
 <p><br/><br/></p>
 <div id="section" class="section level2">
+<h2><a href="">2020</a></h2>
+<p><br/></p>
+<!-- <a href="papers/Thuiller_2017_Diversity_Distributions.pdf" class="download" title="Download as PDF"> -->
+<!-- <img src="pictures/art_2017_Thuiller_DD.png" alt="Thuiller 2017 Diversity Distributions" style="width:350px"> -->
+<!-- </a> -->
+<p><br/></p>
+<ul>
+<li>Capblancq, T. , Morin, X. , <strong>Guéguen, M.</strong> , Renaud, J. , Lobreaux, S. and Bazin, E. (2020). <em>Climate associated genetic variation in Fagus sylvatica and potential responses to climate change in the French Alps.</em> Journal of Evolutionary Biology. 33. <a href="https://doi:10.1111/jeb.13610" class="uri">https://doi:10.1111/jeb.13610</a></li>
+<li>Sherpa, S. , Renaud, J. , <strong>Guéguen, M.</strong> , Besnard, G. , Mouyon, L. , Rey, D. and Després, L. (2020). <em>Landscape does matter: Disentangling founder effects from natural and human-aided post-introduction dispersal during an ongoing biological invasion.</em> Journal of Animal Ecology. <a href="https://doi:10.1111/1365-2656.13284" class="uri">https://doi:10.1111/1365-2656.13284</a></li>
+</ul>
+<p><br/></p>
+</div>
+<div id="section-1" class="section level2">
+<h2><a href="">2019</a></h2>
+<p><br/></p>
+<!-- <a href="papers/Thuiller_2017_Diversity_Distributions.pdf" class="download" title="Download as PDF"> -->
+<!-- <img src="pictures/art_2017_Thuiller_DD.png" alt="Thuiller 2017 Diversity Distributions" style="width:350px"> -->
+<!-- </a> -->
+<p><br/></p>
+<ul>
+<li>Cerasoli, F. , Thuiller, W. , <strong>Guéguen, M.</strong> , Renaud, J. , D’Alessandro, P. and Biondi, M. (2019). <em>The role of climate and biotic factors in shaping current distributions and potential future shifts of European Neocrepidodera (Coleoptera, Chrysomelidae).</em> Insect Conservation and Diversity. <a href="https://doi:10.1111/icad.12376" class="uri">https://doi:10.1111/icad.12376</a></li>
+<li>Dufour, P. , Descamps, S. , Chantepie, S. , Renaud, J. , <strong>Guéguen, M.</strong> , Schiffers, K. , Thuiller, W. and Lavergne, S. (2019). <em>Reconstructing the geographic and climatic origins of long‐distance bird migrations.</em> Journal of Biogeography. <a href="https://doi:10.1111/jbi.13700" class="uri">https://doi:10.1111/jbi.13700</a></li>
+<li>Menchetti, M. , <strong>Guéguen, M.</strong> and Talavera, G. (2019). Spatio-temporal ecological niche modelling of multigenerational insect migrations. Proceedings of the Royal Society B: Biological Sciences. 286. 20191583. <a href="https://doi:10.1098/rspb.2019.1583" class="uri">https://doi:10.1098/rspb.2019.1583</a></li>
+<li>Ondo, I. , Thuiller, W. , <strong>Guéguen, M.</strong> and Pironon, S. (2019). <em>A new R application for Modelling Species Distribution.</em> <a href="https://doi:10.13140/RG.2.2.23431.83363" class="uri">https://doi:10.13140/RG.2.2.23431.83363</a></li>
+<li>Sherpa, S. , <strong>Guéguen, M.</strong> , Renaud, J. , Blum, M. , Gaude, T. , Laporte, F. , Akiner, M. M. , Alten, B. , Aranda, C. , Barré-Cardi, H. , Bellini, R. , Paulis, M. , Chen, X-G. , Eritja, R. , Flacio, E. , Foxi, C. , Ishak, I. , Kalan, K. , Kasai, S. and Després, L. (2019). <em>Predicting the success of an invader: Niche shift versus niche conservatism.</em> Ecology and Evolution. <a href="https://doi:10.1002/ece3.5734" class="uri">https://doi:10.1002/ece3.5734</a></li>
+<li>Thuiller, W. , <strong>Guéguen, M.</strong> , Renaud, J. , Karger, D. N. and Zimmermann, N. (2019). <em>Uncertainty in ensembles of global biodiversity scenarios.</em> Nature Communications. 10. <a href="https://doi:10.1038/s41467-019-09519-w" class="uri">https://doi:10.1038/s41467-019-09519-w</a></li>
+</ul>
+<p><br/></p>
+</div>
+<div id="section-2" class="section level2">
+<h2><a href="">2018</a></h2>
+<p><br/></p>
+<!-- <a href="papers/Thuiller_2017_Diversity_Distributions.pdf" class="download" title="Download as PDF"> -->
+<!-- <img src="pictures/art_2017_Thuiller_DD.png" alt="Thuiller 2017 Diversity Distributions" style="width:350px"> -->
+<!-- </a> -->
+<p><br/></p>
+<ul>
+<li>Kim, H. , Rosa, I. , Alkemade, R. , Leadley, P. , Hurtt, G. , Popp, A. , Vuuren, D. , Anthoni, P. , Arneth, A. , Baisero, D. , Caton, E. , Chaplin-Kramer, R. , Chini, L , De Palma, A. , Di Fulvio, F. , Di Marco, M. , Espinoza, F. , Ferrier, S. and Fujimori, S. (2018). <em>A protocol for an intercomparison of biodiversity and ecosystem services models using harmonized land-use and climate scenarios.</em> Geoscientific Model Development. 11. 4537-4562. <a href="https://doi:10.5194/gmd-11-4537-2018" class="uri">https://doi:10.5194/gmd-11-4537-2018</a></li>
+<li>Roy, J. , Bonneville, J-M. , Saccone, P. , Ibañez, S. , Albert, C. , Boleda, M. , <strong>Guéguen, M.</strong> , Ohlmann, M. , Rioux, D. , Clement, J-C. , Lavergne, S. and Geremia, R. (2018). <em>Differences in the fungal communities nursed by two genetic groups of the alpine cushion plant, Silene acaulis: XXXX.</em> Ecology and Evolution. 8. <a href="https://doi:10.1002/ece3.4606" class="uri">https://doi:10.1002/ece3.4606</a></li>
+</ul>
+<p><br/></p>
+</div>
+<div id="section-3" class="section level2">
 <h2><a href="">2017</a></h2>
 <p><br/></p>
 <p><a href="papers/Thuiller_2017_Diversity_Distributions.pdf" class="download" title="Download as PDF"> <img src="pictures/art_2017_Thuiller_DD.png" alt="Thuiller 2017 Diversity Distributions" style="width:350px"> </a> <a href="papers/Mazel_2017_Current_Biology.pdf" class="download" title="Download as PDF"> <img src="pictures/art_2017_Mazel_CB.png" alt="Mazel 2017 Current Biology" style="width:350px"> </a> <a href="papers/Carboni_2017_Global_Change_Biology.pdf" class="download" title="Download as PDF"> <img src="pictures/art_2017_Carboni_GCB.png" alt="Carboni 2017 Global Change Biology" style="width:350px"> </a> <a href="papers/Barros_2017_Journal_Applied_Ecology.pdf" class="download" title="Download as PDF"> <img src="pictures/art_2017_Barros_JAE.png" alt="Barros 2017 Journal of Applied Ecology" style="width:350px"> </a></p>
 <p><br/></p>
 <ul>
-<li>Barros, C. , <strong>Guéguen, M.</strong> , Douzet, R. , Carboni, M. , Boulangeat, I. , Zimmermann, N. E., Münkemüller, T. , Thuiller, W. and Mori, A. (2017), Extreme climate events counteract the effects of climate and land‐use changes in Alpine tree lines. J Appl Ecol, 54: 39-50. <a href="https://doi:10.1111/1365-2664.12742" class="uri">https://doi:10.1111/1365-2664.12742</a></li>
-<li>Carboni M, <strong>Guéguen M</strong>, Barros C, et al. Simulating plant invasion dynamics in mountain ecosystems under global change scenarios. Glob Change Biol. 2018;24:e289–e302. <a href="https://doi.org/10.1111/gcb.13879" class="uri">https://doi.org/10.1111/gcb.13879</a></li>
-<li>Mazel, F., Wüest, R., <strong>Guéguen, M.</strong>, Renaud, J., Ficetola, G. F., Lavergne, S. &amp; Thuiller, W. (2017). The Geography of Ecological Niche Evolution in Mammals. Current Biology. 27. <a href="https://doi.org/10.1016/j.cub.2017.03.046" class="uri">https://doi.org/10.1016/j.cub.2017.03.046</a>.</li>
-<li>Thuiller W, <strong>Guéguen M</strong>, Bison M, et al. Combining point‐process and landscape vegetation models to predict large herbivore distributions in space and time—A case study of Rupicapra rupicapra. Divers Distrib. 2018;24:352–362. <a href="https://doi.org/10.1111/ddi.12684" class="uri">https://doi.org/10.1111/ddi.12684</a></li>
+<li>Barros, C. , <strong>Guéguen, M.</strong> , Douzet, R. , Carboni, M. , Boulangeat, I. , Zimmermann, N. E., Münkemüller, T. , Thuiller, W. and Mori, A. (2017). <em>Extreme climate events counteract the effects of climate and land‐use changes in Alpine tree lines.</em> J Appl Ecol, 54: 39-50. <a href="https://doi:10.1111/1365-2664.12742" class="uri">https://doi:10.1111/1365-2664.12742</a></li>
+<li>Carboni M, <strong>Guéguen M</strong>, Barros C, et al. (2017). <em>Simulating plant invasion dynamics in mountain ecosystems under global change scenarios.</em> Glob Change Biol. 2018;24:e289–e302. <a href="https://doi.org/10.1111/gcb.13879" class="uri">https://doi.org/10.1111/gcb.13879</a></li>
+<li>Mazel, F., Wüest, R., <strong>Guéguen, M.</strong>, Renaud, J., Ficetola, G. F., Lavergne, S. &amp; Thuiller, W. (2017). <em>The Geography of Ecological Niche Evolution in Mammals.</em> Current Biology. 27. <a href="https://doi.org/10.1016/j.cub.2017.03.046" class="uri">https://doi.org/10.1016/j.cub.2017.03.046</a>.</li>
+<li>Thuiller W, <strong>Guéguen M</strong>, Bison M, et al. (2017). <em>Combining point‐process and landscape vegetation models to predict large herbivore distributions in space and time—A case study of Rupicapra rupicapra.</em> Divers Distrib. 2018;24:352–362. <a href="https://doi.org/10.1111/ddi.12684" class="uri">https://doi.org/10.1111/ddi.12684</a></li>
 </ul>
 <p><br/></p>
 </div>
-<div id="section-1" class="section level2">
+<div id="section-4" class="section level2">
 <h2><a href="">2015</a></h2>
 <p><br/></p>
 <p><a href="papers/Thuiller_2015_Ecology_Letters.pdf" class="download" title="Download as PDF"> <img src="pictures/art_2015_Thuiller_EL.png" alt="Thuiller 2015 Ecology Letters" style="width:500px"> </a></p>
 <p><br/></p>
 <ul>
-<li>Thuiller, W. , Pollock, L. J., <strong>Guéguen, M.</strong> , Münkemüller, T. and Cornell, H. (2015), From species distributions to meta‐communities. Ecol Lett, 18: 1321-1328. <a href="https://doi:10.1111/ele.12526" class="uri">https://doi:10.1111/ele.12526</a></li>
+<li>Thuiller, W. , Pollock, L. J., <strong>Guéguen, M.</strong> , Münkemüller, T. and Cornell, H. (2015). <em>From species distributions to meta‐communities.</em> Ecol Lett, 18: 1321-1328. <a href="https://doi:10.1111/ele.12526" class="uri">https://doi:10.1111/ele.12526</a></li>
 </ul>
 <p><br/></p>
 </div>
-<div id="section-2" class="section level2">
+<div id="section-5" class="section level2">
 <h2><a href="">2014</a></h2>
 <p><br/></p>
 <p><a href="papers/Thuiller_2014_Ecography.pdf" class="download" title="Download as PDF"> <img src="pictures/art_2014_Thuiller_Ecography.png" alt="Thuiller 2014 Ecography" style="width:500px"> </a></p>
 <p><br/></p>
 <ul>
-<li>Thuiller, W. , <strong>Guéguen, M.</strong> , Georges, D. , Bonet, R. , Chalmandrier, L. , Garraud, L. , Renaud, J. , Roquet, C. , Van Es, J. , Zimmermann, N. E. and Lavergne, S. (2014), Are different facets of plant diversity well protected against climate and land cover changes? A test study in the French Alps. Ecography, 37: 1254-1266. <a href="https://doi:10.1111/ecog.00670" class="uri">https://doi:10.1111/ecog.00670</a></li>
+<li>Thuiller, W. , <strong>Guéguen, M.</strong> , Georges, D. , Bonet, R. , Chalmandrier, L. , Garraud, L. , Renaud, J. , Roquet, C. , Van Es, J. , Zimmermann, N. E. and Lavergne, S. (2014). <em>Are different facets of plant diversity well protected against climate and land cover changes? A test study in the French Alps.</em> Ecography, 37: 1254-1266. <a href="https://doi:10.1111/ecog.00670" class="uri">https://doi:10.1111/ecog.00670</a></li>
 </ul>
 </div>
 
@@ -385,6 +484,49 @@ $(document).ready(function () {
 });
 
 
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = false;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
 </script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
