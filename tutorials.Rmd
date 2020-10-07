@@ -16,4 +16,26 @@ output:
 - [Communities](DIVERSITY_measures_communities.html)
 - [Richness](DIVERSITY_measures_richness.html)
 
+<br/><br/>
+
+### CODE / PROGRAMMING
+
+<br/>
+
+#### [`LaTeX`](https://www.latex-project.org/)
+
+<div style="text-align:center;">
+<iframe src="./ViewerJS/#../documents/COURS_latex_beamer.pdf" width='900' height='700' allowfullscreen webkitallowfullscreen></iframe>
+</div>
+
+<br/><br/>
+
 ### LOGICIEL R
+
+<br/>
+
+#### [`ggplot2`](https://ggplot2.tidyverse.org/)
+
+<div style="text-align:center;">
+<iframe src="./ViewerJS/#../documents/COURS_ggplot2_COMPLETE.pdf" width='900' height='700' allowfullscreen webkitallowfullscreen></iframe>
+</div>
