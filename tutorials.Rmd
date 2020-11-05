@@ -7,7 +7,11 @@ output:
 
 <br/><br/>
 
-### DIVERSITY indices
+### CHEATSHEET
+
+<br/>
+
+##### DIVERSITY indices
 
 - [Abundance](DIVERSITY_measures_abundance.html)
 - [Functional](DIVERSITY_measures_functional.html)
@@ -15,6 +19,16 @@ output:
 - [Partitioning](DIVERSITY_measures_partitioning.html)
 - [Communities](DIVERSITY_measures_communities.html)
 - [Richness](DIVERSITY_measures_richness.html)
+
+##### TRAITS
+
+- [Imputation](DIVERSITY_traits_imputation.html)
+
+##### MODELS
+
+- [Null models]()
+- [Meta-analysis]()
+
 
 <br/><br/>
 
@@ -25,7 +39,7 @@ output:
 #### [`LaTeX`](https://www.latex-project.org/)
 
 <div style="text-align:center;">
-<iframe src="./ViewerJS/#../documents/COURS_latex_beamer.pdf" width='900' height='700' allowfullscreen webkitallowfullscreen></iframe>
+<embed src="documents/COURS_latex_beamer.pdf" width='900' height='700' allowfullscreen webkitallowfullscreen></embed>
 </div>
 
 <br/><br/>
@@ -37,5 +51,5 @@ output:
 #### [`ggplot2`](https://ggplot2.tidyverse.org/)
 
 <div style="text-align:center;">
-<iframe src="./ViewerJS/#../documents/COURS_ggplot2_COMPLETE.pdf" width='900' height='700' allowfullscreen webkitallowfullscreen></iframe>
+<embed src="documents/COURS_ggplot2_COMPLETE.pdf" width='900' height='700' allowfullscreen webkitallowfullscreen></embed>
 </div>

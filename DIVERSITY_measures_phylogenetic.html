@@ -368,39 +368,12 @@ div.tocify {
     Work
   </a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+<li>
+  <a href="tutorials.html">
     <span class="fa fa-toolbox"></span>
      
     Tutorials
-     
-    <span class="caret"></span>
   </a>
-  <ul class="dropdown-menu" role="menu">
-    <li class="divider"></li>
-    <li>
-      <a href="DIVERSITY_measures_abundance.html">DIVERSITY indices : abundance</a>
-    </li>
-    <li>
-      <a href="DIVERSITY_measures_functional.html">DIVERSITY indices : functional</a>
-    </li>
-    <li>
-      <a href="DIVERSITY_measures_phylogenetic.html">DIVERSITY indices : phylogenetic</a>
-    </li>
-    <li>
-      <a href="DIVERSITY_measures_partitioning.html">DIVERSITY indices : partitioning</a>
-    </li>
-    <li>
-      <a href="DIVERSITY_measures_richness.html">DIVERSITY indices : richness</a>
-    </li>
-    <li>
-      <a href="DIVERSITY_measures_communities.html">DIVERSITY indices : communities</a>
-    </li>
-    <li class="divider"></li>
-    <li>
-      <a href="DIVERSITY_traits_imputation.html">DIVERSITY traits : imputation</a>
-    </li>
-  </ul>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -437,13 +410,13 @@ div.tocify {
 <div id="vellend" class="section level1">
 <h1>2011 : Vellend</h1>
 <div id="indices-of-species-distinctness" class="section level2">
-<h2>Indices of species’ distinctness</h2>
-<table>
+<h2>Indices of species' distinctness</h2>
+<table style="width:100%;">
 <colgroup>
 <col width="30%" />
-<col width="42%" />
-<col width="13%" />
-<col width="13%" />
+<col width="41%" />
+<col width="14%" />
+<col width="14%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -522,16 +495,24 @@ div.tocify {
 <p><br/></p>
 <p>Aggregation of metrics according to :</p>
 <ul>
-<li>nature of the phylogenetic tree - distance-based metrics - counting nodes metrics (special case of first)</li>
-<li>nature of species data - abundances - presence-absence (special case of first)</li>
+<li>nature of the phylogenetic tree
+<ul>
+<li>distance-based metrics</li>
+<li>counting nodes metrics (special case of first)</li>
+</ul></li>
+<li>nature of species data
+<ul>
+<li>abundances</li>
+<li>presence-absence (special case of first)</li>
+</ul></li>
 </ul>
 <p><br/></p>
 <table>
 <colgroup>
-<col width="13%" />
-<col width="36%" />
-<col width="36%" />
-<col width="13%" />
+<col width="14%" />
+<col width="35%" />
+<col width="35%" />
+<col width="14%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -605,10 +586,10 @@ div.tocify {
 </div>
 <div id="probabilities-of-loss" class="section level3">
 <h3>Probabilities of loss</h3>
-<p><strong>Expected PD :</strong> PD given a set of species’ extinction probabilities.<br />
-<em>Species case of Weitzman’s general expected diversity formula.</em></p>
+<p><strong>Expected PD :</strong> PD given a set of species' extinction probabilities.<br />
+<em>Species case of Weitzman's general expected diversity formula.</em></p>
 <ul>
-<li><p><strong>Delta PD q :</strong> change in expected PD if probability extinction of species (e.g. in a given area) changes from <code>q</code> to 1.<br />
+<li><p><strong>Delta PD q :</strong> change in expected PD if probability extinction of species (e.g. in a given area) changes from <code>q</code> to 1.<br />
 <em>The value will be large to the extent that the species shares long ancestral branches with few other species.</em></p></li>
 <li><p><strong>PD50 :</strong> change in expected PD with a current probability of extinction of 0.5 for all species.<br />
 <em>The value will be large when the species has long ancestral branches with few other descendants.</em></p></li>
@@ -626,7 +607,7 @@ div.tocify {
 <div id="dissimilarities-with-abundance-information" class="section level3">
 <h3>Dissimilarities with abundance information</h3>
 <ul>
-<li><p><strong>Chao’s framework</strong></p></li>
+<li><p><strong>Chao's framework</strong></p></li>
 <li><p><strong>Effective rare PD :</strong> defines “Valley numbers” in which the flexible parameter provides increasing focus on low abundance.<br />
 <em>Effective amount of rare feature diversity</em></p></li>
 </ul>
@@ -682,7 +663,7 @@ div.tocify {
 <li>Faith, D. (1992). Conservation evaluation and phylogenetic diversity. Biological Conservation. 61. 1-10. <a href="https://doi.org/10.1016/0006-3207(92)91201-3" class="uri">https://doi.org/10.1016/0006-3207(92)91201-3</a></li>
 <li>Helmus, M., Bland, T., Williams, C. &amp; Ives, A. (2007). Phylogenetic measures of biodiversity. Am Nat 169(3):E68-E83. The American naturalist. 169. <a href="https://doi.org/10.1086/511334" class="uri">https://doi.org/10.1086/511334</a></li>
 <li>Rao, C. R. (1982). Diversity and Dissimilarity Coefficients: A Unified Approach. Theoretical population biology, 21, 24-43. Theoretical Population Biology. 21. 24-43. <a href="https://doi.org/10.1016/0040-5809(82)90004-1" class="uri">https://doi.org/10.1016/0040-5809(82)90004-1</a></li>
-<li>Warwick, R. &amp; Clarke, K. (1995). New ‘biodiversity’ measures reveal a decrease in taxonomic distinctness with increasing stress. Marine Ecology Progress Series. 129. 301-305. <a href="https://doi.org/10.3354/meps129301" class="uri">https://doi.org/10.3354/meps129301</a></li>
+<li>Warwick, R. &amp; Clarke, K. (1995). New 'biodiversity' measures reveal a decrease in taxonomic distinctness with increasing stress. Marine Ecology Progress Series. 129. 301-305. <a href="https://doi.org/10.3354/meps129301" class="uri">https://doi.org/10.3354/meps129301</a></li>
 <li><p>Webb, C. (2000). Exploring the Phylogenetic Structure of Ecological Communities: An Example for Rain Forest Trees. The American naturalist. 156. 145-155. <a href="https://doi.org/10.1086/303378" class="uri">https://doi.org/10.1086/303378</a></p></li>
 </ul></li>
 <li><p>Vellend, M., Cornwell, W., Magnuson-Ford, K. &amp; Mooers, A. (2010). Measuring phylogenetic biodiversity.</p></li>

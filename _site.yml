@@ -20,23 +20,6 @@ navbar:
   - text: Tutorials
     icon: fa-toolbox
     href: tutorials.html
-    menu:
-      - text: "---------"
-      - text: "DIVERSITY indices : abundance"
-        href: DIVERSITY_measures_abundance.html
-      - text: "DIVERSITY indices : functional"
-        href: DIVERSITY_measures_functional.html
-      - text: "DIVERSITY indices : phylogenetic"
-        href: DIVERSITY_measures_phylogenetic.html
-      - text: "DIVERSITY indices : partitioning"
-        href: DIVERSITY_measures_partitioning.html
-      - text: "DIVERSITY indices : richness"
-        href: DIVERSITY_measures_richness.html
-      - text: "DIVERSITY indices : communities"
-        href: DIVERSITY_measures_communities.html
-      - text: "---------"
-      - text: "DIVERSITY traits : imputation"
-        href: DIVERSITY_traits_imputation.html
     
   right:
   - text: Contact me
@@ -52,4 +35,4 @@ output:
     highlight: zenburn
     lib_dir: site_libs
     self_contained: no
-
+    

@@ -368,39 +368,12 @@ div.tocify {
     Work
   </a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+<li>
+  <a href="tutorials.html">
     <span class="fa fa-toolbox"></span>
      
     Tutorials
-     
-    <span class="caret"></span>
   </a>
-  <ul class="dropdown-menu" role="menu">
-    <li class="divider"></li>
-    <li>
-      <a href="DIVERSITY_measures_abundance.html">DIVERSITY indices : abundance</a>
-    </li>
-    <li>
-      <a href="DIVERSITY_measures_functional.html">DIVERSITY indices : functional</a>
-    </li>
-    <li>
-      <a href="DIVERSITY_measures_phylogenetic.html">DIVERSITY indices : phylogenetic</a>
-    </li>
-    <li>
-      <a href="DIVERSITY_measures_partitioning.html">DIVERSITY indices : partitioning</a>
-    </li>
-    <li>
-      <a href="DIVERSITY_measures_richness.html">DIVERSITY indices : richness</a>
-    </li>
-    <li>
-      <a href="DIVERSITY_measures_communities.html">DIVERSITY indices : communities</a>
-    </li>
-    <li class="divider"></li>
-    <li>
-      <a href="DIVERSITY_traits_imputation.html">DIVERSITY traits : imputation</a>
-    </li>
-  </ul>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -474,7 +447,7 @@ CWM (for one community site) = <img src="pictures_tutorials/formula_weighted-mea
 <li><code>n</code> = total number of species</li>
 </ul>
 <p><br/></p>
-<p><strong>Community Weighted Mean correlation :</strong> correlation between CWM values and environmental values (non-weighted by species’ abundances) for all community sites</p>
+<p><strong>Community Weighted Mean correlation :</strong> correlation between CWM values and environmental values (non-weighted by species' abundances) for all community sites</p>
 <p><br/></p>
 </div>
 <div id="species-niche-centroid-snc" class="section level3">
@@ -489,7 +462,7 @@ SNC (for one species) = <img src="pictures_tutorials/formula_weighted-mean-2.png
 <li><code>n</code> = total number of community sites</li>
 </ul>
 <p><br/></p>
-<p><strong>Species Niche Centroid correlation :</strong> correlation between SNC values and trait values (non-weighted by species’ abundances) for all species</p>
+<p><strong>Species Niche Centroid correlation :</strong> correlation between SNC values and trait values (non-weighted by species' abundances) for all species</p>
 <p><br/></p>
 </div>
 <div id="fourth-corner-correlation" class="section level3">
@@ -530,7 +503,7 @@ SNC (for one species) = <img src="pictures_tutorials/formula_weighted-mean-2.png
 <h3>Decomposition of trait variation</h3>
 <p>CWM / SNC are based on weighted averages : ignore trait variation among species within communities<br />
 (i.e. <em>within-community component</em>)</p>
-<p>Usually, <strong>CWM</strong> is used to assess <strong>among-community component</strong>, and <em>average trait distance</em> (e.g. MPD) to asses <em>within-community component</em>. <strong>But they are not additive : they do not sum up to total variation.</strong></p>
+<p>Usually, <strong>CWM</strong> is used to assess <strong>among-community component</strong>, and <em>average trait distance</em> (e.g. MPD) to asses <em>within-community component</em>. <strong>But they are not additive : they do not sum up to total variation.</strong></p>
 <p>New solution for <strong>within-community component</strong> :</p>
 <div style="text-align:center">
 (for one community site) = alpha i * <img src="pictures_tutorials/formula_within-community.png" width=190px/>
