@@ -468,78 +468,128 @@ herb &lt; shrub &lt; tree</p>
 </div>
 <div id="comparison-of-methods" class="section level1">
 <h1>Comparison of methods</h1>
-<table style="width:100%;">
+<!-- | PAPERS | no fam | no sp | no traits (resp) | no traits (used) | no methods | missing data | evaluation | software | -->
+<!-- |---------|---------|---------|---------|---------|---------|---------|---------|---------| -->
+<!-- |  Tamme (2014) | 102 | 576 | 1 | 5 | + relationship | | $R^2$ | `dispeRsal` function | -->
+<!-- |  Taugourdeau (2014) |  | 1054 | 9 |  | + mean <br/> + median <br/> + dissimilarity <br/> + relationship <br/> + mice | 10 prob of deletion $\in [0.01 ; 0.46]$ x 10 rep | MRdAE | 2 author's functions, `mice` pkg | -->
+<!-- |  Penone (2014) |  | 273 | 4 |  | + kNN <br/> + mice <br/> + missForest <br/> + Phylopars | $10\% \rightarrow 80\%$ | - NRMSE <br/> - effect of dataset/missing data/method on errors <br/> - slope deviation | `VIM`, `mice`, `missForest` pkg, `Phylopars` soft | -->
+<!-- |  Schrodt (2015) | 358 | 14320 | 13 |  | + PMF <br/> + BHMPF <br/> + aHMPF | | | -->
+<!-- |  Poyatos (2018) | 4 | 13 | 5 |  | + mean and species mean <br/> + ordinary and regression kriging <br/> + kNN <br/> + mice | | | -->
+<!-- |  Johnson (2020) |  | 500 <br/> (sim) | 1 | 4 | + BHMPF <br/> + Rphylopars <br/> + mice | | | -->
+<!-- <br/><br/> -->
+<table style="width:64%;">
 <colgroup>
-<col width="16%" />
-<col width="16%" />
-<col width="16%" />
-<col width="16%" />
-<col width="16%" />
-<col width="16%" />
+<col width="5%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th>PAPERS</th>
-<th>No families</th>
-<th>No species</th>
-<th>No traits (response)</th>
-<th>No traits (used)</th>
-<th>No methods</th>
+<th>Tamme (2014)</th>
+<th>Taugourdeau (2014)</th>
+<th>Penone (2014)</th>
+<th>Schrodt (2015)</th>
+<th>Poyatos (2018)</th>
+<th>Johnson (2020)</th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Tamme (2014)</td>
+<td><strong>no fam</strong></td>
 <td>102</td>
-<td>576</td>
-<td>1 (max disp dist)</td>
-<td>5</td>
-<td>1 (relationship)</td>
-</tr>
-<tr class="even">
-<td>Taugourdeau (2014)</td>
 <td></td>
-<td>1054</td>
-<td>9</td>
 <td></td>
-<td>5 (mean and median, dissimilarity, relationship, mice)</td>
-</tr>
-<tr class="odd">
-<td>Penone (2014)</td>
-<td></td>
-<td>273</td>
+<td>358</td>
 <td>4</td>
 <td></td>
-<td>4 (kNN, mice, missForest, Phylopars)</td>
+<td></td>
 </tr>
 <tr class="even">
-<td>Schrodt (2015)</td>
-<td>358</td>
+<td><strong>no sp</strong></td>
+<td>576</td>
+<td>1054</td>
+<td>273</td>
 <td>14320</td>
 <td>13</td>
+<td>500 (sim)</td>
 <td></td>
-<td>3 (PMF, BHMPF, aHMPF)</td>
 </tr>
 <tr class="odd">
-<td>Poyatos (2018)</td>
+<td><strong>no traits (resp)</strong></td>
+<td>1</td>
+<td>9</td>
 <td>4</td>
 <td>13</td>
 <td>5</td>
+<td>1</td>
 <td></td>
-<td>6 (mean and species mean, ordinary and regression kriging, kNN, mice)</td>
 </tr>
 <tr class="even">
-<td>Johnson (2020)</td>
+<td><strong>no traits (used)</strong></td>
+<td>5</td>
 <td></td>
-<td>500 (simulated)</td>
-<td>1</td>
+<td></td>
+<td></td>
+<td></td>
 <td>4</td>
-<td>9 (BHMPF, Rphylopars, mice)</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>no methods</strong></td>
+<td>+ relationship</td>
+<td>+ mean <br/> + median <br/> + dissimilarity <br/> + relationship <br/> + mice</td>
+<td>+ kNN <br/> + mice <br/> + missForest <br/> + Phylopars</td>
+<td>+ PMF <br/> + BHMPF <br/> + aHMPF</td>
+<td>+ mean and species mean <br/> + ordinary and regression kriging <br/> + kNN <br/> + mice</td>
+<td>+ BHMPF <br/> + Rphylopars <br/> + mice</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>missing data</strong></td>
+<td></td>
+<td>(sim) 10 prob of deletion <span class="math inline">\(\in [0.01 ; 0.46]\)</span> x 10 rep</td>
+<td>(sim) <span class="math inline">\(10\% \rightarrow 80\%\)</span> x 10 rep</td>
+<td>(obs) mean/trait <span class="math inline">\(\sim 79.9\%\)</span></td>
+<td>(sim) <span class="math inline">\(10\% \rightarrow 80\%\)</span> x 30 rep</td>
+<td>2 resp-trait slopes x 2 cor levels x 10 rep x 4 bias types x 2 bias severity x <span class="math inline">\(5\% \rightarrow 80\%\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>evaluation</strong></td>
+<td><span class="math inline">\(R^2\)</span></td>
+<td>MRdAE</td>
+<td>- NRMSE <br/> - effect of dataset/missing data/method on errors <br/> - slope deviation</td>
+<td>- RMSE <br/> - <span class="math inline">\(R^2\)</span> <br/> - SMA regression <br/> - procrustes analysis</td>
+<td>- NRMSE, KGE <br/> - correlation matrices deviation</td>
+<td>- RMSE <br/> - slope deviation</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>software</strong></td>
+<td><code>dispeRsal</code> function</td>
+<td>2 author's functions, <code>mice</code> pkg</td>
+<td><code>VIM</code>, <code>mice</code>, <code>missForest</code> pkg, <code>Phylopars</code> soft</td>
+<td><code>MATLAB</code></td>
+<td><code>automap</code>, <code>VIM</code>, <code>mice</code> pkg</td>
+<td><code>BHMPF</code>, <code>Rphylopars</code>, <code>mice</code> pkg</td>
+<td></td>
 </tr>
 </tbody>
 </table>
 <p><br/><br/></p>
-<table>
+<table style="width:62%;">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th>METHODS</th>
@@ -566,7 +616,7 @@ herb &lt; shrub &lt; tree</p>
 <tr class="even">
 <td>relationship</td>
 <td></td>
-<td></td>
+<td><em>Depending on the set of species used and traits available, different traits are important (Tamme 2014)</em></td>
 </tr>
 <tr class="odd">
 <td>dissimilarity</td>

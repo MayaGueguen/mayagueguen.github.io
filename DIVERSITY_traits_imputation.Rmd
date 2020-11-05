@@ -79,14 +79,27 @@ Single imputations have been shown to be accurate for datasets with small percen
 
 # Comparison of methods
 
-| PAPERS | No families | No species | No traits (response) | No traits (used) | No methods |
-|--------------|--------------|--------------|--------------|--------------|--------------|
-|  Tamme (2014) | 102 | 576 | 1 (max disp dist) | 5 | 1 (relationship) |
-|  Taugourdeau (2014) |  | 1054 | 9 |  | 5 (mean and median, dissimilarity, relationship, mice) |
-|  Penone (2014) |  | 273 | 4 |  | 4 (kNN, mice, missForest, Phylopars) |
-|  Schrodt (2015) | 358 | 14320 | 13 |  | 3 (PMF, BHMPF, aHMPF) |
-|  Poyatos (2018) | 4 | 13 | 5 |  | 6 (mean and species mean, ordinary and regression kriging, kNN, mice) |
-|  Johnson (2020) |  | 500 (simulated) | 1 | 4 | 9 (BHMPF, Rphylopars, mice) |
+<!-- | PAPERS | no fam | no sp | no traits (resp) | no traits (used) | no methods | missing data | evaluation | software | -->
+<!-- |---------|---------|---------|---------|---------|---------|---------|---------|---------| -->
+<!-- |  Tamme (2014) | 102 | 576 | 1 | 5 | + relationship | | $R^2$ | `dispeRsal` function | -->
+<!-- |  Taugourdeau (2014) |  | 1054 | 9 |  | + mean <br/> + median <br/> + dissimilarity <br/> + relationship <br/> + mice | 10 prob of deletion $\in [0.01 ; 0.46]$ x 10 rep | MRdAE | 2 author's functions, `mice` pkg | -->
+<!-- |  Penone (2014) |  | 273 | 4 |  | + kNN <br/> + mice <br/> + missForest <br/> + Phylopars | $10\% \rightarrow 80\%$ | - NRMSE <br/> - effect of dataset/missing data/method on errors <br/> - slope deviation | `VIM`, `mice`, `missForest` pkg, `Phylopars` soft | -->
+<!-- |  Schrodt (2015) | 358 | 14320 | 13 |  | + PMF <br/> + BHMPF <br/> + aHMPF | | | -->
+<!-- |  Poyatos (2018) | 4 | 13 | 5 |  | + mean and species mean <br/> + ordinary and regression kriging <br/> + kNN <br/> + mice | | | -->
+<!-- |  Johnson (2020) |  | 500 <br/> (sim) | 1 | 4 | + BHMPF <br/> + Rphylopars <br/> + mice | | | -->
+
+<!-- <br/><br/> -->
+
+| PAPERS |  Tamme (2014) | Taugourdeau (2014) | Penone (2014) |  Schrodt (2015) |  Poyatos (2018) |  Johnson (2020) |
+| --- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
+| **no fam** | 102 | | | 358 | 4 | |
+| **no sp** | 576 | 1054 | 273 | 14320 | 13 | 500 (sim) |
+| **no traits (resp)** | 1 | 9 | 4 | 13 | 5 | 1 |
+| **no traits (used)** | 5 | | | | | 4 |
+| **no methods** | + relationship | + mean <br/> + median <br/> + dissimilarity <br/> + relationship <br/> + mice | + kNN <br/> + mice <br/> + missForest <br/> + Phylopars | + PMF <br/> + BHMPF <br/> + aHMPF | + mean and species mean <br/> + ordinary and regression kriging <br/> + kNN <br/> + mice | + BHMPF <br/> + Rphylopars <br/> + mice |
+| **missing data** | | (sim) 10 prob of deletion $\in [0.01 ; 0.46]$ x 10 rep | (sim) $10\% \rightarrow 80\%$ x 10 rep | (obs) mean/trait $\sim 79.9\%$ | (sim) $10\% \rightarrow 80\%$ x 30 rep | 2 resp-trait slopes x 2 cor levels x 10 rep x 4 bias types x 2 bias severity x $5\% \rightarrow 80\%$ |
+| **evaluation** | $R^2$ | MRdAE | - NRMSE <br/> - effect of dataset/missing data/method on errors <br/> - slope deviation | - RMSE <br/> - $R^2$ <br/> - SMA regression <br/> - procrustes analysis | - NRMSE, KGE <br/> - correlation matrices deviation | - RMSE <br/> - slope deviation |
+| **software** | `dispeRsal` function | 2 author's functions, `mice` pkg | `VIM`, `mice`, `missForest` pkg, `Phylopars` soft | `MATLAB` | `automap`, `VIM`, `mice` pkg| `BHMPF`, `Rphylopars`, `mice` pkg |
 
 <br/><br/>
 
@@ -96,7 +109,7 @@ Single imputations have been shown to be accurate for datasets with small percen
 | Complete-case | | |
 | Mean / species mean / median | | |
 | kNN | | |
-| relationship | | |
+| relationship | | *Depending on the set of species used and traits available, different traits are important (Tamme 2014)* |
 | dissimilarity | | |
 | BHMPF | | |
 | (R)phylopars | | |
