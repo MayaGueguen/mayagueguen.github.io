@@ -441,9 +441,9 @@ div.tocify {
 <ul>
 <li>dispersal distance is related <strong>to a dispersal syndrome</strong> (Willson 1993, Pärtel and Zobel 2007, Vittoz and Engler 2007),<br />
 that may generally be deduced from seed morphology</li>
-<li>but difficult to establish a direct association (Nogales et al. 2007)</li>
-<li><strong>plant height</strong> is more important than seed mass in determining seed dispersal distances (Thomson et al. 2011)</li>
-<li><strong>maximum dispersal distance is strongly correlated with mean dispersal distance</strong> (Thomson et al. 2011) :</li>
+<li>but difficult to establish a direct association (Nogales et al. 2007)</li>
+<li><strong>plant height</strong> is more important than seed mass in determining seed dispersal distances (Thomson et al. 2011)</li>
+<li><strong>maximum dispersal distance is strongly correlated with mean dispersal distance</strong> (Thomson et al. 2011) :</li>
 </ul>
 <p><span class="math display">\[ log_{10}(\text{ maximumDist }) = 0.795 + 0.984 * log_{10}(\text{ meanDist })\]</span></p>
 <p><br/></p>
@@ -474,8 +474,149 @@ herb &lt; shrub &lt; tree</p>
 <h1>Imputation methods</h1>
 <div id="schaffer" class="section level2">
 <h2>1999 : Schaffer</h2>
-<p>Single imputations have been shown to be accurate for datasets with small percentages ofmissing values.</p>
+<p>Single imputations have been shown to be accurate for datasets with small percentages of missing values.</p>
 </div>
+<div id="azur-mice" class="section level2">
+<h2>2011 : Azur (MICE)</h2>
+</div>
+<div id="shan-hpmf" class="section level2">
+<h2>2012 : Shan (HPMF)</h2>
+</div>
+<div id="schrodt-bhpmf" class="section level2">
+<h2>2015 : Schrodt (BHPMF)</h2>
+</div>
+<div id="goolsby-rphylopars" class="section level2">
+<h2>2017 : Goolsby (Rphylopars)</h2>
+</div>
+<div id="quartagno-jomo" class="section level2">
+<h2>2019 : Quartagno (jomo)</h2>
+<p><br/><br/></p>
+</div>
+</div>
+<div id="comparison-of-methods" class="section level1">
+<h1>Comparison of methods</h1>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>PAPERS</th>
+<th>No families</th>
+<th>No species</th>
+<th>No traits (response)</th>
+<th>No traits (used)</th>
+<th>No methods</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Tamme (2014)</td>
+<td>102</td>
+<td>576</td>
+<td>1 (max disp dist)</td>
+<td>5</td>
+<td>1 (relationship)</td>
+</tr>
+<tr class="even">
+<td>Taugourdeau (2014)</td>
+<td></td>
+<td>1054</td>
+<td>9</td>
+<td></td>
+<td>5 (mean and median, dissimilarity, relationship, mice)</td>
+</tr>
+<tr class="odd">
+<td>Penone (2014)</td>
+<td></td>
+<td>273</td>
+<td>4</td>
+<td></td>
+<td>4 (kNN, mice, missForest, Phylopars)</td>
+</tr>
+<tr class="even">
+<td>Schrodt (2015)</td>
+<td>358</td>
+<td>14320</td>
+<td>13</td>
+<td></td>
+<td>3 (PMF, BHMPF, aHMPF)</td>
+</tr>
+<tr class="odd">
+<td>Poyatos (2018)</td>
+<td>4</td>
+<td>13</td>
+<td>5</td>
+<td></td>
+<td>6 (mean and species mean, ordinary and regression kriging, kNN, mice)</td>
+</tr>
+<tr class="even">
+<td>Johnson (2020)</td>
+<td></td>
+<td>500 (simulated)</td>
+<td>1</td>
+<td>4</td>
+<td>9 (BHMPF, Rphylopars, mice)</td>
+</tr>
+</tbody>
+</table>
+<p><br/><br/></p>
+<table>
+<thead>
+<tr class="header">
+<th>METHODS</th>
+<th>Positive points</th>
+<th>Negative points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Complete-case</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Mean / species mean / median</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>kNN</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>relationship</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>dissimilarity</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>BHMPF</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>(R)phylopars</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>MICE</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <div id="taugourdeau" class="section level2">
 <h2>2014 : Taugourdeau</h2>
 <p><em>Effect of imputation methods on the evaluation of trait values at species level and on the subsequent calculation of functional diversity indices at community level :</em></p>
@@ -573,15 +714,15 @@ the axes being then used as functional traits</li>
 <li><strong>Single imputation</strong> =
 <ul>
 <li>Replace with the mean or the median of the available trait values</li>
-<li>Functional proximity between species (species with the same functional strategy have a similar set of functional traits) (Westoby et al. 2002, Diaz et al. 2004)</li>
-<li>Relationships between traits (Wrigth et al. 2004, 2006)</li>
+<li>Functional proximity between species (species with the same functional strategy have a similar set of functional traits) (Westoby et al. 2002, Diaz et al. 2004)</li>
+<li>Relationships between traits (Wrigth et al. 2004, 2006)</li>
 </ul></li>
 <li><strong>Multiple imputation</strong> =
 <ul>
 <li>Monte Carlo technique in which the missing values are replaced by <span class="math inline">\(m &gt; 1\)</span> imputed values,<br />
 combined to produce estimates, confidence intervals, missing data uncertainty (Nakagawa and Freckleton 2008)</li>
 <li>Hierarchical probabilistic matrix factorization coupled with phylogenetic information</li>
-<li>Multivariate imputation by chained equations (MICE, Azur et al. 2011)</li>
+<li>Multivariate imputation by chained equations (MICE, Azur et al. 2011)</li>
 </ul></li>
 </ul>
 <p><br/> <br/></p>
