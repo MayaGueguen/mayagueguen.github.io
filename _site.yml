@@ -35,6 +35,8 @@ navbar:
       - text: "DIVERSITY indices : communities"
         href: DIVERSITY_measures_communities.html
       - text: "---------"
+      - text: "DIVERSITY traits : imputation"
+        href: DIVERSITY_traits_imputation.html
     
   right:
   - text: Contact me
