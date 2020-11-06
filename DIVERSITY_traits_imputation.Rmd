@@ -18,166 +18,6 @@ library(knitr)
 <br/>
 <br/>
 
-# Specific traits
-
-## 2014 : Tamme (Ecology)
-
-*Measure the predictive power of simple plant traits to estimate species’ maximum dispersal distances :*
-
-- dispersal distance is related **to a dispersal syndrome** (Willson 1993, Pärtel and Zobel 2007, Vittoz and Engler 2007),  
-that may generally be deduced from seed morphology
-- but difficult to establish a direct association (Nogales et al. 2007)
-- **plant height** is more important than seed mass in determining seed dispersal distances (Thomson et al. 2011)
-- **maximum dispersal distance is strongly correlated with mean dispersal distance** (Thomson et al. 2011) :
-
-$$ log_{10}(\text{ maximumDist }) = 0.795 + 0.984 * log_{10}(\text{ meanDist })$$
-
-<br/>
-
-<div style="text-align:center;">
-$\Rightarrow$ **(dispersal syndrome + growth form + terminal velocity)**  
-explain $\sim$ 60$\%$ of the variation in maximum dispersal distances
-
-$\Rightarrow$ **(dispersal syndrome + growth form)**  
-explain $\sim$ 50$\%$ of the variation in maximum dispersal distances
-</div>
-
-with
-
-* on average, maximum dispersal distances increase from :  
-<div style="text-align:center;">
-wind (no special mechanisms) < ballistic < ant < wind (special mechanisms) < animal  
-herb < shrub < tree
-</div>
-* models with terminal velocity only apply to species with wind or ballistic dispersal syndrome
-* in general, overestimates for species with short-distance dispersal and underestimates for species with long-distance dispersal
-
-<div style="text-align:center;">
-$\Rightarrow$ **`dispeRsal` package**
-</div>
-
-<br/><br/>
-
-# Imputation methods
-
-## 1999 : Schaffer
-
-Single imputations have been shown to be accurate for datasets with small percentages of missing values.
-
-## 2011 : Azur (MICE)
-
-## 2012 : Shan (HPMF)
-
-## 2015 : Schrodt (BHPMF)
-
-## 2017 : Goolsby (Rphylopars)
-
-## 2019 : Quartagno (jomo)
-
-<br/><br/>
-
-
-# Comparison of methods
-
-<!-- | PAPERS | no fam | no sp | no traits (resp) | no traits (used) | no methods | missing data | evaluation | software | -->
-<!-- |---------|---------|---------|---------|---------|---------|---------|---------|---------| -->
-<!-- |  Tamme (2014) | 102 | 576 | 1 | 5 | + relationship | | $R^2$ | `dispeRsal` function | -->
-<!-- |  Taugourdeau (2014) |  | 1054 | 9 |  | + mean <br/> + median <br/> + dissimilarity <br/> + relationship <br/> + mice | 10 prob of deletion $\in [0.01 ; 0.46]$ x 10 rep | MRdAE | 2 author's functions, `mice` pkg | -->
-<!-- |  Penone (2014) |  | 273 | 4 |  | + kNN <br/> + mice <br/> + missForest <br/> + Phylopars | $10\% \rightarrow 80\%$ | - NRMSE <br/> - effect of dataset/missing data/method on errors <br/> - slope deviation | `VIM`, `mice`, `missForest` pkg, `Phylopars` soft | -->
-<!-- |  Schrodt (2015) | 358 | 14320 | 13 |  | + PMF <br/> + BHMPF <br/> + aHMPF | | | -->
-<!-- |  Poyatos (2018) | 4 | 13 | 5 |  | + mean and species mean <br/> + ordinary and regression kriging <br/> + kNN <br/> + mice | | | -->
-<!-- |  Johnson (2020) |  | 500 <br/> (sim) | 1 | 4 | + BHMPF <br/> + Rphylopars <br/> + mice | | | -->
-
-<!-- <br/><br/> -->
-
-| PAPERS |  Tamme (2014) | Taugourdeau (2014) | Penone (2014) |  Schrodt (2015) |  Poyatos (2018) |  Johnson (2020) |
-| --- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
-| **no fam** | 102 | | | 358 | 4 | |
-| **no sp** | 576 | 1054 | 273 | 14320 | 13 | 500 (sim) |
-| **no traits (resp)** | 1 | 9 | 4 | 13 | 5 | 1 |
-| **no traits (used)** | 5 | | | | | 4 |
-| **no methods** | + relationship | + mean <br/> + median <br/> + dissimilarity <br/> + relationship <br/> + mice | + kNN <br/> + mice <br/> + missForest <br/> + Phylopars | + PMF <br/> + BHMPF <br/> + aHMPF | + mean and species mean <br/> + ordinary and regression kriging <br/> + kNN <br/> + mice | + BHMPF <br/> + Rphylopars <br/> + mice |
-| **missing data** | | (sim) 10 prob of deletion $\in [0.01 ; 0.46]$ x 10 rep | (sim) $10\% \rightarrow 80\%$ x 10 rep | (obs) mean/trait $\sim 79.9\%$ | (sim) $10\% \rightarrow 80\%$ x 30 rep | 2 resp-trait slopes x 2 cor levels x 10 rep x 4 bias types x 2 bias severity x $5\% \rightarrow 80\%$ |
-| **evaluation** | $R^2$ | MRdAE | - NRMSE <br/> - effect of dataset/missing data/method on errors <br/> - slope deviation | - RMSE <br/> - $R^2$ <br/> - SMA regression <br/> - procrustes analysis | - NRMSE, KGE <br/> - correlation matrices deviation | - RMSE <br/> - slope deviation |
-| **software** | `dispeRsal` function | 2 author's functions, `mice` pkg | `VIM`, `mice`, `missForest` pkg, `Phylopars` soft | `MATLAB` | `automap`, `VIM`, `mice` pkg| `BHMPF`, `Rphylopars`, `mice` pkg |
-
-<br/><br/>
-
-
-| METHODS | Positive points | Negative points |
-|--------------|--------------|--------------|
-| Complete-case | | |
-| Mean / species mean / median | | |
-| kNN | | |
-| relationship | | *Depending on the set of species used and traits available, different traits are important (Tamme 2014)* |
-| dissimilarity | | |
-| BHMPF | | |
-| (R)phylopars | | |
-| MICE | | |
-
-
-## 2014 : Taugourdeau
-
-*Effect of imputation methods on the evaluation of trait values at species level and on the subsequent calculation of functional diversity indices at community level :*
-
-- Single imputation (mathematical methods) : average / median
-- Single imputation (ecological hypotheses) : dissimilarity / relationships
-- Multiple imputation : MICE
-
-<br/>
-
-<div style="text-align:center;">
-$\Rightarrow$ key parameter to choose the adequate imputation method = the distribution of the trait value in the dataset
-</div>
-
-- **Average method** = least accurate
-
-- **Functional proximity between species** =
-    - best method for traits with *unbalanced distribution*
-    - but would not be an appropriate choice for a study on functional distance between species,  
-    as functional distance would then be underestimated
-    - less affected by the percentage of deleted data (but Gower dissimilarity cannot be calculated between two species if no trait for both species, and so the correction would not be possible if missing data are too numerous)
-
-
-- **Relationships between traits** =
-    - best method for traits with *balanced distribution*
-    - but the most sensitive to the level of missing data
-
-$\Rightarrow$ at the species level, the most accurate imputation method is NOT THE SAME for all traits and in all cases,  
-BUT dissimilarity and/or relationships methods always the most accurate AMONG the single imputation methods
-
-- **MICE** = more accurate than all other methods for all traits except SLA
-    - the correction model can be adapted to the distribution of the variable, but caution with unbalanced traits ??
-
-
-
-<br/>
-
-## 2014 : Penone
-
-*Evaluate the performance of four approaches for estimating missing values in trait databases and test whether imputed datasets retain underlying allometric relationships among traits :*
-
-- Single imputation : k-Nearest Neighbour (kNN, package `VIM`) with average / median
-- Single imputation : random forest algorithms : package `missForest`
-- Single imputation : likelihood-based approach (`Phylopars`) using both phylogeny and allometric relationships among traits (phylogenetic variance-covariance matrix)
-- Multiple imputation : MICE (package `mice`) with predictive mean matching
-
-
-
-mice, missForest and Phylopars), resulted in qualitatively equivalent imputa- tion performance, and all had significantly lower errors than kNN. Adding phylogenetic information into the imputation algorithms improved estimation of missing values for all tested traits. The
-
-<br/>
-
-## 2015 : Schrodt
-
-<br/>
-
-## 2018 : Poyatos
-
-
-<br/>
-<br/>
-
 
 # Glossary
 
@@ -207,25 +47,178 @@ $\Rightarrow$ in functional trait databases, missingness is related to the frequ
 
 - **Imputation method** = replace missing data with substituted values
 
-<br/>
+- **Simple imputation** =  a single value is imputed for each missing datum
 
-- **Single imputation** =
-    - Replace with the mean or the median of the available trait values
-    - Functional proximity between species (species with the same functional strategy have a similar set of functional traits) (Westoby et al. 2002, Diaz et al. 2004)
-    - Relationships between traits (Wrigth et al. 2004, 2006)
-- **Multiple imputation** =
-    - Monte Carlo technique in which the missing values are replaced by $m > 1$ imputed values,  
-        combined to produce estimates, confidence intervals, missing data uncertainty (Nakagawa and Freckleton 2008)
-    - Hierarchical probabilistic matrix factorization coupled with phylogenetic information
-    - Multivariate imputation by chained equations (MICE, Azur et al. 2011)
+- **Multiple imputation** = Monte Carlo technique in which the missing values are replaced by $m > 1$ imputed values, combined to produce estimates, confidence intervals, missing data uncertainty (Nakagawa and Freckleton 2008)
+
+- **Likelihood-based imputation** = 
 
 
 <br/>
 <br/>
+
+
+# Specific traits
+
+<br/>
+
+## 2014 : Tamme (Ecology)
+
+*Measure the predictive power of simple plant traits to estimate species’ maximum dispersal distances :*
+
+- dispersal distance is related **to a dispersal syndrome** (Willson 1993, Pärtel & Zobel 2007, Vittoz & Engler 2007), that may generally be deduced from seed morphology, but difficult to establish a direct association (Nogales 2007)
+- **plant height** more important than seed mass in determining seed dispersal distances (Thomson et al. 2011)
+- **maximum dispersal distance strongly correlated with mean dispersal distance** (Thomson et al. 2011) :
+
+$$ log_{10}(\text{ maximumDist }) = 0.795 + 0.984 * log_{10}(\text{ meanDist })$$
+
+<br/><br/>
+
+<div style="text-align:center;">
+<pre>depending on the set of species used and the trait data available,
+different traits are important in describing dispersal distance patterns</pre>
+
+<br/>
+
+$\Rightarrow$ **(dispersal syndrome + growth form + terminal velocity)**  
+explain $\sim$ 60$\%$ of the variation in maximum dispersal distances
+
+$\Rightarrow$ **(dispersal syndrome + growth form)**  
+explain $\sim$ 50$\%$ of the variation in maximum dispersal distances
+</div>
+
+with
+
+* on average, maximum dispersal distances increase from :  
+<div style="text-align:center;">
+wind (no special mechanisms) < ballistic < ant < wind (special mechanisms) < animal  
+herb < shrub < tree
+</div>
+* models with terminal velocity only apply to species with wind or ballistic dispersal syndrome
+* in general, short-distance dispersal overestimated, and long-distance dispersal underestimated
+
+<div style="text-align:center;">
+$\Rightarrow$ **`dispeRsal` package**
+</div>
+
+<br/><br/>
+
+
+# Comparison of methods
+
+<br/>
+
+## 2014 : Taugourdeau
+
+*Effect of imputation methods on the evaluation of trait values at species level and on the subsequent calculation of functional diversity indices at community level :*
+
+<div style="text-align:center;">
+<pre>None of these methods was able to perform best for all the traits and indices</pre>
+
+<pre>at the species level, the most accurate imputation method is not the same for all traits 
+and in all cases, but dissimilarity and/or relationships method always the most accurate 
+among the single imputation methods</pre>
+
+<pre>key parameter to choose the adequate imputation method 
+= the distribution of the trait value in the dataset
+applying a transformation method to improve the distribution of the trait values prior to  
+using a imputation method could be useful in improving the quality of the replacement</pre>
+</div>
+
+- **Average method** = least accurate
+- **Functional proximity between species** =
+    - best method for traits with *unbalanced distribution*
+    - but not an appropriate choice for a study on functional distance between species,  
+    as functional distance would then be underestimated
+    - less affected by the percentage of deleted data (but Gower dissimilarity cannot be calculated between two species if no trait for both species : not possible if missing data are too numerous)
+
+
+- **Relationships between traits** =
+    - best method for traits with *balanced distribution*
+    - but the most sensitive to the level of missing data
+
+- **MICE** = more accurate than all other methods for all traits except SLA
+    - the correction model can be adapted to the distribution of the variable, but caution with unbalanced traits
+
+<br/>
+
+## 2014 : Penone
+
+*Evaluate the performance of four approaches for estimating missing values in trait databases and test whether imputed datasets retain underlying allometric relationships among traits :*
+
+<br/> <br/>
+
+## Synthesis
+
+<br/>
+
+| METHODS | Group | Precisions | Use phylo | PAPER | SOFTWARE |
+|-----------|------|---------------------------|---------|-----------|---------|
+| mean/median | simple | replace with the mean/median of available trait values | No |
+| kNN | simple | k-Nearest Neighbour | (eigenvectors from PCoA) | Troyanskaya 2001 | `VIM` pkg |
+| random forest | simple | | (eigenvectors from PCoA) | | `missForest` pkg |
+| dissimilarity | simple | *species with the same functional strategy have a similar set of functional traits* <br/> Gower distance + threshold | No | Westoby 2002, Diaz 2004, Taugourdeau 2014 | `FD` pkg |
+| relationship | simple/multiple | regression models <br/> but also : kNN, random forest, matrix factorization... | (eigenvectors from PCoA) | Wrigth et al. 2004, 2006 | `dispeRsal` function (Tamme 2014) |
+| (R)phylopars | simple | likelihood-based approach (`Phylopars`) using both phylogeny and allometric relationships among traits (phylogenetic variance-covariance matrix) | Yes | Bruggeman 2009, Goolsby 2017 | `Phylopars` soft, `Rphylopars` pkg |
+| HMPF | multiple | Hierarchical Probabilistic Matrix Factorization, coupled with phylogenetic information | Yes | Shan 2012 | |
+| BHMPF | multiple | | | Schrodt 2015 | `BHMPF` pkg |
+| MICE | multiple | Multivariate imputation by chained equations | | Azur 2011 | `mice` pkg |
+| jomo | multiple | JOint MOdelling approach for multiple imputation of multilevel data | | Quartagno 2019 | `jomo` pkg |
+    
+<br/><br/>
+
+
+| PAPERS |  Tamme (2014) | Taugourdeau (2014) | Penone (2014) |  Schrodt (2015) |  Poyatos (2018) |  Johnson (2020) |
+|---|------------|-----|--------|------------|-----------|-------------|
+| **no fam** | 102 | | | 358 | 4 | |
+| **no sp** | 576 | 1054 | 273 | 14320 | 13 | 500 (sim) |
+| **no traits (resp)** | 1 | 9 | 4 | 13 | 5 | 1 |
+| **no traits (used)** | 5 | | | | | 4 |
+| **no methods** | + relationship | + mean <br/> + median <br/> + dissimilarity <br/> + relationship <br/> + mice | + kNN <br/> + mice <br/> + missForest <br/> + Phylopars | + PMF <br/> + BHMPF <br/> + aHMPF | + mean and species mean <br/> + ordinary and regression kriging <br/> + kNN <br/> + mice | + BHMPF <br/> + Rphylopars <br/> + mice |
+| **missing data** | | (sim) [10 prob of deletion $0.01 \rightarrow 0.46$] x [10 rep] | (sim) [$10\% \rightarrow 80\%$] x [10 rep] | (obs) mean/trait $\sim 79.9\%$ | (sim) [$10\% \rightarrow 80\%$] x [30 rep] | (sim) [2 resp-trait slopes] x [2 cor levels] x [4 bias types] x [2 bias severity] x [$5\% \rightarrow 80\%$] x [10 rep] |
+| **evaluation** | $R^2$ | MRdAE | - NRMSE <br/> - effect of dataset/missing data/method on errors <br/> - slope deviation | - RMSE <br/> - $R^2$ <br/> - SMA regression <br/> - procrustes analysis | - NRMSE, KGE <br/> - correlation matrices deviation | - RMSE <br/> - slope deviation |
+| **software** | `dispeRsal` function | 2 author's functions, `mice` pkg | `VIM`, `mice`, `missForest` pkg, `Phylopars` soft | `MATLAB` | `automap`, `VIM`, `mice` pkg| `BHMPF`, `Rphylopars`, `mice` pkg |
+
+<br/><br/>
+
+
+| METHODS | Positive points | Negative points |
+|---------|-------------------------------|-------------------------------|
+| mean/median | *accurate for datasets with small percentages of missing values (Schafer 1999)* | Least accurate (Taugourdeau 2014) |
+| kNN |  | |
+| relationship | | *Depending on the set of species used and traits available, different traits are important (Tamme 2014)* <br/> *requires several traits per plant/species to be documented (Taugourdeau 2014)* |
+| dissimilarity |
+| missForest |
+| (R)phylopars |
+| HMPF | *satisfactory to predict trait values when information at the genus level is available (Shan 2012)* <br/> needs only at least one trait value per plant | |
+| BHMPF |
+| MICE |
+
+<br/>
+<br/>
+
 
 
 # Citations
 
-- Allen, B., Kon, M., Bar‐Yam, Y., Associate Editor: Ross H. Crozier, & Editor: Monica A. Geber. (2009). A New Phylogenetic Diversity Measure Generalizing the Shannon Index and Its Application to Phyllostomid Bats. The American Naturalist, 174(2), 236-243. https://doi.org/10.1086/600101
-- 
+<!-- - Audigier V, White I R, Jolani S, Debray T PA, Quartagno M, Carpenter J, van Buuren S and Resche-Rigon M. 2018. “Multiple Imputation for Multilevel Data with Continuous and Binary Variables.” Statistical Science 33 (2): 160–83. https://doi.org/10.1214/18-STS646 -->
+- Azur, M J, Stuart E A, Frangakis C and Leaf P J. 2011. “Multiple Imputation by Chained Equations: What Is It and How Does It Work?” International Journal of Methods in Psychiatric Research 20 (1): 40–49. https://doi.org/10.1002/mpr.329
+- Diniz-Filho, J A F, Villalobos F, and Bini L M. 2015. “The Best of Both Worlds: Phylogenetic Eigenvector Regression and Mapping.” Genetics and Molecular Biology 38 (3): 396–400.
+- Goolsby, E W, Bruggeman J and Ané C. 2017. “Rphylopars: Fast Multivariate Phylogenetic Comparative Methods for Missing Data and within-Species Variation.” Methods in Ecology and Evolution 8 (1): 22–27. https://doi.org/10.1111/2041-210X.12612
+<!-- - Huque Md H, Carlin J B, Simpson J A and Lee K J. 2018. “A Comparison of Multiple Imputation Methods for Missing Data in Longitudinal Studies 01 Mathematical Sciences.” BMC Medical Research Methodology 18 (1): 1–16. https://doi.org/10.1186/s12874-018-0615-6 -->
+- Johnson T F, Isaac N J B, Paviolo A and González‐Suárez M. 2020. “Handling Missing Values in Trait Data.” Global Ecology and Biogeography, no. December 2019: 1–12. https://doi.org/10.1111/geb.13185
+<!-- - Kim S W, Blomberg S P and Pandolfi J M. 2018. “Transcending Data Gaps: A Framework to Reduce Inferential Errors in Ecological Analyses.” Ecology Letters. https://doi.org/10.1111/ele.13089 -->
+- Molina-Venegas R, Moreno-Saiz J C, Parga I C, Davies T J, Peres-Neto P R and Rodríguez M. 2018. “Assessing Among-Lineage Variability in Phylogenetic Imputation of Functional Trait Datasets.” Ecography 41 (10): 1740–49. https://doi.org/10.1111/ecog.03480
+- Penone C, Davidson A D, Shoemaker K T, Di Marco M, Rondinini C, Brooks T M, Young B E, Graham C H and Costa G C. 2014. “Imputation of Missing Data in Life-History Trait Datasets: Which Approach Performs the Best?” Methods in Ecology and Evolution 5 (9): 961–70. https://doi.org/10.1111/2041-210X.12232
+- Poyatos R, Sus O, Badiella L, Mencuccini M and Martínez-Vilalta J. 2018. “Gap-Filling a Spatially Explicit Plant Trait Database: Comparing Imputation Methods and Different Levels of Environmental Information.” Biogeosciences 15 (9): 2601–17. https://doi.org/10.5194/bg-15-2601-2018
+- Quartagno M, Grund S and Carpenter J. 2019. “Jomo: A Flexible Package for Two-Level Joint Modelling Multiple Imputation.” R Journal 11 (2): 205–28. https://doi.org/10.32614/RJ-2019-028
+- Schrodt F, Kattge J, Shan H, Fazayeli F, Joswig J, Banerjee A, Reichstein M, et al. 2015. “BHPMF - a Hierarchical Bayesian Approach to Gap-Filling and Trait Prediction for Macroecology and Functional Biogeography.” Global Ecology and Biogeography 24 (12): 1510–21. https://doi.org/10.1111/geb.12335
+- Shan H, Kattge J, Reich P B, Banerjee A, Schrodt F and Reichstein M. 2012. “Gap Filling in the Plant Kingdom - Trait Prediction Using Hierarchical Probabilistic Matrix Factorization.” In Proceedings of the 29th International Conference on Machine Learning, ICML 2012, 2:1303–10.
+- Tamme R, Götzenberger L, Zobel M, Bullock J M, Hooftman D AP, Kaasik A and Pärtel M. 2014. “Predicting Species’ Maximum Dispersal Distances from Simple Plant Traits.” Ecology 95 (2): 505–13. https://doi.org/10.1890/13-1000.1
+- Taugourdeau S, Villerd J, Plantureux S, Huguenin-Elie O and Amiaud B. 2014. “Filling the Gap in Functional Trait Databases: Use of Ecological Hypotheses to Replace Missing Data.” Ecology and Evolution 4 (7): 944–58. https://doi.org/10.1002/ece3.989
+
+
+
+
+
 
