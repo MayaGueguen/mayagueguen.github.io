@@ -499,6 +499,8 @@ among the single imputation methods</pre>
 = the distribution of the trait value in the dataset
 applying a transformation method to improve the distribution of the trait values prior to  
 using a imputation method could be useful in improving the quality of the replacement</pre>
+<pre>30% of the data missing = percentage of missing data as a limit 
+for the utilization of these single imputation methods</pre>
 </div>
 <ul>
 <li><strong>Average method</strong> = least accurate</li>
@@ -524,10 +526,86 @@ as functional distance would then be underestimated</li>
 <div id="penone" class="section level2">
 <h2>2014 : Penone</h2>
 <p><em>Evaluate the performance of four approaches for estimating missing values in trait databases and test whether imputed datasets retain underlying allometric relationships among traits :</em></p>
+<div style="text-align:center;">
+<pre>adding phylogenetic information reduced the error for all approaches except kNN 
+this result was stronger for missForest than for mice
+
+whithout phylo, mice gave better results than missForest
+this difference was not significant whith phylo</pre>
+<pre>bias was lower when missing data were imputed rather than deleted,
+especially when more than 30% of the data were missing.
+
+with phylo, all approaches had comparable bias, 
+significantly lower than bias in datasets with missing data
+
+phylo reduced the bias for missForest but not for mice
+</pre>
+<pre>imputation approaches with phylogenetic variance-covariance matrix (Phylopars) 
+and phylogenetic eigenvectors (missForest and mice) gave similar results
+
+phylo did not improve estimation equally among traits,
+being more important where phylogenetic signal is stronger 
+and when there are no other traits with strong signal</pre>
+</div>
+<p><br/></p>
+</div>
+<div id="schrodt" class="section level2">
+<h2>2015 : Schrodt</h2>
+<p><em>A new approach (BHPMF) which imputes trait values based on the taxonomic hierarchy, structure within the trait matrix and trait–environment relationships at the same time as providing uncertainty estimates for each single trait prediction.</em></p>
+<div style="text-align:center;">
+<pre>prediction accuracy is not related to the number of entries per trait</pre>
+<pre>BHPMF outperforms the species MEAN baseline in all aspects: 
+RMSE and R2 of predicted versus observed entries are smaller and larger, respectively, 
+for each individual trait, and trait–trait correlations are better retrieved 
+
+aHPMF provides a concept to extrapolate from point measurements to species ranges 
+accounting for intraspecific variability</pre>
+<pre>explicitly taking environmental constraints into account adds little or no improvement to BHPMF</pre>
+<pre>Advancing BHPMF to account for phylogenetic distances instead of taxonomy will improve 
+opportunities for efficient out-of-sample predictions, at least in well-resolved clades</pre>
+</div>
+<p><br/></p>
+</div>
+<div id="poyatos" class="section level2">
+<h2>2018 : Poyatos</h2>
+<p><em>Assess the performance of different imputation methods to fill simulated gaps at different missingness levels in a spatially explicit plant trait dataset</em></p>
+<div style="text-align:center;">
+<pre>No method performed best consistently for the five studied traits, but, considering all traits 
+and performance metrics, MICE informed by relevant ecological variables gave the best results.
+However, at higher missingness (>30 %), species mean imputations and regression kriging 
+tended to outperform MICE for some traits.</pre>
+<pre>In general, mice and kNN imputations resulted in more accurate imputations in terms of NRMSE 
+than Mean at low missingness rates (10 %). However, at moderate and high missingness both mice 
+and kNN were comparable to or outper-formed by Mean, and specially by OrdKrig.
+
+trait covariation did not improve imputations at high missingness
+
+results for OrdKrig, compared to mice and kNN, show that spatial structure, rather than
+trait covariation, may provide more accurate trait imputations when gaps are frequent</pre>
+<pre>Introducing auxiliary variables as predictors improved MICE performance substantially 
+but these improvements were dependent on the specific predictor set and trait</pre>
+<pre>
+Using imputed or incomplete datasets did not lead to large differences 
+in the studied trait relationships when missingness was < 50%
+At high missingness, using imputed datasets led to comparatively larger 
+departures from the relationships obtained with the complete dataset
+No imputation method appeared to perform consistently better than others in preserving trait
+relationships at high missingness levels and, under these conditions, using incomplete datasets
+appeared to correctly reproduce the observed trait relationships in the complete dataset
+</pre>
+<pre>in terms of trait prediction error, no imputation method performs best
+consistently for the five studied traits
+
+when all performance metrics are jointly considered (i.e. errors in trait prediction, 
+multivariate trait distribution and trait correlations), MICE informed by relevant ecological
+variables outperforms approaches based on trait averaging, geostatistical models and kNN methods
+this superiority of MICE tends to vanish at very high missingness levels</pre>
+</div>
 <p><br/> <br/></p>
 </div>
-<div id="synthesis" class="section level2">
-<h2>Synthesis</h2>
+</div>
+<div id="synthesis" class="section level1">
+<h1>Synthesis</h1>
 <p><br/></p>
 <table>
 <colgroup>
@@ -589,6 +667,14 @@ as functional distance would then be underestimated</li>
 <td><code>dispeRsal</code> function (Tamme 2014)</td>
 </tr>
 <tr class="even">
+<td>ordinary/regression kriging</td>
+<td>simple</td>
+<td></td>
+<td>No</td>
+<td></td>
+<td><code>automap</code> pkg</td>
+</tr>
+<tr class="odd">
 <td>(R)phylopars</td>
 <td>simple</td>
 <td>likelihood-based approach (<code>Phylopars</code>) using both phylogeny and allometric relationships among traits (phylogenetic variance-covariance matrix)</td>
@@ -596,19 +682,27 @@ as functional distance would then be underestimated</li>
 <td>Bruggeman 2009, Goolsby 2017</td>
 <td><code>Phylopars</code> soft, <code>Rphylopars</code> pkg</td>
 </tr>
+<tr class="even">
+<td>PMF</td>
+<td>simple</td>
+<td>Probabilistic Matrix Factorization, models a sparse matrix as the scalar product of 2 latent matrices to find a factorization minimizing the error between predicted and observed data</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
 <tr class="odd">
-<td>HMPF</td>
-<td>multiple</td>
+<td>HPMF</td>
+<td>simple</td>
 <td>Hierarchical Probabilistic Matrix Factorization, coupled with phylogenetic information</td>
-<td>Yes</td>
+<td>(taxonomy)</td>
 <td>Shan 2012</td>
 <td></td>
 </tr>
 <tr class="even">
-<td>BHMPF</td>
+<td>BHPMF</td>
 <td>multiple</td>
-<td></td>
-<td></td>
+<td>Bayesian Hierarchical Probabilistic Matrix Factorization, coupled with a Gibbs sampler</td>
+<td>(taxonomy)</td>
 <td>Schrodt 2015</td>
 <td><code>BHMPF</code> pkg</td>
 </tr>
@@ -743,55 +837,73 @@ as functional distance would then be underestimated</li>
 </thead>
 <tbody>
 <tr class="odd">
-<td>mean/median</td>
-<td><em>accurate for datasets with small percentages of missing values (Schafer 1999)</em></td>
-<td>Least accurate (Taugourdeau 2014)</td>
+<td><strong>mean/median</strong></td>
+<td>+ accurate for datasets with small percentages of missing values (Schafer 1999)</td>
+<td>- least accurate (Taugourdeau 2014) <br/> + ignore the variance of the imputed variables (Blonder 2016) <br/> - severely altered trait distributions, introduced larger errors in selected trait correlations, tended to cause larger deviations in the correlation matrix (Poyatos 2018)</td>
 </tr>
 <tr class="even">
-<td>kNN</td>
-<td></td>
-<td></td>
+<td><strong>kNN</strong></td>
+<td>+ can deal with categorical variables (nominal or ordinal) (Penone 2014)</td>
+<td>- produced larger errors and induced more bias in the allometric relationship <br/> - must specify a value of the tuning parameter k which is difficult to determine a priori (Penone 2014) <br/> + tends to introduce larger bias in bivariate trait relationships compared to MICE (Poyatos 2018)</td>
 </tr>
 <tr class="odd">
-<td>relationship</td>
-<td></td>
-<td><em>Depending on the set of species used and traits available, different traits are important (Tamme 2014)</em> <br/> <em>requires several traits per plant/species to be documented (Taugourdeau 2014)</em></td>
-</tr>
-<tr class="even">
-<td>dissimilarity</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>missForest</td>
+<td><strong>random forest</strong></td>
+<td>+ performed better without including phylogeny <br/> + can deal with categorical variables (nominal or ordinal) (Penone 2014)</td>
 <td></td>
 </tr>
 <tr class="even">
-<td>(R)phylopars</td>
-<td></td>
+<td><strong>dissimilarity</strong></td>
+<td>- Gower dissimilarity can be computed with missing data <br/> + most accurate when the trait distribution is unbalanced (Taugourdeau 2014)</td>
+<td>- cannot be calculated between two species if no trait is documented for both species (Taugourdeau 2014)</td>
 </tr>
 <tr class="odd">
-<td>HMPF</td>
-<td><em>satisfactory to predict trait values when information at the genus level is available (Shan 2012)</em> <br/> needs only at least one trait value per plant</td>
+<td><strong>ordinary/regression kriging</strong></td>
+<td></td>
+<td>- altered distributions and trait correlations more than mice but they performed similarly in terms of delta cormat at all missingness levels (Poyatos 2018)</td>
+</tr>
+<tr class="even">
+<td><strong>relationship</strong></td>
+<td></td>
+<td>- depending on the set of species used and traits available, different traits are important (Tamme 2014) <br/> + requires several traits per plant/species to be documented <br/> + in most case less accurate than the dissimilarity method <br/> + does not perform well on very unbalanced traits (like SNP) because the multilinear model is strongly governed by extreme values <br/> + very sensitive to the percentage of missing data (Taugourdeau 2014)</td>
+</tr>
+<tr class="odd">
+<td><strong>(R)phylopars</strong></td>
 <td></td>
 </tr>
 <tr class="even">
-<td>BHMPF</td>
+<td><strong>PMF</strong></td>
 <td></td>
+<td>- like PCA, efficient if the original matrix is of low rank, i.e. if the axes of the original matrix provide strong correlations <br/> - accuracy worse than using species mean trait values to fill the gaps (Schrodt 2015)</td>
 </tr>
 <tr class="odd">
-<td>MICE</td>
+<td><strong>HPMF</strong></td>
+<td>- satisfactory to predict trait values when information at the genus level is available (Shan 2012) <br/> + needs only at least one trait value per plant</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>BHPMF</strong></td>
+<td>+ On average, across all traits, outperforms PMF, MEAN and aHPMF, with MEAN being significantly more accurate than PMF <br/> + advantage over MEAN largest for ‘physiological traits’(leaf N, leaf P), and smaller for more ‘structural traits’ (seed mass, plant height) <br/> + BHPMF and MEAN capture these general trait–trait correlations, but BHPMF reproduces extreme values more accurately than MEAN and is therefore generally better at capturing the shape of the scatter of observed trait data (Schrodt 2015)</td>
+<td>- presence of strong trait–trait correlations is a prerequisite for the accuracy of BHPMF (Schrodt 2015)</td>
+</tr>
+<tr class="odd">
+<td><strong>MICE</strong></td>
+<td>+ more accurate than all other methods for all traits except for the specific leaf area (Taugourdeau 2014) <br/> - smaller error and bias as compared to other multiple imputation approaches (Ambler, Omar &amp; Royston 2007) <br/> + performed better without including phylogeny <br/> + can deal with categorical variables (nominal or ordinal) (Penone 2014) - closely tracked observed trait distributions, introduced the least error in trait correlations under high missingness levels and yielded low delta cormat at extreme missingness levels (Poyatos 2018)</td>
+<td>- affected by the percentage of missing data for 6 (whole subdatabase) and 7 (herbaceous subdatabase) traits (Taugourdeau 2014) <br/> + linear dependencies between variables cause fatal errors and should be eliminated before imputation (Penone 2014)</td>
+</tr>
+<tr class="even">
+<td><strong>jomo</strong></td>
+<td></td>
 <td></td>
 </tr>
 </tbody>
 </table>
 <p><br/> <br/></p>
 </div>
-</div>
 <div id="citations" class="section level1">
 <h1>Citations</h1>
 <!-- - Audigier V, White I R, Jolani S, Debray T PA, Quartagno M, Carpenter J, van Buuren S and Resche-Rigon M. 2018. “Multiple Imputation for Multilevel Data with Continuous and Binary Variables.” Statistical Science 33 (2): 160–83. https://doi.org/10.1214/18-STS646 -->
 <ul>
-<li>Azur, M J, Stuart E A, Frangakis C and Leaf P J. 2011. “Multiple Imputation by Chained Equations: What Is It and How Does It Work?” International Journal of Methods in Psychiatric Research 20 (1): 40–49. <a href="https://doi.org/10.1002/mpr.329" class="uri">https://doi.org/10.1002/mpr.329</a></li>
+<li>Azur, M J, Stuart E A, Frangakis C and Leaf P J. 2011. “Multiple Imputation by Chained Equations: What Is It and How Does It Work?” International Journal of Methods in Psychiatric Research 20 (1): 40–49. <a href="https://doi.org/10.1002/mpr.329" class="uri">https://doi.org/10.1002/mpr.329</a> <!-- - Blonder, Benjamin. 2016. “Do Hypervolumes Have Holes?” American Naturalist 187 (4): E93–105. https://doi.org/10.1086/685444 --></li>
 <li>Diniz-Filho, J A F, Villalobos F, and Bini L M. 2015. “The Best of Both Worlds: Phylogenetic Eigenvector Regression and Mapping.” Genetics and Molecular Biology 38 (3): 396–400.</li>
 <li>Goolsby, E W, Bruggeman J and Ané C. 2017. “Rphylopars: Fast Multivariate Phylogenetic Comparative Methods for Missing Data and within-Species Variation.” Methods in Ecology and Evolution 8 (1): 22–27. <a href="https://doi.org/10.1111/2041-210X.12612" class="uri">https://doi.org/10.1111/2041-210X.12612</a> <!-- - Huque Md H, Carlin J B, Simpson J A and Lee K J. 2018. “A Comparison of Multiple Imputation Methods for Missing Data in Longitudinal Studies 01 Mathematical Sciences.” BMC Medical Research Methodology 18 (1): 1–16. https://doi.org/10.1186/s12874-018-0615-6 --></li>
 <li>Johnson T F, Isaac N J B, Paviolo A and González‐Suárez M. 2020. “Handling Missing Values in Trait Data.” Global Ecology and Biogeography, no. December 2019: 1–12. <a href="https://doi.org/10.1111/geb.13185" class="uri">https://doi.org/10.1111/geb.13185</a> <!-- - Kim S W, Blomberg S P and Pandolfi J M. 2018. “Transcending Data Gaps: A Framework to Reduce Inferential Errors in Ecological Analyses.” Ecology Letters. https://doi.org/10.1111/ele.13089 --></li>
