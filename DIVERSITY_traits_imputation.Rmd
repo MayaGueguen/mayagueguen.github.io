@@ -49,9 +49,9 @@ $\Rightarrow$ in functional trait databases, missingness is related to the frequ
 
 - **Simple imputation** =  a single value is imputed for each missing datum
 
-- **Multiple imputation** = Monte Carlo technique in which the missing values are replaced by $m > 1$ imputed values, combined to produce estimates, confidence intervals, missing data uncertainty (Nakagawa and Freckleton 2008)
+- **Multiple imputation** = Monte Carlo technique in which the missing values are replaced by $m > 1$ imputed values, combined to produce estimates, confidence intervals, missing data uncertainty 
 
-- **Likelihood-based imputation** = 
+- **Likelihood-based imputation** = imputation and analysis are conducted simultaneously
 
 
 <br/>
@@ -208,9 +208,8 @@ and performance metrics, MICE informed by relevant ecological variables gave the
 However, at higher missingness (>30 %), species mean imputations and regression kriging 
 tended to outperform MICE for some traits.</pre>
 
-<pre>In general, mice and kNN imputations resulted in more accurate imputations in terms of NRMSE 
-than Mean at low missingness rates (10 %). However, at moderate and high missingness both mice 
-and kNN were comparable to or outper-formed by Mean, and specially by OrdKrig.
+<pre>low missingness rates (10 %) = mice and kNN more accurate (NRMSE) than Mean
+moderate/high missingness = mice and kNN comparable/outperformed by Mean, and specially by OrdKrig
 
 trait covariation did not improve imputations at high missingness
 
@@ -229,14 +228,6 @@ No imputation method appeared to perform consistently better than others in pres
 relationships at high missingness levels and, under these conditions, using incomplete datasets
 appeared to correctly reproduce the observed trait relationships in the complete dataset
 </pre>
-
-<pre>in terms of trait prediction error, no imputation method performs best
-consistently for the five studied traits
-
-when all performance metrics are jointly considered (i.e. errors in trait prediction, 
-multivariate trait distribution and trait correlations), MICE informed by relevant ecological
-variables outperforms approaches based on trait averaging, geostatistical models and kNN methods
-this superiority of MICE tends to vanish at very high missingness levels</pre>
 </div>
 
 <br/>
@@ -244,11 +235,57 @@ this superiority of MICE tends to vanish at very high missingness levels</pre>
 
 ## 2020 : Johnson
 
+*Evaluate the performance of approaches for handling missing values when considering biased datasets*
+
+<div style="text-align:center;">
+<pre>Rphylopars = most accurate estimate of missing values, best preserve response–trait slope
+
+estimates of missing data were still inaccurate, even with only 5% of values missing
+
+Under severe biases, errors were high with every approach.
+complete-case analysis frequently outperform Mice imputation and, to a lesser degree, BHPMF
+</pre>
+
+<pre>If the objective of the imputation is to produce estimates of missing values, 
+single imputation is considered most effective
+if the objective is to model imputed values against another variable, 
+the added error in the multiple imputation is advantageous</pre>
+
+<pre>Including phylogenetic information generally improved imputation performance in every method</pre>
+
+<pre>Including the response in the imputation :
+- when response–trait slope positive : decreased imputation error in all approaches, 
+decreased slope error substantially in Mice (-> almost comparable with Rphylopars), 
+increased slope error in Rphylopars and BHPMF
+- when no relationship between trait and response : 
+increased imputation and slope errors in every approach, but with a small effect
+
+-> broadly advisable to include response with Mice, to exclude it with Rphylopars and BHPMF</pre>
+
+<pre>Missingness, phylogenetic clustering and change in mean were important predictors of 
+slope error, significant differences in slope error and imputation error.</pre>
+
+<pre>there is no single best solution to deal with missing data
+researchers need to assess the available data and consider the need for imputation versus 
+limiting the scope of the study or completing analyses for separate groups. Use of data 
+imputation should be scrutinized, checking for changes in the data before and after imputation, 
+measuring: missingness, phylogenetic clustering, a change in mean and a change in slope</pre>
+
+<pre>The threshold for deciding whether imputation is accurate depends on the research question.</pre>
+</div>
+
+- Currently, at least 160 packages for handling missing data available on the R-CRAN repository (Josse et al., 2020) $\rightarrow$ Testing all available imputation methods was not feasible
+- imputation can only be successful if it accounts for the mechanism by which data are missing
+- impact of phylogenetic signal strength on imputation performance already tested (Kim 2018, Molina-Venegas 2018); therefore, standardization of Pagel’s λ between phylogeny and traits at $\sim$ one
 
 <br/> <br/>
 
 
 # Synthesis
+
+<br/>
+
+## Methods description
 
 <br/>
 
@@ -260,15 +297,18 @@ this superiority of MICE tends to vanish at very high missingness levels</pre>
 | dissimilarity | simple | *species with the same functional strategy have a similar set of functional traits* <br/> Gower distance + threshold | No | Westoby 2002, Diaz 2004, Taugourdeau 2014 | `FD` pkg |
 | relationship | simple/multiple | regression models <br/> but also : kNN, random forest, matrix factorization... | (eigenvectors from PCoA) | Wrigth et al. 2004, 2006 | `dispeRsal` function (Tamme 2014) |
 | ordinary/regression kriging | simple | | No | | `automap` pkg | 
-| (R)phylopars | simple | likelihood-based approach (`Phylopars`) using both phylogeny and allometric relationships among traits (phylogenetic variance-covariance matrix) | Yes | Bruggeman 2009, Goolsby 2017 | `Phylopars` soft, `Rphylopars` pkg |
+| (R)phylopars | simple (but associated variance) | likelihood-based approach (`Phylopars`) using both phylogeny and allometric relationships among traits (phylogenetic variance-covariance matrix) | Yes | Bruggeman 2009, Goolsby 2017 | `Phylopars` soft, `Rphylopars` pkg |
 | PMF | simple | Probabilistic Matrix Factorization, models a sparse matrix as the scalar product of 2 latent matrices to find a factorization minimizing the error between predicted and observed data | No | | |
 | HPMF | simple | Hierarchical Probabilistic Matrix Factorization, coupled with phylogenetic information | (taxonomy) | Shan 2012 | |
-| BHPMF | multiple | Bayesian Hierarchical Probabilistic Matrix Factorization, coupled with a Gibbs sampler | (taxonomy) | Schrodt 2015 | `BHMPF` pkg |
-| MICE | multiple | Multivariate imputation by chained equations | | Azur 2011 | `mice` pkg |
+| BHPMF | simple (but associated variance) | Bayesian Hierarchical Probabilistic Matrix Factorization, coupled with a Gibbs sampler | (taxonomy) | Schrodt 2015 | `BHMPF` pkg |
+| MICE | multiple | Multivariate imputation by chained equations | (eigenvectors from PCoA) | Azur 2011 | `mice` pkg |
 | jomo | multiple | JOint MOdelling approach for multiple imputation of multilevel data | | Quartagno 2019 | `jomo` pkg |
     
 <br/><br/>
 
+## Papers making comparisons
+
+<br/>
 
 | PAPERS |  Tamme (2014) | Taugourdeau (2014) | Penone (2014) |  Schrodt (2015) |  Poyatos (2018) |  Johnson (2020) |
 |---|------------|-----|--------|------------|-----------|-------------|
@@ -283,19 +323,31 @@ this superiority of MICE tends to vanish at very high missingness levels</pre>
 
 <br/><br/>
 
+## Methods +/- (according to papers)
+
+<br/>
+
 | METHODS | Positive points | Negative points |
 |---------|-------------------------------|-------------------------------|
-| **mean/median** | + accurate for datasets with small percentages of missing values (Schafer 1999) | - least accurate (Taugourdeau 2014) <br/> + ignore the variance of the imputed variables (Blonder 2016) <br/> - severely altered trait distributions, introduced larger errors in selected trait correlations, tended to cause larger deviations in the correlation matrix (Poyatos 2018) |
-| **kNN** | + can deal with categorical variables (nominal or ordinal) (Penone 2014) | - produced larger errors and induced more bias in the allometric relationship <br/> - must specify a value of the tuning parameter k which is difficult to determine a priori (Penone 2014) <br/> + tends to introduce larger bias in bivariate trait relationships compared to MICE (Poyatos 2018) |
+| **mean/median** | + accurate for datasets with small percentages of missing values (Schafer 1999) | - least accurate (Taugourdeau 2014) |
+| | | - ignore the variance of the imputed variables (Blonder 2016) 
+| | | - severely altered trait distributions, introduced larger errors in selected trait correlations, tended to cause larger deviations in the correlation matrix (Poyatos 2018) |
+| **kNN** | + can deal with categorical variables (nominal or ordinal) (Penone 2014) | - produced larger errors and induced more bias in the allometric relationship <br/> - must specify a value of the tuning parameter k which is difficult to determine a priori (Penone 2014) |
+| | | - tends to introduce larger bias in bivariate trait relationships compared to MICE (Poyatos 2018) |
 | **random forest** | + performed better without including phylogeny <br/> + can deal with categorical variables (nominal or ordinal) (Penone 2014) | |
-| **dissimilarity** | - Gower dissimilarity can be computed with missing data <br/> + most accurate when the trait distribution is unbalanced (Taugourdeau 2014) | - cannot be calculated between two species if no trait is documented for both species (Taugourdeau 2014) |
+| **dissimilarity** | + Gower dissimilarity can be computed with missing data | |
+| | + most accurate when the trait distribution is unbalanced (Taugourdeau 2014) | - cannot be calculated between two species if no trait is documented for both species (Taugourdeau 2014) |
 | **ordinary/regression kriging** | | - altered distributions and trait correlations more than mice but they performed similarly in terms of delta cormat at all missingness levels (Poyatos 2018) |
-| **relationship** |  | - depending on the set of species used and traits available, different traits are important (Tamme 2014) <br/> + requires several traits per plant/species to be documented <br/> + in most case less accurate than the dissimilarity method <br/> + does not perform well on very unbalanced traits (like SNP) because the multilinear model is strongly governed by extreme values <br/> + very sensitive to the percentage of missing data (Taugourdeau 2014) |
-| **(R)phylopars** | 
+| **relationship** | | - depending on the set of species used and traits available, different traits are important (Tamme 2014) |
+| | | - requires several traits per plant/species to be documented <br/> - in most case less accurate than the dissimilarity method <br/> - does not perform well on very unbalanced traits (like SNP) because the multilinear model is strongly governed by extreme values <br/> - very sensitive to the percentage of missing data (Taugourdeau 2014) |
+| **(R)phylopars** | + uses a phylogeny and a sparse trait matrix to estimate simultaneously the across-species (phylogenetic) and within-species (phenotypic) trait covariance (similar to a phylogenetic mixed model) to reconstruct the ancestral state and impute missing values (Goolsby 2017) | - depends on the phylogenetic signal in a trait <br/> - cannot deal with categorical traits |
 | **PMF** | | - like PCA, efficient if the original matrix is of low rank, i.e. if the axes of the original matrix provide strong correlations <br/> - accuracy worse than using species mean trait values to fill the gaps (Schrodt 2015) |
-| **HPMF** | - satisfactory to predict trait values when information at the genus level is available (Shan 2012) <br/> + needs only at least one trait value per plant | |
+| **HPMF** | + satisfactory to predict trait values when information at the genus level is available (Shan 2012) <br/> + needs only at least one trait value per plant | |
 | **BHPMF** | + On average, across all traits, outperforms PMF, MEAN and aHPMF, with MEAN being significantly more accurate than PMF <br/> + advantage over MEAN largest for ‘physiological traits’(leaf N, leaf P), and smaller for more ‘structural traits’ (seed mass, plant height) <br/> + BHPMF and MEAN capture these general trait–trait correlations, but BHPMF reproduces extreme values more accurately than MEAN and is therefore generally better at capturing the shape of the scatter of observed trait data (Schrodt 2015) | - presence of strong trait–trait correlations is a prerequisite for the accuracy of BHPMF (Schrodt 2015) |
-| **MICE** | + more accurate than all other methods for all traits except for the specific leaf area (Taugourdeau 2014) <br/> - smaller error and bias as compared to other multiple imputation approaches (Ambler, Omar & Royston 2007) <br/> + performed better without including phylogeny <br/> + can deal with categorical variables (nominal or ordinal) (Penone 2014) - closely tracked observed trait distributions, introduced the least error in trait correlations under high missingness levels and yielded low delta cormat at extreme missingness levels (Poyatos 2018) | - affected by the percentage of missing data for 6 (whole subdatabase) and 7 (herbaceous subdatabase) traits (Taugourdeau 2014) <br/> + linear dependencies between variables cause fatal errors and should be eliminated before imputation (Penone 2014) | 
+| **MICE** | + more accurate than all other methods for all traits except for the specific leaf area (Taugourdeau 2014) | - affected by the percentage of missing data for 6 (whole subdatabase) and 7 (herbaceous subdatabase) traits (Taugourdeau 2014) |
+| | + smaller error and bias as compared to other multiple imputation approaches (Ambler, Omar & Royston 2007) | |
+| | + performed better without including phylogeny <br/> + can deal with categorical variables (nominal or ordinal) (Penone 2014) | - linear dependencies between variables cause fatal errors and should be eliminated before imputation (Penone 2014) |
+| | + closely tracked observed trait distributions, introduced the least error in trait correlations under high missingness levels and yielded low delta cormat at extreme missingness levels (Poyatos 2018) <br/> + perform well when there is no true relationship between response and trait (Johnson 2020) | - perform poorly when there is a positive relationship between response and trait, even when including the response <br/> - phylogenetic information should only be included when data are missing with no bias or a weak bias(Johnson 2020) |
 | **jomo** | | |
 
 <br/>

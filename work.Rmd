@@ -33,7 +33,7 @@ z-index: 10;
 <br/><br/>
 
 
-## FATE
+<!-- ## FATE -->
 
 <br/>
 
