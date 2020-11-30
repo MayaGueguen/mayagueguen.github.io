@@ -207,17 +207,6 @@ ________________________________________________________________________________
 
 <br/>
 
-### Importance of variables
-
-<br/>
-
-<div style="text-align:center;">
-<embed src="pictures_tutorials/example_importance-variables.pdf" width='800' height='600' allowfullscreen webkitallowfullscreen></embed>
-</div>
-
-
-<br/>
-
 ### VIF (Variance Inflation Factor)
 
 - Detects **multi-collinearity** (correlation between predictors) in regression analysis.
@@ -236,6 +225,15 @@ Ranges from 1 upwards :
     - Between 1 and 5 = moderately correlated
     - Greater than 5 = highly correlated
 
+<br/>
+
+### Importance of variables
+
+<br/>
+
+<div style="text-align:center;">
+<embed src="pictures_tutorials/example_importance-variables.pdf" width='800' height='600' allowfullscreen webkitallowfullscreen></embed>
+</div>
 
 <br/>
 
