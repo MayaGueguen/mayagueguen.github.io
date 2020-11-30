@@ -24,9 +24,21 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <link href="site_libs/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 
 
@@ -412,9 +424,9 @@ div.tocify {
 <div id="formulas" class="section level2">
 <h2>Formulas</h2>
 <ul>
-<li><strong>Mean :</strong> <img src="pictures_tutorials/formula_mean.png" width=100px/></li>
+<li><p><strong>Mean :</strong> <img src="pictures_tutorials/formula_mean.png" width=100px/></p></li>
 <li><p><strong>Variance :</strong> <img src="pictures_tutorials/formula_variance.png" width=180px/></p></li>
-<li><strong>Standardization :</strong> <img src="pictures_tutorials/formula_standardized.png" width=180px/></li>
+<li><p><strong>Standardization :</strong> <img src="pictures_tutorials/formula_standardized.png" width=180px/></p></li>
 <li><p><strong>Correlation :</strong> <img src="pictures_tutorials/formula_correlation.png" width=170px/></p></li>
 </ul>
 <p><br/> <br/></p>
@@ -422,10 +434,10 @@ div.tocify {
 <div id="formulas-with-weights" class="section level2">
 <h2>Formulas with weights</h2>
 <ul>
-<li><strong>Weighted mean :</strong> <img src="pictures_tutorials/formula_weighted-mean.png" width=120px/> if weights sum to 1</li>
+<li><p><strong>Weighted mean :</strong> <img src="pictures_tutorials/formula_weighted-mean.png" width=120px/> if weights sum to 1</p></li>
 <li><p><strong>Weighted variance :</strong> <img src="pictures_tutorials/formula_weighted-variance.png" width=210px/> if weights sum to 1</p></li>
-<li><strong>Weighted standardization :</strong> <img src="pictures_tutorials/formula_weighted-standardized.png" width=190px/></li>
-<li><strong>Weighted correlation :</strong> <img src="pictures_tutorials/formula_weighted-correlation.png" width=170px/></li>
+<li><p><strong>Weighted standardization :</strong> <img src="pictures_tutorials/formula_weighted-standardized.png" width=190px/></p></li>
+<li><p><strong>Weighted correlation :</strong> <img src="pictures_tutorials/formula_weighted-correlation.png" width=170px/></p></li>
 <li><p><strong>Weighted covariance :</strong> <img src="pictures_tutorials/formula_weighted-covariance.png" width=190px/></p></li>
 </ul>
 <p><br/> <br/></p>
@@ -447,7 +459,7 @@ CWM (for one community site) = <img src="pictures_tutorials/formula_weighted-mea
 <li><code>n</code> = total number of species</li>
 </ul>
 <p><br/></p>
-<p><strong>Community Weighted Mean correlation :</strong> correlation between CWM values and environmental values (non-weighted by species' abundances) for all community sites</p>
+<p><strong>Community Weighted Mean correlation :</strong> correlation between CWM values and environmental values (non-weighted by species’ abundances) for all community sites</p>
 <p><br/></p>
 </div>
 <div id="species-niche-centroid-snc" class="section level3">
@@ -462,7 +474,7 @@ SNC (for one species) = <img src="pictures_tutorials/formula_weighted-mean-2.png
 <li><code>n</code> = total number of community sites</li>
 </ul>
 <p><br/></p>
-<p><strong>Species Niche Centroid correlation :</strong> correlation between SNC values and trait values (non-weighted by species' abundances) for all species</p>
+<p><strong>Species Niche Centroid correlation :</strong> correlation between SNC values and trait values (non-weighted by species’ abundances) for all species</p>
 <p><br/></p>
 </div>
 <div id="fourth-corner-correlation" class="section level3">
@@ -502,8 +514,8 @@ SNC (for one species) = <img src="pictures_tutorials/formula_weighted-mean-2.png
 <div id="decomposition-of-trait-variation" class="section level3">
 <h3>Decomposition of trait variation</h3>
 <p>CWM / SNC are based on weighted averages : ignore trait variation among species within communities<br />
-(i.e. <em>within-community component</em>)</p>
-<p>Usually, <strong>CWM</strong> is used to assess <strong>among-community component</strong>, and <em>average trait distance</em> (e.g. MPD) to asses <em>within-community component</em>. <strong>But they are not additive : they do not sum up to total variation.</strong></p>
+(i.e. <em>within-community component</em>)</p>
+<p>Usually, <strong>CWM</strong> is used to assess <strong>among-community component</strong>, and <em>average trait distance</em> (e.g. MPD) to asses <em>within-community component</em>. <strong>But they are not additive : they do not sum up to total variation.</strong></p>
 <p>New solution for <strong>within-community component</strong> :</p>
 <div style="text-align:center">
 (for one community site) = alpha i * <img src="pictures_tutorials/formula_within-community.png" width=190px/>
@@ -511,9 +523,9 @@ SNC (for one species) = <img src="pictures_tutorials/formula_weighted-mean-2.png
 <p>with :</p>
 <ul>
 <li><p><code>alpha i</code> = abundance weight of site i</p></li>
-<li><code>lij</code> = abundance of species j in site i</li>
-<li><code>SUM lij</code> = abundance of species in site i</li>
-<li><code>tj</code> = trait value of species j</li>
+<li><p><code>lij</code> = abundance of species j in site i</p></li>
+<li><p><code>SUM lij</code> = abundance of species in site i</p></li>
+<li><p><code>tj</code> = trait value of species j</p></li>
 <li><p><code>ci</code> = CWM value of site i</p></li>
 </ul>
 <p><br/></p>
@@ -540,7 +552,7 @@ SNC (for one species) = <img src="pictures_tutorials/formula_weighted-mean-2.png
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();

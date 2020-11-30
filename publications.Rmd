@@ -1,7 +1,4 @@
 ---
-# title: "FATE-HD tutorial - Installation"
-# author: "LECA Grenoble"
-# date: "10/05/2016"
 output:
   html_document:
     number_sections: no

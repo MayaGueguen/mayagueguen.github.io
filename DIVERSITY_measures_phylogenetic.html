@@ -24,9 +24,21 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <link href="site_libs/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 
 
@@ -410,13 +422,13 @@ div.tocify {
 <div id="vellend" class="section level1">
 <h1>2011 : Vellend</h1>
 <div id="indices-of-species-distinctness" class="section level2">
-<h2>Indices of species' distinctness</h2>
-<table style="width:100%;">
+<h2>Indices of species’ distinctness</h2>
+<table>
 <colgroup>
 <col width="30%" />
-<col width="41%" />
-<col width="14%" />
-<col width="14%" />
+<col width="42%" />
+<col width="13%" />
+<col width="13%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -495,24 +507,16 @@ div.tocify {
 <p><br/></p>
 <p>Aggregation of metrics according to :</p>
 <ul>
-<li>nature of the phylogenetic tree
-<ul>
-<li>distance-based metrics</li>
-<li>counting nodes metrics (special case of first)</li>
-</ul></li>
-<li>nature of species data
-<ul>
-<li>abundances</li>
-<li>presence-absence (special case of first)</li>
-</ul></li>
+<li>nature of the phylogenetic tree - distance-based metrics - counting nodes metrics (special case of first)</li>
+<li>nature of species data - abundances - presence-absence (special case of first)</li>
 </ul>
 <p><br/></p>
 <table>
 <colgroup>
-<col width="14%" />
-<col width="35%" />
-<col width="35%" />
-<col width="14%" />
+<col width="13%" />
+<col width="36%" />
+<col width="36%" />
+<col width="13%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -586,10 +590,10 @@ div.tocify {
 </div>
 <div id="probabilities-of-loss" class="section level3">
 <h3>Probabilities of loss</h3>
-<p><strong>Expected PD :</strong> PD given a set of species' extinction probabilities.<br />
-<em>Species case of Weitzman's general expected diversity formula.</em></p>
+<p><strong>Expected PD :</strong> PD given a set of species’ extinction probabilities.<br />
+<em>Species case of Weitzman’s general expected diversity formula.</em></p>
 <ul>
-<li><p><strong>Delta PD q :</strong> change in expected PD if probability extinction of species (e.g. in a given area) changes from <code>q</code> to 1.<br />
+<li><p><strong>Delta PD q :</strong> change in expected PD if probability extinction of species (e.g. in a given area) changes from <code>q</code> to 1.<br />
 <em>The value will be large to the extent that the species shares long ancestral branches with few other species.</em></p></li>
 <li><p><strong>PD50 :</strong> change in expected PD with a current probability of extinction of 0.5 for all species.<br />
 <em>The value will be large when the species has long ancestral branches with few other descendants.</em></p></li>
@@ -607,7 +611,7 @@ div.tocify {
 <div id="dissimilarities-with-abundance-information" class="section level3">
 <h3>Dissimilarities with abundance information</h3>
 <ul>
-<li><p><strong>Chao's framework</strong></p></li>
+<li><p><strong>Chao’s framework</strong></p></li>
 <li><p><strong>Effective rare PD :</strong> defines “Valley numbers” in which the flexible parameter provides increasing focus on low abundance.<br />
 <em>Effective amount of rare feature diversity</em></p></li>
 </ul>
@@ -631,7 +635,7 @@ div.tocify {
 <div id="glossary" class="section level1">
 <h1>Glossary</h1>
 <ul>
-<li><strong>Node-based tree :</strong> simplest type of phylogenetic tree which represents only the topology, with no information on the lengths of branches connecting the nodes.</li>
+<li><p><strong>Node-based tree :</strong> simplest type of phylogenetic tree which represents only the topology, with no information on the lengths of branches connecting the nodes.</p></li>
 <li><p><strong>Distance-based tree :</strong> with quantitative branch lengths.</p></li>
 <li><p><strong>Ultrametric tree</strong> = in which the distances from the root to every branch tip are equal<br />
 = if the branch lengths are proportional to divergence time, all branch tips are the same distance from the tree base (first node) = a) on the graph, b) is non-ultrametric</p></li>
@@ -639,9 +643,9 @@ div.tocify {
 <!-- <div style="text-align:center"><img src="pictures_tutorials/example_ultrametric-tree.png" width=600px/></div>  -->
 <p><img src="pictures_tutorials/example_ultrametric-tree.png" width="600px" style="display: block; margin: auto;" /></p>
 <ul>
-<li><strong>Balanced tree :</strong> all tips are separated from the root by the same number of nodes, which is equivalent to saying that all lineages bifurcate the same number of times.</li>
+<li><p><strong>Balanced tree :</strong> all tips are separated from the root by the same number of nodes, which is equivalent to saying that all lineages bifurcate the same number of times.</p></li>
 <li><p><strong>Imbalanced tree :</strong> one lineage descending from each node connects directly to a tip with no further bifurcations.</p></li>
-<li><strong>Polytomie :</strong> node where the lineage splits into three or more (most commonly due to data limitations).</li>
+<li><p><strong>Polytomie :</strong> node where the lineage splits into three or more (most commonly due to data limitations).</p></li>
 <li><p><strong>Evenness :</strong> an even distribution of branches within the community has branches with about equal abundance; uneven distributions may be dominated by one or a few abundant branches.</p></li>
 </ul>
 <p><br/> <br/></p>
@@ -651,19 +655,19 @@ div.tocify {
 <ul>
 <li><p>Faith D. P. (2013). Biodiversity and evolutionary history: useful extensions of the PD phylogenetic diversity assessment framework. Ann N Y Acad Sci. Jun; 1289:69-89. <a href="https://doi.org/10.1111/nyas.12186" class="uri">https://doi.org/10.1111/nyas.12186</a></p>
 <ul>
-<li>Altschul, S. &amp; Lipman, D. (1990). Equal animals. Nature 348, 493–494. <a href="https://doi.org/10.1038/348493c0" class="uri">https://doi.org/10.1038/348493c0</a></li>
-<li>May, R.M. (1990). Taxonomy as destiny. Nature, 347, 129-130.</li>
-<li>Nixon, K. &amp; Wheeler, Q. (1990). An Amplification of the Phylogenetic Species Concept. Cladistics. 6. 211-223. <a href="https://doi.org/10.1111/j.1096-0031.1990.tb00541.x" class="uri">https://doi.org/10.1111/j.1096-0031.1990.tb00541.x</a></li>
-<li>Nixon, K. &amp; Wheeler, Q. (1991). Extinction and the origin of species. Extinction and Phylogeny.</li>
-<li>Pavoine, S., Ollier, S. &amp; Dufour, A.‐B. (2005). Is the originality of a species measurable?. Ecology Letters, 8: 579-586. <a href="https://doi.org/10.1111/j.1461-0248.2005.00752.x" class="uri">https://doi.org/10.1111/j.1461-0248.2005.00752.x</a></li>
-<li>Redding, D.W. &amp; Mooers, A.Ø. (2006). Incorporating Evolutionary Measures into Conservation Prioritization. Conservation Biology, 20: 1670-1678. <a href="https://doi.org/10.1111/j.1523-1739.2006.00555.x" class="uri">https://doi.org/10.1111/j.1523-1739.2006.00555.x</a></li>
+<li><p>Altschul, S. &amp; Lipman, D. (1990). Equal animals. Nature 348, 493–494. <a href="https://doi.org/10.1038/348493c0" class="uri">https://doi.org/10.1038/348493c0</a></p></li>
+<li><p>May, R.M. (1990). Taxonomy as destiny. Nature, 347, 129-130.</p></li>
+<li><p>Nixon, K. &amp; Wheeler, Q. (1990). An Amplification of the Phylogenetic Species Concept. Cladistics. 6. 211-223. <a href="https://doi.org/10.1111/j.1096-0031.1990.tb00541.x" class="uri">https://doi.org/10.1111/j.1096-0031.1990.tb00541.x</a></p></li>
+<li><p>Nixon, K. &amp; Wheeler, Q. (1991). Extinction and the origin of species. Extinction and Phylogeny.</p></li>
+<li><p>Pavoine, S., Ollier, S. &amp; Dufour, A.‐B. (2005). Is the originality of a species measurable?. Ecology Letters, 8: 579-586. <a href="https://doi.org/10.1111/j.1461-0248.2005.00752.x" class="uri">https://doi.org/10.1111/j.1461-0248.2005.00752.x</a></p></li>
+<li><p>Redding, D.W. &amp; Mooers, A.Ø. (2006). Incorporating Evolutionary Measures into Conservation Prioritization. Conservation Biology, 20: 1670-1678. <a href="https://doi.org/10.1111/j.1523-1739.2006.00555.x" class="uri">https://doi.org/10.1111/j.1523-1739.2006.00555.x</a></p></li>
 <li><p>Vane-Wright, R.I., Humphries, C.J. &amp; Williams, P.H. (1991). What to protect? - Systematics and the agony of choice. Biological Conservation, 55, 235-254. <a href="https://doi.org/10.1016/0006-3207(91)90030-D" class="uri">https://doi.org/10.1016/0006-3207(91)90030-D</a></p></li>
-<li>Barker, G. (2002). Phylogenetic diversity: a quantitative framework for measurement of priority and achievement in biodiversity conservation. Biological Journal of the Linnean Society. 76. 165-194. <a href="https://doi.org/10.1046/j.1095-8312.2002.00055.x" class="uri">https://doi.org/10.1046/j.1095-8312.2002.00055.x</a></li>
-<li>Crozier, R. (1997). Preserving the Information Content of Species: Genetic Diversity, Phylogeny, and Conservation Worth. Annual Review of Ecology and Systematics, 28, 243-268. <a href="http://www.jstor.org/stable/2952493" class="uri">http://www.jstor.org/stable/2952493</a></li>
-<li>Faith, D. (1992). Conservation evaluation and phylogenetic diversity. Biological Conservation. 61. 1-10. <a href="https://doi.org/10.1016/0006-3207(92)91201-3" class="uri">https://doi.org/10.1016/0006-3207(92)91201-3</a></li>
-<li>Helmus, M., Bland, T., Williams, C. &amp; Ives, A. (2007). Phylogenetic measures of biodiversity. Am Nat 169(3):E68-E83. The American naturalist. 169. <a href="https://doi.org/10.1086/511334" class="uri">https://doi.org/10.1086/511334</a></li>
-<li>Rao, C. R. (1982). Diversity and Dissimilarity Coefficients: A Unified Approach. Theoretical population biology, 21, 24-43. Theoretical Population Biology. 21. 24-43. <a href="https://doi.org/10.1016/0040-5809(82)90004-1" class="uri">https://doi.org/10.1016/0040-5809(82)90004-1</a></li>
-<li>Warwick, R. &amp; Clarke, K. (1995). New 'biodiversity' measures reveal a decrease in taxonomic distinctness with increasing stress. Marine Ecology Progress Series. 129. 301-305. <a href="https://doi.org/10.3354/meps129301" class="uri">https://doi.org/10.3354/meps129301</a></li>
+<li><p>Barker, G. (2002). Phylogenetic diversity: a quantitative framework for measurement of priority and achievement in biodiversity conservation. Biological Journal of the Linnean Society. 76. 165-194. <a href="https://doi.org/10.1046/j.1095-8312.2002.00055.x" class="uri">https://doi.org/10.1046/j.1095-8312.2002.00055.x</a></p></li>
+<li><p>Crozier, R. (1997). Preserving the Information Content of Species: Genetic Diversity, Phylogeny, and Conservation Worth. Annual Review of Ecology and Systematics, 28, 243-268. <a href="http://www.jstor.org/stable/2952493" class="uri">http://www.jstor.org/stable/2952493</a></p></li>
+<li><p>Faith, D. (1992). Conservation evaluation and phylogenetic diversity. Biological Conservation. 61. 1-10. <a href="https://doi.org/10.1016/0006-3207(92)91201-3" class="uri">https://doi.org/10.1016/0006-3207(92)91201-3</a></p></li>
+<li><p>Helmus, M., Bland, T., Williams, C. &amp; Ives, A. (2007). Phylogenetic measures of biodiversity. Am Nat 169(3):E68-E83. The American naturalist. 169. <a href="https://doi.org/10.1086/511334" class="uri">https://doi.org/10.1086/511334</a></p></li>
+<li><p>Rao, C. R. (1982). Diversity and Dissimilarity Coefficients: A Unified Approach. Theoretical population biology, 21, 24-43. Theoretical Population Biology. 21. 24-43. <a href="https://doi.org/10.1016/0040-5809(82)90004-1" class="uri">https://doi.org/10.1016/0040-5809(82)90004-1</a></p></li>
+<li><p>Warwick, R. &amp; Clarke, K. (1995). New ‘biodiversity’ measures reveal a decrease in taxonomic distinctness with increasing stress. Marine Ecology Progress Series. 129. 301-305. <a href="https://doi.org/10.3354/meps129301" class="uri">https://doi.org/10.3354/meps129301</a></p></li>
 <li><p>Webb, C. (2000). Exploring the Phylogenetic Structure of Ecological Communities: An Example for Rain Forest Trees. The American naturalist. 156. 145-155. <a href="https://doi.org/10.1086/303378" class="uri">https://doi.org/10.1086/303378</a></p></li>
 </ul></li>
 <li><p>Vellend, M., Cornwell, W., Magnuson-Ford, K. &amp; Mooers, A. (2010). Measuring phylogenetic biodiversity.</p></li>
@@ -681,7 +685,7 @@ div.tocify {
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();

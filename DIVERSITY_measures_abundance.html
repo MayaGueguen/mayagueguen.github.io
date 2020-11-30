@@ -23,9 +23,21 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <link href="site_libs/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 
 
@@ -451,10 +463,10 @@ Or the uncertainty about the species obtained when one individual is randomly ch
 </div>
 </div>
 <div id="hills-numbers" class="section level1">
-<h1>Hill's numbers</h1>
+<h1>Hill’s numbers</h1>
 <div id="hill-ecology" class="section level2">
 <h2>1973 : Hill (Ecology)</h2>
-<p><br/> The <strong>&quot;doubling&quot; property</strong> = if two equally large, completely distinct communities (no shared species) each have diversity X, and if these communities are combined, then the diversity of the combined communities should be 2X.</p>
+<p><br/> The <strong>“doubling” property</strong> = if two equally large, completely distinct communities (no shared species) each have diversity X, and if these communities are combined, then the diversity of the combined communities should be 2X.</p>
 <p><strong>Most raw diversity indices (standard diversity indices, <code>H</code>) do not obey this property,<br />
 but their numbers equivalents do.</strong></p>
 <p><br/></p>
@@ -510,7 +522,7 @@ but their numbers equivalents do.</strong></p>
 <h1>Similarity-sensitive measures</h1>
 <div id="rao-theoretical-population-biology" class="section level2">
 <h2>1982 : Rao (Theoretical Population Biology)</h2>
-<p><strong>Rao's quadratic entropy :</strong></p>
+<p><strong>Rao’s quadratic entropy :</strong></p>
 <ul>
 <li>measure of average conflict among species<br />
 </li>
@@ -586,8 +598,8 @@ but their numbers equivalents do.</strong></p>
 <tr class="odd">
 <td><em>Generalization</em> <br/> <em>Similarity information</em></td>
 <td>Faith PD (ultrametric tree)</td>
-<td>Allen's entropy <br/> Generalization of Shannon entropy</td>
-<td>Rao's quadratic entropy <br/> Generalization of Gini-Simpson index</td>
+<td>Allen’s entropy <br/> Generalization of Shannon entropy</td>
+<td>Rao’s quadratic entropy <br/> Generalization of Gini-Simpson index</td>
 </tr>
 <tr class="even">
 <td></td>
@@ -601,7 +613,7 @@ but their numbers equivalents do.</strong></p>
 </div>
 </div>
 <div id="hill-numbers-similarity-sensitive-measures" class="section level1">
-<h1>Hill numbers' + similarity-sensitive measures</h1>
+<h1>Hill numbers’ + similarity-sensitive measures</h1>
 <p>Improve the formula of Hill numbers by adding a <strong>similarity-sensitive</strong> parameter = measure that reflect the varying dissimilarities between species (number specifying how similar they are).</p>
 <p><br/></p>
 <div id="chao-phil.-trans.-r.-soc." class="section level2">
@@ -618,15 +630,15 @@ but their numbers equivalents do.</strong></p>
 <p><img src="pictures_tutorials/formula_Chao-PD.png" width="350px" style="display: block; margin: auto;" /></p>
 <p>with :</p>
 <ul>
-<li><code>Li</code> = length of branch <code>i</code></li>
-<li><code>ai</code> = total abundance descended from branch <code>i</code></li>
+<li><p><code>Li</code> = length of branch <code>i</code></p></li>
+<li><p><code>ai</code> = total abundance descended from branch <code>i</code></p></li>
 <li><p><code>q</code> = sensitivity parameter</p></li>
 <li><p><code>T</code> = <code>sum(Li * ai)</code> if ultrametric tree<br />
 = <code>mean quantity</code> if non-ultrametric tree</p></li>
 </ul>
 <p><br/> <em>Hill numbers</em> = special case for all species maximally distinct, all branch lengths = <code>T</code></p>
-<p><em>Faith's PD for all <code>q</code></em> = all species maximally distinct and equally common, age of the highest node = <code>T</code></p>
-<p>After applying a simple transformation, the phylogenetic diversity measure of Faith (1992) and the phylogenetic entropy of Allen et al. (2009) are special cases of mean phylogenetic diversity.</p>
+<p><em>Faith’s PD for all <code>q</code></em> = all species maximally distinct and equally common, age of the highest node = <code>T</code></p>
+<p>After applying a simple transformation, the phylogenetic diversity measure of Faith (1992) and the phylogenetic entropy of Allen et al. (2009) are special cases of mean phylogenetic diversity.</p>
 <p><br/></p>
 <p><strong>Properties of values of Chao model :</strong></p>
 <ul>
@@ -643,8 +655,8 @@ but their numbers equivalents do.</strong></p>
 <p><img src="pictures_tutorials/formula_Leinster-numbers.png" width="250px" style="display: block; margin: auto;" /></p>
 <p>with :</p>
 <ul>
-<li><code>pi</code> = relative abundances</li>
-<li><code>Z</code> = matrix of similarities between species ( 0 = total dissimilarity)</li>
+<li><p><code>pi</code> = relative abundances</p></li>
+<li><p><code>Z</code> = matrix of similarities between species ( 0 = total dissimilarity)</p></li>
 <li><p><code>q</code> = sensitivity parameter</p></li>
 <li><p><code>(Zp)i</code> = relative abundance of species similar to the ith<br />
 = expected similarity between and individual of the ith species and an individual chosen at random<br />
@@ -685,14 +697,14 @@ but their numbers equivalents do.</strong></p>
 <tr class="odd">
 <td><em>Generalization</em> <br/> <em>Similarity information</em></td>
 <td>Faith PD (ultrametric tree)</td>
-<td>Allen's entropy <br/> Generalization of Shannon entropy</td>
-<td>Rao's quadratic entropy <br/> Generalization of Gini-Simpson index</td>
+<td>Allen’s entropy <br/> Generalization of Shannon entropy</td>
+<td>Rao’s quadratic entropy <br/> Generalization of Gini-Simpson index</td>
 </tr>
 <tr class="even">
 <td><em>- Leinster model <br/> exp(Rényi entropy) <br/> Similarity information</em></td>
 <td>Faith PD (ultrametric tree)</td>
 <td></td>
-<td>1 / (1 - Rao's quadratic entropy)</td>
+<td>1 / (1 - Rao’s quadratic entropy)</td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -704,26 +716,11 @@ but their numbers equivalents do.</strong></p>
 </table>
 <p><strong>Properties of values of Leinster model :</strong></p>
 <ul>
-<li><em>Partitioning properties :</em>
-<ul>
-<li>Effective number : diversity of a community with equally abundant and totally dissimilar species = species richness</li>
-<li>Modularity : partition in subcommunities</li>
-<li>Replication : if subcommunities of equal size and diversity, diversity = nb subcom * subdiv</li>
-</ul></li>
-<li><em>Elementary properties :</em>
-<ul>
-<li>Symmetry</li>
-<li>Absent species</li>
-<li>Identical species</li>
-</ul></li>
-<li><em>Effect of species similarity on diversity :</em>
-<ul>
-<li>Monotonicity</li>
-<li>Naive model</li>
-<li>Range</li>
-</ul></li>
+<li><em>Partitioning properties :</em> - Effective number : diversity of a community with equally abundant and totally dissimilar species = species richness - Modularity : partition in subcommunities - Replication : if subcommunities of equal size and diversity, diversity = nb subcom * subdiv</li>
+<li><em>Elementary properties :</em> - Symmetry - Absent species - Identical species</li>
+<li><em>Effect of species similarity on diversity :</em> - Monotonicity - Naive model - Range</li>
 </ul>
-<p><strong>Note :</strong> Allen and Rao's entropies do not respect the replication principle.</p>
+<p><strong>Note :</strong> Allen and Rao’s entropies do not respect the replication principle.</p>
 <p><br/> <br/></p>
 </div>
 </div>
@@ -746,7 +743,7 @@ but their numbers equivalents do.</strong></p>
 <li>Hill, M. (1973). Diversity and Evenness: A Unifying Notation and Its Consequences. Ecology, 54(2), 427-432. <a href="https://doi.org/10.2307/1934352" class="uri">https://doi.org/10.2307/1934352</a></li>
 <li>Leinster, T., &amp; Cobbold, C. (2012). Measuring diversity: The importance of species similarity. Ecology, 93(3), 477-489. <a href="http://www.jstor.org/stable/23143936" class="uri">http://www.jstor.org/stable/23143936</a></li>
 <li>Rao, C. R. (1982). Diversity and Dissimilarity Coefficients: A Unified Approach. Theoretical population biology, 21, 24-43. Theoretical Population Biology. 21. 24-43. <a href="https://doi.org/10.1016/0040-5809(82)90004-1" class="uri">https://doi.org/10.1016/0040-5809(82)90004-1</a></li>
-<li>Rényi, Alfréd. On Measures of Entropy and Information. Proceedings of the Fourth Berkeley Symposium on Mathematical Statistics and Probability, Volume 1: Contributions to the Theory of Statistics, 547--561, University of California Press, Berkeley, Calif., 1961. <a href="https://projecteuclid.org/euclid.bsmsp/1200512181" class="uri">https://projecteuclid.org/euclid.bsmsp/1200512181</a></li>
+<li>Rényi, Alfréd. On Measures of Entropy and Information. Proceedings of the Fourth Berkeley Symposium on Mathematical Statistics and Probability, Volume 1: Contributions to the Theory of Statistics, 547–561, University of California Press, Berkeley, Calif., 1961. <a href="https://projecteuclid.org/euclid.bsmsp/1200512181" class="uri">https://projecteuclid.org/euclid.bsmsp/1200512181</a></li>
 <li>Shannon, C. E. (1948), A Mathematical Theory of Communication. Bell System Technical Journal, 27: 379–423. <a href="https://doi.org/10.1002/j.1538-7305.1948.tb01338.x" class="uri">https://doi.org/10.1002/j.1538-7305.1948.tb01338.x</a></li>
 <li>Simpson, E. H. 1949 - Measurement of diversity. Nature 163: 688. <a href="https://doi.org/10.1038/163688a0" class="uri">https://doi.org/10.1038/163688a0</a></li>
 </ul>
@@ -763,7 +760,7 @@ but their numbers equivalents do.</strong></p>
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();

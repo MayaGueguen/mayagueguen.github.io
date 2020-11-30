@@ -24,9 +24,21 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <link href="site_libs/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 
 
@@ -414,8 +426,8 @@ div.tocify {
 Different parametric distributions may fit the observed data equally well, but lead to drastically different species richness estimates.</p></li>
 <li><p><strong>Non-parametric methods :</strong> always obtainable and make no assumptions about the mathematical form of the underlying species abundance/incidence distributions.</p></li>
 <li><p><strong>Species richness :</strong> number of observed species + number of undetected species</p></li>
-<li><strong>Uniques :</strong> number of species observed in only one sampling unit</li>
-<li><strong>Duplicates :</strong> number of species observed in exactly two sampling units</li>
+<li><p><strong>Uniques :</strong> number of species observed in only one sampling unit</p></li>
+<li><p><strong>Duplicates :</strong> number of species observed in exactly two sampling units</p></li>
 <li><p><strong>Super-duplicates :</strong> number of species observed in at least two sampling units</p></li>
 </ul>
 <p><br/> <br/></p>
@@ -438,10 +450,10 @@ Different parametric distributions may fit the observed data equally well, but l
 <p><img src="pictures_tutorials/formula_Burnham-jackknife-2.png" width="100px" style="display: block; margin: auto;" /></p>
 <p>with :</p>
 <ul>
-<li><code>N</code> : total number of individuals / species</li>
+<li><p><code>N</code> : total number of individuals / species</p></li>
 <li><p><code>S</code> : non-parametric maximum likelihood estimator of N</p></li>
-<li><code>i</code> : sampling-unit (day, trap, quadrat)</li>
-<li><code>t</code> : total number of sampling units</li>
+<li><p><code>i</code> : sampling-unit (day, trap, quadrat)</p></li>
+<li><p><code>t</code> : total number of sampling units</p></li>
 <li><p><code>fr</code> : number of individuals captured exactly r times</p></li>
 </ul>
 <p><br/></p>
@@ -637,7 +649,7 @@ which requires an estimation of the number of undetected species :</p>
 <ul>
 <li>Burnham, K., &amp; Overton, W. (1978). Estimation of the Size of a Closed Population when Capture Probabilities vary Among Animals. Biometrika, 65(3), 625-633. <a href="https://doi.org/10.2307/2335915" class="uri">https://doi.org/10.2307/2335915</a></li>
 <li>Chao, A. (1987). Estimating the Population Size for Capture-Recapture Data with Unequal Catchability. Biometrics, 43(4), 783-791. <a href="https://doi.org/10.2307/2531532" class="uri">https://doi.org/10.2307/2531532</a></li>
-<li>Chao, A. &amp; Chiu, C.-H. (2012) Estimation of species richness and shared species richness. In Methods and Applications of Statistics in the Atmospheric and Earth Sciences (ed. N. Balakrishnan), pp. 76–111, Wiley, New York, NY, USA.</li>
+<li>Chao, A. &amp; Chiu, C.-H. (2012) Estimation of species richness and shared species richness. In Methods and Applications of Statistics in the Atmospheric and Earth Sciences (ed. N. Balakrishnan), pp. 76–111, Wiley, New York, NY, USA.</li>
 <li>Chao, A., Colwell, R. K., Chiu, C.-H. and Townsend, D. (2017), Seen once or more than once: applying Good–Turing theory to estimate species richness using only unique observations and a species list. Methods Ecol Evol, 8: 1221–1232. <a href="https://doi.org/10.1111/2041-210X.12768" class="uri">https://doi.org/10.1111/2041-210X.12768</a></li>
 <li>Chazdon, Robin &amp; Colwell, Robert &amp; S. Denslow, J &amp; Guariguata, Manuel. (1998). Statistical methods for estimating species richness of woody regeneration in primary and secondary rain forests of NE Costa Rica. In Forest biodiversity research, monitoring and modelling. 285-309.</li>
 <li>Colwell, Robert &amp; Chao, Anne &amp; J. Gotelli, Nicholas &amp; Lin, SY &amp; Mao, Chang Xuan &amp; Chazdon, Robin &amp; T. Longino, John. (2012). Models and estimators linking individual-based and sample-based rarefaction, extrapolation and comparison of assemblages. Journal of Plant Ecology. 5. 3-21. <a href="https://doi.org/10.1093/jpe/rtr044" class="uri">https://doi.org/10.1093/jpe/rtr044</a>.</li>
@@ -657,7 +669,7 @@ which requires an estimation of the number of undetected species :</p>
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();

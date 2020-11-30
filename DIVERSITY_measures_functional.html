@@ -24,9 +24,21 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <link href="site_libs/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 
 
@@ -433,7 +445,7 @@ div.tocify {
 </div>
 <div id="podani-schemra" class="section level2">
 <h2>2006 : Podani &amp; Schemra</h2>
-<p><strong>Gower's distance :</strong> can cope with mixed scale types of data :</p>
+<p><strong>Gower’s distance :</strong> can cope with mixed scale types of data :</p>
 <ul>
 <li>quantitative,</li>
 <li>interval,</li>
@@ -447,11 +459,11 @@ div.tocify {
 </div>
 <p>with :</p>
 <ul>
-<li><code>a, b</code> : species to be compared</li>
-<li><code>N</code> : number of quantitative traits</li>
-<li><code>diab</code> : dissimilarity between species for trait i</li>
+<li><p><code>a, b</code> : species to be compared</p></li>
+<li><p><code>N</code> : number of quantitative traits</p></li>
+<li><p><code>diab</code> : dissimilarity between species for trait i</p></li>
 <li><p><code>xia, xib</code> : values of trait i for each species</p></li>
-<li>If <code>xia</code> or <code>xib</code> is missing, <code>wiab = 0</code>.</li>
+<li><p>If <code>xia</code> or <code>xib</code> is missing, <code>wiab = 0</code>.</p></li>
 <li><p>If no missing value, all quantitative traits and each trait equally weighted :</p></li>
 </ul>
 <!-- <div style="text-align:center"><img src="pictures_tutorials/formula_distance-gower-3.png" width=220px/></div>  -->
@@ -468,11 +480,11 @@ div.tocify {
 <p>Some algorithms are well known to cause a distortion of space.</p>
 <p>Clustering methods for constructing a hierarchical classification :</p>
 <p><br/></p>
-<table style="width:100%;">
+<table>
 <colgroup>
-<col width="12%" />
-<col width="43%" />
-<col width="43%" />
+<col width="11%" />
+<col width="44%" />
+<col width="44%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -539,7 +551,7 @@ div.tocify {
 <ul>
 <li>measure of how faithfully a dendrogram preserves the pairwise distances between the original unmodeled data points</li>
 <li>dissimilarity between initial distance and cophenetic distance matrices</li>
-<li><code>DM = 1 - c²</code> with <code>c</code> : cophenetic correlation coefficient (e.g. Pearson correlation coefficient)<br />
+<li><code>DM = 1 - c²</code> with <code>c</code> : cophenetic correlation coefficient (e.g. Pearson correlation coefficient)<br />
 <em><code>DM = 0</code> : no distortion between distance matrices</em></li>
 </ul>
 <p><br/></p>
@@ -587,7 +599,7 @@ to enhance the reliability of the classification and, ultimately, the estimation
 <div id="citations" class="section level1">
 <h1>Citations</h1>
 <ul>
-<li>Legendre P. and Legendre L. (1998). Numerical Ecology. Elsevier, Amsterdam, p. 853, 1998.</li>
+<li>Legendre P. and Legendre L. (1998). Numerical Ecology. Elsevier, Amsterdam, p. 853, 1998.</li>
 <li>Mouchet, Maud &amp; Guilhaumon, Francois &amp; Villéger, Sébastien &amp; Mason, Norman &amp; Tomasini, Jean &amp; Mouillot, David. (2008). Towards a consensus for calculating dendrogram-based functional diversity indices. Oikos. 117. 794 - 800. <a href="https://doi.org/10.1111/j.0030-1299.2008.16594.x" class="uri">https://doi.org/10.1111/j.0030-1299.2008.16594.x</a></li>
 <li>Petchey, O. L., &amp; Gaston, K. J. (2002). Functional diversity (FD), species richness and community composition. Ecology letters, 5(3), 402-411. <a href="https://doi.org/10.1046/j.1461-0248.2002.00339.x" class="uri">https://doi.org/10.1046/j.1461-0248.2002.00339.x</a></li>
 <li>Podani, Janos &amp; Schmera, Dénes. (2006). On dendrogram-based measures of functional diversity. Oikos. 115. 179 - 185. <a href="https://doi.org/10.1111/j.2006.0030-1299.15048.x" class="uri">https://doi.org/10.1111/j.2006.0030-1299.15048.x</a></li>
@@ -606,7 +618,7 @@ to enhance the reliability of the classification and, ultimately, the estimation
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();

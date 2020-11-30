@@ -11,7 +11,7 @@
 
 
 
-<title></title>
+<title>about.utf8</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -23,9 +23,21 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <link href="site_libs/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 
 
@@ -418,9 +430,9 @@ modélisation statistique, sous le logiciel R. <a href="http://www.tela-botanica
 <li><p><em>September - Octobre 2016</em> :<br />
 MOOC Tela Botanica. Apprendre à connaître les plantes.</p></li>
 <li><p><em>May 2015</em> :<br />
-École d'été. Bayesian calibration, forescasting and multi-model<br />
+École d’été. Bayesian calibration, forescasting and multi-model<br />
 predictions of process-based vegetation models.<br />
-Statistiques bayésiennes, méthodes d'optimisation et de Monte-Carlo par Chaînes de Markov (MCMC).</p></li>
+Statistiques bayésiennes, méthodes d’optimisation et de Monte-Carlo par Chaînes de Markov (MCMC).</p></li>
 </ul>
 <p><br/><br></p>
 <p><strong>University education</strong> <a href="https://www.insa-lyon.fr/"><img src="pictures/logo-insa.png" alt="INSA" align="right" style="width:250px;"></a></p>
@@ -428,7 +440,7 @@ Statistiques bayésiennes, méthodes d'optimisation et de Monte-Carlo par Chaîn
 <li><p><em>September 2011 – June 2014</em> :<br />
 Cycle ingénieur à l’INSA de Lyon.<br />
 Département Bio-Informatique et Modélisation.</p></li>
-<li><p><em>September 2009 – June 2011</em> : <a href="https://www.insa-lyon.fr/fr/formation/premier-cycle-eurinsa"><img src="pictures/logo-eurinsa.png" alt="EURINSA" align="right" style="width:300px;"></a> Cycle préparatoire à l'INSA de Lyon.<br />
+<li><p><em>September 2009 – June 2011</em> : <a href="https://www.insa-lyon.fr/fr/formation/premier-cycle-eurinsa"><img src="pictures/logo-eurinsa.png" alt="EURINSA" align="right" style="width:300px;"></a> Cycle préparatoire à l’INSA de Lyon.<br />
 Section européenne.</p></li>
 </ul>
 <p><br/><br/></p>
@@ -467,7 +479,7 @@ GitHub / SVN</p></li>
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();

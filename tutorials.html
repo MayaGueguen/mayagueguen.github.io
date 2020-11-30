@@ -11,7 +11,7 @@
 
 
 
-<title></title>
+<title>tutorials.utf8</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -20,9 +20,21 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <link href="site_libs/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 
 
@@ -325,6 +337,12 @@ $(document).ready(function () {
 <div id="cheatsheet" class="section level3">
 <h3>CHEATSHEET</h3>
 <p><br/></p>
+<div id="statistics" class="section level5">
+<h5>STATISTICS</h5>
+<ul>
+<li><a href="STATISTICS_indices.html">Indices</a></li>
+</ul>
+</div>
 <div id="diversity-indices" class="section level5">
 <h5>DIVERSITY indices</h5>
 <ul>
@@ -346,7 +364,7 @@ $(document).ready(function () {
 <h5>MODELS</h5>
 <ul>
 <li><a href="">Null models</a></li>
-<li><a href="">Meta-analysis</a></li>
+<li><a href="MODELS_meta_analysis.html">Meta-analysis</a></li>
 </ul>
 <p><br/><br/></p>
 </div>
@@ -384,7 +402,7 @@ $(document).ready(function () {
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();

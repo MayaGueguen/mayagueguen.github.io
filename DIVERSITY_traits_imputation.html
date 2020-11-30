@@ -23,9 +23,21 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <link href="site_libs/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 
 
@@ -453,8 +465,8 @@ the axes being then used as functional traits</li>
 <p><em>Measure the predictive power of simple plant traits to estimate species’ maximum dispersal distances :</em></p>
 <ul>
 <li>dispersal distance is related <strong>to a dispersal syndrome</strong> (Willson 1993, Pärtel &amp; Zobel 2007, Vittoz &amp; Engler 2007), that may generally be deduced from seed morphology, but difficult to establish a direct association (Nogales 2007)</li>
-<li><strong>plant height</strong> more important than seed mass in determining seed dispersal distances (Thomson et al. 2011)</li>
-<li><strong>maximum dispersal distance strongly correlated with mean dispersal distance</strong> (Thomson et al. 2011) :</li>
+<li><strong>plant height</strong> more important than seed mass in determining seed dispersal distances (Thomson et al. 2011)</li>
+<li><strong>maximum dispersal distance strongly correlated with mean dispersal distance</strong> (Thomson et al. 2011) :</li>
 </ul>
 <p><span class="math display">\[ log_{10}(\text{ maximumDist }) = 0.795 + 0.984 * log_{10}(\text{ meanDist })\]</span></p>
 <p><br/><br/></p>
@@ -646,7 +658,7 @@ measuring: missingness, phylogenetic clustering, a change in mean and a change i
 <colgroup>
 <col width="15%" />
 <col width="8%" />
-<col width="35%" />
+<col width="36%" />
 <col width="12%" />
 <col width="15%" />
 <col width="12%" />
@@ -667,6 +679,7 @@ measuring: missingness, phylogenetic clustering, a change in mean and a change i
 <td>simple</td>
 <td>replace with the mean/median of available trait values</td>
 <td>No</td>
+<td></td>
 <td></td>
 </tr>
 <tr class="even">
@@ -696,9 +709,9 @@ measuring: missingness, phylogenetic clustering, a change in mean and a change i
 <tr class="odd">
 <td>relationship</td>
 <td>simple/multiple</td>
-<td>regression models <br/> but also : kNN, random forest, matrix factorization...</td>
+<td>regression models <br/> but also : kNN, random forest, matrix factorization…</td>
 <td>(eigenvectors from PCoA)</td>
-<td>Wrigth et al. 2004, 2006</td>
+<td>Wrigth et al. 2004, 2006</td>
 <td><code>dispeRsal</code> function (Tamme 2014)</td>
 </tr>
 <tr class="even">
@@ -764,15 +777,15 @@ measuring: missingness, phylogenetic clustering, a change in mean and a change i
 <div id="papers-making-comparisons" class="section level2">
 <h2>Papers making comparisons</h2>
 <p><br/></p>
-<table style="width:99%;">
+<table>
 <colgroup>
-<col width="5%" />
+<col width="4%" />
 <col width="18%" />
-<col width="8%" />
+<col width="7%" />
 <col width="12%" />
 <col width="18%" />
-<col width="16%" />
-<col width="19%" />
+<col width="17%" />
+<col width="20%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -852,7 +865,7 @@ measuring: missingness, phylogenetic clustering, a change in mean and a change i
 <tr class="even">
 <td><strong>software</strong></td>
 <td><code>dispeRsal</code> function</td>
-<td>2 author's functions, <code>mice</code> pkg</td>
+<td>2 author’s functions, <code>mice</code> pkg</td>
 <td><code>VIM</code>, <code>mice</code>, <code>missForest</code> pkg, <code>Phylopars</code> soft</td>
 <td><code>MATLAB</code></td>
 <td><code>automap</code>, <code>VIM</code>, <code>mice</code> pkg</td>
@@ -865,9 +878,9 @@ measuring: missingness, phylogenetic clustering, a change in mean and a change i
 <div id="methods---according-to-papers" class="section level2">
 <h2>Methods +/- (according to papers)</h2>
 <p><br/></p>
-<table>
+<table style="width:100%;">
 <colgroup>
-<col width="13%" />
+<col width="12%" />
 <col width="43%" />
 <col width="43%" />
 </colgroup>
@@ -942,7 +955,7 @@ measuring: missingness, phylogenetic clustering, a change in mean and a change i
 <tr class="odd">
 <td><strong>PMF</strong></td>
 <td></td>
-<td>- like PCA, efficient if the original matrix is of low rank, i.e. if the axes of the original matrix provide strong correlations <br/> - accuracy worse than using species mean trait values to fill the gaps (Schrodt 2015)</td>
+<td>- like PCA, efficient if the original matrix is of low rank, i.e. if the axes of the original matrix provide strong correlations <br/> - accuracy worse than using species mean trait values to fill the gaps (Schrodt 2015)</td>
 </tr>
 <tr class="even">
 <td><strong>HPMF</strong></td>
@@ -996,7 +1009,7 @@ measuring: missingness, phylogenetic clustering, a change in mean and a change i
 <li>Penone C, Davidson A D, Shoemaker K T, Di Marco M, Rondinini C, Brooks T M, Young B E, Graham C H and Costa G C. 2014. “Imputation of Missing Data in Life-History Trait Datasets: Which Approach Performs the Best?” Methods in Ecology and Evolution 5 (9): 961–70. <a href="https://doi.org/10.1111/2041-210X.12232" class="uri">https://doi.org/10.1111/2041-210X.12232</a></li>
 <li>Poyatos R, Sus O, Badiella L, Mencuccini M and Martínez-Vilalta J. 2018. “Gap-Filling a Spatially Explicit Plant Trait Database: Comparing Imputation Methods and Different Levels of Environmental Information.” Biogeosciences 15 (9): 2601–17. <a href="https://doi.org/10.5194/bg-15-2601-2018" class="uri">https://doi.org/10.5194/bg-15-2601-2018</a></li>
 <li>Quartagno M, Grund S and Carpenter J. 2019. “Jomo: A Flexible Package for Two-Level Joint Modelling Multiple Imputation.” R Journal 11 (2): 205–28. <a href="https://doi.org/10.32614/RJ-2019-028" class="uri">https://doi.org/10.32614/RJ-2019-028</a></li>
-<li>Schrodt F, Kattge J, Shan H, Fazayeli F, Joswig J, Banerjee A, Reichstein M, et al. 2015. “BHPMF - a Hierarchical Bayesian Approach to Gap-Filling and Trait Prediction for Macroecology and Functional Biogeography.” Global Ecology and Biogeography 24 (12): 1510–21. <a href="https://doi.org/10.1111/geb.12335" class="uri">https://doi.org/10.1111/geb.12335</a></li>
+<li>Schrodt F, Kattge J, Shan H, Fazayeli F, Joswig J, Banerjee A, Reichstein M, et al. 2015. “BHPMF - a Hierarchical Bayesian Approach to Gap-Filling and Trait Prediction for Macroecology and Functional Biogeography.” Global Ecology and Biogeography 24 (12): 1510–21. <a href="https://doi.org/10.1111/geb.12335" class="uri">https://doi.org/10.1111/geb.12335</a></li>
 <li>Shan H, Kattge J, Reich P B, Banerjee A, Schrodt F and Reichstein M. 2012. “Gap Filling in the Plant Kingdom - Trait Prediction Using Hierarchical Probabilistic Matrix Factorization.” In Proceedings of the 29th International Conference on Machine Learning, ICML 2012, 2:1303–10.</li>
 <li>Tamme R, Götzenberger L, Zobel M, Bullock J M, Hooftman D AP, Kaasik A and Pärtel M. 2014. “Predicting Species’ Maximum Dispersal Distances from Simple Plant Traits.” Ecology 95 (2): 505–13. <a href="https://doi.org/10.1890/13-1000.1" class="uri">https://doi.org/10.1890/13-1000.1</a></li>
 <li>Taugourdeau S, Villerd J, Plantureux S, Huguenin-Elie O and Amiaud B. 2014. “Filling the Gap in Functional Trait Databases: Use of Ecological Hypotheses to Replace Missing Data.” Ecology and Evolution 4 (7): 944–58. <a href="https://doi.org/10.1002/ece3.989" class="uri">https://doi.org/10.1002/ece3.989</a></li>
@@ -1014,7 +1027,7 @@ measuring: missingness, phylogenetic clustering, a change in mean and a change i
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();

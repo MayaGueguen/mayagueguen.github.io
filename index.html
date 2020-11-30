@@ -11,7 +11,7 @@
 
 
 
-<title></title>
+<title>index.utf8</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -23,9 +23,21 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <link href="site_libs/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 
 
@@ -406,8 +418,8 @@ div.tocify {
 <p><br/><br/></p>
 <p><a href="about.html"><img src="pictures/PHOTO_Gueguen_Maya.png" alt="Maya" align="right" style="width:200px; margin-left:100px;"></a></p>
 <p><br/></p>
-<p>Ingénieure d'études en analyse de données et calcul scientifique au <a href="https://leca.osug.fr/">Laboratoire d'Ecologie Alpine</a>.</p>
-<p>Mon travail se partage entre la <strong>modélisation de la biodiversité</strong> (modèles de distribution d'espèces, modèle spatialement explicite de végétation, indices de diversité, groupements fonctionnels...) et le <strong>soutien technique</strong> aux membres du laboratoire (programmation sous R, utilisation du cluster de calcul <a href="https://gricad.univ-grenoble-alpes.fr/">Gricad</a>, formations internes...).</p>
+<p>Ingénieure d’études en analyse de données et calcul scientifique au <a href="https://leca.osug.fr/">Laboratoire d’Ecologie Alpine</a>.</p>
+<p>Mon travail se partage entre la <strong>modélisation de la biodiversité</strong> (modèles de distribution d’espèces, modèle spatialement explicite de végétation, indices de diversité, groupements fonctionnels…) et le <strong>soutien technique</strong> aux membres du laboratoire (programmation sous R, utilisation du cluster de calcul <a href="https://gricad.univ-grenoble-alpes.fr/">Gricad</a>, formations internes…).</p>
 <p><br/><br/></p>
 <p><a href="publications.html"><img src="pictures/picture-archive.jpg" alt="Maya" align="left" style="width:200px;"></a> <a href="work.html"><img src="pictures/picture-code.jpg" alt="Maya" align="center" style="width:200px; margin-left:80px;"></a> <a href="tutorials.html"><img src="pictures/picture-tutorial.jpg" alt="Maya" align="center" style="width:200px; margin-left:80px;"></a></p>
 
@@ -422,7 +434,7 @@ div.tocify {
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
