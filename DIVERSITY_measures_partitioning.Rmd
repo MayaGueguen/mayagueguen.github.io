@@ -10,6 +10,11 @@ output:
       smooth_scroll: false
 ---	
 
+
+```{r, echo=FALSE}
+library(knitr)
+```
+
 <br/><br/>
 
 # Glossary {.tabset .tabset-fade .tabset-pills} 
@@ -337,7 +342,7 @@ with :
 <br/>
 
 
-## 2016 : Reeve
+## 2014 : Reeve
 
 <br/>
 <br/>

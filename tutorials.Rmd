@@ -13,20 +13,20 @@ output:
 
 ##### STATISTICS
 
-- [Indices](STATISTICS_indices.html)
+- [Correlations, evaluation metrics, variance...](STATISTICS_indices.html)
 
 ##### DIVERSITY indices
 
-- [Abundance](DIVERSITY_measures_abundance.html)
-- [Functional](DIVERSITY_measures_functional.html)
-- [Phylogenetic](DIVERSITY_measures_phylogenetic.html)
-- [Partitioning](DIVERSITY_measures_partitioning.html)
-- [Communities](DIVERSITY_measures_communities.html)
-- [Richness](DIVERSITY_measures_richness.html)
+- [Abundance (Hill's numbers - *Leinster, Chao*)](DIVERSITY_measures_abundance.html)
+- [Functional (FD, Gower's distance, clustering)](DIVERSITY_measures_functional.html)
+- [Phylogenetic (PD - *Faith, Chao*)](DIVERSITY_measures_phylogenetic.html)
+- [Partitioning (alpha, beta - *Whittaker, Baselga, Jost*)](DIVERSITY_measures_partitioning.html)
+- [Communities (CWM, SNC, 4th corner)](DIVERSITY_measures_communities.html)
+- [Richness (undetected, shared, richness - *Chao*)](DIVERSITY_measures_richness.html)
 
 ##### TRAITS
 
-- [Imputation](DIVERSITY_traits_imputation.html)
+- [Imputation (methods comparison)](DIVERSITY_traits_imputation.html)
 
 ##### MODELS
 

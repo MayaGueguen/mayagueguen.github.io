@@ -358,9 +358,9 @@ measuring: missingness, phylogenetic clustering, a change in mean and a change i
 # Citations
 
 <!-- - Audigier V, White I R, Jolani S, Debray T PA, Quartagno M, Carpenter J, van Buuren S and Resche-Rigon M. 2018. “Multiple Imputation for Multilevel Data with Continuous and Binary Variables.” Statistical Science 33 (2): 160–83. https://doi.org/10.1214/18-STS646 -->
-- Azur, M J, Stuart E A, Frangakis C and Leaf P J. 2011. “Multiple Imputation by Chained Equations: What Is It and How Does It Work?” International Journal of Methods in Psychiatric Research 20 (1): 40–49. https://doi.org/10.1002/mpr.329
+- Azur M J, Stuart E A, Frangakis C and Leaf P J. 2011. “Multiple Imputation by Chained Equations: What Is It and How Does It Work?” International Journal of Methods in Psychiatric Research 20 (1): 40–49. https://doi.org/10.1002/mpr.329
 <!-- - Blonder, Benjamin. 2016. “Do Hypervolumes Have Holes?” American Naturalist 187 (4): E93–105. https://doi.org/10.1086/685444 -->
-- Diniz-Filho, J A F, Villalobos F, and Bini L M. 2015. “The Best of Both Worlds: Phylogenetic Eigenvector Regression and Mapping.” Genetics and Molecular Biology 38 (3): 396–400.
+- Diniz-Filho, J A F, Villalobos F and Bini L M. 2015. “The Best of Both Worlds: Phylogenetic Eigenvector Regression and Mapping.” Genetics and Molecular Biology 38 (3): 396–400.
 - Goolsby, E W, Bruggeman J and Ané C. 2017. “Rphylopars: Fast Multivariate Phylogenetic Comparative Methods for Missing Data and within-Species Variation.” Methods in Ecology and Evolution 8 (1): 22–27. https://doi.org/10.1111/2041-210X.12612
 <!-- - Huque Md H, Carlin J B, Simpson J A and Lee K J. 2018. “A Comparison of Multiple Imputation Methods for Missing Data in Longitudinal Studies 01 Mathematical Sciences.” BMC Medical Research Methodology 18 (1): 1–16. https://doi.org/10.1186/s12874-018-0615-6 -->
 - Johnson T F, Isaac N J B, Paviolo A and González‐Suárez M. 2020. “Handling Missing Values in Trait Data.” Global Ecology and Biogeography, no. December 2019: 1–12. https://doi.org/10.1111/geb.13185

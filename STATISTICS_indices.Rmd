@@ -194,7 +194,7 @@ Presence-only data. Spearman correlation
 <br/>
 
 <div style="text-align:center;">
-<embed src="pictures_tutorials/example_boyce-index.pdf" width='800' height='600' allowfullscreen webkitallowfullscreen></embed>
+<embed src="pictures_tutorials/example_Boyce-index.pdf" width='800' height='600' allowfullscreen webkitallowfullscreen></embed>
 </div>
 
 <br/>

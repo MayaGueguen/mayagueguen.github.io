@@ -10,10 +10,15 @@ output:
       smooth_scroll: false
 ---
 
-<br/><br/>
+```{r, echo=FALSE}
+library(knitr)
+```
+
+<br/>
+<br/>
 
 
-# 2011 : Vellend
+# 2010 : Vellend
 
 ## Indices of species' distinctness
 
@@ -169,24 +174,25 @@ include_graphics("pictures_tutorials/example_ultrametric-tree.png")
 # Citations
 
 - Faith D. P. (2013). Biodiversity and evolutionary history: useful extensions of the PD phylogenetic diversity assessment framework. Ann N Y Acad Sci. Jun; 1289:69-89. https://doi.org/10.1111/nyas.12186
-
-    - Altschul, S. & Lipman, D. (1990). Equal animals. Nature 348, 493–494. https://doi.org/10.1038/348493c0
-    - May, R.M. (1990). Taxonomy as destiny. Nature, 347, 129-130.
-    - Nixon, K. & Wheeler, Q. (1990). An Amplification of the Phylogenetic Species Concept. Cladistics. 6. 211-223. https://doi.org/10.1111/j.1096-0031.1990.tb00541.x
-    - Nixon, K. & Wheeler, Q. (1991). Extinction and the origin of species. Extinction and Phylogeny.
-    - Pavoine, S., Ollier, S. & Dufour, A.‐B. (2005). Is the originality of a species measurable?. Ecology Letters, 8: 579-586. https://doi.org/10.1111/j.1461-0248.2005.00752.x
-    - Redding, D.W. & Mooers, A.Ø. (2006). Incorporating Evolutionary Measures into Conservation Prioritization. Conservation Biology, 20: 1670-1678. https://doi.org/10.1111/j.1523-1739.2006.00555.x
-    - Vane-Wright, R.I., Humphries, C.J. & Williams, P.H. (1991). What to protect? - Systematics and the agony of choice. Biological Conservation, 55, 235-254. https://doi.org/10.1016/0006-3207(91)90030-D
-
-    - Barker, G. (2002). Phylogenetic diversity: a quantitative framework for measurement of priority and achievement in biodiversity conservation. Biological Journal of the Linnean Society. 76. 165-194. https://doi.org/10.1046/j.1095-8312.2002.00055.x
-    - Crozier, R. (1997). Preserving the Information Content of Species: Genetic Diversity, Phylogeny, and Conservation Worth. Annual Review of Ecology and Systematics, 28, 243-268. http://www.jstor.org/stable/2952493
-    - Faith, D. (1992). Conservation evaluation and phylogenetic diversity. Biological Conservation. 61. 1-10. https://doi.org/10.1016/0006-3207(92)91201-3
-    - Helmus, M., Bland, T., Williams, C. & Ives, A. (2007). Phylogenetic measures of biodiversity. Am Nat 169(3):E68-E83. The American naturalist. 169. https://doi.org/10.1086/511334
-    - Rao, C. R. (1982). Diversity and Dissimilarity Coefficients: A Unified Approach. Theoretical population biology, 21, 24-43. Theoretical Population Biology. 21. 24-43. https://doi.org/10.1016/0040-5809(82)90004-1
-    - Warwick, R. & Clarke, K. (1995). New 'biodiversity' measures reveal a decrease in taxonomic distinctness with increasing stress. Marine Ecology Progress Series. 129. 301-305. https://doi.org/10.3354/meps129301
-    - Webb, C. (2000). Exploring the Phylogenetic Structure of Ecological Communities: An Example for Rain Forest Trees. The American naturalist. 156. 145-155. https://doi.org/10.1086/303378
-
 - Vellend, M., Cornwell, W., Magnuson-Ford, K. & Mooers, A. (2010). Measuring phylogenetic biodiversity.
+
+  - Altschul, S. & Lipman, D. (1990). Equal animals. Nature 348, 493–494. https://doi.org/10.1038/348493c0
+  - May, R.M. (1990). Taxonomy as destiny. Nature, 347, 129-130.
+  - Nixon, K. & Wheeler, Q. (1990). An Amplification of the Phylogenetic Species Concept. Cladistics. 6. 211-223. https://doi.org/10.1111/j.1096-0031.1990.tb00541.x
+  - Nixon, K. & Wheeler, Q. (1991). Extinction and the origin of species. Extinction and Phylogeny.
+  - Pavoine, S., Ollier, S. & Dufour, A.‐B. (2005). Is the originality of a species measurable?. Ecology Letters, 8: 579-586. https://doi.org/10.1111/j.1461-0248.2005.00752.x
+  - Redding, D.W. & Mooers, A.Ø. (2006). Incorporating Evolutionary Measures into Conservation Prioritization. Conservation Biology, 20: 1670-1678. https://doi.org/10.1111/j.1523-1739.2006.00555.x
+  - Vane-Wright, R.I., Humphries, C.J. & Williams, P.H. (1991). What to protect? - Systematics and the agony of choice. Biological Conservation, 55, 235-254. https://doi.org/10.1016/0006-3207(91)90030-D
+  - 
+  - Barker, G. (2002). Phylogenetic diversity: a quantitative framework for measurement of priority and achievement in biodiversity conservation. Biological Journal of the Linnean Society. 76. 165-194. https://doi.org/10.1046/j.1095-8312.2002.00055.x
+  - Crozier, R. (1997). Preserving the Information Content of Species: Genetic Diversity, Phylogeny, and Conservation Worth. Annual Review of Ecology and Systematics, 28, 243-268. http://www.jstor.org/stable/2952493
+  - Faith, D. (1992). Conservation evaluation and phylogenetic diversity. Biological Conservation. 61. 1-10. https://doi.org/10.1016/0006-3207(92)91201-3
+  - Helmus, M., Bland, T., Williams, C. & Ives, A. (2007). Phylogenetic measures of biodiversity. Am Nat 169(3):E68-E83. The American naturalist. 169. https://doi.org/10.1086/511334
+  - Rao, C. R. (1982). Diversity and Dissimilarity Coefficients: A Unified Approach. Theoretical population biology, 21, 24-43. Theoretical Population Biology. 21. 24-43. https://doi.org/10.1016/0040-5809(82)90004-1
+  - Warwick, R. & Clarke, K. (1995). New 'biodiversity' measures reveal a decrease in taxonomic distinctness with increasing stress. Marine Ecology Progress Series. 129. 301-305. https://doi.org/10.3354/meps129301
+  - Webb, C. (2000). Exploring the Phylogenetic Structure of Ecological Communities: An Example for Rain Forest Trees. The American naturalist. 156. 145-155. https://doi.org/10.1086/303378
+
+
 
 
 
