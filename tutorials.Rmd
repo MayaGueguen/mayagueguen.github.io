@@ -31,7 +31,7 @@ output:
 ##### MODELS
 
 - [Null models]()
-- [Meta-analysis](MODELS_meta_analysis.html)
+- [Meta-analysis (publications bias, effect size, heterogeneity)](MODELS_meta_analysis.html)
 
 
 <br/><br/>

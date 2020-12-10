@@ -10,7 +10,7 @@
 
 
 
-<meta name="date" content="2018-12-02" />
+<meta name="date" content="2020-10-12" />
 
 <title>MODELS : meta analysis</title>
 
@@ -413,340 +413,410 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">MODELS : meta analysis</h1>
-<h4 class="date">12/02/2018</h4>
+<h4 class="date">10/12/2020</h4>
 
 </div>
 
 
 <p><br/> <br/></p>
-<div id="standard-diversity-indices" class="section level1">
-<h1>Standard diversity indices</h1>
-<div id="simpson-nature" class="section level2">
-<h2>1949 : Simpson (Nature)</h2>
-<p><strong>Simpson concentration :</strong> probability that two randomly chosen individuals from a given community are the same species.</p>
-<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Simpson-index.png" width=60px/></div>   -->
-<p><img src="pictures_tutorials/formula_Simpson-index.png" width="60px" style="display: block; margin: auto;" /></p>
-<!-- \begin{equation} -->
-<!-- \sum\limits_{i=1}^S {p_i}^2 -->
-<!-- \end{equation} -->
-<p><br/></p>
-<p><strong>Gini-Simpson index :</strong> probability that two randomly chosen individuals from a given community are different species.</p>
-<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Gini-Simpson-index.png" width=80px/></div>   -->
-<p><img src="pictures_tutorials/formula_Gini-Simpson-index.png" width="80px" style="display: block; margin: auto;" /></p>
-<p><br/></p>
-</div>
-<div id="shannon-weaver" class="section level2">
-<h2>1948-1962 : Shannon &amp; Weaver</h2>
-<p><strong>Shannon entropy :</strong> average amount of <em>information</em> in the community, given the facts that :</p>
+<div id="publication-bias" class="section level1">
+<h1>Publication bias</h1>
 <ul>
-<li>rare species carry more <em>information</em> than common species ;</li>
-<li>their information value is proportional to the logarithm of their relative abundance.</li>
+<li>research in the published literature is <strong>unrepresentative</strong> of the population of completed studies</li>
+<li>originally defined as the publication or non-publication of studies depending on the direction and statistical significance of the results</li>
+<li>language, availability, cost, familiarity, outcome (= dissemination bias)</li>
 </ul>
-<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Shannon-entropy.png" width=100px/></div>   -->
-<p><img src="pictures_tutorials/formula_Shannon-entropy.png" width="100px" style="display: block; margin: auto;" /></p>
-<p><br/></p>
-<p>Measures the loss of information due to the loss of a species.<br />
-Or the uncertainty about the species obtained when one individual is randomly chosen.</p>
-<p><br/></p>
-</div>
-<div id="rényi" class="section level2">
-<h2>1961-1970 : Rényi</h2>
-<p><strong>Rényi entropy :</strong></p>
+<p><span class="math inline">\(\rightarrow\)</span> especially problematic when it comes to systematic review and meta-analytic methods (aiming to summarize research)</p>
+<p></br></p>
+<ol style="list-style-type: decimal">
+<li><strong>Detect publication bias</strong>
 <ul>
-<li><code>q -&gt; 0</code> : increasingly weighs all possible species more equally, regardless of their probabilities.</li>
-<li><code>q = 0</code> : Hartley entropy (logarithm of the species richness).</li>
-<li><code>q -&gt; 1</code> : Shannon entropy.</li>
-<li><code>q -&gt; inf</code> : increasingly determined by the most abundant species.</li>
-</ul>
-<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Renyi-entropy.png" width=160px/></div>   -->
-<p><img src="pictures_tutorials/formula_Renyi-entropy.png" width="160px" style="display: block; margin: auto;" /></p>
-<p><br/></p>
-</div>
-</div>
-<div id="hills-numbers" class="section level1">
-<h1>Hill’s numbers</h1>
-<div id="hill-ecology" class="section level2">
-<h2>1973 : Hill (Ecology)</h2>
-<p><br/> The <strong>“doubling” property</strong> = if two equally large, completely distinct communities (no shared species) each have diversity X, and if these communities are combined, then the diversity of the combined communities should be 2X.</p>
-<p><strong>Most raw diversity indices (standard diversity indices, <code>H</code>) do not obey this property,<br />
-but their numbers equivalents do.</strong></p>
-<p><br/></p>
-<p>The <strong>numbers equivalents</strong> or <strong>effective number of elements</strong> of a diversity index = number of equally likely elements needed to produce the given value of the diversity index.<br />
-<em>The diversity of <code>S</code> equally abundant species is <code>S</code>.</em></p>
-<p>Every diversity measure <code>H</code> has a number equivalent <code>D</code> : <!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Hill-numbers.png" width=300px/></div>   --> <img src="pictures_tutorials/formula_Hill-numbers.png" width="300px" style="display: block; margin: auto;" /></p>
-<p><br/> The order <code>q</code> determines a diversity <strong>measure’s sensitivity to species abundance</strong> (rare or common species) :</p>
+<li>test funnel plot assymmetry (Begg and Mazumdar 1994, Egger et al 1997, Sterne and Egger)</li>
+</ul></li>
+<li><strong>Assess sensitivity of analysis to (possible) publication bias</strong>
 <ul>
-<li>orders higher than 1 are disproportionately sensitive to the most common species,</li>
-<li>while orders lower than 1 are disproportionately sensitive to the rare species.</li>
-</ul>
-<p><br/></p>
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th>q = 0</th>
-<th>q = 1</th>
-<th>q = 2</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><em>Standard diversity indices</em></td>
-<td>Species richness <br/> <img src="pictures_tutorials/formula_species-richness.png" width=60px/></td>
-<td>Shannon entropy <br/> <img src="pictures_tutorials/formula_Shannon-entropy.png" width=100px/></td>
-<td>Simpson index <br/> <img src="pictures_tutorials/formula_Simpson-index.png" width=60px/> <br/><br/> Gini-Simpson index <br/> <img src="pictures_tutorials/formula_Gini-Simpson-index.png" width=80px/></td>
-</tr>
-<tr class="even">
-<td><em>- Effective numbers <br/> Hill numbers</em> <br/> <em>- exp(Rényi entropy) <br/>(total dissimilarity)</em></td>
-<td>Species richness</td>
-<td>Exponential of Shannon entropy</td>
-<td>Inverse of (Gini)-Simpson index</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p><br/></p>
-</div>
-</div>
-<div id="similarity-sensitive-measures" class="section level1">
-<h1>Similarity-sensitive measures</h1>
-<div id="rao-theoretical-population-biology" class="section level2">
-<h2>1982 : Rao (Theoretical Population Biology)</h2>
-<p><strong>Rao’s quadratic entropy :</strong></p>
+<li>failsafe N, or file-drawer analysis (Harris Cooper 1979)</li>
+</ul></li>
+<li><strong>Adjust estimates for (possible) effect of publication bias</strong>
 <ul>
-<li>measure of average conflict among species<br />
-</li>
-<li>efficient index of functional diversity<br />
-</li>
-<li>expected dissimilarity between two individuals of a given species assemblage selected at random with replacement</li>
-<li><strong>Simpson concentration + pairwise distance between species</strong></li>
-</ul>
-<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Rao-entropy.png" width=150px/></div>   -->
-<p><img src="pictures_tutorials/formula_Rao-entropy.png" width="150px" style="display: block; margin: auto;" /></p>
-<p><em>Both Simpson and Rao indices :</em></p>
-<ul>
-<li>non-linearity with respect to increasing diversity</li>
-<li>do not obey the replication principle</li>
-</ul>
-<p><br/></p>
+<li>trim and fill method (Duval and Tweedie)</li>
+</ul></li>
+</ol>
+<p>(<em>Rothstein review 2005</em>)</p>
+<p></br></br></p>
 </div>
-<div id="faith-biological-conservation" class="section level2">
-<h2>1992 : Faith (Biological Conservation)</h2>
-<p><strong>Phylogenetic diversity (PD)</strong> = sum of the lengths of all those branches that are members of the corresponding minimum spanning path (smallest assemblage of branches from the cladogram for the complete set of taxa such that, for any two members of a subset of the taxa, a path connecting the two can be found that uses only branches in the assemblage).</p>
-<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Faith-PD.png" width=150px/></div>   -->
-<p><img src="pictures_tutorials/formula_Faith-PD.png" width="150px" style="display: block; margin: auto;" /></p>
-<p><br/></p>
-</div>
-<div id="allen-american-naturalist" class="section level2">
-<h2>2009 : Allen (American Naturalist)</h2>
-<p><strong>Phylogenetic entropy index :</strong></p>
+<div id="effect-size" class="section level1">
+<h1>Effect size</h1>
+<div id="neq-with-statistical-significance" class="section level2">
+<h2><span class="math inline">\(\neq\)</span> with statistical significance</h2>
+<p>Any statistical test depends on four quantities :</p>
+<ol style="list-style-type: decimal">
+<li><strong>P-Value</strong>
 <ul>
-<li>places a high value on distinctive species but has the property that when members of a species become rare in proportion to other species, it is never desirable to eliminate them<br />
-</li>
-<li><strong>Shannon entropy + phylogenetic differences</strong></li>
-</ul>
-<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Allen-entropy.png" width=300px/></div>   -->
-<p><img src="pictures_tutorials/formula_Allen-entropy.png" width="300px" style="display: block; margin: auto;" /></p>
-<p><em>Both Shannon and Allen indices :</em></p>
+<li>= probability that a difference of at least the same size would have arisen by chance, even if there really were no difference between the two populations</li>
+<li>= <em>statistical significance</em></li>
+<li>does not give information about the magnitude of an effect</li>
+<li>depends essentially on sample size and on effect size</li>
+<li>BUT ‘significant’ with (big effect, and small sample) or (big sample, and small effect)</li>
+</ul></li>
+<li><strong>Sample size</strong>
 <ul>
-<li>non-linearity with respect to increasing diversity</li>
-<li>do not obey the replication principle</li>
-</ul>
-<p><br/></p>
+<li>Test statistics are usually a function of sample size, so can not serve as ES.</li>
+</ul></li>
+<li><strong>Effect size</strong>
+<ul>
+<li>= measures to quantify the degree to which a phenomenon exists</li>
+<li>= quantifies the size of the difference between two groups</li>
+<li>emphasises the size of the difference rather than confounding it with sample size</li>
+<li>Each hypothesis test needs a relevant ES, together with an estimate of its likely ‘margin for error’ or ‘confidence interval’</li>
+</ul></li>
+<li><strong>Power of the test</strong></li>
+</ol>
+<p>(<em>Coe 2002</em>, <em>Jamalzadeh 2010</em>)</p>
+<p></br></p>
 </div>
-<div id="generalization" class="section level2">
-<h2>Generalization</h2>
-<p><br/></p>
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th>q = 0</th>
-<th>q = 1</th>
-<th>q = 2</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><em>Standard diversity indices</em></td>
-<td>Species richness <br/> <img src="pictures_tutorials/formula_species-richness.png" width=60px/></td>
-<td>Shannon entropy <br/> <img src="pictures_tutorials/formula_Shannon-entropy.png" width=100px/></td>
-<td>Simpson concentration <br/> <img src="pictures_tutorials/formula_Simpson-index.png" width=60px/> <br/><br/> Gini-Simpson index <br/> <img src="pictures_tutorials/formula_Gini-Simpson-index.png" width=80px/></td>
-</tr>
-<tr class="even">
-<td><em>- Effective numbers <br/> Hill numbers</em> <br/> <em>- exp(Rényi entropy) <br/>(total dissimilarity)</em></td>
-<td>Species richness</td>
-<td>Exponential of Shannon entropy</td>
-<td>Inverse of Simpson concentration</td>
-</tr>
-<tr class="odd">
-<td><em>Generalization</em> <br/> <em>Similarity information</em></td>
-<td>Faith PD (ultrametric tree)</td>
-<td>Allen’s entropy <br/> Generalization of Shannon entropy</td>
-<td>Rao’s quadratic entropy <br/> Generalization of Gini-Simpson index</td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p><br/></p>
+<div id="measures-of-effect-size" class="section level2">
+<h2>Measures of effect size</h2>
+<div id="cohen-d" class="section level3">
+<h3>1977 : Cohen (d)</h3>
+<ul>
+<li><em>standardised mean difference</em></li>
+<li>2 normal populations with same standard deviation</li>
+<li>important to say which way round the calculation was done</li>
+<li>/!\ very sensitive to violations of normality assumption</li>
+</ul>
+<p><span class="math display">\[d = \frac{\bar{x_1} - \bar{x_2}}{\sigma}\]</span></p>
+</div>
+<div id="hodges-s" class="section level3">
+<h3>1985 : Hodges (s)</h3>
+<ul>
+<li>2 normal populations with non-equal standard deviation</li>
+</ul>
+<p><span class="math display">\[s = \sqrt{\frac{(n_1 - 1) \cdot s_1^2 + (n_2 - 1) \cdot s_2^2}{n_1 + n_2 - 2}}\]</span></p>
+</div>
+<div id="mcgraw-wong-cles" class="section level3">
+<h3>1992 : McGraw &amp; Wong (CLES)</h3>
+<ul>
+<li><em>Common Language Effect Size</em> = probability that a randomly selected individual from one group have a higher score on a variable than a randomly selected individual from another group</li>
+<li>2 normal populations with same standard deviation</li>
+<li><span class="math inline">\(0.5\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> populations overlap (identical), <span class="math inline">\(0\)</span> or <span class="math inline">\(1\)</span> <span class="math inline">\(\Rightarrow\)</span> larger effect size</li>
+</ul>
+<p><span class="math display">\[CLES = \Phi \left( \frac{\mu_y - \mu_x}{\sqrt{2} \cdot \sigma} \right)\]</span></p>
+</div>
+<div id="cohen-noes" class="section level3">
+<h3>1992 : Cohen (NOES)</h3>
+<ul>
+<li><em>Non-Overlap Effect Size</em> = amount of combined area under the density probability distribution function not shared by two populations</li>
+<li>no need for normality assumption</li>
+<li><span class="math inline">\(0\)</span> = small effect size, <span class="math inline">\(1\)</span> = large effect size</li>
+</ul>
+<p><img src="pictures_tutorials/example_NOES.png" width="200px" style="display: block; margin: auto;" /></p>
+</div>
+<div id="cliff-npes" class="section level3">
+<h3>1993 : Cliff (NPES)</h3>
+<ul>
+<li><em>Non-Parametric Effect Size</em> = enumerating the number of occurrences of an observation from one group having a higher response value than an observation from the second group, and the number of occurrences of the reverse</li>
+<li>no need for normality assumption</li>
+<li><span class="math inline">\(0\)</span> = small effect size, <span class="math inline">\(1\)</span> = large effect size</li>
+</ul>
+<p><span class="math display">\[NPES = \delta = \frac{\Sigma_{i=1}^{n_1} \Sigma_{j=1}^{n_2} sign(x_{i1} - x_{j2})}{n_1 \cdot n_2}\]</span></p>
+</div>
+<div id="qad" class="section level3">
+<h3>QAD</h3>
+<ul>
+<li><em>Quantile Absolute Deviation</em> = average absolute distance between the quantiles of two populations</li>
+<li><span class="math inline">\(F^{-1}\)</span> and <span class="math inline">\(G^{-1}\)</span> = quantile functions (cumulative distribution functions) for 2 statistical populations</li>
+<li><span class="math inline">\(QAD(F,F) = 0\)</span>, and <span class="math inline">\(QAD(F,G) = 0\)</span> if and only if <span class="math inline">\(F = G\)</span></li>
+</ul>
+<p><span class="math display">\[QAD = \int_0^1 |F^{-1}(p) - G^{-1}(p) | dp\]</span></p>
+</div>
+<div id="des" class="section level3">
+<h3>DES</h3>
+<ul>
+<li><em>Divergence Effect Size</em></li>
+<li>not symmetric : <span class="math inline">\(DES(F|G) \neq DES(G|F)\)</span></li>
+</ul>
+<p><span class="math display">\[DES = 2 \cdot \int_0^1 |G\{F^{-1}(p)\} - G\{G^{-1}(p)\} | dp\]</span></p>
+<p></br></p>
 </div>
 </div>
-<div id="hill-numbers-similarity-sensitive-measures" class="section level1">
-<h1>Hill numbers’ + similarity-sensitive measures</h1>
-<p>Improve the formula of Hill numbers by adding a <strong>similarity-sensitive</strong> parameter = measure that reflect the varying dissimilarities between species (number specifying how similar they are).</p>
-<p><br/></p>
-<div id="chao-phil.-trans.-r.-soc." class="section level2">
-<h2>2010 : Chao (Phil. Trans. R. Soc.)</h2>
-<p>Family of effective number similarity-sensitive measures, <strong>tailored specifically to phylogenetic diversity</strong> (similarity derived from a tree = <strong>distance</strong>).</p>
-<p><strong>Mean phylogenetic diversity of order <code>q</code> :</strong></p>
+<div id="interpretations" class="section level2">
+<h2>Interpretation(s)</h2>
 <ul>
-<li>family of diversity measures taking into account phylogenetic similarities, derived from a phylogenetic tree.</li>
-<li>product of the interval duration <code>T</code> and the mean diversity over that interval.</li>
+<li><strong>statements about the overlap between the two samples in terms of a comparison of percentiles</strong></li>
 </ul>
-<p><br/></p>
-<p><strong>Phylogenetic diversity of order <code>q</code> through <code>T</code> years ago :</strong></p>
-<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Chao-PD.png" width=350px/></div>   -->
-<p><img src="pictures_tutorials/formula_Chao-PD.png" width="350px" style="display: block; margin: auto;" /></p>
-<p>with :</p>
+<p><em>An effect size is exactly equivalent to a ‘Z-score’ of a standard Normal distribution. For example, an effect size of 0.8 means that the score of the average person in the experimental group is 0.8 standard deviations above the average person in the control group, and hence exceeds the scores of 79% of the control group.</em></p>
 <ul>
-<li><p><code>Li</code> = length of branch <code>i</code></p></li>
-<li><p><code>ai</code> = total abundance descended from branch <code>i</code></p></li>
-<li><p><code>q</code> = sensitivity parameter</p></li>
-<li><p><code>T</code> = <code>sum(Li * ai)</code> if ultrametric tree<br />
-= <code>mean quantity</code> if non-ultrametric tree</p></li>
+<li><strong>probability that one could guess which group a person came from, based only on their test score</strong></li>
 </ul>
-<p><br/> <em>Hill numbers</em> = special case for all species maximally distinct, all branch lengths = <code>T</code></p>
-<p><em>Faith’s PD for all <code>q</code></em> = all species maximally distinct and equally common, age of the highest node = <code>T</code></p>
-<p>After applying a simple transformation, the phylogenetic diversity measure of Faith (1992) and the phylogenetic entropy of Allen et al. (2009) are special cases of mean phylogenetic diversity.</p>
-<p><br/></p>
-<p><strong>Properties of values of Chao model :</strong></p>
+<p><em>If the effect size were 0 (i.e. the two groups were the same) then the probability of a correct guess would be exactly a half – or 0.50. With a difference between the two groups equivalent to an effect size of 0.3, there is still plenty of overlap, and the probability of correctly identifying the groups rises only slightly to 0.56. With an effect size of 1, the probability is now 0.69, just over a two-thirds chance.</em></p>
 <ul>
-<li>satisfies replication, but only under the assumption that <em>subcommunities all have the same mean evolutionary change (ultrametric tree)</em></li>
-<li>for <em>non-ultrametric trees</em>, mean phylogenetic diversity can be greater than the number of species !</li>
+<li><strong>equivalence between standardised mean difference (d) and correlation coefficient (r) (Cohen 1969)</strong></li>
 </ul>
-<p><br/></p>
+<p>If group membership is coded with a dummy variable (e.g. denoting the control group by 0 and the experimental group by 1) and the correlation between this variable and the outcome measure calculated, a value of r can be derived : <span class="math display">\[r^2 = \frac{d^2}{(4+d^2)}\]</span></p>
+<ul>
+<li><strong>Binomial effect size display (BESD) (Rosenthal and Rubin (1982))</strong></li>
+</ul>
+<p>If the outcome measure is reduced to a simple dichotomy (for example, whether a score is above or below a particular value such as the median, which could be thought of as ‘success’ or ‘failure’), r can be interpreted as the difference in the proportions in each category.</p>
+<p><em>For example, an effect size of 0.2 indicates a difference of 0.10 in these proportions, as would be the case if 45% of the control group and 55% of the treatment group had reached some threshold of ‘success’. Note, however, that if the overall proportion ‘successful’ is not close to 50%, this interpretation can be somewhat misleading (Strahan 1991, McGraw 1991).</em></p>
+<ul>
+<li><p><strong>Proportion of variance accounted for ?</strong></p>
+<ul>
+<li><p><span class="math inline">\(r\)</span> = correlation between two variables</p></li>
+<li><p><span class="math inline">\(R^2 = r^2\)</span> = proportion of the variance in each that is ‘accounted for’ by the other </br> proportion by which the variance of the outcome measure is reduced when it is replaced by the variance of the residuals from a regression equation (close analogies in ANOVA) </br> <span class="math inline">\(\rightarrow\)</span> sometimes advocated as a universal measure of effect size (e.g. Thompson, 1999) ?</p></li>
+<li><p>BUT :</p>
+<ul>
+<li>sensitivity to violation of assumptions (heterogeneity of variance, balanced designs)</li>
+<li>associated standard errors can be large (Olejnik and Algina, 2000)</li>
+<li>generally more statistically complex and hence perhaps less easily understood</li>
+<li>non-directional (2 studies with precisely opposite results would report exactly the same variance accounted for)</li>
+<li>Expressing different measures in terms of the same statistic can hide important differences between them; <span class="math inline">\(R^2\)</span> and ‘effect sizes’ are fundamentally different, and should not be confused.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>(<em>Coe 2002</em>)</p>
+<p></br></p>
 </div>
-<div id="leinster-ecology" class="section level2">
-<h2>2012 : Leinster (Ecology)</h2>
-<p><br/> <em>Community’s diversity profile</em> = calculate the diversity of order q for every q, and plot it against q.</p>
-<p>For <code>q != 1</code> :</p>
-<!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Leinster-numbers.png" width=250px/></div>   -->
-<p><img src="pictures_tutorials/formula_Leinster-numbers.png" width="250px" style="display: block; margin: auto;" /></p>
-<p>with :</p>
+<div id="confidence-interval" class="section level2">
+<h2>Confidence interval</h2>
+<p>To calculate a 95% confidence interval, you assume that the value you got (<em>e.g. the effect size estimate of 0.8</em>) is the ‘true’ value, but calculate the amount of variation in this estimate you would get if you repeatedly took new samples of the same size (i.e. different samples of 38 children). For every 100 of these hypothetical new samples, by definition, 95 would give estimates of the effect size within the ‘95% confidence interval’. If this confidence interval includes zero, then that is the same as saying that the result is not statistically significant. If, on the other hand, zero is outside the range, then it is ‘statistically significant at the 5% level’.</p>
+<p>(<em>Coe 2002</em>)</p>
+<div id="hedges-olkin" class="section level3">
+<h3>1985 : Hedges &amp; Olkin</h3>
+<p>If the effect size estimate from the sample is d, then it is normally distributed, with standard deviation :</p>
+<p><span class="math display">\[\sigma[d] = \sqrt{\frac{N_e + N_c}{N_e \cdot N_c} + \frac{d^2}{2 \cdot (N_e + N_c)}}\]</span> with <span class="math inline">\(N_e\)</span> and <span class="math inline">\(N_c\)</span> the numbers in the experimental and control groups.</p>
+<p>Hence a 95% confidence interval for d would be from <span class="math inline">\((d - 1.96 \cdot \sigma[d])\)</span> to <span class="math inline">\((d + 1.96 \cdot \sigma[d])\)</span>.</p>
+<p></br></p>
+</div>
+</div>
+<div id="influence-factors" class="section level2">
+<h2>Influence factors</h2>
 <ul>
-<li><p><code>pi</code> = relative abundances</p></li>
-<li><p><code>Z</code> = matrix of similarities between species ( 0 = total dissimilarity)</p></li>
-<li><p><code>q</code> = sensitivity parameter</p></li>
-<li><p><code>(Zp)i</code> = relative abundance of species similar to the ith<br />
-= expected similarity between and individual of the ith species and an individual chosen at random<br />
-= measures the ordinariness of the ith species within the community<br />
-= inversely related to the diversity</p></li>
+<li><strong>which ‘standard deviation’ to use</strong>
+<ul>
+<li>often better to use a ‘pooled’ estimate of SD = an average of the SD of the experimental and control groups : <span class="math display">\[ SD_{pooled} = \sqrt{\frac{(N_e-1) \cdot SD_e^2 + (N_c-1) \cdot SD_c^2}{N_e + N_c - 2}}\]</span></li>
+<li>depends on the assumption that the two calculated SD are estimates of the same population value </br> (= that experimental and control group SD differ only as a result of sampling variation) </br></li>
+</ul></li>
+<li><strong>corrections for bias</strong>
+<ul>
+<li><span class="math inline">\(SD_{pooled}\)</span> gives a better estimate than the control group SD, BUT still slightly biased (in general gives a value slightly larger than the true population value) (Hedges and Olkin, 1985) </br></li>
+</ul></li>
+<li><strong>restricted range</strong>
+<ul>
+<li>The spread of scores found within the highly selected group would be much less than that in a true cross-section of the population.</li>
+<li>Ideally, use the SD of the full population, in order to make comparisons fair. Any comparison with effect sizes calculated from a full-range population must be made with great caution, if at all.</li>
+<li><em>en gros</em>, attention aux facteurs confondants !</li>
+</ul></li>
+<li><strong>non-normal distributions</strong>
+<ul>
+<li>if normal assumption is not true then the interpretation may be altered</li>
+<li>in particular, it may be difficult to make a fair comparison between an effect-size based on Normal distributions and one based on non-Normal distributions.</li>
+</ul></li>
+<li><strong>measurement reliability</strong>
+<ul>
+<li>in classical measurement theory, any measure = ‘true’ underlying value + component of ‘error’.</li>
+<li>PB = amount of variation in measured scores for a particular sample (i.e. its standard deviation) will depend on both the variation in underlying scores and the amount of error in their measurement.</li>
+<li><span class="math inline">\(\rightarrow\)</span> reliability of any outcome measure used should be reported</li>
+<li>(<em>It is theoretically possible to make a correction for unreliability (sometimes called ‘attenuation’), which gives an estimate of what the effect size would have been, had the reliability of the test been perfect BUT not trusty</em>)</li>
+</ul></li>
 </ul>
-<p><br/> <em>Hill numbers</em> = special case of <strong>total dissimilarity</strong>, <code>Z</code> = identity matrix, <code>(Zp)i</code> = <code>pi</code></p>
-<p><strong>If a measure knows nothing of the commonalities between species, it will evaluate the community as more diverse than it really is. The naive model typically overestimates diversity.</strong></p>
+<p>(<em>Coe 2002</em>)</p>
+<p></br></p>
+</div>
+<div id="from-effect-size-to-meta-analysis" class="section level2">
+<h2>From effect size to meta-analysis</h2>
+<p>When a particular experiment has been replicated, the different effect size estimates from each study can easily be combined to give an overall best estimate of the size of the effect = <strong>meta-analysis</strong>.</p>
+<p><span class="math inline">\(\rightarrow\)</span> seeking relationships between effect sizes and characteristics, context and study design in which they were found </br> <span class="math inline">\(\rightarrow\)</span> even small studies can make a significant contribution to knowledge </br> <span class="math inline">\(\rightarrow\)</span> BUT danger of combining incommensurable results</p>
+<p>(<em>Coe 2002</em>)</p>
+<p></br></br></p>
+</div>
+</div>
+<div id="meta-analysis" class="section level1">
+<h1>Meta-analysis</h1>
+<div id="definitions" class="section level2">
+<h2>Definition(s)</h2>
+<p>Hunt 1997 = accumulation of knowledge and research findings</p>
+<ol style="list-style-type: decimal">
+<li><strong>Narrative review</strong>
+<ul>
+<li>= <em>A researcher would collect information about the studies she finds important or worthwhile regarding a phenomenon, and make inferences about the model by examining the individual studies. She would try to come up with a final judgment about the connection between the variables, by looking at the different studies and evaluating these studies on several criteria. She may also try to analyze the differences between the studies, by looking at particular study sample- or design- features. The researcher may count the numbers of significant and non- significant results using vote counting. If the majority of the results are significant, the researcher may claim that there is some evidence of effect in the studies. If the votes are similar, the researcher may conclude that no conclusive result is ob- served. Thus, more empirical studies are required.</em></li>
+<li>BUT :
+<ul>
+<li>highly subjective as to which patterns are considered important and which ones irrelevant</li>
+<li>do not have a systematic tool for combining the results of several studies</li>
+<li>focus on statistical significance rather than the magnitude of effect</li>
+<li>do not adequately correct for sample characteristics, or design features</li>
+<li>lack of adequate emphasis on inclusion and exclusion criteria for studies</li>
+</ul></li>
+</ul></li>
+</ol>
+<p></br></p>
+<p>Glass 1976 = the statistical analysis of a large collection of analysis results from individual studies for the purpose of integrating the findings</p>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Systematic review</strong>
+<ul>
+<li>focuses on minimizing bias in literature review by using clearly pre-defined criteria so that the literature search is replicable</li>
+<li>preferred way to do literature review for meta-analysis</li>
+</ul></li>
+<li><strong>Meta-analysis</strong>
+<ul>
+<li>statistical analysis of effect sizes</li>
+<li>statistically combines the effect sizes and models them with study characteristics (<strong>moderators</strong>) to explain the differences (<strong>meta-regression</strong>)</li>
+<li>focus not on statistical significance but on the magnitude of the effect</li>
+<li>NEED :
+<ul>
+<li>enough primary studies (not easy to state the number of studies required)</li>
+<li>enough information in extracted studies to calculate the effect sizes</li>
+<li>search strategy not flawed / studies not biased</li>
+</ul></li>
+</ul></li>
+</ol>
+<p></br></p>
+<p><span class="math inline">\(\Rightarrow\)</span> if conditions fulfilled, advisable to combine both systematic review and meta-analysis in the same review process</p>
+<p></br></p>
+</div>
+<div id="selection-of-articles" class="section level2">
+<h2>Selection of articles</h2>
+<p><strong>Not easy to state the number of studies required</strong></p>
+<ul>
+<li><p><strong>Minimize selection bias :</strong> use more than one database</p></li>
+<li><p><strong>Replicable :</strong> document the search strategy</p></li>
+<li><p>Estimate the number of studies required with <em>power analysis</em></p></li>
+<li><p><em>Whether unpublished studies (dissertations, conferences, unpublished papers) should be included ?</em></p>
+<ul>
+<li>Fergusion and Brannick 2012 :
+<ol style="list-style-type: decimal">
+<li>may be of weaker methodology,</li>
+<li>may be biased towards the authors conducting the meta-analyses (ease of availability of these studies),</li>
+<li>search for unpublished studies may favor established rather than non-established authors,</li>
+<li>search for unpublished studies may also be biased</li>
+</ol></li>
+<li>Rothstein and Bushman 2012 :
+<ol style="list-style-type: decimal">
+<li>studies may be excluded on the methodological rigorousness by using clearly define inclusion criteria,</li>
+<li>researchers may contact authors who have published in the topic to minimize potential selection bias,</li>
+<li>researchers should include unpublished studies and test whether study characteristics related to methodological quality moderate the effect sizes</li>
+</ol></li>
+</ul></li>
+</ul>
+<p></br></p>
+</div>
+<div id="effect-sizes" class="section level2">
+<h2>Effect sizes</h2>
+<ul>
+<li><em>Unstandardized :</em> appropriate if the effect sizes can be used to communicate or compare across studies</li>
+<li><strong>Directional :</strong> indicate direction of treatment or association (<span class="math inline">\(\neq R^2\)</span> in multiple regression, <span class="math inline">\(\eta^2\)</span> ou <span class="math inline">\(\omega^2\)</span> in ANOVA)</li>
+</ul>
+<p>3 common types of effect sizes :</p>
+<ul>
+<li><strong>based on binary outcome :</strong>
+<ul>
+<li>yes/no, failed/success…</li>
+<li>relative risk, odds ratio</li>
+</ul></li>
+<li><strong>based on mean differences :</strong>
+<ul>
+<li>to represent the treatment effect between an experimental and a control groups</li>
+<li>raw mean difference if the scale is meaningful, </br> a standardized mean difference otherwise if the scale is not comparable across studies</li>
+</ul></li>
+<li><strong>based on correlation coefficient :</strong>
+<ul>
+<li>to represent the association between two variables</li>
+<li>correlation coefficient directly, or transformed to Fisher’s Z score to help normalizing the sampling distribution of the correlation when used as an effect size</li>
+</ul></li>
+</ul>
+<p><span class="math inline">\(\rightarrow\)</span> if the research topic is related to experimental or between group comparisons, mean differences are usually used</p>
+<p><span class="math inline">\(\rightarrow\)</span> it is possible to convert the effect sizes among odds ratio, mean difference and correlation coefficient </br> (no need to exclude studies because of the difference in the reported effect sizes)</p>
+<p><strong>/!\ An effect size cannot be used in the analysis if its sampling variance is missing.</strong></p>
+<p></br></p>
+</div>
+<div id="testing-heterogeneity" class="section level2">
+<h2>Testing heterogeneity</h2>
+<ul>
+<li><strong>Fixed-effects model (common)</strong>
+<ul>
+<li>usually assume that the effect sizes are homogeneous across studies</li>
+<li>all studies share the same population effect size <span class="math inline">\(\beta_F\)</span>, </br> and the observed difference between ES is mainly due to sampling error</li>
+<li><span class="math inline">\(y_i = \beta_F + e_i\)</span></li>
+</ul></li>
+<li><strong>Random-effects model</strong>
+<ul>
+<li>allows studies have their own population effect sizes</li>
+<li>observed difference on sample ES consists of two components: </br> true differences among the population effect sizes, and sampling error</li>
+<li><span class="math inline">\(y_i = \beta_R + u_i + e_i\)</span></li>
+</ul></li>
+</ul>
+<p></br></p>
+<p><span class="math display">\[\text{Population effect size : } \beta_F = \frac{\Sigma_{i=1}^k w_i \cdot y_i}{\Sigma_{i=1}^k w_i}\]</span> <span class="math display">\[\text{Average population effect : } \beta_R\]</span> with :</p>
+<ul>
+<li><span class="math inline">\(w_i = \frac{1}{v_i}\)</span> the weight (and precision) of <span class="math inline">\(i\)</span>th study</li>
+<li><span class="math inline">\(v_i = Var(e_i)\)</span> the known sampling variance of <span class="math inline">\(i\)</span>th study</li>
+<li><span class="math inline">\(\tau^2 = Var(u_i)\)</span> the population heterogeneity variance of <span class="math inline">\(i\)</span>th study</li>
+</ul>
+<p></br></p>
+<p><span class="math inline">\(\Rightarrow\)</span> <strong>Test of heterogeneity</strong> = are studies consistent (variation in findings compatible with chance alone), or not ? </br> (consistency of the effect across studies)</p>
+<p><span class="math inline">\(\Rightarrow\)</span> if random model : more studies are required, otherwise the estimated heterogeneity variance is not stable enough</p>
+<p></br></p>
+<div id="cochran-q" class="section level3">
+<h3>1950 : Cochran (Q)</h3>
+<ul>
+<li>= to test the assumption of homogeneity of the effect sizes</li>
+<li>= summing the squared deviations of each study’s estimate from the overall meta-analytic estimate, weighting each study’s contribution in the same manner as in the meta-analysis</li>
+<li>P values are obtained by comparing the statistic with a Chi2 distribution with k−1 degrees of freedom </br> (where k is the number of studies)</li>
+</ul>
+<p><span class="math display">\[Q = \Sigma_{i=1}^k w_i \cdot (y_i - \beta_F)^2\]</span></p>
+<p>BUT low statistical power (detecting true heterogeneity)</p>
+<ul>
+<li>low power (unlikely to be significant) when few studies </br> (<span class="math inline">\(\rightarrow\)</span> a non-significant result cannot be taken as evidence of homogeneity)</li>
+<li>Using a cut-off of 10% for significance ameliorates this problem </br> but increases the risk of drawing a false positive conclusion (type I error).</li>
+<li>excessive power (likely to be significant) when many studies (especially if large studies)</li>
+</ul>
+<p><span class="math inline">\(\Rightarrow\)</span> <strong>susceptible to the number of trials included</strong></p>
+<p><span class="math inline">\(\Rightarrow\)</span> <strong>not advisable</strong> to choose between fixed- vs random-effects models by relying on the significance test on Q statistic</p>
+</div>
+<div id="higgins-i2" class="section level3">
+<h3>2003 : Higgins (<span class="math inline">\(I^2\)</span>)</h3>
+<ul>
+<li>= percentage of the total variation of the effect size across studies due to the between-study heterogeneity</li>
+</ul>
+<p><span class="math display">\[ I^2 = 100\% \cdot \frac{Q - (k-1)}{Q}\]</span></p>
+<ul>
+<li>Negative values of I2 are put equal to zero so that I2 lies between 0% and 100%.</li>
+<li>A value of 0% indicates no observed heterogeneity, and larger values show increasing heterogeneity.</li>
+</ul>
+<p></br></p>
+<ul>
+<li>can usually be derived from published meta-analyses</li>
+<li>can be accompanied by an <strong>uncertainty interval</strong></li>
+<li>can be calculated and <strong>compared</strong> across meta-analyses of different sizes, types of study, types of outcome data (eg dichotomous, quantitative, or time to event) and choice of effect measure (eg odds ratio or hazard ratio)</li>
+<li><strong>do not depend on the number of studies in the meta-analysis</strong></li>
+<li>can also be helpful in investigating the causes and type of any heterogeneity,</li>
+</ul>
+<p>BUT</p>
+<ul>
+<li><strong>relative measure of heterogeneity</strong> = becomes larger when the sampling error gets smaller, and vice versa</li>
+<li><span class="math inline">\(\rightarrow\)</span> if heterogeneity identified, a common option is to <strong>subgroup the studies</strong> (eg high vs low quality)</li>
+<li>Because of loss of power, non-significant heterogeneity within a subgroup may be due not to homogeneity but to the smaller number of studies.</li>
+</ul>
+</div>
+<div id="tau2" class="section level3">
+<h3>(<span class="math inline">\(\tau^2\)</span>)</h3>
+<p>An alternative quantification of heterogeneity in a meta-analysis is the among-study variance (often called tau2), calculated as part of a random effects meta-analysis. This is more useful for comparisons of heterogeneity among subgroups, but values depend on the treatment effect scale.</p>
+<ul>
+<li><strong>absolute measure of heterogeneity</strong> = theoretically free of influence from the sampling error</li>
+</ul>
 <p><br/></p>
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th>q = 0</th>
-<th>q = 1</th>
-<th>q = 2</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><em>Standard diversity indices</em></td>
-<td>Species richness <br/> <img src="pictures_tutorials/formula_species-richness.png" width=60px/></td>
-<td>Shannon entropy <br/> <img src="pictures_tutorials/formula_Shannon-entropy.png" width=100px/></td>
-<td>Simpson concentration <br/> <img src="pictures_tutorials/formula_Simpson-index.png" width=60px/> <br/><br/> Gini-Simpson index <br/> <img src="pictures_tutorials/formula_Gini-Simpson-index.png" width=80px/></td>
-</tr>
-<tr class="even">
-<td><em>- Effective numbers <br/> Hill numbers</em> <br/> <em>- Leinster naive model <br/> exp(Rényi entropy) <br/> (total dissimilarity)</em></td>
-<td>Species richness</td>
-<td>Exponential of Shannon entropy</td>
-<td>Inverse of Simpson concentration</td>
-</tr>
-<tr class="odd">
-<td><em>Generalization</em> <br/> <em>Similarity information</em></td>
-<td>Faith PD (ultrametric tree)</td>
-<td>Allen’s entropy <br/> Generalization of Shannon entropy</td>
-<td>Rao’s quadratic entropy <br/> Generalization of Gini-Simpson index</td>
-</tr>
-<tr class="even">
-<td><em>- Leinster model <br/> exp(Rényi entropy) <br/> Similarity information</em></td>
-<td>Faith PD (ultrametric tree)</td>
-<td></td>
-<td>1 / (1 - Rao’s quadratic entropy)</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Properties of values of Leinster model :</strong></p>
-<ul>
-<li><em>Partitioning properties :</em> - Effective number : diversity of a community with equally abundant and totally dissimilar species = species richness - Modularity : partition in subcommunities - Replication : if subcommunities of equal size and diversity, diversity = nb subcom * subdiv</li>
-<li><em>Elementary properties :</em> - Symmetry - Absent species - Identical species</li>
-<li><em>Effect of species similarity on diversity :</em> - Monotonicity - Naive model - Range</li>
-</ul>
-<p><strong>Note :</strong> Allen and Rao’s entropies do not respect the replication principle.</p>
 <p><br/> <br/></p>
 </div>
 </div>
-<div id="glossary" class="section level1">
-<h1>Glossary</h1>
-<ul>
-<li><strong>Ultrametric tree</strong> = in which the distances from the root to every branch tip are equal<br />
-= if the branch lengths are proportional to divergence time, all branch tips are the same distance from the tree base (first node) = a) on the graph, b) is non-ultrametric</li>
-</ul>
-<!-- <div style="text-align:center"><img src="pictures_tutorials/example_ultrametric-tree.png" width=600px/></div>   -->
-<p><img src="pictures_tutorials/example_ultrametric-tree.png" width="600px" style="display: block; margin: auto;" /></p>
-<p><br/> <br/></p>
 </div>
 <div id="citations" class="section level1">
 <h1>Citations</h1>
 <ul>
-<li>Allen, B., Kon, M., Bar‐Yam, Y., Associate Editor: Ross H. Crozier, &amp; Editor: Monica A. Geber. (2009). A New Phylogenetic Diversity Measure Generalizing the Shannon Index and Its Application to Phyllostomid Bats. The American Naturalist, 174(2), 236-243. <a href="https://doi.org/10.1086/600101" class="uri">https://doi.org/10.1086/600101</a></li>
-<li>Chao, A., Chiu, C., &amp; Jost, L. (2010). Phylogenetic diversity measures based on Hill numbers. Philosophical Transactions: Biological Sciences, 365(1558), 3599-3609. <a href="http://www.jstor.org/stable/20789175" class="uri">http://www.jstor.org/stable/20789175</a></li>
-<li>Faith, D. (1992). Conservation evaluation and phylogenetic diversity. Biological Conservation. 61. 1-10. <a href="https://doi.org/10.1016/0006-3207(92)91201-3" class="uri">https://doi.org/10.1016/0006-3207(92)91201-3</a></li>
-<li>Hill, M. (1973). Diversity and Evenness: A Unifying Notation and Its Consequences. Ecology, 54(2), 427-432. <a href="https://doi.org/10.2307/1934352" class="uri">https://doi.org/10.2307/1934352</a></li>
-<li>Leinster, T., &amp; Cobbold, C. (2012). Measuring diversity: The importance of species similarity. Ecology, 93(3), 477-489. <a href="http://www.jstor.org/stable/23143936" class="uri">http://www.jstor.org/stable/23143936</a></li>
-<li>Rao, C. R. (1982). Diversity and Dissimilarity Coefficients: A Unified Approach. Theoretical population biology, 21, 24-43. Theoretical Population Biology. 21. 24-43. <a href="https://doi.org/10.1016/0040-5809(82)90004-1" class="uri">https://doi.org/10.1016/0040-5809(82)90004-1</a></li>
-<li>Rényi, Alfréd. On Measures of Entropy and Information. Proceedings of the Fourth Berkeley Symposium on Mathematical Statistics and Probability, Volume 1: Contributions to the Theory of Statistics, 547–561, University of California Press, Berkeley, Calif., 1961. <a href="https://projecteuclid.org/euclid.bsmsp/1200512181" class="uri">https://projecteuclid.org/euclid.bsmsp/1200512181</a></li>
-<li>Shannon, C. E. (1948), A Mathematical Theory of Communication. Bell System Technical Journal, 27: 379–423. <a href="https://doi.org/10.1002/j.1538-7305.1948.tb01338.x" class="uri">https://doi.org/10.1002/j.1538-7305.1948.tb01338.x</a></li>
-<li>Simpson, E. H. 1949 - Measurement of diversity. Nature 163: 688. <a href="https://doi.org/10.1038/163688a0" class="uri">https://doi.org/10.1038/163688a0</a></li>
+<li>Cheung M W L and Vijayakumar R. 2016. A Guide to Conducting a Meta-Analysis. Neuropsychology Review. <a href="https://doi.org/10.1007/s11065-016-9319-z" class="uri">https://doi.org/10.1007/s11065-016-9319-z</a></li>
+<li>Coe R. 2002. It’s the Effect Size, Stupid. In Annual Conference of the British Educational Research Association.</li>
+<li>Higgins J P T, Thompson S G, Deeks J J and Altman D G. 2003. Measuring Inconsistency in Meta-Analyses. British Medical Journal. <a href="https://doi.org/10.1136/bmj.327.7414.557" class="uri">https://doi.org/10.1136/bmj.327.7414.557</a></li>
+<li>Rothstein H R, Sutton A J and Borenstein M. 2005. Chapter 1 : Publication Bias in Meta-Analysis. Publication Bias in Meta-Analysis – Prevention, Assessment and Adjustments.</li>
 </ul>
 </div>
 
