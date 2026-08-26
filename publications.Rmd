@@ -10,19 +10,76 @@ output:
 
 <br/><br/>
 
+## [2026]()
+
+<br/>
+
+- Dragonetti, C., Thuiller, W., **Guéguen, M.**, Renaud, J., Visconti, P. and Di Marco, M. (2026). *Impact of global change on the distribution of mountain mammals and birds.* Conservation Biology, e70339. https://doi.org/10.1111/cobi.70339
+- **Guéguen, M.**, Blancheteau, H., Lemaire-Patin, R. and Thuiller, W. (2026). *‘biomod2’ – extending presence–absence species distribution models to multiple data types.* Ecography e08588. https://doi.org/10.1002/ecog.08588
+- Perrot, C., Anceau, C., Astruc, G., Bech, N., Belleau, E., Bison, M., Besnard, A., Bouche, M., Bouvet, P., Bunz, Y., Canut, M., Cavailhes, J., Chambert, T., Chiffard, J., Coulon, A., Courbin, N., Couturier, T., Delestrade, A., Desmet, J-F., Doval, S., Dupont, P., Goussot, A., **Guéguen, M.**, Guignet, J., Larroque, J., Letty, J., Mansons, J., Montadert, M., Muffat-Joly, B., Queney, G., Sèbe, F., Tournier, H., Yoccoz, N. G. (2026). *Espèces arctico-alpines face à la crise climatique. De nouvelles connaissances en faveur de leur conservation. Étude de cas : Lièvre variable et Lagopède alpin.* Office français de la biodiversité, Comprendre pour agir. 132p. https://ofb.gouv.fr/node/13250
+
+<br/>
+
+## [2025]()
+
+<br/>
+
+- Bektaş, B., Rutten, G., Saillard, A., Friaud, R., Arnoldi, C., Renaud, J., **Guéguen, M.**, Foulquier, A., Poulenard, J., Lyautey, E., Clément, J-C., Thuiller, W. and Münkemüller, T. (2026). *Traits and functions of alpine plant communities respond strongly but not always sufficiently to in situ climate change.* New Phytologist, 249 : 1173-1187. https://doi.org/10.1111/nph.70503
+- Grange, M. C., Munoz, F., Moretti, M., Varona-Y-Varona, S., Renaud, J., Colace, M-P., **Guéguen, M.**, Ssymank, A. and Gallien, L. (2025). *The golden threat — Solidago invasion alters native plant–pollinator interactions by vegetative crowding.* Journal of Ecology, 113, 3762–3772. https://doi.org/10.1111/1365-2745.70194 ([PDF](papers/Grange_2025_Journal_Ecology.pdf))
+- Kass, J. M., Smith, A. B., Warren, D.L., Vignali, S., Schmitt, S., Aiello-Lammens, M. E., Arlé, E., Márcia Barbosa, A., Broennimann, O., Cobos, M. E., **Guéguen, M.**, Guisan, A., Merow, C., Naimi, B., Nobis, M. P., Ondo, I., Osorio-Olvera, L., Owens, H. L., Pinilla-Buitrago, G.E., Sánchez-Tapia, A., Thuiller, W., Valavi, R., Velazco, S. J. E., Zizka, A. and Zurell, D. (2025). *Achieving higher standards in species distribution modeling by leveraging the diversity of available software.* Ecography, 2025: e07346. https://doi.org/10.1111/ecog.07346
+- Lucas, P. M., Thuiller, W., Talluto, L., Polaina, E., Albrecht, J., Selva, N., De Barba, M., Penteriani, V., **Guéguen, M.**, Balkenhol, N., Dutta, T., Fedorca, A., Frank, S. C., Zedrosser, A., Afonso-Jordana, I., Ambarlı, H., Ballesteros, F., Bashta, A-T., Bilgin, C.C., Bogdanović, N., Bojārs, E., Bojarska, K., Bragalanti, N., Brøseth, H., Chynoweth, M. W., Ćirović, D., Ciucci, P., Corradini, A., De Angelis, D., de Gabriel Hernando, M., Domokos, C., Dutsov, A., Ertürk, A., Filacorda, S., Frangini, L., Groff, C., Heikkinen, S., Hoxha, B., Huber, D., Huitu, O., Ionescu, G., Ionescu, O., Jerina, K., Jurj, R., Karamanlidis, A.A., Kindberg, J., Kojola, I., López-Bao, J.V., Männil, P., Melovski, D., Mertzanis, Y., Molinari, P., Molinari-Jobin, A., Mustoni, A., Naves, J., Ogurtsov, S., Özüt, D., Palazón, S., Pedrotti, L., Perović, A., Piminov, V.N., Pop, I-M., Popa, M., Psaralexi, M., Quenette, P-Y., Rauer, G., Reljic, S., Revilla, E., Saarma, U., Saveljev, A. P., Sayar, A. O., Şekercioğlu, Ç.H., Sergiel, A., Sîrbu, G., Skrbinšek, T., Skuban, M., Soyumert, A., Stojanov, A., Tammeleht, E., Tirronen, K., Trajçe, A., Trbojević, I., Trbojević, T., Zięba, F., Zlatanova, D., Zwijacz-Kozica, T. and Pollock, L. J. (2025). *Trophic interactions are key to understanding the effects of global change on the distribution and functional role of the Brown Bear.* Global Change Biology, 31 : e70252. https://doi.org/10.1111/gcb.70252
+- Rosa, Z., Blancheteau, H., Renaud, J., **Guéguen, M.**, Féaud, B., Valla, P. G., Thuiller, W., Ibanez, S. & Lavergne, S. (2025). *How prevalent were nunataks as glacial refugia in the Alps ? Insights from range hindcasting of the nival flora.* Alpine Botany, 135, 149–166. https://doi.org/10.1007/s00035-025-00334-2 ([PDF](papers/Rosa_2025_HAL.pdf))
+
+<br/>
+
+## [2024]()
+
+<br/>
+
+- Bektaş, B., Rutten, G., Saillard, A., Friaud, R., Arnoldi, C., Renaud, J., **Guéguen, M.**, Foulquier, A., Poulenard, J., Lyautey, E., Clément, J-C., Thuiller, W. and Münkemüller, T. (2025). *Traits and functions of alpine plant communities respond strongly but not always sufficiently to in situ climate change.* New Phytologist. https://doi.org/10.1111/nph.70503
+- Thuiller, T., Saillard, A., Abdulhak, S., Augé, V., Birck, C., Bonet, R., Choler, P., Delestrade, A., Kunstler, G., Leccia, M-F., Lienard, B., Poulenard, J., Valay, J-G., Bayle, A., Bonfanti, N., Brousset, L., Bizard, L., Calderón-Sanou, I., Dentant, C., Desjonquères, C., Gielly, L., **Guéguen, M.**, Guiter, F., Hedde, M., Hustache, E., Kedhim, N., Lapenu, P., Le Guillarme, N., Marchal, L., Mahieu, C., Martin, G., Martinez-Almoyna, C., Miele, V., Murienne, J., Paillet, Y., Rome, M., Renaud, J., The Orchamp Consortium (2024). *ORCHAMP: an observation network for monitoring biodiversity and ecosystem functioning across space and time in mountainous regions.* Comptes Rendus. Biologies, Volume 347 (2024), pp. 223-247. https://doi.org/10.5802/crbiol.165
+
+<br/>
+
+## [2023]()
+
+<br/>
+
+- Bektaş, B., Thuiller, W., Renaud, J., **Guéguen, M.**, Calderón-Sanou, I., Valay, J-G. et al. (2023). *A spatially explicit trait-based approach uncovers changes in assembly processes under warming.* Ecology Letters, 26, 1119–1131. Available from : https://doi.org/10.1111/ele.14225
+- Grange, M., Munoz, F., Moretti, M., Varona-y-Varona, S., Renaud, J., Colace, M-P., **Guéguen, M.**, Arnoldi, C., Bernard, L. and Gallien, L. (2023). *Avoid, tolerate, or escape ? Native vegetation responses to invasion vary between functional groups.* Biological Invasions, 25, 1387–1401. https://doi.org/10.1007/s10530-022-02983-4 ([PDF](papers/Grange_2023_HAL.pdf))
+- Kebaïli, C., Sherpa, S., **Guéguen, M.**, Renaud, J., Rioux, D. and Després, L. (2023). *Comparative genetic and demographic responses to climate change in three peatland butterflies in the Jura massif.* Biological Conservation, 287. https://doi.org/10.1016/j.biocon.2023.110332 ([PDF](papers/Kebaili_2023_HAL.pdf))
+
+<br/>
+
+## [2022]()
+
+<br/>
+
+- Chardon, N., Nabe-Nielsen, J., Assmann, J., Jacobsen, I. B. D., **Guéguen, M.**, Normand, S. and Wipf, S. (2022). *High resolution species distribution and abundance models cannot predict separate shrub datasets in adjacent Arctic fjords.* Diversity and Distributions. 28. n/a-n/a. https://doi.org/10.1111/ddi.13498
+- Chauvier, Y., Descombes, P., **Guéguen, M.**, Boulangeat, L., Thuiller, W. and Zimmermann, N. (2022). *Resolution in species distribution models shapes spatial patterns of plant multifaceted diversity.* Ecography. https://doi.org/10.1111/ecog.05973
+- Peterson, A. T., Aiello-Lammens, M., Amatulli, G., Anderson, R., Cobos, M., Diniz-Filho, J. A., Escobar, L. et al. (2022). *ENM2020 : A Free Online Course and Set of Resources on Modeling Species' Niches and Distributions.* Biodiversity Informatics, 17 (March) : 1-9. https://doi.org/10.17161/bi.v17i.15016
+- Sherpa, S., Kebaïli, C., Rioux, D., **Guéguen, M.**, Renaud, J. and Després, L. (2022). *Population decline at distribution margins : Assessing extinction risk in the last glacial relictual but still functional metapopulation of a European butterfly.* Diversity and Distributions. 28. https://doi.org/10.1111/ddi.13460
+
+<br/>
+
+## [2021]()
+
+<br/>
+
+- Dufour, P., de Franceschi, C., Doniol-Valcroze, P., Jiguet, F., **Guéguen, M.**, Renaud, J., Lavergne, S., Crochet, P-A. (2021). *A new westward migration route in an Asian passerine bird.* Current biology : CB. https://doi.org/10.1016/j.cub.2021.09.086
+- Grange, M., Munoz, F., Moretti, M., Varona-y-Varona, S., Renaud, J., Colace, M-P., **Guéguen, M.** and Gallien, L. (2021). *Designing sampling protocols for plant-pollinator interactions - timing, meteorology, flowering variations and failed captures matter.* Botany Letters. 168. 324-332. https://doi.org/10.1080/23818107.2021.1964596 ([PDF]())
+- Mouillot, D., Loiseau, N., Grenié, M., Algar, A., Allegra, M., Cadotte, M., Casajus, N., Denelle, P., **Guéguen, M.**, Maire, A., Maitner, B., McGill, B., McLean, M., Mouquet, N., Munoz, F., Thuiller, W., Villéger, S., Violle, C. and Auber, A. (2021). *The dimensionality and structure of species trait spaces.* Ecology Letters. 24. 1988-2009. https://doi.org/10.1111/ele.13778
+- von Oppen, J., Normand, S., Bjorkman, A. D., Blach-Overgaard, A., Assmann, J. J., Forchhammer, M., **Guéguen, M.** and Nabe-Nielsen, J. (2021). *Annual air temperature variability and biotic interactions explain tundra shrub species abundance.* Journal of Vegetation Science. 2021; 32:e13009. https://doi.org/10.1111/jvs.13009 ([PDF](papers/vonOppen_2021_Journal_Vegetation_Science.pdf))
+
+<br/>
+
 ## [2020]()
 
 <br/>
 
-<!-- <a href="papers/Thuiller_2017_Diversity_Distributions.pdf" class="download" title="Download as PDF"> -->
-<!-- <img src="pictures/art_2017_Thuiller_DD.png" alt="Thuiller 2017 Diversity Distributions" style="width:350px"> -->
-<!-- </a> -->
-
-
-<br/>
-
-- Capblancq, T. , Morin, X. , **Guéguen, M.** , Renaud, J. , Lobreaux, S. and Bazin, E. (2020). *Climate associated genetic variation in Fagus sylvatica and potential responses to climate change in the French Alps.* Journal of Evolutionary Biology. 33. https://doi.org/10.1111/jeb.13610
-- Sherpa, S. , Renaud, J. , **Guéguen, M.** , Besnard, G. , Mouyon, L. , Rey, D. and Després, L. (2020). *Landscape does matter: Disentangling founder effects from natural and human-aided post-introduction dispersal during an ongoing biological invasion.* Journal of Animal Ecology. https://doi.org/10.1111/1365-2656.13284
+- Capblancq, T., Morin, X., **Guéguen, M.**, Renaud, J., Lobreaux, S. and Bazin, E. (2020). *Climate associated genetic variation in Fagus sylvatica and potential responses to climate change in the French Alps.* Journal of Evolutionary Biology. 33. https://doi.org/10.1111/jeb.13610 ([PDF](papers/Capblancq_2020_HAL.pdf))
+- Loiseau, N., Mouquet, N., Casajus, N., Grenié, M., **Guéguen, M.**, Maitner, B., Mouillot, D., Ostling, A., Renaud, J., Tucker, C., Velez, L., Thuiller, W. and Violle, C. (2020). *Global distribution and conservation status of ecologically rare mammal and bird species.* Nature Communications. https://doi.org/10.1038/s41467-020-18779-w
+- Sherpa, S., Renaud, J., **Guéguen, M.**, Besnard, G., Mouyon, L., Rey, D. and Després, L. (2020). *Landscape does matter: Disentangling founder effects from natural and human-aided post-introduction dispersal during an ongoing biological invasion.* Journal of Animal Ecology. https://doi.org/10.1111/1365-2656.13284
 
 <br/>
 
@@ -30,19 +87,12 @@ output:
 
 <br/>
 
-<!-- <a href="papers/Thuiller_2017_Diversity_Distributions.pdf" class="download" title="Download as PDF"> -->
-<!-- <img src="pictures/art_2017_Thuiller_DD.png" alt="Thuiller 2017 Diversity Distributions" style="width:350px"> -->
-<!-- </a> -->
-
-
-<br/>
-
-- Cerasoli, F. , Thuiller, W. , **Guéguen, M.** , Renaud, J. , D'Alessandro, P. and Biondi, M. (2019). *The role of climate and biotic factors in shaping current distributions and potential future shifts of European Neocrepidodera (Coleoptera, Chrysomelidae).* Insect Conservation and Diversity. https://doi.org/10.1111/icad.12376
-- Dufour, P. , Descamps, S. , Chantepie, S. , Renaud, J. , **Guéguen, M.** , Schiffers, K. , Thuiller, W. and Lavergne, S. (2019). *Reconstructing the geographic and climatic origins of long‐distance bird migrations.* Journal of Biogeography. https://doi.org/10.1111/jbi.13700
-- Menchetti, M. , **Guéguen, M.** and Talavera, G. (2019). Spatio-temporal ecological niche modelling of multigenerational insect migrations. Proceedings of the Royal Society B: Biological Sciences. 286. 20191583. https://doi.org/10.1098/rspb.2019.1583
-- Ondo, I. , Thuiller, W. , **Guéguen, M.** and Pironon, S. (2019). *A new R application for Modelling Species Distribution.* https://doi.org/10.13140/RG.2.2.23431.83363
-- Sherpa, S. , **Guéguen, M.** , Renaud, J. , Blum, M. , Gaude, T. , Laporte, F. , Akiner, M. M. , Alten, B. , Aranda, C. , Barré-Cardi, H. , Bellini, R. , Paulis, M. , Chen, X-G. , Eritja, R. , Flacio, E. , Foxi, C. , Ishak, I. , Kalan, K. , Kasai, S. and Després, L. (2019). *Predicting the success of an invader: Niche shift versus niche conservatism.* Ecology and Evolution. https://doi.org/10.1002/ece3.5734
-- Thuiller, W. , **Guéguen, M.** , Renaud, J. , Karger, D. N. and Zimmermann, N. (2019). *Uncertainty in ensembles of global biodiversity scenarios.* Nature Communications. 10. https://doi.org/10.1038/s41467-019-09519-w
+- Cerasoli, F., Thuiller, W., **Guéguen, M.**, Renaud, J., D'Alessandro, P. and Biondi, M. (2019). *The role of climate and biotic factors in shaping current distributions and potential future shifts of European Neocrepidodera (Coleoptera, Chrysomelidae).* Insect Conservation and Diversity. https://doi.org/10.1111/icad.12376 ([PDF](papers/Cerasoli_2020_Insect_Conservation_Diversity.pdf))
+- Dufour, P., Descamps, S., Chantepie, S., Renaud, J., **Guéguen, M.**, Schiffers, K., Thuiller, W. and Lavergne, S. (2019). *Reconstructing the geographic and climatic origins of long‐distance bird migrations.* Journal of Biogeography. https://doi.org/10.1111/jbi.13700 ([PDF](papers/Dufour_2019_Journal_Biogeography.pdf))
+- Menchetti, M., **Guéguen, M.** and Talavera, G. (2019). *Spatio-temporal ecological niche modelling of multigenerational insect migrations.* Proceedings of the Royal Society B: Biological Sciences. 286. 20191583. https://doi.org/10.1098/rspb.2019.1583
+- Ondo, I., Thuiller, W., **Guéguen, M.** and Pironon, S. (2019). *A new R application for Modelling Species Distribution.* https://doi.org/10.13140/RG.2.2.23431.83363
+- Sherpa, S., **Guéguen, M.**, Renaud, J., Blum, M., Gaude, T., Laporte, F., Akiner, M. M., Alten, B., Aranda, C., Barré-Cardi, H., Bellini, R., Paulis, M., Chen, X-G., Eritja, R., Flacio, E., Foxi, C., Ishak, I., Kalan, K., Kasai, S. and Després, L. (2019). *Predicting the success of an invader: Niche shift versus niche conservatism.* Ecology and Evolution. https://doi.org/10.1002/ece3.5734
+- Thuiller, W., **Guéguen, M.**, Renaud, J., Karger, D. N. and Zimmermann, N. (2019). *Uncertainty in ensembles of global biodiversity scenarios.* Nature Communications. 10. https://doi.org/10.1038/s41467-019-09519-w
 
 <br/>
 
@@ -50,15 +100,8 @@ output:
 
 <br/>
 
-<!-- <a href="papers/Thuiller_2017_Diversity_Distributions.pdf" class="download" title="Download as PDF"> -->
-<!-- <img src="pictures/art_2017_Thuiller_DD.png" alt="Thuiller 2017 Diversity Distributions" style="width:350px"> -->
-<!-- </a> -->
-
-
-<br/>
-
-- Kim, H. , Rosa, I. ,  Alkemade, R. , Leadley, P. , Hurtt, G. , Popp, A. , Vuuren, D. , Anthoni, P. , Arneth, A. , Baisero, D. , Caton, E. , Chaplin-Kramer, R. , Chini, L , De Palma, A. , Di Fulvio, F. , Di Marco, M. , Espinoza, F. , Ferrier, S. and Fujimori, S. (2018). *A protocol for an intercomparison of biodiversity and ecosystem services models using harmonized land-use and climate scenarios.* Geoscientific Model Development. 11. 4537-4562. https://doi.org/10.5194/gmd-11-4537-2018
-- Roy, J. , Bonneville, J-M. , Saccone, P. , Ibañez, S. , Albert, C. , Boleda, M. , **Guéguen, M.** , Ohlmann, M. , Rioux, D. , Clement, J-C. , Lavergne, S. and Geremia, R. (2018). *Differences in the fungal communities nursed by two genetic groups of the alpine cushion plant, Silene acaulis: XXXX.* Ecology and Evolution. 8. https://doi.org/10.1002/ece3.4606
+- Kim, H., Rosa, I. M. D., Alkemade, R., Leadley, P., Hurtt, G., Popp, A., van Vuuren, D. P., Anthoni, P., Arneth, A., Baisero, D., Caton, E., Chaplin-Kramer, R., Chini, L., De Palma, A., Di Fulvio, F., Di Marco, M., Espinoza, F., Ferrier, S., Fujimori, S., Gonzalez, R. E., **Guéguen, M.**, Guerra, C., Harfoot, M., Harwood, T. D., Hasegawa, T., Haverd, V., Havlík, P., Hellweg, S., Hill, S. L. L., Hirata, A., Hoskins, A. J., Janse, J. H., Jetz, W., Johnson, J. A., Krause, A., Leclère, D., Martins, I. S., Matsui, T., Merow, C., Obersteiner, M., Ohashi, H., Poulter, B., Purvis, A., Quesada, B., Rondinini, C., Schipper, A. M., Sharp, R., Takahashi, K., Thuiller, W., Titeux, N., Visconti, P., Ware, C., Wolf, F., and Pereira, H. M. (2018). *A protocol for an intercomparison of biodiversity and ecosystem services models using harmonized land-use and climate scenarios.* Geoscientific Model Development, 11, 4537–4562, https://doi.org/10.5194/gmd-11-4537-2018
+- Roy, J., Bonneville, J-M., Saccone, P., Ibañez, S., Albert, C., Boleda, M., **Guéguen, M.**, Ohlmann, M., Rioux, D., Clement, J-C., Lavergne, S. and Geremia, R. (2018). *Differences in the fungal communities nursed by two genetic groups of the alpine cushion plant, Silene acaulis: XXXX.* Ecology and Evolution. 8. https://doi.org/10.1002/ece3.4606
 
 <br/>
 
@@ -66,25 +109,10 @@ output:
 
 <br/>
 
-<a href="papers/Thuiller_2017_Diversity_Distributions.pdf" class="download" title="Download as PDF">
-<img src="pictures/art_2017_Thuiller_DD.png" alt="Thuiller 2017 Diversity Distributions" style="width:350px">
-</a>
-<a href="papers/Mazel_2017_Current_Biology.pdf" class="download" title="Download as PDF">
-<img src="pictures/art_2017_Mazel_CB.png" alt="Mazel 2017 Current Biology" style="width:350px">
-</a>
-<a href="papers/Carboni_2017_Global_Change_Biology.pdf" class="download" title="Download as PDF">
-<img src="pictures/art_2017_Carboni_GCB.png" alt="Carboni 2017 Global Change Biology" style="width:350px">
-</a>
-<a href="papers/Barros_2017_Journal_Applied_Ecology.pdf" class="download" title="Download as PDF">
-<img src="pictures/art_2017_Barros_JAE.png" alt="Barros 2017 Journal of Applied Ecology" style="width:350px">
-</a>
-
-<br/>
-
-- Barros, C. , **Guéguen, M.** , Douzet, R. , Carboni, M. , Boulangeat, I. , Zimmermann, N. E., Münkemüller, T. , Thuiller, W. and Mori, A. (2017). *Extreme climate events counteract the effects of climate and land‐use changes in Alpine tree lines.* J Appl Ecol, 54: 39-50. https://doi.org/10.1111/1365-2664.12742
-- Carboni M, **Guéguen M**, Barros C, et al. (2017). *Simulating plant invasion dynamics in mountain ecosystems under global change scenarios.* Glob Change Biol. 2018;24:e289–e302. https://doi.org/10.1111/gcb.13879
+- Barros, C., **Guéguen, M.**, Douzet, R., Carboni, M., Boulangeat, I., Zimmermann, N. E., Münkemüller, T., Thuiller, W. and Mori, A. (2017). *Extreme climate events counteract the effects of climate and land‐use changes in Alpine tree lines.* Journal of Applied Ecology, 54: 39-50. https://doi.org/10.1111/1365-2664.12742
+- Carboni M, **Guéguen M**, Barros C, et al. (2017). *Simulating plant invasion dynamics in mountain ecosystems under global change scenarios.* Global Change Biology. 2018;24:e289–e302. https://doi.org/10.1111/gcb.13879 ([PDF](papers/Carboni_2017_Global_Change_Biology.pdf))
 - Mazel, F., Wüest, R., **Guéguen, M.**, Renaud, J., Ficetola, G. F., Lavergne, S. & Thuiller, W. (2017). *The Geography of Ecological Niche Evolution in Mammals.* Current Biology. 27. https://doi.org/10.1016/j.cub.2017.03.046. 
-- Thuiller W, **Guéguen M**, Bison M, et al. (2017). *Combining point‐process and landscape vegetation models to predict large herbivore distributions in space and time—A case study of Rupicapra rupicapra.* Divers Distrib. 2018;24:352–362. https://doi.org/10.1111/ddi.12684
+- Thuiller W, **Guéguen M**, Bison M, et al. (2017). *Combining point‐process and landscape vegetation models to predict large herbivore distributions in space and time—A case study of Rupicapra rupicapra.* Diversity and Distributions. 2018;24:352–362. https://doi.org/10.1111/ddi.12684 ([PDF](papers/Thuiller_2017_Diversity_Distributions.pdf))
 
 <br/>
 
@@ -92,13 +120,7 @@ output:
 
 <br/>
 
-<a href="papers/Thuiller_2015_Ecology_Letters.pdf" class="download" title="Download as PDF">
-<img src="pictures/art_2015_Thuiller_EL.png" alt="Thuiller 2015 Ecology Letters" style="width:500px">
-</a>
-
-<br/>
-
-- Thuiller, W. , Pollock, L. J., **Guéguen, M.** , Münkemüller, T. and Cornell, H. (2015). *From species distributions to meta‐communities.* Ecol Lett, 18: 1321-1328. https://doi.org/10.1111/ele.12526
+- Thuiller, W., Pollock, L. J., **Guéguen, M.**, Münkemüller, T. and Cornell, H. (2015). *From species distributions to meta‐communities.* Ecoloy Letters, 18: 1321-1328. https://doi.org/10.1111/ele.12526 ([PDF](papers/Thuiller_2015_Ecology_Letters.pdf))
 
 <br/>
 
@@ -106,11 +128,6 @@ output:
 
 <br/>
 
-<a href="papers/Thuiller_2014_Ecography.pdf" class="download" title="Download as PDF">
-<img src="pictures/art_2014_Thuiller_Ecography.png" alt="Thuiller 2014 Ecography" style="width:500px">
-</a>
+- Thuiller, W., **Guéguen, M.**, Georges, D., Bonet, R., Chalmandrier, L., Garraud, L., Renaud, J., Roquet, C., Van Es, J., Zimmermann, N. E. and Lavergne, S. (2014). *Are different facets of plant diversity well protected against climate and land cover changes? A test study in the French Alps.* Ecography, 37: 1254-1266. https://doi.org/10.1111/ecog.00670
 
-<br/>
-
-- Thuiller, W. , **Guéguen, M.** , Georges, D. , Bonet, R. , Chalmandrier, L. , Garraud, L. , Renaud, J. , Roquet, C. , Van Es, J. , Zimmermann, N. E. and Lavergne, S. (2014). *Are different facets of plant diversity well protected against climate and land cover changes? A test study in the French Alps.* Ecography, 37: 1254-1266. https://doi.org/10.1111/ecog.00670
-
+<br/><br/>
