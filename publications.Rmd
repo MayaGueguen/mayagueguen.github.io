@@ -67,7 +67,7 @@ output:
 <br/>
 
 - Dufour, P., de Franceschi, C., Doniol-Valcroze, P., Jiguet, F., **Guéguen, M.**, Renaud, J., Lavergne, S., Crochet, P-A. (2021). *A new westward migration route in an Asian passerine bird.* Current biology : CB. https://doi.org/10.1016/j.cub.2021.09.086
-- Grange, M., Munoz, F., Moretti, M., Varona-y-Varona, S., Renaud, J., Colace, M-P., **Guéguen, M.** and Gallien, L. (2021). *Designing sampling protocols for plant-pollinator interactions - timing, meteorology, flowering variations and failed captures matter.* Botany Letters. 168. 324-332. https://doi.org/10.1080/23818107.2021.1964596 ([PDF]())
+- Grange, M., Munoz, F., Moretti, M., Varona-y-Varona, S., Renaud, J., Colace, M-P., **Guéguen, M.** and Gallien, L. (2021). *Designing sampling protocols for plant-pollinator interactions - timing, meteorology, flowering variations and failed captures matter.* Botany Letters. 168. 324-332. https://doi.org/10.1080/23818107.2021.1964596 ([PDF](papers/Grange_2021_HAL.pdf))
 - Mouillot, D., Loiseau, N., Grenié, M., Algar, A., Allegra, M., Cadotte, M., Casajus, N., Denelle, P., **Guéguen, M.**, Maire, A., Maitner, B., McGill, B., McLean, M., Mouquet, N., Munoz, F., Thuiller, W., Villéger, S., Violle, C. and Auber, A. (2021). *The dimensionality and structure of species trait spaces.* Ecology Letters. 24. 1988-2009. https://doi.org/10.1111/ele.13778
 - von Oppen, J., Normand, S., Bjorkman, A. D., Blach-Overgaard, A., Assmann, J. J., Forchhammer, M., **Guéguen, M.** and Nabe-Nielsen, J. (2021). *Annual air temperature variability and biotic interactions explain tundra shrub species abundance.* Journal of Vegetation Science. 2021; 32:e13009. https://doi.org/10.1111/jvs.13009 ([PDF](papers/vonOppen_2021_Journal_Vegetation_Science.pdf))
 
