@@ -36,7 +36,6 @@ output:
 
 <br/>
 
-- Bektaş, B., Rutten, G., Saillard, A., Friaud, R., Arnoldi, C., Renaud, J., **Guéguen, M.**, Foulquier, A., Poulenard, J., Lyautey, E., Clément, J-C., Thuiller, W. and Münkemüller, T. (2025). *Traits and functions of alpine plant communities respond strongly but not always sufficiently to in situ climate change.* New Phytologist. https://doi.org/10.1111/nph.70503
 - Thuiller, T., Saillard, A., Abdulhak, S., Augé, V., Birck, C., Bonet, R., Choler, P., Delestrade, A., Kunstler, G., Leccia, M-F., Lienard, B., Poulenard, J., Valay, J-G., Bayle, A., Bonfanti, N., Brousset, L., Bizard, L., Calderón-Sanou, I., Dentant, C., Desjonquères, C., Gielly, L., **Guéguen, M.**, Guiter, F., Hedde, M., Hustache, E., Kedhim, N., Lapenu, P., Le Guillarme, N., Marchal, L., Mahieu, C., Martin, G., Martinez-Almoyna, C., Miele, V., Murienne, J., Paillet, Y., Rome, M., Renaud, J., The Orchamp Consortium (2024). *ORCHAMP: an observation network for monitoring biodiversity and ecosystem functioning across space and time in mountainous regions.* Comptes Rendus. Biologies, Volume 347 (2024), pp. 223-247. https://doi.org/10.5802/crbiol.165
 
 <br/>
