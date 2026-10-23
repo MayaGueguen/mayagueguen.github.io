@@ -1,9 +1,16 @@
 ---
+title: "Maya Guéguen - Tutorials"
 output:
   html_document:
     number_sections: no
     toc: no
 ---	
+
+<style>
+  .title{
+    display: none;
+  }
+</style>
 
 <br/><br/>
 

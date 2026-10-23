@@ -1,4 +1,5 @@
 ---
+title: "Maya Guéguen - Website"
 output:
   html_document:
     number_sections: no
@@ -8,17 +9,36 @@ output:
       smooth_scroll: false
 ---	
 
+<style>
+  .title{
+    display: none;
+  }
+</style>
+
 <br/><br/>
+
+<!-- ## What I like -->
+
+<!-- <br/> -->
+
+
+<!-- <br/><br/> -->
 
 
 ## Education
 
 <br/>
 
-**Training** [<img src="pictures/logo-cnrs.png" alt="CNRS" align="right" style="width:100px;">](http://www.cnrs.fr/fr/page-daccueil)
+**Training**
+
+[<img src="pictures/logo-fidle.svg" alt="FIDLE" align="right" style="width:150px;">](https://fidle.cnrs.fr/w3/)
+
+- *2026-2027 (ongoing)* :  
+Formation CNRS. Introduction au Deep Learning (FIDLE).
 
 - *November 2017* :  
 Formation CNRS. Python pour le calcul scientifique et la Programmation Orientée Objet (POO).
+[<img src="pictures/logo-cnrs.png" alt="CNRS" align="right" style="width:100px;">](http://www.cnrs.fr/fr/page-daccueil)
 
 - *December 2016* :  
 Formation CNRS. Analyses statistiques des réseaux.  
@@ -55,25 +75,4 @@ Baccalauréat Scientifique, Mention Très bien. Avignon (84).
 
 <br/><br/>
 
-
-
-## Skills
-
-<br/>
-
-**Programming**
-
-- *Languages* :  
-R / C++ / C / Python / HTML / CSS
-
-- *Tools* :  
-GitHub / SVN
-
-<br/><br/>
-
-
-
-## Projects
-
-<br/>
 

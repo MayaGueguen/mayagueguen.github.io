@@ -17,12 +17,21 @@ output:
 
 <br/><br/>
 
+<div style="text-align:right;">
+<img src="pictures/logo-orcid.svg" alt="ORCID" align="right" style="width:20px; margin-left:10px;"> [ORCID ID 0000-0002-1045-2997](https://orcid.org/0000-0002-1045-2997)
+
+<img src="pictures/logo-researchgate.png" alt="RG" align="right" style="width:20px; margin-left:10px;">[ResearchGate profile](https://www.researchgate.net/profile/Maya-Gueguen-2)
+</div>
+
+<br/><br/>
+
 ## [2026]()
 
 <br/>
 
 - Dragonetti, C., Thuiller, W., **Guéguen, M.**, Renaud, J., Visconti, P. and Di Marco, M. (2026). *Impact of global change on the distribution of mountain mammals and birds.* Conservation Biology, e70339. https://doi.org/10.1111/cobi.70339
-- **Guéguen, M.**, Blancheteau, H., Lemaire-Patin, R. and Thuiller, W. (2026). *‘biomod2’ – extending presence–absence species distribution models to multiple data types.* Ecography e08588. https://doi.org/10.1002/ecog.08588
+- González-García, A., Neyret, M., López-Tejedor, A., Prima, M. C., Si-Moussi, S., Renaud, J., **Guéguen, M.** and Lavorel, S. (2026). *Ecosystem service gradients at protected area borders reveal multiple patterns and prevalent management conflicts.* Conservation Biology, 1–14. https://doi.org/10.1111/cobi.70402
+- **Guéguen, M.**, Blancheteau, H., Lemaire-Patin, R. and Thuiller, W. (2026). *'biomod2' – extending presence–absence species distribution models to multiple data types.* Ecography, 2026: e08588. https://doi.org/10.1002/ecog.08588
 - Perrot, C., Anceau, C., Astruc, G., Bech, N., Belleau, E., Bison, M., Besnard, A., Bouche, M., Bouvet, P., Bunz, Y., Canut, M., Cavailhes, J., Chambert, T., Chiffard, J., Coulon, A., Courbin, N., Couturier, T., Delestrade, A., Desmet, J-F., Doval, S., Dupont, P., Goussot, A., **Guéguen, M.**, Guignet, J., Larroque, J., Letty, J., Mansons, J., Montadert, M., Muffat-Joly, B., Queney, G., Sèbe, F., Tournier, H., Yoccoz, N. G. (2026). *Espèces arctico-alpines face à la crise climatique. De nouvelles connaissances en faveur de leur conservation. Étude de cas : Lièvre variable et Lagopède alpin.* Office français de la biodiversité, Comprendre pour agir. 132p. https://ofb.gouv.fr/node/13250
 
 <br/>
