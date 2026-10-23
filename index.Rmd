@@ -1,5 +1,5 @@
 ---
-# title: " Maya Guéguen - Website"
+title: " Maya Guéguen - Website"
 output:
   html_document:
     number_sections: no
@@ -8,6 +8,12 @@ output:
       collapsed: false
       smooth_scroll: false
 ---
+
+<style>
+  .title{
+    display: none;
+  }
+</style>
 
 <br/><br/>
 
