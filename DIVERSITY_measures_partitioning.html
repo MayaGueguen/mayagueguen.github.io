@@ -13,21 +13,28 @@
 
 <title>DIVERSITY indices : partitioning</title>
 
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.31/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/journal.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet" />
 <link href="site_libs/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
 
 <style type="text/css">
@@ -42,32 +49,8 @@
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
+
 
 
 
@@ -77,10 +60,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -97,40 +76,16 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 61px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h2 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h3 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h4 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h5 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h6 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -158,7 +113,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -170,7 +125,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -180,11 +135,28 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.parent().addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -196,13 +168,12 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -210,16 +181,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -328,7 +292,7 @@ div.tocify {
 
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
+<div class="row">
 <div class="col-xs-12 col-sm-4 col-md-3">
 <div id="TOC" class="tocify">
 </div>
@@ -342,7 +306,7 @@ div.tocify {
 <div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -373,13 +337,6 @@ div.tocify {
   </a>
 </li>
 <li>
-  <a href="work.html">
-    <span class="fa fa-chart-line"></span>
-     
-    Work
-  </a>
-</li>
-<li>
   <a href="tutorials.html">
     <span class="fa fa-toolbox"></span>
      
@@ -407,7 +364,7 @@ div.tocify {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -418,46 +375,62 @@ div.tocify {
 
 
 <p><br/><br/></p>
-<div id="glossary" class="section level1 tabset tabset-fade tabset-pills">
-<h1>Glossary</h1>
+<div id="glossary"
+class="section level1 tabset tabset-fade tabset-pills">
+<h1 class="tabset tabset-fade tabset-pills">Glossary</h1>
 <div id="components" class="section level2">
 <h2>Components</h2>
 <ul>
-<li><strong>Patch :</strong> an area over which there is no significant change in the taxonomic composition of a community.</li>
-<li><strong>Habitat :</strong> a distinct set of environmental conditions; can include multiple community states.</li>
-<li><strong>Landscape :</strong> an area including one or more patches and one or more habitats.</li>
+<li><strong>Patch :</strong> an area over which there is no significant
+change in the taxonomic composition of a community.</li>
+<li><strong>Habitat :</strong> a distinct set of environmental
+conditions; can include multiple community states.</li>
+<li><strong>Landscape :</strong> an area including one or more patches
+and one or more habitats.</li>
 </ul>
 <p><br/></p>
 <ul>
-<li><strong>Alpha diversity :</strong> local diversity, within-habitat diversity, within-patch diversity.</li>
-<li><strong>Beta diversity :</strong> between-sampling unit diversity (NOT LIMITED to change along gradients).</li>
-<li><strong>Gamma diversity :</strong> total diversity of a region or landscape.</li>
+<li><strong>Alpha diversity :</strong> local diversity, within-habitat
+diversity, within-patch diversity.</li>
+<li><strong>Beta diversity :</strong> between-sampling unit diversity
+(NOT LIMITED to change along gradients).</li>
+<li><strong>Gamma diversity :</strong> total diversity of a region or
+landscape.</li>
 </ul>
 <p><br/> <br/></p>
 </div>
 <div id="theory" class="section level2">
 <h2>Theory</h2>
 <ul>
-<li><strong>Diversity is dependent on the scale of sampling.</strong><br />
-<em>MacArthur &amp; Wilson’s theory of island biogeography (see Rosenzweig 1994), Whittaker (1972)</em></li>
+<li><strong>Diversity is dependent on the scale of
+sampling.</strong><br />
+<em>MacArthur &amp; Wilson’s theory of island biogeography (see
+Rosenzweig 1994), Whittaker (1972)</em></li>
 </ul>
 <p><br/></p>
 <ul>
-<li><p><strong>Concavity :</strong> diversity at any level in the hierarchy must be equal to or greater than the average diversity of the contributing diversity components (gamma &gt; alpha moyen).<br />
-<em>OK for all indices, Rao PD/FD if distances are euclidean</em></p></li>
-<li><p><strong>Monotonicity :</strong> adding a species in the community increases the diversity.<br />
-<em>Not always true for Rao, since the 0 diagonal in the distance matrix is included in calculation</em></p></li>
+<li><p><strong>Concavity :</strong> diversity at any level in the
+hierarchy must be equal to or greater than the average diversity of the
+contributing diversity components (gamma &gt; alpha moyen).<br />
+<em>OK for all indices, Rao PD/FD if distances are
+euclidean</em></p></li>
+<li><p><strong>Monotonicity :</strong> adding a species in the community
+increases the diversity.<br />
+<em>Not always true for Rao, since the 0 diagonal in the distance matrix
+is included in calculation</em></p></li>
 </ul>
 <p><br/> <br/></p>
 </div>
 </div>
-<div id="diversity-measures-of-relative-similarity" class="section level1">
+<div id="diversity-measures-of-relative-similarity"
+class="section level1">
 <h1>Diversity measures of relative similarity</h1>
 <div id="jaccard" class="section level2">
 <h2>1902 : Jaccard</h2>
-<p><strong>Coefficient of community (percentage of co-occurrence) :</strong></p>
+<p><strong>Coefficient of community (percentage of co-occurrence)
+:</strong></p>
 <!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Jaccard.png" width=200px/></div>   -->
-<p><img src="pictures_tutorials/formula_Jaccard.png" width="200px" style="display: block; margin: auto;" /></p>
+<p><img src="pictures_tutorials/formula_Jaccard.png" alt="" width="200px" style="display: block; margin: auto;" /></p>
 <p>with :</p>
 <ul>
 <li><code>Ss</code> = number of species shared between two sites</li>
@@ -473,19 +446,22 @@ div.tocify {
 <p>with :</p>
 <ul>
 <li><code>a</code> = number of species shared between two sites</li>
-<li><code>b</code> = number of species unique to the <em>poorest</em> site</li>
-<li><code>c</code> = number of species unique to the <em>richest</em> site</li>
+<li><code>b</code> = number of species unique to the <em>poorest</em>
+site</li>
+<li><code>c</code> = number of species unique to the <em>richest</em>
+site</li>
 </ul>
 <p>leading to :</p>
 <!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Jaccard-2.png" width=100px/></div>   -->
-<p><img src="pictures_tutorials/formula_Jaccard-2.png" width="100px" style="display: block; margin: auto;" /></p>
+<p><img src="pictures_tutorials/formula_Jaccard-2.png" alt="" width="100px" style="display: block; margin: auto;" /></p>
 <p><br/></p>
 </div>
 <div id="sorensen" class="section level2">
 <h2>1948 : Sorensen</h2>
-<p><strong>Coefficient of community (percentage of co-occurrence) :</strong></p>
+<p><strong>Coefficient of community (percentage of co-occurrence)
+:</strong></p>
 <!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Sorensen.png" width=200px/></div>   -->
-<p><img src="pictures_tutorials/formula_Sorensen.png" width="200px" style="display: block; margin: auto;" /></p>
+<p><img src="pictures_tutorials/formula_Sorensen.png" alt="" width="200px" style="display: block; margin: auto;" /></p>
 <p>with :</p>
 <ul>
 <li><code>Ss</code> = number of species shared between two sites</li>
@@ -501,23 +477,27 @@ div.tocify {
 <p>with :</p>
 <ul>
 <li><code>a</code> = number of species shared between two sites</li>
-<li><code>b</code> = number of species unique to the <em>poorest</em> site</li>
-<li><code>c</code> = number of species unique to the <em>richest</em> site</li>
+<li><code>b</code> = number of species unique to the <em>poorest</em>
+site</li>
+<li><code>c</code> = number of species unique to the <em>richest</em>
+site</li>
 </ul>
 <p>leading to :</p>
 <!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Sorensen-2.png" width=100px/></div>   -->
-<p><img src="pictures_tutorials/formula_Sorensen-2.png" width="100px" style="display: block; margin: auto;" /></p>
+<p><img src="pictures_tutorials/formula_Sorensen-2.png" alt="" width="100px" style="display: block; margin: auto;" /></p>
 <p><br/></p>
 </div>
 <div id="bray-curtis" class="section level2">
 <h2>1957 : Bray &amp; Curtis</h2>
 <p><strong>Percentage similarity :</strong></p>
 <!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Bray-Curtis.png" width=300px/></div>   -->
-<p><img src="pictures_tutorials/formula_Bray-Curtis.png" width="300px" style="display: block; margin: auto;" /></p>
+<p><img src="pictures_tutorials/formula_Bray-Curtis.png" alt="" width="300px" style="display: block; margin: auto;" /></p>
 <p>with :</p>
 <ul>
-<li><code>nij, nik</code> = unrelativized importance values for a given species <code>i</code> in samples <code>j</code> and <code>k</code></li>
-<li><code>Nj, Nk</code> = total unrelativized importance values in samples <code>j</code> and <code>k</code></li>
+<li><code>nij, nik</code> = unrelativized importance values for a given
+species <code>i</code> in samples <code>j</code> and <code>k</code></li>
+<li><code>Nj, Nk</code> = total unrelativized importance values in
+samples <code>j</code> and <code>k</code></li>
 </ul>
 <p><br/></p>
 </div>
@@ -526,40 +506,58 @@ div.tocify {
 <h1>Beta partitioning</h1>
 <div id="baselga-methods-ecology-evolution" class="section level2">
 <h2>2012 : Baselga (Methods Ecology Evolution)</h2>
-<p><em><strong>Jaccard and Sorensen dissimilarity</strong> represent the opposite tenants of <strong>Jaccard and Sorensen CC</strong> (presented before).<br />
-Instead of looking at the percentage of co-occurring species between two sites, they look at the percentage of different species between these two sites.</em></p>
+<p><em><strong>Jaccard and Sorensen dissimilarity</strong> represent the
+opposite tenants of <strong>Jaccard and Sorensen CC</strong> (presented
+before).<br />
+Instead of looking at the percentage of co-occurring species between two
+sites, they look at the percentage of different species between these
+two sites.</em></p>
 <p><br/></p>
 <!-- <div style="text-align:center"> -->
 <!-- <img src="pictures_tutorials/formula_Sorensen-beta-decomposition.png" width=300px/> -->
 <!-- <br/> -->
 <!-- <img src="pictures_tutorials/formula_Jaccard-beta-decomposition.png" width=300px/> -->
 <!-- </div>   -->
-<p><img src="pictures_tutorials/formula_Sorensen-beta-decomposition.png" width="300px" style="display: block; margin: auto;" /> <img src="pictures_tutorials/formula_Jaccard-beta-decomposition.png" width="300px" style="display: block; margin: auto;" /></p>
+<p><img src="pictures_tutorials/formula_Sorensen-beta-decomposition.png" alt="" width="300px" style="display: block; margin: auto;" />
+<img src="pictures_tutorials/formula_Jaccard-beta-decomposition.png" alt="" width="300px" style="display: block; margin: auto;" /></p>
 <p>with :</p>
 <ul>
-<li><p><code>a</code> = number of species shared between two sites</p></li>
-<li><p><code>b</code> = number of species unique to the <em>poorest</em> site</p></li>
-<li><p><code>c</code> = number of species unique to the <em>richest</em> site</p></li>
-<li><p><code>Bsim</code> = Simpson dissimilarity, <strong>turnover</strong> component of Sorensen dissimilarity</p></li>
-<li><p><code>Bsne</code> = <strong>nestedness</strong> component of Sorensen dissimilarity</p></li>
-<li><p><code>Bjtu</code> = <strong>turnover</strong> component of Jaccard dissimilarity</p></li>
-<li><p><code>Bjne</code> = <strong>nestedness</strong> component of Jaccard dissimilarity</p></li>
+<li><p><code>a</code> = number of species shared between two
+sites</p></li>
+<li><p><code>b</code> = number of species unique to the <em>poorest</em>
+site</p></li>
+<li><p><code>c</code> = number of species unique to the <em>richest</em>
+site</p></li>
+<li><p><code>Bsim</code> = Simpson dissimilarity,
+<strong>turnover</strong> component of Sorensen dissimilarity</p></li>
+<li><p><code>Bsne</code> = <strong>nestedness</strong> component of
+Sorensen dissimilarity</p></li>
+<li><p><code>Bjtu</code> = <strong>turnover</strong> component of
+Jaccard dissimilarity</p></li>
+<li><p><code>Bjne</code> = <strong>nestedness</strong> component of
+Jaccard dissimilarity</p></li>
 </ul>
 <p><br/></p>
 </div>
 <div id="baselga-methods-ecology-evolution-1" class="section level2">
 <h2>2013 : Baselga (Methods Ecology Evolution)</h2>
-<p><em><strong>Delta Bray-Curtis index</strong> (opposite of Bray-Curtis PS) is equal to <strong>Sorensen dissimilarity</strong>.</em></p>
+<p><em><strong>Delta Bray-Curtis index</strong> (opposite of Bray-Curtis
+PS) is equal to <strong>Sorensen dissimilarity</strong>.</em></p>
 <p><br/></p>
 <!-- <div style="text-align:center"> -->
 <!-- <img src="pictures_tutorials/formula_Bray-Curtis-decomposition-1.png" width=200px/> -->
 <!-- <img src="pictures_tutorials/formula_Bray-Curtis-decomposition-2.png" width=300px/> -->
 <!-- </div>  -->
-<p><img src="pictures_tutorials/formula_Bray-Curtis-decomposition-1.png" width="200px" style="display: block; margin: auto;" /> <img src="pictures_tutorials/formula_Bray-Curtis-decomposition-2.png" width="300px" style="display: block; margin: auto;" /></p>
+<p><img src="pictures_tutorials/formula_Bray-Curtis-decomposition-1.png" alt="" width="200px" style="display: block; margin: auto;" />
+<img src="pictures_tutorials/formula_Bray-Curtis-decomposition-2.png" alt="" width="300px" style="display: block; margin: auto;" /></p>
 <p><br/></p>
-<p>Using an <em>analogous reasoning as for separating the turnover and nestedness components</em> of incidence-based dissimilarity, the <strong>balanced variation</strong> and <strong>abundance gradient</strong> components of Bray-Curtis dissimilarity can be separated as follows :</p>
+<p>Using an <em>analogous reasoning as for separating the turnover and
+nestedness components</em> of incidence-based dissimilarity, the
+<strong>balanced variation</strong> and <strong>abundance
+gradient</strong> components of Bray-Curtis dissimilarity can be
+separated as follows :</p>
 <!-- <div style="text-align:center"> <img src="pictures_tutorials/formula_Bray-Curtis-decomposition-3.png" width=450px/> </div> -->
-<p><img src="pictures_tutorials/formula_Bray-Curtis-decomposition-3.png" width="450px" style="display: block; margin: auto;" /></p>
+<p><img src="pictures_tutorials/formula_Bray-Curtis-decomposition-3.png" alt="" width="450px" style="display: block; margin: auto;" /></p>
 <p>with :</p>
 <ul>
 <li><code>dBC-bal</code> = <strong>turnover</strong> equivalent</li>
@@ -570,7 +568,8 @@ Instead of looking at the percentage of co-occurring species between two sites, 
 <!-- <img src="pictures_tutorials/example_Bray-Curtis-decomposition-1.png" width=300px/> -->
 <!-- <img src="pictures_tutorials/example_Bray-Curtis-decomposition-2.png" width=300px/> -->
 <!-- </div>  -->
-<p><img src="pictures_tutorials/example_Bray-Curtis-decomposition-1.png" width="300px" style="display: block; margin: auto;" /> <img src="pictures_tutorials/example_Bray-Curtis-decomposition-2.png" width="300px" style="display: block; margin: auto;" /></p>
+<p><img src="pictures_tutorials/example_Bray-Curtis-decomposition-1.png" alt="" width="300px" style="display: block; margin: auto;" />
+<img src="pictures_tutorials/example_Bray-Curtis-decomposition-2.png" alt="" width="300px" style="display: block; margin: auto;" /></p>
 <p><br/></p>
 </div>
 </div>
@@ -580,23 +579,26 @@ Instead of looking at the percentage of co-occurring species between two sites, 
 <h2>1972 : Whittaker (Taxon)</h2>
 <p><strong>Beta diversity :</strong></p>
 <ul>
-<li>ratio of number of species in a composite sample (combining a number of alpha samples)<br />
+<li>ratio of number of species in a composite sample (combining a number
+of alpha samples)<br />
 divided by the mean number of species in the alpha samples</li>
 <li>ratio of gamma divided by mean alpha</li>
 </ul>
 <p><br/></p>
-<p><strong>Multiplicative relationship between Alpha, Beta and Gamma :</strong></p>
+<p><strong>Multiplicative relationship between Alpha, Beta and Gamma
+:</strong></p>
 <!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Whittaker.png" width=100px/></div>   -->
-<p><img src="pictures_tutorials/formula_Whittaker.png" width="100px" style="display: block; margin: auto;" /></p>
+<p><img src="pictures_tutorials/formula_Whittaker.png" alt="" width="100px" style="display: block; margin: auto;" /></p>
 <p><br/></p>
 </div>
 <div id="lande-oikos" class="section level2">
 <h2>1996 : Lande (Oikos)</h2>
 <p><strong>Additive Diversity Partitioning (ADP) :</strong></p>
 <!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Lande.png" width=300px/></div>   -->
-<p><img src="pictures_tutorials/formula_Lande.png" width="300px" style="display: block; margin: auto;" /></p>
+<p><img src="pictures_tutorials/formula_Lande.png" alt="" width="300px" style="display: block; margin: auto;" /></p>
 <ul>
-<li>Total diversity and its components have the same units and can be compared directly.</li>
+<li>Total diversity and its components have the same units and can be
+compared directly.</li>
 </ul>
 <p><br/></p>
 </div>
@@ -604,14 +606,20 @@ divided by the mean number of species in the alpha samples</li>
 <h2>2007 : Jost (Ecology)</h2>
 <p><strong>Basic properties of intuitive alpha and beta :</strong></p>
 <ol style="list-style-type: decimal">
-<li>Alpha and beta should be free to vary independently (Shmida 1984).</li>
-<li>A given number should denote the same amount of diversity or uncertainty, whether it comes from the alpha component, the beta component, or the gamma component, so that the within-community and among-community components could be directly compared (Lande 1996).</li>
-<li>Alpha is some type of average of the diversity indices of the communities or samples that make up the region.</li>
+<li>Alpha and beta should be free to vary independently (Shmida
+1984).</li>
+<li>A given number should denote the same amount of diversity or
+uncertainty, whether it comes from the alpha component, the beta
+component, or the gamma component, so that the within-community and
+among-community components could be directly compared (Lande 1996).</li>
+<li>Alpha is some type of average of the diversity indices of the
+communities or samples that make up the region.</li>
 <li>Gamma must be completely determined by alpha and beta.</li>
 <li>Alpha can never be greater than gamma.</li>
 </ol>
 <p><br/></p>
-<p><strong>Decomposition of standard diversity indices into <em>independent</em> components :</strong></p>
+<p><strong>Decomposition of standard diversity indices into
+<em>independent</em> components :</strong></p>
 <table>
 <colgroup>
 <col width="25%" />
@@ -632,12 +640,15 @@ divided by the mean number of species in the alpha samples</li>
 <td><em>Standard diversity indices</em></td>
 <td>Species richness <br/> <strong>Htot = Ha x Hb</strong></td>
 <td>Shannon entropy <br/> <strong>Htot = Ha + Hb</strong></td>
-<td>Simpson index <br/> <strong>Htot = Ha x Hb</strong> <br/><br/> Gini-Simpson index <br/> <strong>Htot = Ha + Hb - (Ha x Hb)</strong></td>
+<td>Simpson index <br/> <strong>Htot = Ha x Hb</strong> <br/><br/>
+Gini-Simpson index <br/> <strong>Htot = Ha + Hb - (Ha x
+Hb)</strong></td>
 </tr>
 <tr class="even">
 <td><em>Numbers equivalents</em> <br/> <em>Hill numbers</em></td>
 <td>Species richness</td>
-<td>Exponential of Shannon entropy <br/> <strong>Htot = Ha x Hb</strong></td>
+<td>Exponential of Shannon entropy <br/> <strong>Htot = Ha x
+Hb</strong></td>
 <td>Inverse of (Gini)-Simpson index</td>
 </tr>
 <tr class="odd">
@@ -649,15 +660,18 @@ divided by the mean number of species in the alpha samples</li>
 </tbody>
 </table>
 <p><br/></p>
-<p><strong>Decomposition of Hill’s numbers using Whittaker’s law :</strong></p>
+<p><strong>Decomposition of Hill’s numbers using Whittaker’s law
+:</strong></p>
 <!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Whittaker-Jost.png" width=300px/></div>   -->
-<p><img src="pictures_tutorials/formula_Whittaker-Jost.png" width="300px" style="display: block; margin: auto;" /></p>
+<p><img src="pictures_tutorials/formula_Whittaker-Jost.png" alt="" width="300px" style="display: block; margin: auto;" /></p>
 <!-- <div style="text-align:center"><img src="pictures_tutorials/formula_Whittaker-Jost-alpha.png" width=500px/></div> -->
-<p><img src="pictures_tutorials/formula_Whittaker-Jost-alpha.png" width="500px" style="display: block; margin: auto;" /></p>
-<p><em>The second formula is used to calculate alpha and gamma components,<br />
+<p><img src="pictures_tutorials/formula_Whittaker-Jost-alpha.png" alt="" width="500px" style="display: block; margin: auto;" /></p>
+<p><em>The second formula is used to calculate alpha and gamma
+components,<br />
 and the first formula is used to obtain beta component.</em></p>
 <p><br/></p>
-<p><strong>1. Special case when community weights are all equal (verifying all 5 basic properties) :</strong></p>
+<p><strong>1. Special case when community weights are all equal
+(verifying all 5 basic properties) :</strong></p>
 <table>
 <colgroup>
 <col width="25%" />
@@ -678,12 +692,14 @@ and the first formula is used to obtain beta component.</em></p>
 <td><em>Standard diversity indices</em></td>
 <td>Species richness <br/> <strong>Hb = Hg / Ha</strong></td>
 <td>Shannon entropy <br/> <strong>Hb = Hg + Ha</strong></td>
-<td>Simpson index <br/> <strong>Hb = Hg / Ha</strong> <br/><br/> Gini-Simpson index <br/> <strong>Hb = (Hg - Ha) / (1 - Ha)</strong></td>
+<td>Simpson index <br/> <strong>Hb = Hg / Ha</strong> <br/><br/>
+Gini-Simpson index <br/> <strong>Hb = (Hg - Ha) / (1 - Ha)</strong></td>
 </tr>
 <tr class="even">
 <td><em>Numbers equivalents</em> <br/> <em>Hill numbers</em></td>
 <td>Species richness</td>
-<td>Exponential of Shannon entropy <br/> <strong>Hb = Hg / Ha</strong></td>
+<td>Exponential of Shannon entropy <br/> <strong>Hb = Hg /
+Ha</strong></td>
 <td>Inverse of (Gini)-Simpson index</td>
 </tr>
 <tr class="odd">
@@ -695,7 +711,8 @@ and the first formula is used to obtain beta component.</em></p>
 </tbody>
 </table>
 <p><br/></p>
-<p><strong>2. When community weights are unequal, only Shannon concentration verifies all 5 basic properties.</strong></p>
+<p><strong>2. When community weights are unequal, only Shannon
+concentration verifies all 5 basic properties.</strong></p>
 <p><br/></p>
 </div>
 <div id="chiu-ecological-monographs" class="section level2">
@@ -705,23 +722,34 @@ and the first formula is used to obtain beta component.</em></p>
 <div id="chalmandrier-methods-ecology-evolution" class="section level2">
 <h2>2015 : Chalmandrier (Methods Ecology Evolution)</h2>
 <!-- <div style="text-align:center"> <img src="pictures_tutorials/formula_Chalmandrier.png" width=250px/> </div>  -->
-<p><img src="pictures_tutorials/formula_Chalmandrier.png" width="250px" style="display: block; margin: auto;" /></p>
+<p><img src="pictures_tutorials/formula_Chalmandrier.png" alt="" width="250px" style="display: block; margin: auto;" /></p>
 <p>with :</p>
 <ul>
-<li><code>Bt</code> = change in diversity between time pools, <strong>temporal change</strong> irrespective of the spatial patterns</li>
-<li><code>Bs</code> = change in diversity between site pools, <strong>spatial change</strong> after averaging the temporal variability
+<li><code>Bt</code> = change in diversity between time pools,
+<strong>temporal change</strong> irrespective of the spatial
+patterns</li>
+<li><code>Bs</code> = change in diversity between site pools,
+<strong>spatial change</strong> after averaging the temporal variability
 <ul>
 <li>minimum value = 1</li>
-<li>maximum value = if site pools (<code>Bs</code>), time pools (<code>Bt</code>), communities (<code>B</code>) do not share species or tree branches</li>
+<li>maximum value = if site pools (<code>Bs</code>), time pools
+(<code>Bt</code>), communities (<code>B</code>) do not share species or
+tree branches</li>
 </ul></li>
 </ul>
 <p><br/></p>
 <ul>
 <li><code>Bst</code> =
 <ul>
-<li><strong>interaction between spatial and temporal turnover</strong>, to quantify finer changes (e.g. rearrangement of species between sites between two dates)</li>
-<li><code>= 1</code> : identical change of diversity across space and time between communities</li>
-<li><code>&gt; 1</code> : heterogeneity of change of communities over space and time that is not quantified by <code>Bs</code> and <code>Bt</code> because it averages out at larger spatial or temporal scales</li>
+<li><strong>interaction between spatial and temporal turnover</strong>,
+to quantify finer changes (e.g. rearrangement of species between sites
+between two dates)</li>
+<li><code>= 1</code> : identical change of diversity across space and
+time between communities</li>
+<li><code>&gt; 1</code> : heterogeneity of change of communities over
+space and time that is not quantified by <code>Bs</code> and
+<code>Bt</code> because it averages out at larger spatial or temporal
+scales</li>
 </ul></li>
 </ul>
 <p><br/></p>
@@ -734,17 +762,54 @@ and the first formula is used to obtain beta component.</em></p>
 <div id="citations" class="section level1">
 <h1>Citations</h1>
 <ul>
-<li>Baselga, A. and Orme, C. D. L. (2012). betapart: an R package for the study of beta diversity. Methods in Ecology and Evolution, 3: 808–812. <a href="https://doi.org/10.1111/j.2041-210X.2012.00224.x" class="uri">https://doi.org/10.1111/j.2041-210X.2012.00224.x</a></li>
-<li>Baselga, A. (2013). Separating the two components of abundance-based dissimilarity: balanced changes in abundance vs. abundance gradients. Methods Ecol Evol, 4: 552–557. <a href="https://doi.org/10.1111/2041-210X.12029" class="uri">https://doi.org/10.1111/2041-210X.12029</a></li>
-<li>Bray, J., &amp; Curtis, J. (1957). An Ordination of the Upland Forest Communities of Southern Wisconsin. Ecological Monographs, 27(4), 326-349. <a href="https://doi.org/10.2307/1942268" class="uri">https://doi.org/10.2307/1942268</a></li>
-<li>Chalmandrier, L., Münkemüller, T., Devictor, V., Lavergne, S. and Thuiller, W. (2015). Decomposing changes in phylogenetic and functional diversity over space and time. Methods Ecol Evol, 6: 109–118. <a href="https://doi.org/10.1111/2041-210X.12297" class="uri">https://doi.org/10.1111/2041-210X.12297</a></li>
-<li>Chiu, C., Jost, L., &amp; Chao, A. (2014). Phylogenetic beta diversity, similarity, and differentiation measures based on Hill numbers. Ecological Monographs, 84(1), 21-44. <a href="http://www.jstor.org/stable/43187595" class="uri">http://www.jstor.org/stable/43187595</a></li>
-<li>Jaccard, P. (1902). Lois de distribution florale dans la zone alpine. Bulletin de la Société vaudoise des sciences naturelles. 38. 69-130. <a href="https://doi.org/10.5169/seals-266762" class="uri">https://doi.org/10.5169/seals-266762</a>.</li>
-<li>Jost, L. (2007). Partitioning Diversity into Independent Alpha and Beta Components. Ecology, 88(10), 2427-2439. <a href="http://www.jstor.org/stable/27651387" class="uri">http://www.jstor.org/stable/27651387</a></li>
-<li>Lande, R. (1996). Statistics and Partitioning of Species Diversity, and Similarity Among Multiple Communities. Oikos. 76. 5-13. <a href="https://doi.org/10.2307/3545743" class="uri">https://doi.org/10.2307/3545743</a>.</li>
-<li>Reeve, R. &amp; Matthews, L., &amp; Cobbold, C. &amp; Leinster, T. &amp; Thompson, J &amp; Brummitt, N. (2014). How to partition diversity. <a href="http://arxiv.org/abs/1404.6520" class="uri">http://arxiv.org/abs/1404.6520</a></li>
-<li>Sorenson, T. (1948). A Method of Establishing Groups of Equal Amplitudes in Plant Sociology Based on Similarity of Species Content and Its Application to Analyses of the Vegetation on Danish Commons. Kongelige Danske Videnskabernes Selskab, Biologiske Skrifter, 5, 1-34.</li>
-<li>Whittaker, R. (1972). Evolution and Measurement of Species Diversity. Taxon, 21(2/3), 213-251. <a href="https://doi.org/10.2307/1218190" class="uri">https://doi.org/10.2307/1218190</a></li>
+<li>Baselga, A. and Orme, C. D. L. (2012). betapart: an R package for
+the study of beta diversity. Methods in Ecology and Evolution, 3:
+808–812. <a href="https://doi.org/10.1111/j.2041-210X.2012.00224.x"
+class="uri">https://doi.org/10.1111/j.2041-210X.2012.00224.x</a></li>
+<li>Baselga, A. (2013). Separating the two components of abundance-based
+dissimilarity: balanced changes in abundance vs. abundance gradients.
+Methods Ecol Evol, 4: 552–557. <a
+href="https://doi.org/10.1111/2041-210X.12029"
+class="uri">https://doi.org/10.1111/2041-210X.12029</a></li>
+<li>Bray, J., &amp; Curtis, J. (1957). An Ordination of the Upland
+Forest Communities of Southern Wisconsin. Ecological Monographs, 27(4),
+326-349. <a href="https://doi.org/10.2307/1942268"
+class="uri">https://doi.org/10.2307/1942268</a></li>
+<li>Chalmandrier, L., Münkemüller, T., Devictor, V., Lavergne, S. and
+Thuiller, W. (2015). Decomposing changes in phylogenetic and functional
+diversity over space and time. Methods Ecol Evol, 6: 109–118. <a
+href="https://doi.org/10.1111/2041-210X.12297"
+class="uri">https://doi.org/10.1111/2041-210X.12297</a></li>
+<li>Chiu, C., Jost, L., &amp; Chao, A. (2014). Phylogenetic beta
+diversity, similarity, and differentiation measures based on Hill
+numbers. Ecological Monographs, 84(1), 21-44. <a
+href="http://www.jstor.org/stable/43187595"
+class="uri">http://www.jstor.org/stable/43187595</a></li>
+<li>Jaccard, P. (1902). Lois de distribution florale dans la zone
+alpine. Bulletin de la Société vaudoise des sciences naturelles. 38.
+69-130. <a href="https://doi.org/10.5169/seals-266762"
+class="uri">https://doi.org/10.5169/seals-266762</a>.</li>
+<li>Jost, L. (2007). Partitioning Diversity into Independent Alpha and
+Beta Components. Ecology, 88(10), 2427-2439. <a
+href="http://www.jstor.org/stable/27651387"
+class="uri">http://www.jstor.org/stable/27651387</a></li>
+<li>Lande, R. (1996). Statistics and Partitioning of Species Diversity,
+and Similarity Among Multiple Communities. Oikos. 76. 5-13. <a
+href="https://doi.org/10.2307/3545743"
+class="uri">https://doi.org/10.2307/3545743</a>.</li>
+<li>Reeve, R. &amp; Matthews, L., &amp; Cobbold, C. &amp; Leinster, T.
+&amp; Thompson, J &amp; Brummitt, N. (2014). How to partition diversity.
+<a href="http://arxiv.org/abs/1404.6520"
+class="uri">http://arxiv.org/abs/1404.6520</a></li>
+<li>Sorenson, T. (1948). A Method of Establishing Groups of Equal
+Amplitudes in Plant Sociology Based on Similarity of Species Content and
+Its Application to Analyses of the Vegetation on Danish Commons.
+Kongelige Danske Videnskabernes Selskab, Biologiske Skrifter, 5,
+1-34.</li>
+<li>Whittaker, R. (1972). Evolution and Measurement of Species
+Diversity. Taxon, 21(2/3), 213-251. <a
+href="https://doi.org/10.2307/1218190"
+class="uri">https://doi.org/10.2307/1218190</a></li>
 </ul>
 </div>
 
@@ -777,7 +842,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
@@ -786,6 +851,9 @@ $(document).ready(function () {
 
 <script>
 $(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
 
     // move toc-ignore selectors from section div to header
     $('div.section.toc-ignore')

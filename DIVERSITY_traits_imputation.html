@@ -13,21 +13,28 @@
 
 <title>DIVERSITY traits : imputation</title>
 
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.31/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/journal.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet" />
 <link href="site_libs/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
 
 <style type="text/css">
@@ -42,32 +49,8 @@
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
+
 
 
 
@@ -77,10 +60,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -97,40 +76,16 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 61px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h2 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h3 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h4 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h5 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h6 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -158,7 +113,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -170,7 +125,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -180,11 +135,28 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.parent().addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -196,13 +168,12 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -210,16 +181,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -328,7 +292,7 @@ div.tocify {
 
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
+<div class="row">
 <div class="col-xs-12 col-sm-4 col-md-3">
 <div id="TOC" class="tocify">
 </div>
@@ -342,7 +306,7 @@ div.tocify {
 <div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -373,13 +337,6 @@ div.tocify {
   </a>
 </li>
 <li>
-  <a href="work.html">
-    <span class="fa fa-chart-line"></span>
-     
-    Work
-  </a>
-</li>
-<li>
   <a href="tutorials.html">
     <span class="fa fa-toolbox"></span>
      
@@ -407,7 +364,7 @@ div.tocify {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -424,36 +381,53 @@ div.tocify {
 <li><strong>Distribution of missing data</strong> =
 <ul>
 <li>MCAR = missing completely at random</li>
-<li>MAR = missing at random (when the presence of missing data for a given variable is related to the values of another variable)</li>
+<li>MAR = missing at random (when the presence of missing data for a
+given variable is related to the values of another variable)</li>
 <li>MNAR = missing not at random</li>
 </ul></li>
 </ul>
-<p><span class="math inline">\(\Rightarrow\)</span> in functional trait databases, missingness is related to the frequency of the species and their abundances, and taxonomic and phylogenetic bias is commonplace <span class="math inline">\(/!\setminus\)</span></p>
+<p><span class="math inline">\(\Rightarrow\)</span> in functional trait
+databases, missingness is related to the frequency of the species and
+their abundances, and taxonomic and phylogenetic bias is commonplace
+<span class="math inline">\(/!\setminus\)</span></p>
 <p><br/></p>
 <ul>
 <li><strong>Deletion method</strong> =
 <ul>
-<li>delete species with missing data for the calculation of diversity indices</li>
-<li>acceptable for estimation of the community-weighted mean trait value (CWM)<br />
-as long as it only concerns the minor species (should not exceed 20<span class="math inline">\(\%\)</span> of the total biomass of the community)</li>
+<li>delete species with missing data for the calculation of diversity
+indices</li>
+<li>acceptable for estimation of the community-weighted mean trait value
+(CWM)<br />
+as long as it only concerns the minor species (should not exceed 20<span
+class="math inline">\(\%\)</span> of the total biomass of the
+community)</li>
 </ul></li>
 </ul>
 <p><br/></p>
 <ul>
 <li><strong>Gower + PCoA</strong> =
 <ul>
-<li>compute Gower distance (with missing data) and project the distance with a Principal Coordinate Analysis,<br />
+<li>compute Gower distance (with missing data) and project the distance
+with a Principal Coordinate Analysis,<br />
 the axes being then used as functional traits</li>
-<li>only relevant for functional diversity indices calculated from several traits</li>
-<li>trait information gets lost and only multivariate approaches can be used</li>
+<li>only relevant for functional diversity indices calculated from
+several traits</li>
+<li>trait information gets lost and only multivariate approaches can be
+used</li>
 </ul></li>
 </ul>
 <p><br/></p>
 <ul>
-<li><p><strong>Imputation method</strong> = replace missing data with substituted values</p></li>
-<li><p><strong>Simple imputation</strong> = a single value is imputed for each missing datum</p></li>
-<li><p><strong>Multiple imputation</strong> = Monte Carlo technique in which the missing values are replaced by <span class="math inline">\(m &gt; 1\)</span> imputed values, combined to produce estimates, confidence intervals, missing data uncertainty</p></li>
-<li><p><strong>Likelihood-based imputation</strong> = imputation and analysis are conducted simultaneously</p></li>
+<li><p><strong>Imputation method</strong> = replace missing data with
+substituted values</p></li>
+<li><p><strong>Simple imputation</strong> = a single value is imputed
+for each missing datum</p></li>
+<li><p><strong>Multiple imputation</strong> = Monte Carlo technique in
+which the missing values are replaced by <span class="math inline">\(m
+&gt; 1\)</span> imputed values, combined to produce estimates,
+confidence intervals, missing data uncertainty</p></li>
+<li><p><strong>Likelihood-based imputation</strong> = imputation and
+analysis are conducted simultaneously</p></li>
 </ul>
 <p><br/> <br/></p>
 </div>
@@ -462,36 +436,53 @@ the axes being then used as functional traits</li>
 <p><br/></p>
 <div id="tamme-ecology" class="section level2">
 <h2>2014 : Tamme (Ecology)</h2>
-<p><em>Measure the predictive power of simple plant traits to estimate species’ maximum dispersal distances :</em></p>
+<p><em>Measure the predictive power of simple plant traits to estimate
+species’ maximum dispersal distances :</em></p>
 <ul>
-<li>dispersal distance is related <strong>to a dispersal syndrome</strong> (Willson 1993, Pärtel &amp; Zobel 2007, Vittoz &amp; Engler 2007), that may generally be deduced from seed morphology, but difficult to establish a direct association (Nogales 2007)</li>
-<li><strong>plant height</strong> more important than seed mass in determining seed dispersal distances (Thomson et al. 2011)</li>
-<li><strong>maximum dispersal distance strongly correlated with mean dispersal distance</strong> (Thomson et al. 2011) :</li>
+<li>dispersal distance is related <strong>to a dispersal
+syndrome</strong> (Willson 1993, Pärtel &amp; Zobel 2007, Vittoz &amp;
+Engler 2007), that may generally be deduced from seed morphology, but
+difficult to establish a direct association (Nogales 2007)</li>
+<li><strong>plant height</strong> more important than seed mass in
+determining seed dispersal distances (Thomson et al. 2011)</li>
+<li><strong>maximum dispersal distance strongly correlated with mean
+dispersal distance</strong> (Thomson et al. 2011) :</li>
 </ul>
-<p><span class="math display">\[ log_{10}(\text{ maximumDist }) = 0.795 + 0.984 * log_{10}(\text{ meanDist })\]</span></p>
+<p><span class="math display">\[ log_{10}(\text{ maximumDist }) = 0.795
++ 0.984 * log_{10}(\text{ meanDist })\]</span></p>
 <p><br/><br/></p>
 <div style="text-align:center;">
 <pre>depending on the set of species used and the trait data available,
 different traits are important in describing dispersal distance patterns</pre>
 <p><br/></p>
-<p><span class="math inline">\(\Rightarrow\)</span> <strong>(dispersal syndrome + growth form + terminal velocity)</strong><br />
-explain <span class="math inline">\(\sim\)</span> 60<span class="math inline">\(\%\)</span> of the variation in maximum dispersal distances</p>
-<p><span class="math inline">\(\Rightarrow\)</span> <strong>(dispersal syndrome + growth form)</strong><br />
-explain <span class="math inline">\(\sim\)</span> 50<span class="math inline">\(\%\)</span> of the variation in maximum dispersal distances</p>
+<p><span class="math inline">\(\Rightarrow\)</span> <strong>(dispersal
+syndrome + growth form + terminal velocity)</strong><br />
+explain <span class="math inline">\(\sim\)</span> 60<span
+class="math inline">\(\%\)</span> of the variation in maximum dispersal
+distances</p>
+<p><span class="math inline">\(\Rightarrow\)</span> <strong>(dispersal
+syndrome + growth form)</strong><br />
+explain <span class="math inline">\(\sim\)</span> 50<span
+class="math inline">\(\%\)</span> of the variation in maximum dispersal
+distances</p>
 </div>
 <p>with</p>
 <ul>
 <li>on average, maximum dispersal distances increase from :<br />
 
 <div style="text-align:center;">
-<p>wind (no special mechanisms) &lt; ballistic &lt; ant &lt; wind (special mechanisms) &lt; animal<br />
+<p>wind (no special mechanisms) &lt; ballistic &lt; ant &lt; wind
+(special mechanisms) &lt; animal<br />
 herb &lt; shrub &lt; tree</p>
 </div></li>
-<li>models with terminal velocity only apply to species with wind or ballistic dispersal syndrome</li>
-<li>in general, short-distance dispersal overestimated, and long-distance dispersal underestimated</li>
+<li>models with terminal velocity only apply to species with wind or
+ballistic dispersal syndrome</li>
+<li>in general, short-distance dispersal overestimated, and
+long-distance dispersal underestimated</li>
 </ul>
 <div style="text-align:center;">
-<p><span class="math inline">\(\Rightarrow\)</span> <strong><code>dispeRsal</code> package</strong></p>
+<p><span class="math inline">\(\Rightarrow\)</span>
+<strong><code>dispeRsal</code> package</strong></p>
 </div>
 <p><br/><br/></p>
 </div>
@@ -501,7 +492,9 @@ herb &lt; shrub &lt; tree</p>
 <p><br/></p>
 <div id="taugourdeau" class="section level2">
 <h2>2014 : Taugourdeau</h2>
-<p><em>Effect of imputation methods on the evaluation of trait values at species level and on the subsequent calculation of functional diversity indices at community level :</em></p>
+<p><em>Effect of imputation methods on the evaluation of trait values at
+species level and on the subsequent calculation of functional diversity
+indices at community level :</em></p>
 <div style="text-align:center;">
 <pre>None of these methods was able to perform best for all the traits and indices</pre>
 <pre>at the species level, the most accurate imputation method is not the same for all traits 
@@ -519,25 +512,32 @@ for the utilization of these single imputation methods</pre>
 <li><strong>Functional proximity between species</strong> =
 <ul>
 <li>best method for traits with <em>unbalanced distribution</em></li>
-<li>but not an appropriate choice for a study on functional distance between species,<br />
+<li>but not an appropriate choice for a study on functional distance
+between species,<br />
 as functional distance would then be underestimated</li>
-<li>less affected by the percentage of deleted data (but Gower dissimilarity cannot be calculated between two species if no trait for both species : not possible if missing data are too numerous)</li>
+<li>less affected by the percentage of deleted data (but Gower
+dissimilarity cannot be calculated between two species if no trait for
+both species : not possible if missing data are too numerous)</li>
 </ul></li>
 <li><strong>Relationships between traits</strong> =
 <ul>
 <li>best method for traits with <em>balanced distribution</em></li>
 <li>but the most sensitive to the level of missing data</li>
 </ul></li>
-<li><strong>MICE</strong> = more accurate than all other methods for all traits except SLA
+<li><strong>MICE</strong> = more accurate than all other methods for all
+traits except SLA
 <ul>
-<li>the correction model can be adapted to the distribution of the variable, but caution with unbalanced traits</li>
+<li>the correction model can be adapted to the distribution of the
+variable, but caution with unbalanced traits</li>
 </ul></li>
 </ul>
 <p><br/></p>
 </div>
 <div id="penone" class="section level2">
 <h2>2014 : Penone</h2>
-<p><em>Evaluate the performance of four approaches for estimating missing values in trait databases and test whether imputed datasets retain underlying allometric relationships among traits :</em></p>
+<p><em>Evaluate the performance of four approaches for estimating
+missing values in trait databases and test whether imputed datasets
+retain underlying allometric relationships among traits :</em></p>
 <div style="text-align:center;">
 <pre>adding phylogenetic information reduced the error for all approaches except kNN 
 this result was stronger for missForest than for mice
@@ -563,7 +563,10 @@ and when there are no other traits with strong signal</pre>
 </div>
 <div id="schrodt" class="section level2">
 <h2>2015 : Schrodt</h2>
-<p><em>A new approach (BHPMF) which imputes trait values based on the taxonomic hierarchy, structure within the trait matrix and trait–environment relationships at the same time as providing uncertainty estimates for each single trait prediction.</em></p>
+<p><em>A new approach (BHPMF) which imputes trait values based on the
+taxonomic hierarchy, structure within the trait matrix and
+trait–environment relationships at the same time as providing
+uncertainty estimates for each single trait prediction.</em></p>
 <div style="text-align:center;">
 <pre>prediction accuracy is not related to the number of entries per trait</pre>
 <pre>BHPMF outperforms the species MEAN baseline in all aspects: 
@@ -580,7 +583,9 @@ opportunities for efficient out-of-sample predictions, at least in well-resolved
 </div>
 <div id="poyatos" class="section level2">
 <h2>2018 : Poyatos</h2>
-<p><em>Assess the performance of different imputation methods to fill simulated gaps at different missingness levels in a spatially explicit plant trait dataset</em></p>
+<p><em>Assess the performance of different imputation methods to fill
+simulated gaps at different missingness levels in a spatially explicit
+plant trait dataset</em></p>
 <div style="text-align:center;">
 <pre>No method performed best consistently for the five studied traits, but, considering all traits 
 and performance metrics, MICE informed by relevant ecological variables gave the best results.
@@ -609,7 +614,8 @@ appeared to correctly reproduce the observed trait relationships in the complete
 </div>
 <div id="johnson" class="section level2">
 <h2>2020 : Johnson</h2>
-<p><em>Evaluate the performance of approaches for handling missing values when considering biased datasets</em></p>
+<p><em>Evaluate the performance of approaches for handling missing
+values when considering biased datasets</em></p>
 <div style="text-align:center;">
 <pre>Rphylopars = most accurate estimate of missing values, best preserve response–trait slope
 
@@ -641,9 +647,16 @@ measuring: missingness, phylogenetic clustering, a change in mean and a change i
 <pre>The threshold for deciding whether imputation is accurate depends on the research question.</pre>
 </div>
 <ul>
-<li>Currently, at least 160 packages for handling missing data available on the R-CRAN repository (Josse et al., 2020) <span class="math inline">\(\rightarrow\)</span> Testing all available imputation methods was not feasible</li>
-<li>imputation can only be successful if it accounts for the mechanism by which data are missing</li>
-<li>impact of phylogenetic signal strength on imputation performance already tested (Kim 2018, Molina-Venegas 2018); therefore, standardization of Pagel’s λ between phylogeny and traits at <span class="math inline">\(\sim\)</span> one</li>
+<li>Currently, at least 160 packages for handling missing data available
+on the R-CRAN repository (Josse et al., 2020) <span
+class="math inline">\(\rightarrow\)</span> Testing all available
+imputation methods was not feasible</li>
+<li>imputation can only be successful if it accounts for the mechanism
+by which data are missing</li>
+<li>impact of phylogenetic signal strength on imputation performance
+already tested (Kim 2018, Molina-Venegas 2018); therefore,
+standardization of Pagel’s λ between phylogeny and traits at <span
+class="math inline">\(\sim\)</span> one</li>
 </ul>
 <p><br/> <br/></p>
 </div>
@@ -701,7 +714,8 @@ measuring: missingness, phylogenetic clustering, a change in mean and a change i
 <tr class="even">
 <td>dissimilarity</td>
 <td>simple</td>
-<td><em>species with the same functional strategy have a similar set of functional traits</em> <br/> Gower distance + threshold</td>
+<td><em>species with the same functional strategy have a similar set of
+functional traits</em> <br/> Gower distance + threshold</td>
 <td>No</td>
 <td>Westoby 2002, Diaz 2004, Taugourdeau 2014</td>
 <td><code>FD</code> pkg</td>
@@ -709,7 +723,8 @@ measuring: missingness, phylogenetic clustering, a change in mean and a change i
 <tr class="odd">
 <td>relationship</td>
 <td>simple/multiple</td>
-<td>regression models <br/> but also : kNN, random forest, matrix factorization…</td>
+<td>regression models <br/> but also : kNN, random forest, matrix
+factorization…</td>
 <td>(eigenvectors from PCoA)</td>
 <td>Wrigth et al. 2004, 2006</td>
 <td><code>dispeRsal</code> function (Tamme 2014)</td>
@@ -725,7 +740,9 @@ measuring: missingness, phylogenetic clustering, a change in mean and a change i
 <tr class="odd">
 <td>(R)phylopars</td>
 <td>simple (but associated variance)</td>
-<td>likelihood-based approach (<code>Phylopars</code>) using both phylogeny and allometric relationships among traits (phylogenetic variance-covariance matrix)</td>
+<td>likelihood-based approach (<code>Phylopars</code>) using both
+phylogeny and allometric relationships among traits (phylogenetic
+variance-covariance matrix)</td>
 <td>Yes</td>
 <td>Bruggeman 2009, Goolsby 2017</td>
 <td><code>Phylopars</code> soft, <code>Rphylopars</code> pkg</td>
@@ -733,7 +750,9 @@ measuring: missingness, phylogenetic clustering, a change in mean and a change i
 <tr class="even">
 <td>PMF</td>
 <td>simple</td>
-<td>Probabilistic Matrix Factorization, models a sparse matrix as the scalar product of 2 latent matrices to find a factorization minimizing the error between predicted and observed data</td>
+<td>Probabilistic Matrix Factorization, models a sparse matrix as the
+scalar product of 2 latent matrices to find a factorization minimizing
+the error between predicted and observed data</td>
 <td>No</td>
 <td></td>
 <td></td>
@@ -741,7 +760,8 @@ measuring: missingness, phylogenetic clustering, a change in mean and a change i
 <tr class="odd">
 <td>HPMF</td>
 <td>simple</td>
-<td>Hierarchical Probabilistic Matrix Factorization, coupled with phylogenetic information</td>
+<td>Hierarchical Probabilistic Matrix Factorization, coupled with
+phylogenetic information</td>
 <td>(taxonomy)</td>
 <td>Shan 2012</td>
 <td></td>
@@ -749,7 +769,8 @@ measuring: missingness, phylogenetic clustering, a change in mean and a change i
 <tr class="even">
 <td>BHPMF</td>
 <td>simple (but associated variance)</td>
-<td>Bayesian Hierarchical Probabilistic Matrix Factorization, coupled with a Gibbs sampler</td>
+<td>Bayesian Hierarchical Probabilistic Matrix Factorization, coupled
+with a Gibbs sampler</td>
 <td>(taxonomy)</td>
 <td>Schrodt 2015</td>
 <td><code>BHMPF</code> pkg</td>
@@ -765,7 +786,8 @@ measuring: missingness, phylogenetic clustering, a change in mean and a change i
 <tr class="even">
 <td>jomo</td>
 <td>multiple</td>
-<td>JOint MOdelling approach for multiple imputation of multilevel data</td>
+<td>JOint MOdelling approach for multiple imputation of multilevel
+data</td>
 <td></td>
 <td>Quartagno 2019</td>
 <td><code>jomo</code> pkg</td>
@@ -838,27 +860,37 @@ measuring: missingness, phylogenetic clustering, a change in mean and a change i
 <tr class="odd">
 <td><strong>no methods</strong></td>
 <td>+ relationship</td>
-<td>+ mean <br/> + median <br/> + dissimilarity <br/> + relationship <br/> + mice</td>
+<td>+ mean <br/> + median <br/> + dissimilarity <br/> + relationship
+<br/> + mice</td>
 <td>+ kNN <br/> + mice <br/> + missForest <br/> + Phylopars</td>
 <td>+ PMF <br/> + BHMPF <br/> + aHMPF</td>
-<td>+ mean and species mean <br/> + ordinary and regression kriging <br/> + kNN <br/> + mice</td>
+<td>+ mean and species mean <br/> + ordinary and regression kriging
+<br/> + kNN <br/> + mice</td>
 <td>+ BHMPF <br/> + Rphylopars <br/> + mice</td>
 </tr>
 <tr class="even">
 <td><strong>missing data</strong></td>
 <td></td>
-<td>(sim) [10 prob of deletion <span class="math inline">\(0.01 \rightarrow 0.46\)</span>] x [10 rep]</td>
-<td>(sim) [<span class="math inline">\(10\% \rightarrow 80\%\)</span>] x [10 rep]</td>
-<td>(obs) mean/trait <span class="math inline">\(\sim 79.9\%\)</span></td>
-<td>(sim) [<span class="math inline">\(10\% \rightarrow 80\%\)</span>] x [30 rep]</td>
-<td>(sim) [2 resp-trait slopes] x [2 cor levels] x [4 bias types] x [2 bias severity] x [<span class="math inline">\(5\% \rightarrow 80\%\)</span>] x [10 rep]</td>
+<td>(sim) [10 prob of deletion <span class="math inline">\(0.01
+\rightarrow 0.46\)</span>] x [10 rep]</td>
+<td>(sim) [<span class="math inline">\(10\% \rightarrow 80\%\)</span>] x
+[10 rep]</td>
+<td>(obs) mean/trait <span class="math inline">\(\sim
+79.9\%\)</span></td>
+<td>(sim) [<span class="math inline">\(10\% \rightarrow 80\%\)</span>] x
+[30 rep]</td>
+<td>(sim) [2 resp-trait slopes] x [2 cor levels] x [4 bias types] x [2
+bias severity] x [<span class="math inline">\(5\% \rightarrow
+80\%\)</span>] x [10 rep]</td>
 </tr>
 <tr class="odd">
 <td><strong>evaluation</strong></td>
 <td><span class="math inline">\(R^2\)</span></td>
 <td>MRdAE</td>
-<td>- NRMSE <br/> - effect of dataset/missing data/method on errors <br/> - slope deviation</td>
-<td>- RMSE <br/> - <span class="math inline">\(R^2\)</span> <br/> - SMA regression <br/> - procrustes analysis</td>
+<td>- NRMSE <br/> - effect of dataset/missing data/method on errors
+<br/> - slope deviation</td>
+<td>- RMSE <br/> - <span class="math inline">\(R^2\)</span> <br/> - SMA
+regression <br/> - procrustes analysis</td>
 <td>- NRMSE, KGE <br/> - correlation matrices deviation</td>
 <td>- RMSE <br/> - slope deviation</td>
 </tr>
@@ -866,10 +898,12 @@ measuring: missingness, phylogenetic clustering, a change in mean and a change i
 <td><strong>software</strong></td>
 <td><code>dispeRsal</code> function</td>
 <td>2 author’s functions, <code>mice</code> pkg</td>
-<td><code>VIM</code>, <code>mice</code>, <code>missForest</code> pkg, <code>Phylopars</code> soft</td>
+<td><code>VIM</code>, <code>mice</code>, <code>missForest</code> pkg,
+<code>Phylopars</code> soft</td>
 <td><code>MATLAB</code></td>
 <td><code>automap</code>, <code>VIM</code>, <code>mice</code> pkg</td>
-<td><code>BHMPF</code>, <code>Rphylopars</code>, <code>mice</code> pkg</td>
+<td><code>BHMPF</code>, <code>Rphylopars</code>, <code>mice</code>
+pkg</td>
 </tr>
 </tbody>
 </table>
@@ -894,7 +928,8 @@ measuring: missingness, phylogenetic clustering, a change in mean and a change i
 <tbody>
 <tr class="odd">
 <td><strong>mean/median</strong></td>
-<td>+ accurate for datasets with small percentages of missing values (Schafer 1999)</td>
+<td>+ accurate for datasets with small percentages of missing values
+(Schafer 1999)</td>
 <td>- least accurate (Taugourdeau 2014)</td>
 </tr>
 <tr class="even">
@@ -905,21 +940,28 @@ measuring: missingness, phylogenetic clustering, a change in mean and a change i
 <tr class="odd">
 <td></td>
 <td></td>
-<td>- severely altered trait distributions, introduced larger errors in selected trait correlations, tended to cause larger deviations in the correlation matrix (Poyatos 2018)</td>
+<td>- severely altered trait distributions, introduced larger errors in
+selected trait correlations, tended to cause larger deviations in the
+correlation matrix (Poyatos 2018)</td>
 </tr>
 <tr class="even">
 <td><strong>kNN</strong></td>
-<td>+ can deal with categorical variables (nominal or ordinal) (Penone 2014)</td>
-<td>- produced larger errors and induced more bias in the allometric relationship <br/> - must specify a value of the tuning parameter k which is difficult to determine a priori (Penone 2014)</td>
+<td>+ can deal with categorical variables (nominal or ordinal) (Penone
+2014)</td>
+<td>- produced larger errors and induced more bias in the allometric
+relationship <br/> - must specify a value of the tuning parameter k
+which is difficult to determine a priori (Penone 2014)</td>
 </tr>
 <tr class="odd">
 <td></td>
 <td></td>
-<td>- tends to introduce larger bias in bivariate trait relationships compared to MICE (Poyatos 2018)</td>
+<td>- tends to introduce larger bias in bivariate trait relationships
+compared to MICE (Poyatos 2018)</td>
 </tr>
 <tr class="even">
 <td><strong>random forest</strong></td>
-<td>+ performed better without including phylogeny <br/> + can deal with categorical variables (nominal or ordinal) (Penone 2014)</td>
+<td>+ performed better without including phylogeny <br/> + can deal with
+categorical variables (nominal or ordinal) (Penone 2014)</td>
 <td></td>
 </tr>
 <tr class="odd">
@@ -929,63 +971,103 @@ measuring: missingness, phylogenetic clustering, a change in mean and a change i
 </tr>
 <tr class="even">
 <td></td>
-<td>+ most accurate when the trait distribution is unbalanced (Taugourdeau 2014)</td>
-<td>- cannot be calculated between two species if no trait is documented for both species (Taugourdeau 2014)</td>
+<td>+ most accurate when the trait distribution is unbalanced
+(Taugourdeau 2014)</td>
+<td>- cannot be calculated between two species if no trait is documented
+for both species (Taugourdeau 2014)</td>
 </tr>
 <tr class="odd">
 <td><strong>ordinary/regression kriging</strong></td>
 <td></td>
-<td>- altered distributions and trait correlations more than mice but they performed similarly in terms of delta cormat at all missingness levels (Poyatos 2018)</td>
+<td>- altered distributions and trait correlations more than mice but
+they performed similarly in terms of delta cormat at all missingness
+levels (Poyatos 2018)</td>
 </tr>
 <tr class="even">
 <td><strong>relationship</strong></td>
 <td></td>
-<td>- depending on the set of species used and traits available, different traits are important (Tamme 2014)</td>
+<td>- depending on the set of species used and traits available,
+different traits are important (Tamme 2014)</td>
 </tr>
 <tr class="odd">
 <td></td>
 <td></td>
-<td>- requires several traits per plant/species to be documented <br/> - in most case less accurate than the dissimilarity method <br/> - does not perform well on very unbalanced traits (like SNP) because the multilinear model is strongly governed by extreme values <br/> - very sensitive to the percentage of missing data (Taugourdeau 2014)</td>
+<td>- requires several traits per plant/species to be documented <br/> -
+in most case less accurate than the dissimilarity method <br/> - does
+not perform well on very unbalanced traits (like SNP) because the
+multilinear model is strongly governed by extreme values <br/> - very
+sensitive to the percentage of missing data (Taugourdeau 2014)</td>
 </tr>
 <tr class="even">
 <td><strong>(R)phylopars</strong></td>
-<td>+ uses a phylogeny and a sparse trait matrix to estimate simultaneously the across-species (phylogenetic) and within-species (phenotypic) trait covariance (similar to a phylogenetic mixed model) to reconstruct the ancestral state and impute missing values (Goolsby 2017)</td>
-<td>- depends on the phylogenetic signal in a trait <br/> - cannot deal with categorical traits</td>
+<td>+ uses a phylogeny and a sparse trait matrix to estimate
+simultaneously the across-species (phylogenetic) and within-species
+(phenotypic) trait covariance (similar to a phylogenetic mixed model) to
+reconstruct the ancestral state and impute missing values (Goolsby
+2017)</td>
+<td>- depends on the phylogenetic signal in a trait <br/> - cannot deal
+with categorical traits</td>
 </tr>
 <tr class="odd">
 <td><strong>PMF</strong></td>
 <td></td>
-<td>- like PCA, efficient if the original matrix is of low rank, i.e. if the axes of the original matrix provide strong correlations <br/> - accuracy worse than using species mean trait values to fill the gaps (Schrodt 2015)</td>
+<td>- like PCA, efficient if the original matrix is of low rank, i.e. if
+the axes of the original matrix provide strong correlations <br/> -
+accuracy worse than using species mean trait values to fill the gaps
+(Schrodt 2015)</td>
 </tr>
 <tr class="even">
 <td><strong>HPMF</strong></td>
-<td>+ satisfactory to predict trait values when information at the genus level is available (Shan 2012) <br/> + needs only at least one trait value per plant</td>
+<td>+ satisfactory to predict trait values when information at the genus
+level is available (Shan 2012) <br/> + needs only at least one trait
+value per plant</td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><strong>BHPMF</strong></td>
-<td>+ On average, across all traits, outperforms PMF, MEAN and aHPMF, with MEAN being significantly more accurate than PMF <br/> + advantage over MEAN largest for ‘physiological traits’(leaf N, leaf P), and smaller for more ‘structural traits’ (seed mass, plant height) <br/> + BHPMF and MEAN capture these general trait–trait correlations, but BHPMF reproduces extreme values more accurately than MEAN and is therefore generally better at capturing the shape of the scatter of observed trait data (Schrodt 2015)</td>
-<td>- presence of strong trait–trait correlations is a prerequisite for the accuracy of BHPMF (Schrodt 2015)</td>
+<td>+ On average, across all traits, outperforms PMF, MEAN and aHPMF,
+with MEAN being significantly more accurate than PMF <br/> + advantage
+over MEAN largest for ‘physiological traits’(leaf N, leaf P), and
+smaller for more ‘structural traits’ (seed mass, plant height) <br/> +
+BHPMF and MEAN capture these general trait–trait correlations, but BHPMF
+reproduces extreme values more accurately than MEAN and is therefore
+generally better at capturing the shape of the scatter of observed trait
+data (Schrodt 2015)</td>
+<td>- presence of strong trait–trait correlations is a prerequisite for
+the accuracy of BHPMF (Schrodt 2015)</td>
 </tr>
 <tr class="even">
 <td><strong>MICE</strong></td>
-<td>+ more accurate than all other methods for all traits except for the specific leaf area (Taugourdeau 2014)</td>
-<td>- affected by the percentage of missing data for 6 (whole subdatabase) and 7 (herbaceous subdatabase) traits (Taugourdeau 2014)</td>
+<td>+ more accurate than all other methods for all traits except for the
+specific leaf area (Taugourdeau 2014)</td>
+<td>- affected by the percentage of missing data for 6 (whole
+subdatabase) and 7 (herbaceous subdatabase) traits (Taugourdeau
+2014)</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td>+ smaller error and bias as compared to other multiple imputation approaches (Ambler, Omar &amp; Royston 2007)</td>
+<td>+ smaller error and bias as compared to other multiple imputation
+approaches (Ambler, Omar &amp; Royston 2007)</td>
 <td></td>
 </tr>
 <tr class="even">
 <td></td>
-<td>+ performed better without including phylogeny <br/> + can deal with categorical variables (nominal or ordinal) (Penone 2014)</td>
-<td>- linear dependencies between variables cause fatal errors and should be eliminated before imputation (Penone 2014)</td>
+<td>+ performed better without including phylogeny <br/> + can deal with
+categorical variables (nominal or ordinal) (Penone 2014)</td>
+<td>- linear dependencies between variables cause fatal errors and
+should be eliminated before imputation (Penone 2014)</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td>+ closely tracked observed trait distributions, introduced the least error in trait correlations under high missingness levels and yielded low delta cormat at extreme missingness levels (Poyatos 2018) <br/> + perform well when there is no true relationship between response and trait (Johnson 2020)</td>
-<td>- perform poorly when there is a positive relationship between response and trait, even when including the response <br/> - phylogenetic information should only be included when data are missing with no bias or a weak bias(Johnson 2020)</td>
+<td>+ closely tracked observed trait distributions, introduced the least
+error in trait correlations under high missingness levels and yielded
+low delta cormat at extreme missingness levels (Poyatos 2018) <br/> +
+perform well when there is no true relationship between response and
+trait (Johnson 2020)</td>
+<td>- perform poorly when there is a positive relationship between
+response and trait, even when including the response <br/> -
+phylogenetic information should only be included when data are missing
+with no bias or a weak bias(Johnson 2020)</td>
 </tr>
 <tr class="even">
 <td><strong>jomo</strong></td>
@@ -1001,18 +1083,69 @@ measuring: missingness, phylogenetic clustering, a change in mean and a change i
 <h1>Citations</h1>
 <!-- - Audigier V, White I R, Jolani S, Debray T PA, Quartagno M, Carpenter J, van Buuren S and Resche-Rigon M. 2018. “Multiple Imputation for Multilevel Data with Continuous and Binary Variables.” Statistical Science 33 (2): 160–83. https://doi.org/10.1214/18-STS646 -->
 <ul>
-<li>Azur M J, Stuart E A, Frangakis C and Leaf P J. 2011. “Multiple Imputation by Chained Equations: What Is It and How Does It Work?” International Journal of Methods in Psychiatric Research 20 (1): 40–49. <a href="https://doi.org/10.1002/mpr.329" class="uri">https://doi.org/10.1002/mpr.329</a> <!-- - Blonder, Benjamin. 2016. “Do Hypervolumes Have Holes?” American Naturalist 187 (4): E93–105. https://doi.org/10.1086/685444 --></li>
-<li>Diniz-Filho, J A F, Villalobos F and Bini L M. 2015. “The Best of Both Worlds: Phylogenetic Eigenvector Regression and Mapping.” Genetics and Molecular Biology 38 (3): 396–400.</li>
-<li>Goolsby, E W, Bruggeman J and Ané C. 2017. “Rphylopars: Fast Multivariate Phylogenetic Comparative Methods for Missing Data and within-Species Variation.” Methods in Ecology and Evolution 8 (1): 22–27. <a href="https://doi.org/10.1111/2041-210X.12612" class="uri">https://doi.org/10.1111/2041-210X.12612</a> <!-- - Huque Md H, Carlin J B, Simpson J A and Lee K J. 2018. “A Comparison of Multiple Imputation Methods for Missing Data in Longitudinal Studies 01 Mathematical Sciences.” BMC Medical Research Methodology 18 (1): 1–16. https://doi.org/10.1186/s12874-018-0615-6 --></li>
-<li>Johnson T F, Isaac N J B, Paviolo A and González‐Suárez M. 2020. “Handling Missing Values in Trait Data.” Global Ecology and Biogeography, no. December 2019: 1–12. <a href="https://doi.org/10.1111/geb.13185" class="uri">https://doi.org/10.1111/geb.13185</a> <!-- - Kim S W, Blomberg S P and Pandolfi J M. 2018. “Transcending Data Gaps: A Framework to Reduce Inferential Errors in Ecological Analyses.” Ecology Letters. https://doi.org/10.1111/ele.13089 --></li>
-<li>Molina-Venegas R, Moreno-Saiz J C, Parga I C, Davies T J, Peres-Neto P R and Rodríguez M. 2018. “Assessing Among-Lineage Variability in Phylogenetic Imputation of Functional Trait Datasets.” Ecography 41 (10): 1740–49. <a href="https://doi.org/10.1111/ecog.03480" class="uri">https://doi.org/10.1111/ecog.03480</a></li>
-<li>Penone C, Davidson A D, Shoemaker K T, Di Marco M, Rondinini C, Brooks T M, Young B E, Graham C H and Costa G C. 2014. “Imputation of Missing Data in Life-History Trait Datasets: Which Approach Performs the Best?” Methods in Ecology and Evolution 5 (9): 961–70. <a href="https://doi.org/10.1111/2041-210X.12232" class="uri">https://doi.org/10.1111/2041-210X.12232</a></li>
-<li>Poyatos R, Sus O, Badiella L, Mencuccini M and Martínez-Vilalta J. 2018. “Gap-Filling a Spatially Explicit Plant Trait Database: Comparing Imputation Methods and Different Levels of Environmental Information.” Biogeosciences 15 (9): 2601–17. <a href="https://doi.org/10.5194/bg-15-2601-2018" class="uri">https://doi.org/10.5194/bg-15-2601-2018</a></li>
-<li>Quartagno M, Grund S and Carpenter J. 2019. “Jomo: A Flexible Package for Two-Level Joint Modelling Multiple Imputation.” R Journal 11 (2): 205–28. <a href="https://doi.org/10.32614/RJ-2019-028" class="uri">https://doi.org/10.32614/RJ-2019-028</a></li>
-<li>Schrodt F, Kattge J, Shan H, Fazayeli F, Joswig J, Banerjee A, Reichstein M, et al. 2015. “BHPMF - a Hierarchical Bayesian Approach to Gap-Filling and Trait Prediction for Macroecology and Functional Biogeography.” Global Ecology and Biogeography 24 (12): 1510–21. <a href="https://doi.org/10.1111/geb.12335" class="uri">https://doi.org/10.1111/geb.12335</a></li>
-<li>Shan H, Kattge J, Reich P B, Banerjee A, Schrodt F and Reichstein M. 2012. “Gap Filling in the Plant Kingdom - Trait Prediction Using Hierarchical Probabilistic Matrix Factorization.” In Proceedings of the 29th International Conference on Machine Learning, ICML 2012, 2:1303–10.</li>
-<li>Tamme R, Götzenberger L, Zobel M, Bullock J M, Hooftman D AP, Kaasik A and Pärtel M. 2014. “Predicting Species’ Maximum Dispersal Distances from Simple Plant Traits.” Ecology 95 (2): 505–13. <a href="https://doi.org/10.1890/13-1000.1" class="uri">https://doi.org/10.1890/13-1000.1</a></li>
-<li>Taugourdeau S, Villerd J, Plantureux S, Huguenin-Elie O and Amiaud B. 2014. “Filling the Gap in Functional Trait Databases: Use of Ecological Hypotheses to Replace Missing Data.” Ecology and Evolution 4 (7): 944–58. <a href="https://doi.org/10.1002/ece3.989" class="uri">https://doi.org/10.1002/ece3.989</a></li>
+<li>Azur M J, Stuart E A, Frangakis C and Leaf P J. 2011. “Multiple
+Imputation by Chained Equations: What Is It and How Does It Work?”
+International Journal of Methods in Psychiatric Research 20 (1): 40–49.
+<a href="https://doi.org/10.1002/mpr.329"
+class="uri">https://doi.org/10.1002/mpr.329</a>
+<!-- - Blonder, Benjamin. 2016. “Do Hypervolumes Have Holes?” American Naturalist 187 (4): E93–105. https://doi.org/10.1086/685444 --></li>
+<li>Diniz-Filho, J A F, Villalobos F and Bini L M. 2015. “The Best of
+Both Worlds: Phylogenetic Eigenvector Regression and Mapping.” Genetics
+and Molecular Biology 38 (3): 396–400.</li>
+<li>Goolsby, E W, Bruggeman J and Ané C. 2017. “Rphylopars: Fast
+Multivariate Phylogenetic Comparative Methods for Missing Data and
+within-Species Variation.” Methods in Ecology and Evolution 8 (1):
+22–27. <a href="https://doi.org/10.1111/2041-210X.12612"
+class="uri">https://doi.org/10.1111/2041-210X.12612</a>
+<!-- - Huque Md H, Carlin J B, Simpson J A and Lee K J. 2018. “A Comparison of Multiple Imputation Methods for Missing Data in Longitudinal Studies 01 Mathematical Sciences.” BMC Medical Research Methodology 18 (1): 1–16. https://doi.org/10.1186/s12874-018-0615-6 --></li>
+<li>Johnson T F, Isaac N J B, Paviolo A and González‐Suárez M. 2020.
+“Handling Missing Values in Trait Data.” Global Ecology and
+Biogeography, no. December 2019: 1–12. <a
+href="https://doi.org/10.1111/geb.13185"
+class="uri">https://doi.org/10.1111/geb.13185</a>
+<!-- - Kim S W, Blomberg S P and Pandolfi J M. 2018. “Transcending Data Gaps: A Framework to Reduce Inferential Errors in Ecological Analyses.” Ecology Letters. https://doi.org/10.1111/ele.13089 --></li>
+<li>Molina-Venegas R, Moreno-Saiz J C, Parga I C, Davies T J, Peres-Neto
+P R and Rodríguez M. 2018. “Assessing Among-Lineage Variability in
+Phylogenetic Imputation of Functional Trait Datasets.” Ecography 41
+(10): 1740–49. <a href="https://doi.org/10.1111/ecog.03480"
+class="uri">https://doi.org/10.1111/ecog.03480</a></li>
+<li>Penone C, Davidson A D, Shoemaker K T, Di Marco M, Rondinini C,
+Brooks T M, Young B E, Graham C H and Costa G C. 2014. “Imputation of
+Missing Data in Life-History Trait Datasets: Which Approach Performs the
+Best?” Methods in Ecology and Evolution 5 (9): 961–70. <a
+href="https://doi.org/10.1111/2041-210X.12232"
+class="uri">https://doi.org/10.1111/2041-210X.12232</a></li>
+<li>Poyatos R, Sus O, Badiella L, Mencuccini M and Martínez-Vilalta J.
+2018. “Gap-Filling a Spatially Explicit Plant Trait Database: Comparing
+Imputation Methods and Different Levels of Environmental Information.”
+Biogeosciences 15 (9): 2601–17. <a
+href="https://doi.org/10.5194/bg-15-2601-2018"
+class="uri">https://doi.org/10.5194/bg-15-2601-2018</a></li>
+<li>Quartagno M, Grund S and Carpenter J. 2019. “Jomo: A Flexible
+Package for Two-Level Joint Modelling Multiple Imputation.” R Journal 11
+(2): 205–28. <a href="https://doi.org/10.32614/RJ-2019-028"
+class="uri">https://doi.org/10.32614/RJ-2019-028</a></li>
+<li>Schrodt F, Kattge J, Shan H, Fazayeli F, Joswig J, Banerjee A,
+Reichstein M, et al. 2015. “BHPMF - a Hierarchical Bayesian Approach to
+Gap-Filling and Trait Prediction for Macroecology and Functional
+Biogeography.” Global Ecology and Biogeography 24 (12): 1510–21. <a
+href="https://doi.org/10.1111/geb.12335"
+class="uri">https://doi.org/10.1111/geb.12335</a></li>
+<li>Shan H, Kattge J, Reich P B, Banerjee A, Schrodt F and Reichstein M.
+2012. “Gap Filling in the Plant Kingdom - Trait Prediction Using
+Hierarchical Probabilistic Matrix Factorization.” In Proceedings of the
+29th International Conference on Machine Learning, ICML 2012,
+2:1303–10.</li>
+<li>Tamme R, Götzenberger L, Zobel M, Bullock J M, Hooftman D AP, Kaasik
+A and Pärtel M. 2014. “Predicting Species’ Maximum Dispersal Distances
+from Simple Plant Traits.” Ecology 95 (2): 505–13. <a
+href="https://doi.org/10.1890/13-1000.1"
+class="uri">https://doi.org/10.1890/13-1000.1</a></li>
+<li>Taugourdeau S, Villerd J, Plantureux S, Huguenin-Elie O and Amiaud
+B. 2014. “Filling the Gap in Functional Trait Databases: Use of
+Ecological Hypotheses to Replace Missing Data.” Ecology and Evolution 4
+(7): 944–58. <a href="https://doi.org/10.1002/ece3.989"
+class="uri">https://doi.org/10.1002/ece3.989</a></li>
 </ul>
 </div>
 
@@ -1045,7 +1178,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
@@ -1054,6 +1187,9 @@ $(document).ready(function () {
 
 <script>
 $(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
 
     // move toc-ignore selectors from section div to header
     $('div.section.toc-ignore')

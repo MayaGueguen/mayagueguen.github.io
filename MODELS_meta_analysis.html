@@ -14,21 +14,28 @@
 
 <title>MODELS : meta analysis</title>
 
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.31/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/journal.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet" />
 <link href="site_libs/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
 
 <style type="text/css">
@@ -43,32 +50,8 @@
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
+
 
 
 
@@ -78,10 +61,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -98,40 +77,16 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 61px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h2 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h3 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h4 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h5 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h6 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -159,7 +114,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -171,7 +126,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -181,11 +136,28 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.parent().addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -197,13 +169,12 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -211,16 +182,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -329,7 +293,7 @@ div.tocify {
 
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
+<div class="row">
 <div class="col-xs-12 col-sm-4 col-md-3">
 <div id="TOC" class="tocify">
 </div>
@@ -343,7 +307,7 @@ div.tocify {
 <div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -374,13 +338,6 @@ div.tocify {
   </a>
 </li>
 <li>
-  <a href="work.html">
-    <span class="fa fa-chart-line"></span>
-     
-    Work
-  </a>
-</li>
-<li>
   <a href="tutorials.html">
     <span class="fa fa-toolbox"></span>
      
@@ -408,7 +365,7 @@ div.tocify {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -422,22 +379,32 @@ div.tocify {
 <div id="publication-bias" class="section level1">
 <h1>Publication bias</h1>
 <ul>
-<li>research in the published literature is <strong>unrepresentative</strong> of the population of completed studies</li>
-<li>originally defined as the publication or non-publication of studies depending on the direction and statistical significance of the results</li>
-<li>language, availability, cost, familiarity, outcome (= dissemination bias)</li>
+<li>research in the published literature is
+<strong>unrepresentative</strong> of the population of completed
+studies</li>
+<li>originally defined as the publication or non-publication of studies
+depending on the direction and statistical significance of the
+results</li>
+<li>language, availability, cost, familiarity, outcome (= dissemination
+bias)</li>
 </ul>
-<p><span class="math inline">\(\rightarrow\)</span> especially problematic when it comes to systematic review and meta-analytic methods (aiming to summarize research)</p>
+<p><span class="math inline">\(\rightarrow\)</span> especially
+problematic when it comes to systematic review and meta-analytic methods
+(aiming to summarize research)</p>
 <p></br></p>
 <ol style="list-style-type: decimal">
 <li><strong>Detect publication bias</strong>
 <ul>
-<li>test funnel plot assymmetry (Begg and Mazumdar 1994, Egger et al 1997, Sterne and Egger)</li>
+<li>test funnel plot assymmetry (Begg and Mazumdar 1994, Egger et al
+1997, Sterne and Egger)</li>
 </ul></li>
-<li><strong>Assess sensitivity of analysis to (possible) publication bias</strong>
+<li><strong>Assess sensitivity of analysis to (possible) publication
+bias</strong>
 <ul>
 <li>failsafe N, or file-drawer analysis (Harris Cooper 1979)</li>
 </ul></li>
-<li><strong>Adjust estimates for (possible) effect of publication bias</strong>
+<li><strong>Adjust estimates for (possible) effect of publication
+bias</strong>
 <ul>
 <li>trim and fill method (Duval and Tweedie)</li>
 </ul></li>
@@ -448,27 +415,34 @@ div.tocify {
 <div id="effect-size" class="section level1">
 <h1>Effect size</h1>
 <div id="neq-with-statistical-significance" class="section level2">
-<h2><span class="math inline">\(\neq\)</span> with statistical significance</h2>
+<h2><span class="math inline">\(\neq\)</span> with statistical
+significance</h2>
 <p>Any statistical test depends on four quantities :</p>
 <ol style="list-style-type: decimal">
 <li><strong>P-Value</strong>
 <ul>
-<li>= probability that a difference of at least the same size would have arisen by chance, even if there really were no difference between the two populations</li>
+<li>= probability that a difference of at least the same size would have
+arisen by chance, even if there really were no difference between the
+two populations</li>
 <li>= <em>statistical significance</em></li>
 <li>does not give information about the magnitude of an effect</li>
 <li>depends essentially on sample size and on effect size</li>
-<li>BUT ‘significant’ with (big effect, and small sample) or (big sample, and small effect)</li>
+<li>BUT ‘significant’ with (big effect, and small sample) or (big
+sample, and small effect)</li>
 </ul></li>
 <li><strong>Sample size</strong>
 <ul>
-<li>Test statistics are usually a function of sample size, so can not serve as ES.</li>
+<li>Test statistics are usually a function of sample size, so can not
+serve as ES.</li>
 </ul></li>
 <li><strong>Effect size</strong>
 <ul>
 <li>= measures to quantify the degree to which a phenomenon exists</li>
 <li>= quantifies the size of the difference between two groups</li>
-<li>emphasises the size of the difference rather than confounding it with sample size</li>
-<li>Each hypothesis test needs a relevant ES, together with an estimate of its likely ‘margin for error’ or ‘confidence interval’</li>
+<li>emphasises the size of the difference rather than confounding it
+with sample size</li>
+<li>Each hypothesis test needs a relevant ES, together with an estimate
+of its likely ‘margin for error’ or ‘confidence interval’</li>
 </ul></li>
 <li><strong>Power of the test</strong></li>
 </ol>
@@ -485,92 +459,159 @@ div.tocify {
 <li>important to say which way round the calculation was done</li>
 <li>/!\ very sensitive to violations of normality assumption</li>
 </ul>
-<p><span class="math display">\[d = \frac{\bar{x_1} - \bar{x_2}}{\sigma}\]</span></p>
+<p><span class="math display">\[d = \frac{\bar{x_1} -
+\bar{x_2}}{\sigma}\]</span></p>
 </div>
 <div id="hodges-s" class="section level3">
 <h3>1985 : Hodges (s)</h3>
 <ul>
 <li>2 normal populations with non-equal standard deviation</li>
 </ul>
-<p><span class="math display">\[s = \sqrt{\frac{(n_1 - 1) \cdot s_1^2 + (n_2 - 1) \cdot s_2^2}{n_1 + n_2 - 2}}\]</span></p>
+<p><span class="math display">\[s = \sqrt{\frac{(n_1 - 1) \cdot s_1^2 +
+(n_2 - 1) \cdot s_2^2}{n_1 + n_2 - 2}}\]</span></p>
 </div>
 <div id="mcgraw-wong-cles" class="section level3">
 <h3>1992 : McGraw &amp; Wong (CLES)</h3>
 <ul>
-<li><em>Common Language Effect Size</em> = probability that a randomly selected individual from one group have a higher score on a variable than a randomly selected individual from another group</li>
+<li><em>Common Language Effect Size</em> = probability that a randomly
+selected individual from one group have a higher score on a variable
+than a randomly selected individual from another group</li>
 <li>2 normal populations with same standard deviation</li>
-<li><span class="math inline">\(0.5\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> populations overlap (identical), <span class="math inline">\(0\)</span> or <span class="math inline">\(1\)</span> <span class="math inline">\(\Rightarrow\)</span> larger effect size</li>
+<li><span class="math inline">\(0.5\)</span> <span
+class="math inline">\(\Rightarrow\)</span> <span
+class="math inline">\(x\)</span> and <span
+class="math inline">\(y\)</span> populations overlap (identical), <span
+class="math inline">\(0\)</span> or <span
+class="math inline">\(1\)</span> <span
+class="math inline">\(\Rightarrow\)</span> larger effect size</li>
 </ul>
-<p><span class="math display">\[CLES = \Phi \left( \frac{\mu_y - \mu_x}{\sqrt{2} \cdot \sigma} \right)\]</span></p>
+<p><span class="math display">\[CLES = \Phi \left( \frac{\mu_y -
+\mu_x}{\sqrt{2} \cdot \sigma} \right)\]</span></p>
 </div>
 <div id="cohen-noes" class="section level3">
 <h3>1992 : Cohen (NOES)</h3>
 <ul>
-<li><em>Non-Overlap Effect Size</em> = amount of combined area under the density probability distribution function not shared by two populations</li>
+<li><em>Non-Overlap Effect Size</em> = amount of combined area under the
+density probability distribution function not shared by two
+populations</li>
 <li>no need for normality assumption</li>
-<li><span class="math inline">\(0\)</span> = small effect size, <span class="math inline">\(1\)</span> = large effect size</li>
+<li><span class="math inline">\(0\)</span> = small effect size, <span
+class="math inline">\(1\)</span> = large effect size</li>
 </ul>
-<p><img src="pictures_tutorials/example_NOES.png" width="200px" style="display: block; margin: auto;" /></p>
+<p><img src="pictures_tutorials/example_NOES.png" alt="" width="200px" style="display: block; margin: auto;" /></p>
 </div>
 <div id="cliff-npes" class="section level3">
 <h3>1993 : Cliff (NPES)</h3>
 <ul>
-<li><em>Non-Parametric Effect Size</em> = enumerating the number of occurrences of an observation from one group having a higher response value than an observation from the second group, and the number of occurrences of the reverse</li>
+<li><em>Non-Parametric Effect Size</em> = enumerating the number of
+occurrences of an observation from one group having a higher response
+value than an observation from the second group, and the number of
+occurrences of the reverse</li>
 <li>no need for normality assumption</li>
-<li><span class="math inline">\(0\)</span> = small effect size, <span class="math inline">\(1\)</span> = large effect size</li>
+<li><span class="math inline">\(0\)</span> = small effect size, <span
+class="math inline">\(1\)</span> = large effect size</li>
 </ul>
-<p><span class="math display">\[NPES = \delta = \frac{\Sigma_{i=1}^{n_1} \Sigma_{j=1}^{n_2} sign(x_{i1} - x_{j2})}{n_1 \cdot n_2}\]</span></p>
+<p><span class="math display">\[NPES = \delta = \frac{\Sigma_{i=1}^{n_1}
+\Sigma_{j=1}^{n_2} sign(x_{i1} - x_{j2})}{n_1 \cdot n_2}\]</span></p>
 </div>
 <div id="qad" class="section level3">
 <h3>QAD</h3>
 <ul>
-<li><em>Quantile Absolute Deviation</em> = average absolute distance between the quantiles of two populations</li>
-<li><span class="math inline">\(F^{-1}\)</span> and <span class="math inline">\(G^{-1}\)</span> = quantile functions (cumulative distribution functions) for 2 statistical populations</li>
-<li><span class="math inline">\(QAD(F,F) = 0\)</span>, and <span class="math inline">\(QAD(F,G) = 0\)</span> if and only if <span class="math inline">\(F = G\)</span></li>
+<li><em>Quantile Absolute Deviation</em> = average absolute distance
+between the quantiles of two populations</li>
+<li><span class="math inline">\(F^{-1}\)</span> and <span
+class="math inline">\(G^{-1}\)</span> = quantile functions (cumulative
+distribution functions) for 2 statistical populations</li>
+<li><span class="math inline">\(QAD(F,F) = 0\)</span>, and <span
+class="math inline">\(QAD(F,G) = 0\)</span> if and only if <span
+class="math inline">\(F = G\)</span></li>
 </ul>
-<p><span class="math display">\[QAD = \int_0^1 |F^{-1}(p) - G^{-1}(p) | dp\]</span></p>
+<p><span class="math display">\[QAD = \int_0^1 |F^{-1}(p) - G^{-1}(p) |
+dp\]</span></p>
 </div>
 <div id="des" class="section level3">
 <h3>DES</h3>
 <ul>
 <li><em>Divergence Effect Size</em></li>
-<li>not symmetric : <span class="math inline">\(DES(F|G) \neq DES(G|F)\)</span></li>
+<li>not symmetric : <span class="math inline">\(DES(F|G) \neq
+DES(G|F)\)</span></li>
 </ul>
-<p><span class="math display">\[DES = 2 \cdot \int_0^1 |G\{F^{-1}(p)\} - G\{G^{-1}(p)\} | dp\]</span></p>
+<p><span class="math display">\[DES = 2 \cdot \int_0^1 |G\{F^{-1}(p)\} -
+G\{G^{-1}(p)\} | dp\]</span></p>
 <p></br></p>
 </div>
 </div>
 <div id="interpretations" class="section level2">
 <h2>Interpretation(s)</h2>
 <ul>
-<li><strong>statements about the overlap between the two samples in terms of a comparison of percentiles</strong></li>
+<li><strong>statements about the overlap between the two samples in
+terms of a comparison of percentiles</strong></li>
 </ul>
-<p><em>An effect size is exactly equivalent to a ‘Z-score’ of a standard Normal distribution. For example, an effect size of 0.8 means that the score of the average person in the experimental group is 0.8 standard deviations above the average person in the control group, and hence exceeds the scores of 79% of the control group.</em></p>
+<p><em>An effect size is exactly equivalent to a ‘Z-score’ of a standard
+Normal distribution. For example, an effect size of 0.8 means that the
+score of the average person in the experimental group is 0.8 standard
+deviations above the average person in the control group, and hence
+exceeds the scores of 79% of the control group.</em></p>
 <ul>
-<li><strong>probability that one could guess which group a person came from, based only on their test score</strong></li>
+<li><strong>probability that one could guess which group a person came
+from, based only on their test score</strong></li>
 </ul>
-<p><em>If the effect size were 0 (i.e. the two groups were the same) then the probability of a correct guess would be exactly a half – or 0.50. With a difference between the two groups equivalent to an effect size of 0.3, there is still plenty of overlap, and the probability of correctly identifying the groups rises only slightly to 0.56. With an effect size of 1, the probability is now 0.69, just over a two-thirds chance.</em></p>
+<p><em>If the effect size were 0 (i.e. the two groups were the same)
+then the probability of a correct guess would be exactly a half – or
+0.50. With a difference between the two groups equivalent to an effect
+size of 0.3, there is still plenty of overlap, and the probability of
+correctly identifying the groups rises only slightly to 0.56. With an
+effect size of 1, the probability is now 0.69, just over a two-thirds
+chance.</em></p>
 <ul>
-<li><strong>equivalence between standardised mean difference (d) and correlation coefficient (r) (Cohen 1969)</strong></li>
+<li><strong>equivalence between standardised mean difference (d) and
+correlation coefficient (r) (Cohen 1969)</strong></li>
 </ul>
-<p>If group membership is coded with a dummy variable (e.g. denoting the control group by 0 and the experimental group by 1) and the correlation between this variable and the outcome measure calculated, a value of r can be derived : <span class="math display">\[r^2 = \frac{d^2}{(4+d^2)}\]</span></p>
+<p>If group membership is coded with a dummy variable (e.g. denoting the
+control group by 0 and the experimental group by 1) and the correlation
+between this variable and the outcome measure calculated, a value of r
+can be derived : <span class="math display">\[r^2 =
+\frac{d^2}{(4+d^2)}\]</span></p>
 <ul>
-<li><strong>Binomial effect size display (BESD) (Rosenthal and Rubin (1982))</strong></li>
+<li><strong>Binomial effect size display (BESD) (Rosenthal and Rubin
+(1982))</strong></li>
 </ul>
-<p>If the outcome measure is reduced to a simple dichotomy (for example, whether a score is above or below a particular value such as the median, which could be thought of as ‘success’ or ‘failure’), r can be interpreted as the difference in the proportions in each category.</p>
-<p><em>For example, an effect size of 0.2 indicates a difference of 0.10 in these proportions, as would be the case if 45% of the control group and 55% of the treatment group had reached some threshold of ‘success’. Note, however, that if the overall proportion ‘successful’ is not close to 50%, this interpretation can be somewhat misleading (Strahan 1991, McGraw 1991).</em></p>
+<p>If the outcome measure is reduced to a simple dichotomy (for example,
+whether a score is above or below a particular value such as the median,
+which could be thought of as ‘success’ or ‘failure’), r can be
+interpreted as the difference in the proportions in each category.</p>
+<p><em>For example, an effect size of 0.2 indicates a difference of 0.10
+in these proportions, as would be the case if 45% of the control group
+and 55% of the treatment group had reached some threshold of ‘success’.
+Note, however, that if the overall proportion ‘successful’ is not close
+to 50%, this interpretation can be somewhat misleading (Strahan 1991,
+McGraw 1991).</em></p>
 <ul>
 <li><p><strong>Proportion of variance accounted for ?</strong></p>
 <ul>
-<li><p><span class="math inline">\(r\)</span> = correlation between two variables</p></li>
-<li><p><span class="math inline">\(R^2 = r^2\)</span> = proportion of the variance in each that is ‘accounted for’ by the other </br> proportion by which the variance of the outcome measure is reduced when it is replaced by the variance of the residuals from a regression equation (close analogies in ANOVA) </br> <span class="math inline">\(\rightarrow\)</span> sometimes advocated as a universal measure of effect size (e.g. Thompson, 1999) ?</p></li>
+<li><p><span class="math inline">\(r\)</span> = correlation between two
+variables</p></li>
+<li><p><span class="math inline">\(R^2 = r^2\)</span> = proportion of
+the variance in each that is ‘accounted for’ by the other </br>
+proportion by which the variance of the outcome measure is reduced when
+it is replaced by the variance of the residuals from a regression
+equation (close analogies in ANOVA) </br> <span
+class="math inline">\(\rightarrow\)</span> sometimes advocated as a
+universal measure of effect size (e.g. Thompson, 1999) ?</p></li>
 <li><p>BUT :</p>
 <ul>
-<li>sensitivity to violation of assumptions (heterogeneity of variance, balanced designs)</li>
-<li>associated standard errors can be large (Olejnik and Algina, 2000)</li>
-<li>generally more statistically complex and hence perhaps less easily understood</li>
-<li>non-directional (2 studies with precisely opposite results would report exactly the same variance accounted for)</li>
-<li>Expressing different measures in terms of the same statistic can hide important differences between them; <span class="math inline">\(R^2\)</span> and ‘effect sizes’ are fundamentally different, and should not be confused.</li>
+<li>sensitivity to violation of assumptions (heterogeneity of variance,
+balanced designs)</li>
+<li>associated standard errors can be large (Olejnik and Algina,
+2000)</li>
+<li>generally more statistically complex and hence perhaps less easily
+understood</li>
+<li>non-directional (2 studies with precisely opposite results would
+report exactly the same variance accounted for)</li>
+<li>Expressing different measures in terms of the same statistic can
+hide important differences between them; <span
+class="math inline">\(R^2\)</span> and ‘effect sizes’ are fundamentally
+different, and should not be confused.</li>
 </ul></li>
 </ul></li>
 </ul>
@@ -579,13 +620,29 @@ div.tocify {
 </div>
 <div id="confidence-interval" class="section level2">
 <h2>Confidence interval</h2>
-<p>To calculate a 95% confidence interval, you assume that the value you got (<em>e.g. the effect size estimate of 0.8</em>) is the ‘true’ value, but calculate the amount of variation in this estimate you would get if you repeatedly took new samples of the same size (i.e. different samples of 38 children). For every 100 of these hypothetical new samples, by definition, 95 would give estimates of the effect size within the ‘95% confidence interval’. If this confidence interval includes zero, then that is the same as saying that the result is not statistically significant. If, on the other hand, zero is outside the range, then it is ‘statistically significant at the 5% level’.</p>
+<p>To calculate a 95% confidence interval, you assume that the value you
+got (<em>e.g. the effect size estimate of 0.8</em>) is the ‘true’ value,
+but calculate the amount of variation in this estimate you would get if
+you repeatedly took new samples of the same size (i.e. different samples
+of 38 children). For every 100 of these hypothetical new samples, by
+definition, 95 would give estimates of the effect size within the ‘95%
+confidence interval’. If this confidence interval includes zero, then
+that is the same as saying that the result is not statistically
+significant. If, on the other hand, zero is outside the range, then it
+is ‘statistically significant at the 5% level’.</p>
 <p>(<em>Coe 2002</em>)</p>
 <div id="hedges-olkin" class="section level3">
 <h3>1985 : Hedges &amp; Olkin</h3>
-<p>If the effect size estimate from the sample is d, then it is normally distributed, with standard deviation :</p>
-<p><span class="math display">\[\sigma[d] = \sqrt{\frac{N_e + N_c}{N_e \cdot N_c} + \frac{d^2}{2 \cdot (N_e + N_c)}}\]</span> with <span class="math inline">\(N_e\)</span> and <span class="math inline">\(N_c\)</span> the numbers in the experimental and control groups.</p>
-<p>Hence a 95% confidence interval for d would be from <span class="math inline">\((d - 1.96 \cdot \sigma[d])\)</span> to <span class="math inline">\((d + 1.96 \cdot \sigma[d])\)</span>.</p>
+<p>If the effect size estimate from the sample is d, then it is normally
+distributed, with standard deviation :</p>
+<p><span class="math display">\[\sigma[d] = \sqrt{\frac{N_e + N_c}{N_e
+\cdot N_c} + \frac{d^2}{2 \cdot (N_e + N_c)}}\]</span> with <span
+class="math inline">\(N_e\)</span> and <span
+class="math inline">\(N_c\)</span> the numbers in the experimental and
+control groups.</p>
+<p>Hence a 95% confidence interval for d would be from <span
+class="math inline">\((d - 1.96 \cdot \sigma[d])\)</span> to <span
+class="math inline">\((d + 1.96 \cdot \sigma[d])\)</span>.</p>
 <p></br></p>
 </div>
 </div>
@@ -594,30 +651,51 @@ div.tocify {
 <ul>
 <li><strong>which ‘standard deviation’ to use</strong>
 <ul>
-<li>often better to use a ‘pooled’ estimate of SD = an average of the SD of the experimental and control groups : <span class="math display">\[ SD_{pooled} = \sqrt{\frac{(N_e-1) \cdot SD_e^2 + (N_c-1) \cdot SD_c^2}{N_e + N_c - 2}}\]</span></li>
-<li>depends on the assumption that the two calculated SD are estimates of the same population value </br> (= that experimental and control group SD differ only as a result of sampling variation) </br></li>
+<li>often better to use a ‘pooled’ estimate of SD = an average of the SD
+of the experimental and control groups : <span class="math display">\[
+SD_{pooled} = \sqrt{\frac{(N_e-1) \cdot SD_e^2 + (N_c-1) \cdot
+SD_c^2}{N_e + N_c - 2}}\]</span></li>
+<li>depends on the assumption that the two calculated SD are estimates
+of the same population value </br> (= that experimental and control
+group SD differ only as a result of sampling variation) </br></li>
 </ul></li>
 <li><strong>corrections for bias</strong>
 <ul>
-<li><span class="math inline">\(SD_{pooled}\)</span> gives a better estimate than the control group SD, BUT still slightly biased (in general gives a value slightly larger than the true population value) (Hedges and Olkin, 1985) </br></li>
+<li><span class="math inline">\(SD_{pooled}\)</span> gives a better
+estimate than the control group SD, BUT still slightly biased (in
+general gives a value slightly larger than the true population value)
+(Hedges and Olkin, 1985) </br></li>
 </ul></li>
 <li><strong>restricted range</strong>
 <ul>
-<li>The spread of scores found within the highly selected group would be much less than that in a true cross-section of the population.</li>
-<li>Ideally, use the SD of the full population, in order to make comparisons fair. Any comparison with effect sizes calculated from a full-range population must be made with great caution, if at all.</li>
+<li>The spread of scores found within the highly selected group would be
+much less than that in a true cross-section of the population.</li>
+<li>Ideally, use the SD of the full population, in order to make
+comparisons fair. Any comparison with effect sizes calculated from a
+full-range population must be made with great caution, if at all.</li>
 <li><em>en gros</em>, attention aux facteurs confondants !</li>
 </ul></li>
 <li><strong>non-normal distributions</strong>
 <ul>
-<li>if normal assumption is not true then the interpretation may be altered</li>
-<li>in particular, it may be difficult to make a fair comparison between an effect-size based on Normal distributions and one based on non-Normal distributions.</li>
+<li>if normal assumption is not true then the interpretation may be
+altered</li>
+<li>in particular, it may be difficult to make a fair comparison between
+an effect-size based on Normal distributions and one based on non-Normal
+distributions.</li>
 </ul></li>
 <li><strong>measurement reliability</strong>
 <ul>
-<li>in classical measurement theory, any measure = ‘true’ underlying value + component of ‘error’.</li>
-<li>PB = amount of variation in measured scores for a particular sample (i.e. its standard deviation) will depend on both the variation in underlying scores and the amount of error in their measurement.</li>
-<li><span class="math inline">\(\rightarrow\)</span> reliability of any outcome measure used should be reported</li>
-<li>(<em>It is theoretically possible to make a correction for unreliability (sometimes called ‘attenuation’), which gives an estimate of what the effect size would have been, had the reliability of the test been perfect BUT not trusty</em>)</li>
+<li>in classical measurement theory, any measure = ‘true’ underlying
+value + component of ‘error’.</li>
+<li>PB = amount of variation in measured scores for a particular sample
+(i.e. its standard deviation) will depend on both the variation in
+underlying scores and the amount of error in their measurement.</li>
+<li><span class="math inline">\(\rightarrow\)</span> reliability of any
+outcome measure used should be reported</li>
+<li>(<em>It is theoretically possible to make a correction for
+unreliability (sometimes called ‘attenuation’), which gives an estimate
+of what the effect size would have been, had the reliability of the test
+been perfect BUT not trusty</em>)</li>
 </ul></li>
 </ul>
 <p>(<em>Coe 2002</em>)</p>
@@ -625,8 +703,17 @@ div.tocify {
 </div>
 <div id="from-effect-size-to-meta-analysis" class="section level2">
 <h2>From effect size to meta-analysis</h2>
-<p>When a particular experiment has been replicated, the different effect size estimates from each study can easily be combined to give an overall best estimate of the size of the effect = <strong>meta-analysis</strong>.</p>
-<p><span class="math inline">\(\rightarrow\)</span> seeking relationships between effect sizes and characteristics, context and study design in which they were found </br> <span class="math inline">\(\rightarrow\)</span> even small studies can make a significant contribution to knowledge </br> <span class="math inline">\(\rightarrow\)</span> BUT danger of combining incommensurable results</p>
+<p>When a particular experiment has been replicated, the different
+effect size estimates from each study can easily be combined to give an
+overall best estimate of the size of the effect =
+<strong>meta-analysis</strong>.</p>
+<p><span class="math inline">\(\rightarrow\)</span> seeking
+relationships between effect sizes and characteristics, context and
+study design in which they were found </br> <span
+class="math inline">\(\rightarrow\)</span> even small studies can make a
+significant contribution to knowledge </br> <span
+class="math inline">\(\rightarrow\)</span> BUT danger of combining
+incommensurable results</p>
 <p>(<em>Coe 2002</em>)</p>
 <p></br></br></p>
 </div>
@@ -639,63 +726,100 @@ div.tocify {
 <ol style="list-style-type: decimal">
 <li><strong>Narrative review</strong>
 <ul>
-<li>= <em>A researcher would collect information about the studies she finds important or worthwhile regarding a phenomenon, and make inferences about the model by examining the individual studies. She would try to come up with a final judgment about the connection between the variables, by looking at the different studies and evaluating these studies on several criteria. She may also try to analyze the differences between the studies, by looking at particular study sample- or design- features. The researcher may count the numbers of significant and non- significant results using vote counting. If the majority of the results are significant, the researcher may claim that there is some evidence of effect in the studies. If the votes are similar, the researcher may conclude that no conclusive result is ob- served. Thus, more empirical studies are required.</em></li>
+<li>= <em>A researcher would collect information about the studies she
+finds important or worthwhile regarding a phenomenon, and make
+inferences about the model by examining the individual studies. She
+would try to come up with a final judgment about the connection between
+the variables, by looking at the different studies and evaluating these
+studies on several criteria. She may also try to analyze the differences
+between the studies, by looking at particular study sample- or design-
+features. The researcher may count the numbers of significant and non-
+significant results using vote counting. If the majority of the results
+are significant, the researcher may claim that there is some evidence of
+effect in the studies. If the votes are similar, the researcher may
+conclude that no conclusive result is ob- served. Thus, more empirical
+studies are required.</em></li>
 <li>BUT :
 <ul>
-<li>highly subjective as to which patterns are considered important and which ones irrelevant</li>
-<li>do not have a systematic tool for combining the results of several studies</li>
-<li>focus on statistical significance rather than the magnitude of effect</li>
-<li>do not adequately correct for sample characteristics, or design features</li>
-<li>lack of adequate emphasis on inclusion and exclusion criteria for studies</li>
+<li>highly subjective as to which patterns are considered important and
+which ones irrelevant</li>
+<li>do not have a systematic tool for combining the results of several
+studies</li>
+<li>focus on statistical significance rather than the magnitude of
+effect</li>
+<li>do not adequately correct for sample characteristics, or design
+features</li>
+<li>lack of adequate emphasis on inclusion and exclusion criteria for
+studies</li>
 </ul></li>
 </ul></li>
 </ol>
 <p></br></p>
-<p>Glass 1976 = the statistical analysis of a large collection of analysis results from individual studies for the purpose of integrating the findings</p>
+<p>Glass 1976 = the statistical analysis of a large collection of
+analysis results from individual studies for the purpose of integrating
+the findings</p>
 <ol start="2" style="list-style-type: decimal">
 <li><strong>Systematic review</strong>
 <ul>
-<li>focuses on minimizing bias in literature review by using clearly pre-defined criteria so that the literature search is replicable</li>
+<li>focuses on minimizing bias in literature review by using clearly
+pre-defined criteria so that the literature search is replicable</li>
 <li>preferred way to do literature review for meta-analysis</li>
 </ul></li>
 <li><strong>Meta-analysis</strong>
 <ul>
 <li>statistical analysis of effect sizes</li>
-<li>statistically combines the effect sizes and models them with study characteristics (<strong>moderators</strong>) to explain the differences (<strong>meta-regression</strong>)</li>
-<li>focus not on statistical significance but on the magnitude of the effect</li>
+<li>statistically combines the effect sizes and models them with study
+characteristics (<strong>moderators</strong>) to explain the differences
+(<strong>meta-regression</strong>)</li>
+<li>focus not on statistical significance but on the magnitude of the
+effect</li>
 <li>NEED :
 <ul>
-<li>enough primary studies (not easy to state the number of studies required)</li>
-<li>enough information in extracted studies to calculate the effect sizes</li>
+<li>enough primary studies (not easy to state the number of studies
+required)</li>
+<li>enough information in extracted studies to calculate the effect
+sizes</li>
 <li>search strategy not flawed / studies not biased</li>
 </ul></li>
 </ul></li>
 </ol>
 <p></br></p>
-<p><span class="math inline">\(\Rightarrow\)</span> if conditions fulfilled, advisable to combine both systematic review and meta-analysis in the same review process</p>
+<p><span class="math inline">\(\Rightarrow\)</span> if conditions
+fulfilled, advisable to combine both systematic review and meta-analysis
+in the same review process</p>
 <p></br></p>
 </div>
 <div id="selection-of-articles" class="section level2">
 <h2>Selection of articles</h2>
 <p><strong>Not easy to state the number of studies required</strong></p>
 <ul>
-<li><p><strong>Minimize selection bias :</strong> use more than one database</p></li>
-<li><p><strong>Replicable :</strong> document the search strategy</p></li>
-<li><p>Estimate the number of studies required with <em>power analysis</em></p></li>
-<li><p><em>Whether unpublished studies (dissertations, conferences, unpublished papers) should be included ?</em></p>
+<li><p><strong>Minimize selection bias :</strong> use more than one
+database</p></li>
+<li><p><strong>Replicable :</strong> document the search
+strategy</p></li>
+<li><p>Estimate the number of studies required with <em>power
+analysis</em></p></li>
+<li><p><em>Whether unpublished studies (dissertations, conferences,
+unpublished papers) should be included ?</em></p>
 <ul>
 <li>Fergusion and Brannick 2012 :
 <ol style="list-style-type: decimal">
 <li>may be of weaker methodology,</li>
-<li>may be biased towards the authors conducting the meta-analyses (ease of availability of these studies),</li>
-<li>search for unpublished studies may favor established rather than non-established authors,</li>
+<li>may be biased towards the authors conducting the meta-analyses (ease
+of availability of these studies),</li>
+<li>search for unpublished studies may favor established rather than
+non-established authors,</li>
 <li>search for unpublished studies may also be biased</li>
 </ol></li>
 <li>Rothstein and Bushman 2012 :
 <ol style="list-style-type: decimal">
-<li>studies may be excluded on the methodological rigorousness by using clearly define inclusion criteria,</li>
-<li>researchers may contact authors who have published in the topic to minimize potential selection bias,</li>
-<li>researchers should include unpublished studies and test whether study characteristics related to methodological quality moderate the effect sizes</li>
+<li>studies may be excluded on the methodological rigorousness by using
+clearly define inclusion criteria,</li>
+<li>researchers may contact authors who have published in the topic to
+minimize potential selection bias,</li>
+<li>researchers should include unpublished studies and test whether
+study characteristics related to methodological quality moderate the
+effect sizes</li>
 </ol></li>
 </ul></li>
 </ul>
@@ -704,8 +828,12 @@ div.tocify {
 <div id="effect-sizes" class="section level2">
 <h2>Effect sizes</h2>
 <ul>
-<li><em>Unstandardized :</em> appropriate if the effect sizes can be used to communicate or compare across studies</li>
-<li><strong>Directional :</strong> indicate direction of treatment or association (<span class="math inline">\(\neq R^2\)</span> in multiple regression, <span class="math inline">\(\eta^2\)</span> ou <span class="math inline">\(\omega^2\)</span> in ANOVA)</li>
+<li><em>Unstandardized :</em> appropriate if the effect sizes can be
+used to communicate or compare across studies</li>
+<li><strong>Directional :</strong> indicate direction of treatment or
+association (<span class="math inline">\(\neq R^2\)</span> in multiple
+regression, <span class="math inline">\(\eta^2\)</span> ou <span
+class="math inline">\(\omega^2\)</span> in ANOVA)</li>
 </ul>
 <p>3 common types of effect sizes :</p>
 <ul>
@@ -716,18 +844,29 @@ div.tocify {
 </ul></li>
 <li><strong>based on mean differences :</strong>
 <ul>
-<li>to represent the treatment effect between an experimental and a control groups</li>
-<li>raw mean difference if the scale is meaningful, </br> a standardized mean difference otherwise if the scale is not comparable across studies</li>
+<li>to represent the treatment effect between an experimental and a
+control groups</li>
+<li>raw mean difference if the scale is meaningful, </br> a standardized
+mean difference otherwise if the scale is not comparable across
+studies</li>
 </ul></li>
 <li><strong>based on correlation coefficient :</strong>
 <ul>
 <li>to represent the association between two variables</li>
-<li>correlation coefficient directly, or transformed to Fisher’s Z score to help normalizing the sampling distribution of the correlation when used as an effect size</li>
+<li>correlation coefficient directly, or transformed to Fisher’s Z score
+to help normalizing the sampling distribution of the correlation when
+used as an effect size</li>
 </ul></li>
 </ul>
-<p><span class="math inline">\(\rightarrow\)</span> if the research topic is related to experimental or between group comparisons, mean differences are usually used</p>
-<p><span class="math inline">\(\rightarrow\)</span> it is possible to convert the effect sizes among odds ratio, mean difference and correlation coefficient </br> (no need to exclude studies because of the difference in the reported effect sizes)</p>
-<p><strong>/!\ An effect size cannot be used in the analysis if its sampling variance is missing.</strong></p>
+<p><span class="math inline">\(\rightarrow\)</span> if the research
+topic is related to experimental or between group comparisons, mean
+differences are usually used</p>
+<p><span class="math inline">\(\rightarrow\)</span> it is possible to
+convert the effect sizes among odds ratio, mean difference and
+correlation coefficient </br> (no need to exclude studies because of the
+difference in the reported effect sizes)</p>
+<p><strong>/!\ An effect size cannot be used in the analysis if its
+sampling variance is missing.</strong></p>
 <p></br></p>
 </div>
 <div id="testing-heterogeneity" class="section level2">
@@ -735,75 +874,124 @@ div.tocify {
 <ul>
 <li><strong>Fixed-effects model (common)</strong>
 <ul>
-<li>usually assume that the effect sizes are homogeneous across studies</li>
-<li>all studies share the same population effect size <span class="math inline">\(\beta_F\)</span>, </br> and the observed difference between ES is mainly due to sampling error</li>
+<li>usually assume that the effect sizes are homogeneous across
+studies</li>
+<li>all studies share the same population effect size <span
+class="math inline">\(\beta_F\)</span>, </br> and the observed
+difference between ES is mainly due to sampling error</li>
 <li><span class="math inline">\(y_i = \beta_F + e_i\)</span></li>
 </ul></li>
 <li><strong>Random-effects model</strong>
 <ul>
 <li>allows studies have their own population effect sizes</li>
-<li>observed difference on sample ES consists of two components: </br> true differences among the population effect sizes, and sampling error</li>
+<li>observed difference on sample ES consists of two components: </br>
+true differences among the population effect sizes, and sampling
+error</li>
 <li><span class="math inline">\(y_i = \beta_R + u_i + e_i\)</span></li>
 </ul></li>
 </ul>
 <p></br></p>
-<p><span class="math display">\[\text{Population effect size : } \beta_F = \frac{\Sigma_{i=1}^k w_i \cdot y_i}{\Sigma_{i=1}^k w_i}\]</span> <span class="math display">\[\text{Average population effect : } \beta_R\]</span> with :</p>
+<p><span class="math display">\[\text{Population effect size : } \beta_F
+= \frac{\Sigma_{i=1}^k w_i \cdot y_i}{\Sigma_{i=1}^k w_i}\]</span> <span
+class="math display">\[\text{Average population effect : }
+\beta_R\]</span> with :</p>
 <ul>
-<li><span class="math inline">\(w_i = \frac{1}{v_i}\)</span> the weight (and precision) of <span class="math inline">\(i\)</span>th study</li>
-<li><span class="math inline">\(v_i = Var(e_i)\)</span> the known sampling variance of <span class="math inline">\(i\)</span>th study</li>
-<li><span class="math inline">\(\tau^2 = Var(u_i)\)</span> the population heterogeneity variance of <span class="math inline">\(i\)</span>th study</li>
+<li><span class="math inline">\(w_i = \frac{1}{v_i}\)</span> the weight
+(and precision) of <span class="math inline">\(i\)</span>th study</li>
+<li><span class="math inline">\(v_i = Var(e_i)\)</span> the known
+sampling variance of <span class="math inline">\(i\)</span>th study</li>
+<li><span class="math inline">\(\tau^2 = Var(u_i)\)</span> the
+population heterogeneity variance of <span
+class="math inline">\(i\)</span>th study</li>
 </ul>
 <p></br></p>
-<p><span class="math inline">\(\Rightarrow\)</span> <strong>Test of heterogeneity</strong> = are studies consistent (variation in findings compatible with chance alone), or not ? </br> (consistency of the effect across studies)</p>
-<p><span class="math inline">\(\Rightarrow\)</span> if random model : more studies are required, otherwise the estimated heterogeneity variance is not stable enough</p>
+<p><span class="math inline">\(\Rightarrow\)</span> <strong>Test of
+heterogeneity</strong> = are studies consistent (variation in findings
+compatible with chance alone), or not ? </br> (consistency of the effect
+across studies)</p>
+<p><span class="math inline">\(\Rightarrow\)</span> if random model :
+more studies are required, otherwise the estimated heterogeneity
+variance is not stable enough</p>
 <p></br></p>
 <div id="cochran-q" class="section level3">
 <h3>1950 : Cochran (Q)</h3>
 <ul>
 <li>= to test the assumption of homogeneity of the effect sizes</li>
-<li>= summing the squared deviations of each study’s estimate from the overall meta-analytic estimate, weighting each study’s contribution in the same manner as in the meta-analysis</li>
-<li>P values are obtained by comparing the statistic with a Chi2 distribution with k−1 degrees of freedom </br> (where k is the number of studies)</li>
+<li>= summing the squared deviations of each study’s estimate from the
+overall meta-analytic estimate, weighting each study’s contribution in
+the same manner as in the meta-analysis</li>
+<li>P values are obtained by comparing the statistic with a Chi2
+distribution with k−1 degrees of freedom </br> (where k is the number of
+studies)</li>
 </ul>
-<p><span class="math display">\[Q = \Sigma_{i=1}^k w_i \cdot (y_i - \beta_F)^2\]</span></p>
+<p><span class="math display">\[Q = \Sigma_{i=1}^k w_i \cdot (y_i -
+\beta_F)^2\]</span></p>
 <p>BUT low statistical power (detecting true heterogeneity)</p>
 <ul>
-<li>low power (unlikely to be significant) when few studies </br> (<span class="math inline">\(\rightarrow\)</span> a non-significant result cannot be taken as evidence of homogeneity)</li>
-<li>Using a cut-off of 10% for significance ameliorates this problem </br> but increases the risk of drawing a false positive conclusion (type I error).</li>
-<li>excessive power (likely to be significant) when many studies (especially if large studies)</li>
+<li>low power (unlikely to be significant) when few studies </br> (<span
+class="math inline">\(\rightarrow\)</span> a non-significant result
+cannot be taken as evidence of homogeneity)</li>
+<li>Using a cut-off of 10% for significance ameliorates this problem
+</br> but increases the risk of drawing a false positive conclusion
+(type I error).</li>
+<li>excessive power (likely to be significant) when many studies
+(especially if large studies)</li>
 </ul>
-<p><span class="math inline">\(\Rightarrow\)</span> <strong>susceptible to the number of trials included</strong></p>
-<p><span class="math inline">\(\Rightarrow\)</span> <strong>not advisable</strong> to choose between fixed- vs random-effects models by relying on the significance test on Q statistic</p>
+<p><span class="math inline">\(\Rightarrow\)</span> <strong>susceptible
+to the number of trials included</strong></p>
+<p><span class="math inline">\(\Rightarrow\)</span> <strong>not
+advisable</strong> to choose between fixed- vs random-effects models by
+relying on the significance test on Q statistic</p>
 </div>
 <div id="higgins-i2" class="section level3">
 <h3>2003 : Higgins (<span class="math inline">\(I^2\)</span>)</h3>
 <ul>
-<li>= percentage of the total variation of the effect size across studies due to the between-study heterogeneity</li>
+<li>= percentage of the total variation of the effect size across
+studies due to the between-study heterogeneity</li>
 </ul>
-<p><span class="math display">\[ I^2 = 100\% \cdot \frac{Q - (k-1)}{Q}\]</span></p>
+<p><span class="math display">\[ I^2 = 100\% \cdot \frac{Q -
+(k-1)}{Q}\]</span></p>
 <ul>
-<li>Negative values of I2 are put equal to zero so that I2 lies between 0% and 100%.</li>
-<li>A value of 0% indicates no observed heterogeneity, and larger values show increasing heterogeneity.</li>
+<li>Negative values of I2 are put equal to zero so that I2 lies between
+0% and 100%.</li>
+<li>A value of 0% indicates no observed heterogeneity, and larger values
+show increasing heterogeneity.</li>
 </ul>
 <p></br></p>
 <ul>
 <li>can usually be derived from published meta-analyses</li>
 <li>can be accompanied by an <strong>uncertainty interval</strong></li>
-<li>can be calculated and <strong>compared</strong> across meta-analyses of different sizes, types of study, types of outcome data (eg dichotomous, quantitative, or time to event) and choice of effect measure (eg odds ratio or hazard ratio)</li>
-<li><strong>do not depend on the number of studies in the meta-analysis</strong></li>
-<li>can also be helpful in investigating the causes and type of any heterogeneity,</li>
+<li>can be calculated and <strong>compared</strong> across meta-analyses
+of different sizes, types of study, types of outcome data (eg
+dichotomous, quantitative, or time to event) and choice of effect
+measure (eg odds ratio or hazard ratio)</li>
+<li><strong>do not depend on the number of studies in the
+meta-analysis</strong></li>
+<li>can also be helpful in investigating the causes and type of any
+heterogeneity,</li>
 </ul>
 <p>BUT</p>
 <ul>
-<li><strong>relative measure of heterogeneity</strong> = becomes larger when the sampling error gets smaller, and vice versa</li>
-<li><span class="math inline">\(\rightarrow\)</span> if heterogeneity identified, a common option is to <strong>subgroup the studies</strong> (eg high vs low quality)</li>
-<li>Because of loss of power, non-significant heterogeneity within a subgroup may be due not to homogeneity but to the smaller number of studies.</li>
+<li><strong>relative measure of heterogeneity</strong> = becomes larger
+when the sampling error gets smaller, and vice versa</li>
+<li><span class="math inline">\(\rightarrow\)</span> if heterogeneity
+identified, a common option is to <strong>subgroup the studies</strong>
+(eg high vs low quality)</li>
+<li>Because of loss of power, non-significant heterogeneity within a
+subgroup may be due not to homogeneity but to the smaller number of
+studies.</li>
 </ul>
 </div>
 <div id="tau2" class="section level3">
 <h3>(<span class="math inline">\(\tau^2\)</span>)</h3>
-<p>An alternative quantification of heterogeneity in a meta-analysis is the among-study variance (often called tau2), calculated as part of a random effects meta-analysis. This is more useful for comparisons of heterogeneity among subgroups, but values depend on the treatment effect scale.</p>
+<p>An alternative quantification of heterogeneity in a meta-analysis is
+the among-study variance (often called tau2), calculated as part of a
+random effects meta-analysis. This is more useful for comparisons of
+heterogeneity among subgroups, but values depend on the treatment effect
+scale.</p>
 <ul>
-<li><strong>absolute measure of heterogeneity</strong> = theoretically free of influence from the sampling error</li>
+<li><strong>absolute measure of heterogeneity</strong> = theoretically
+free of influence from the sampling error</li>
 </ul>
 <p><br/></p>
 <p><br/> <br/></p>
@@ -813,10 +1001,19 @@ div.tocify {
 <div id="citations" class="section level1">
 <h1>Citations</h1>
 <ul>
-<li>Cheung M W L and Vijayakumar R. 2016. A Guide to Conducting a Meta-Analysis. Neuropsychology Review. <a href="https://doi.org/10.1007/s11065-016-9319-z" class="uri">https://doi.org/10.1007/s11065-016-9319-z</a></li>
-<li>Coe R. 2002. It’s the Effect Size, Stupid. In Annual Conference of the British Educational Research Association.</li>
-<li>Higgins J P T, Thompson S G, Deeks J J and Altman D G. 2003. Measuring Inconsistency in Meta-Analyses. British Medical Journal. <a href="https://doi.org/10.1136/bmj.327.7414.557" class="uri">https://doi.org/10.1136/bmj.327.7414.557</a></li>
-<li>Rothstein H R, Sutton A J and Borenstein M. 2005. Chapter 1 : Publication Bias in Meta-Analysis. Publication Bias in Meta-Analysis – Prevention, Assessment and Adjustments.</li>
+<li>Cheung M W L and Vijayakumar R. 2016. A Guide to Conducting a
+Meta-Analysis. Neuropsychology Review. <a
+href="https://doi.org/10.1007/s11065-016-9319-z"
+class="uri">https://doi.org/10.1007/s11065-016-9319-z</a></li>
+<li>Coe R. 2002. It’s the Effect Size, Stupid. In Annual Conference of
+the British Educational Research Association.</li>
+<li>Higgins J P T, Thompson S G, Deeks J J and Altman D G. 2003.
+Measuring Inconsistency in Meta-Analyses. British Medical Journal. <a
+href="https://doi.org/10.1136/bmj.327.7414.557"
+class="uri">https://doi.org/10.1136/bmj.327.7414.557</a></li>
+<li>Rothstein H R, Sutton A J and Borenstein M. 2005. Chapter 1 :
+Publication Bias in Meta-Analysis. Publication Bias in Meta-Analysis –
+Prevention, Assessment and Adjustments.</li>
 </ul>
 </div>
 
@@ -849,7 +1046,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
@@ -858,6 +1055,9 @@ $(document).ready(function () {
 
 <script>
 $(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
 
     // move toc-ignore selectors from section div to header
     $('div.section.toc-ignore')
